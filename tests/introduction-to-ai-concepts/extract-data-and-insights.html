@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-900 Practice Test — Extract Data and Insights</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f8f9fb;
+    color: #222;
+    margin: 0;
+    padding: 2rem;
+  }
+  a.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #0063B1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a.back-link:hover,
+  a.back-link:focus {
+    text-decoration: underline;
+  }
+  h1 {
+    color: #004578;
+    margin-bottom: 1.5rem;
+  }
+  .question {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .question h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  ul.options {
+    list-style-type: upper-alpha;
+    margin-left: 1.5rem;
+    line-height: 1.6;
+  }
+  details {
+    margin-top: 0.5rem;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #0063B1;
+  }
+  .answer {
+    background: #f1f8ff;
+    border-left: 4px solid #0063B1;
+    padding: 0.8rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+  }
+</style>
+</head>
+<body>
+<a class="back-link" href="index.html">← Back to Introduction to AI Concepts</a>
+<h1>Extract Data and Insights</h1>
+<p>Test your knowledge of Azure services that help discover information from documents and data stores.</p>
+
+<div class="question">
+  <h2>1️⃣ Which service can analyze scanned receipts to extract totals, dates, and merchant names?</h2>
+  <ul class="options">
+    <li>A. Azure Cognitive Search</li>
+    <li>B. Azure Form Recognizer</li>
+    <li>C. Azure Machine Learning</li>
+    <li>D. Azure Databricks</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> B — Azure Form Recognizer.<br>
+      <strong>Explanation:</strong> Form Recognizer provides prebuilt models for receipts, invoices, and other business documents, extracting key-value pairs with high accuracy.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>2️⃣ Why would you enrich documents in an Azure Cognitive Search index?</h2>
+  <ul class="options">
+    <li>A. To increase storage redundancy</li>
+    <li>B. To add AI-generated metadata such as key phrases and entities</li>
+    <li>C. To convert images to SVG format</li>
+    <li>D. To replicate the index across regions</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> B — To add AI-generated metadata such as key phrases and entities.<br>
+      <strong>Explanation:</strong> Skillsets enrich content during indexing, creating searchable fields that surface insights from unstructured data.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>3️⃣ Which component of Azure Cognitive Search defines the schema for searchable content?</h2>
+  <ul class="options">
+    <li>A. Indexer</li>
+    <li>B. Skillset</li>
+    <li>C. Index</li>
+    <li>D. Data source</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> C — Index.<br>
+      <strong>Explanation:</strong> The index describes fields, data types, and search behavior, acting as the schema that clients query.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>4️⃣ You need to build a pipeline that ingests PDFs from Azure Blob Storage and makes them searchable. What should you configure first?</h2>
+  <ul class="options">
+    <li>A. A data source pointing to the storage account</li>
+    <li>B. A semantic ranker</li>
+    <li>C. A private endpoint</li>
+    <li>D. Azure Synapse Link</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> A — A data source pointing to the storage account.<br>
+      <strong>Explanation:</strong> The data source connection tells Azure Cognitive Search where to retrieve content before indexers and skillsets process the files.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>5️⃣ What advantage does Azure Synapse Analytics provide when analyzing insights extracted from AI workloads?</h2>
+  <ul class="options">
+    <li>A. Built-in labeling tools for training models</li>
+    <li>B. Serverless SQL and Spark pools for large-scale analytics</li>
+    <li>C. Automatic speech translation</li>
+    <li>D. Managed conversational bots</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> B — Serverless SQL and Spark pools for large-scale analytics.<br>
+      <strong>Explanation:</strong> Synapse unifies big data and data warehousing, enabling teams to analyze extracted insights alongside enterprise data.
+    </div>
+  </details>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-900 Practice Test — Speech Workloads</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f8f9fb;
+    color: #222;
+    margin: 0;
+    padding: 2rem;
+  }
+  a.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #0063B1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a.back-link:hover,
+  a.back-link:focus {
+    text-decoration: underline;
+  }
+  h1 {
+    color: #004578;
+    margin-bottom: 1.5rem;
+  }
+  .question {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .question h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  ul.options {
+    list-style-type: upper-alpha;
+    margin-left: 1.5rem;
+    line-height: 1.6;
+  }
+  details {
+    margin-top: 0.5rem;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #0063B1;
+  }
+  .answer {
+    background: #f1f8ff;
+    border-left: 4px solid #0063B1;
+    padding: 0.8rem 1rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+  }
+</style>
+</head>
+<body>
+<a class="back-link" href="index.html">← Back to Introduction to AI Concepts</a>
+<h1>Speech Workloads</h1>
+<p>This quiz focuses on Azure AI services that convert, translate, and analyze speech.</p>
+
+<div class="question">
+  <h2>1️⃣ Which Azure service provides speech-to-text transcription with custom vocabularies?</h2>
+  <ul class="options">
+    <li>A. Azure AI Language</li>
+    <li>B. Azure Speech Service</li>
+    <li>C. Azure OpenAI Service</li>
+    <li>D. Azure Bot Service</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> B — Azure Speech Service.<br>
+      <strong>Explanation:</strong> The Speech service supports real-time and batch transcription and allows custom speech models for unique vocabularies.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>2️⃣ What feature of Azure Speech enables real-time translation of spoken audio into multiple languages?</h2>
+  <ul class="options">
+    <li>A. Speech studio conversation transcription</li>
+    <li>B. Speech translation</li>
+    <li>C. Neural Text-to-Speech</li>
+    <li>D. Custom Neural Voice</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> B — Speech translation.<br>
+      <strong>Explanation:</strong> Speech translation can translate incoming speech into text or synthetic speech in target languages in near real-time.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>3️⃣ Which capability lets you build a branded synthetic voice using your own recordings?</h2>
+  <ul class="options">
+    <li>A. Custom Neural Voice</li>
+    <li>B. Keyword recognition</li>
+    <li>C. Audio content safety</li>
+    <li>D. Speech Synthesis Markup Language</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> A — Custom Neural Voice.<br>
+      <strong>Explanation:</strong> Custom Neural Voice lets organizations create high-quality, realistic synthetic voices trained on their own audio datasets.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>4️⃣ When should you use the batch transcription API instead of real-time speech-to-text?</h2>
+  <ul class="options">
+    <li>A. For conversations that need speaker diarization</li>
+    <li>B. For streaming voice commands in an app</li>
+    <li>C. For low-latency transcription in a call center</li>
+    <li>D. For summarizing recorded meetings stored in Azure Blob Storage</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> D — For summarizing recorded meetings stored in Azure Blob Storage.<br>
+      <strong>Explanation:</strong> Batch transcription handles large prerecorded files asynchronously, ideal for archived meeting recordings.
+    </div>
+  </details>
+</div>
+
+<div class="question">
+  <h2>5️⃣ Which security feature helps prevent unauthorized use of a custom voice model?</h2>
+  <ul class="options">
+    <li>A. Content filters</li>
+    <li>B. Resource locks</li>
+    <li>C. Speaker verification</li>
+    <li>D. Voice talent agreements</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+    <div class="answer">
+      <strong>✅ Correct Answer:</strong> D — Voice talent agreements.<br>
+      <strong>Explanation:</strong> Custom Neural Voice requires documented consent from the voice talent, ensuring ethical usage and preventing misuse of the voice model.
+    </div>
+  </details>
+</div>
+
+</body>
+</html>
