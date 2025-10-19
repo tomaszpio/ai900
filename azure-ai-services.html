@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure AI Services Knowledge Graph</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --surface: #ffffff;
+      --surface-alt: #f3f6fb;
+      --border: #d0d7de;
+      --accent: #0078d4;
+      --accent-soft: rgba(0, 120, 212, 0.12);
+      --text: #1f1f1f;
+      --muted: #5f6a7d;
+      --shadow: rgba(15, 23, 42, 0.12);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--surface-alt);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #002050, #005a9e);
+      color: white;
+      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    header h1 {
+      margin: 0 0 0.6rem 0;
+      font-weight: 600;
+      font-size: clamp(2rem, 3vw, 2.75rem);
+    }
+
+    header p {
+      max-width: 60ch;
+      margin: 0;
+      opacity: 0.85;
+      font-size: 1.05rem;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .graph-card,
+    .details-card {
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px var(--shadow);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .details-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .details-card h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--accent);
+    }
+
+    .details-card h3 {
+      margin: 1rem 0 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .details-card p {
+      margin: 0.35rem 0 0;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .details-card h4 {
+      margin: 1rem 0 0.35rem;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .details-card ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .details-card li {
+      margin-bottom: 0.35rem;
+    }
+
+    .details-card .placeholder {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+      background: var(--surface-alt);
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .legend {
+      margin-top: auto;
+      padding-top: 2rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .legend-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    #graph {
+      width: 100%;
+      height: clamp(24rem, 60vh, 32rem);
+    }
+
+    .node circle {
+      fill: white;
+      stroke: var(--accent);
+      stroke-width: 2px;
+      cursor: pointer;
+      transition: fill 0.2s ease, stroke-width 0.2s ease;
+    }
+
+    .node circle:hover {
+      fill: var(--accent-soft);
+      stroke-width: 3px;
+    }
+
+    .node text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      fill: var(--text);
+      pointer-events: none;
+    }
+
+    .link {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 2px;
+    }
+
+    .node--category circle {
+      fill: rgba(0, 120, 212, 0.08);
+    }
+
+    .node--root circle {
+      fill: rgba(0, 120, 212, 0.12);
+    }
+
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .graph-card {
+        order: 2;
+      }
+
+      .details-card {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Azure AI Services Knowledge Graph</h1>
+    <p>
+      Explore how Azure AI services are structured. Select a service or category to learn about its purpose and typical use
+      cases.
+    </p>
+  </header>
+  <main>
+    <section class="graph-card" aria-label="Graph of Azure AI services">
+      <svg id="graph" role="img" aria-labelledby="graph-title"></svg>
+      <span id="graph-title" class="sr-only">Interactive graph showing Azure AI services hierarchy</span>
+    </section>
+    <aside class="details-card" aria-live="polite" aria-atomic="true">
+      <h2 id="details-title">Service details</h2>
+      <div id="details-content">
+        <div class="placeholder">Select a node in the graph to view its description, capabilities, and common scenarios.</div>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: rgba(0, 120, 212, 0.12);"></span>
+          <span>Azure AI services (root)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: rgba(0, 120, 212, 0.08);"></span>
+          <span>Service categories</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: white; border-color: var(--accent);"></span>
+          <span>Individual services</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-kHuI9Al4Xv7N0ZTRXHer1Ye03yuQ/NKexx39GraxLYU6+erjLr7nfTQ0FRmaFfQd0vA7LyQUbj3A5+xJrTMYtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const servicesData = {
+      name: 'Azure AI Services',
+      description: 'A collection of prebuilt AI capabilities for vision, speech, language, and decision-making that can be accessed via REST APIs and SDKs.',
+      capabilities: [
+        'Ready-made cognitive capabilities',
+        'Integrates with Azure infrastructure and security',
+        'Support for multiple programming languages and SDKs'
+      ],
+      scenarios: [
+        'Add intelligent features without building models from scratch',
+        'Augment applications with language, vision, and speech AI',
+        'Accelerate AI solution delivery with prebuilt models'
+      ],
+      children: [
+        {
+          name: 'Language Services',
+          type: 'category',
+          description: 'Understand and generate natural language with pretrained models and conversational AI.',
+          capabilities: [
+            'Natural language understanding',
+            'Conversational AI with orchestration',
+            'Text analytics and translation'
+          ],
+          scenarios: [
+            'Multilingual chatbots and virtual agents',
+            'Text summarization and sentiment analysis',
+            'Automated document classification'
+          ],
+          children: [
+            {
+              name: 'Azure AI Language',
+              description: 'Unified language service with capabilities for text analytics, question answering, and conversational language understanding.',
+              capabilities: [
+                'Sentiment and opinion mining',
+                'Entity recognition and key phrase extraction',
+                'Custom text classification and conversational orchestration'
+              ],
+              scenarios: [
+                'Monitor customer feedback across channels',
+                'Build FAQ bots that extract answers from knowledge bases',
+                'Route and classify support tickets automatically'
+              ]
+            },
+            {
+              name: 'Azure AI Speech',
+              description: 'Convert speech to text, synthesize speech, and translate conversations in real time.',
+              capabilities: [
+                'Speech-to-text with custom acoustic tuning',
+                'Text-to-speech with neural voices',
+                'Real-time speech translation and speaker diarization'
+              ],
+              scenarios: [
+                'Meeting transcription and insights',
+                'Interactive voice response systems',
+                'Assistive solutions for accessibility'
+              ]
+            },
+            {
+              name: 'Azure OpenAI Service',
+              description: 'Access OpenAI large language models for generation, summarization, and semantic search with Azure enterprise promises.',
+              capabilities: [
+                'GPT models for content generation',
+                'Embeddings for search and knowledge mining',
+                'Fine-tuning and safety moderation tools'
+              ],
+              scenarios: [
+                'Automated report and content generation',
+                'Conversational copilots and assistants',
+                'Code completion and knowledge retrieval'
+              ]
+            }
+          ]
+        },
+        {
+          name: 'Vision Services',
+          type: 'category',
+          description: 'Analyze images and video to detect objects, extract text, and build custom vision models.',
+          capabilities: [
+            'Image recognition and classification',
+            'Optical character recognition (OCR)',
+            'Custom vision model training'
+          ],
+          scenarios: [
+            'Automated content moderation',
+            'Smart manufacturing defect detection',
+            'Document digitization and form processing'
+          ],
+          children: [
+            {
+              name: 'Azure AI Vision',
+              description: 'Prebuilt and custom computer vision APIs for image analysis, spatial analysis, and face detection.',
+              capabilities: [
+                'Tagging, description, and object detection',
+                'Spatial analysis for people counting and occupancy',
+                'Face recognition with responsible AI controls'
+              ],
+              scenarios: [
+                'Retail shelf analytics',
+                'Facility safety monitoring',
+                'Content accessibility with image descriptions'
+              ]
+            },
+            {
+              name: 'Custom Vision',
+              description: 'Train, deploy, and improve custom image classification and object detection models.',
+              capabilities: [
+                'No-code model training interface',
+                'Active learning with tagging assistance',
+                'Edge deployment for offline inference'
+              ],
+              scenarios: [
+                'Predictive maintenance using visual inspections',
+                'Agricultural crop monitoring',
+                'Quality assurance in manufacturing'
+              ]
+            }
+          ]
+        },
+        {
+          name: 'Document Intelligence',
+          type: 'category',
+          description: 'Apply AI to extract structured data from documents, forms, and invoices.',
+          capabilities: [
+            'Prebuilt models for invoices, receipts, IDs',
+            'Custom document processing with labeling',
+            'Document classification and splitting'
+          ],
+          scenarios: [
+            'Accounts payable automation',
+            'Customer onboarding with ID verification',
+            'Digitizing paper records into structured data'
+          ],
+          children: [
+            {
+              name: 'Azure AI Document Intelligence',
+              description: 'Extract text, key-value pairs, tables, and structures from documents using template-less AI models.',
+              capabilities: [
+                'Prebuilt models for common business documents',
+                'Custom models built with labeled data',
+                'Workflow automation via REST APIs and Logic Apps'
+              ],
+              scenarios: [
+                'Invoice processing and matching',
+                'Loan document review automation',
+                'Regulatory compliance record digitization'
+              ]
+            }
+          ]
+        },
+        {
+          name: 'Decision & Applied AI',
+          type: 'category',
+          description: 'Infuse applications with personal recommendations, anomaly detection, and domain-specific AI agents.',
+          capabilities: [
+            'Personalization and recommendations',
+            'Anomaly detection and forecasting',
+            'Business process automation with orchestration'
+          ],
+          scenarios: [
+            'Adaptive customer experiences',
+            'Operational monitoring and alerting',
+            'Contact center productivity'
+          ],
+          children: [
+            {
+              name: 'Personalizer',
+              description: 'Deliver contextual, personalized experiences using reinforcement learning.',
+              capabilities: [
+                'Real-time learning from rewards',
+                'Exploration vs exploitation balancing',
+                'Built-in evaluation and offline experimentation'
+              ],
+              scenarios: [
+                'Personalized content recommendations',
+                'Context-aware app experiences',
+                'Targeted promotions and offers'
+              ]
+            },
+            {
+              name: 'Metrics Advisor',
+              description: 'Monitor time-series data to detect anomalies and diagnose issues quickly.',
+              capabilities: [
+                'Adaptive anomaly detection models',
+                'Root cause analysis and incident management',
+                'Multivariate analysis across metrics'
+              ],
+              scenarios: [
+                'Application performance monitoring',
+                'IoT operations anomaly detection',
+                'Business KPI tracking'
+              ]
+            },
+            {
+              name: 'Azure AI Studio',
+              description: 'Unified authoring canvas for building and orchestrating generative AI copilots and agents.',
+              capabilities: [
+                'Graphical flow and agent design',
+                'Integration with Azure OpenAI and AI Search',
+                'Safety, monitoring, and deployment tools'
+              ],
+              scenarios: [
+                'Enterprise copilot development',
+                'Knowledge-grounded assistants',
+                'Responsible deployment and lifecycle management'
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    const svg = d3.select('#graph');
+    const width = svg.node().clientWidth;
+    const height = svg.node().clientHeight;
+
+    const g = svg
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .append('g')
+      .attr('transform', 'translate(60, 20)');
+
+    const treeLayout = d3.tree().size([height - 40, width - 160]);
+    const root = d3.hierarchy(servicesData);
+
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    const linkGenerator = d3.linkHorizontal()
+      .x(d => d.y)
+      .y(d => d.x);
+
+    const update = source => {
+      const treeData = treeLayout(root);
+      const nodes = treeData.descendants();
+      const links = treeData.links();
+
+      nodes.forEach(d => d.y = d.depth * 180);
+
+      const node = g.selectAll('g.node')
+        .data(nodes, d => d.id || (d.id = d.data.name));
+
+      const nodeEnter = node.enter()
+        .append('g')
+        .attr('class', d => `node node--${d.depth === 0 ? 'root' : d.data.type || 'service'}`)
+        .attr('transform', d => `translate(${source.y0},${source.x0})`);
+
+      nodeEnter.append('circle')
+        .attr('r', 1e-6)
+        .on('click', (event, d) => {
+          event.stopPropagation();
+          showDetails(d.data);
+          if (d.children) {
+            d._children = d.children;
+            d.children = null;
+          } else {
+            d.children = d._children;
+            d._children = null;
+          }
+          update(d);
+        });
+
+      nodeEnter.append('text')
+        .attr('dy', '0.35em')
+        .attr('x', d => d.depth === 0 ? -10 : 12)
+        .attr('text-anchor', d => d.depth === 0 ? 'end' : 'start')
+        .text(d => d.data.name)
+        .style('fill-opacity', 1e-6);
+
+      const nodeUpdate = nodeEnter.merge(node);
+
+      nodeUpdate.transition()
+        .duration(300)
+        .attr('transform', d => `translate(${d.y},${d.x})`);
+
+      nodeUpdate.select('circle')
+        .transition()
+        .duration(300)
+        .attr('r', 16);
+
+      nodeUpdate.select('text')
+        .transition()
+        .duration(300)
+        .style('fill-opacity', 1)
+        .attr('x', d => d.depth === 0 ? -20 : 20)
+        .attr('text-anchor', d => d.depth === 0 ? 'end' : 'start');
+
+      const nodeExit = node.exit().transition()
+        .duration(300)
+        .attr('transform', d => `translate(${source.y},${source.x})`)
+        .remove();
+
+      nodeExit.select('circle')
+        .attr('r', 1e-6);
+
+      nodeExit.select('text')
+        .style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link')
+        .data(links, d => d.target.id);
+
+      const linkEnter = link.enter().insert('path', 'g')
+        .attr('class', 'link')
+        .attr('d', () => {
+          const o = { x: source.x0, y: source.y0 };
+          return linkGenerator({ source: o, target: o });
+        });
+
+      linkEnter.merge(link).transition()
+        .duration(300)
+        .attr('d', linkGenerator);
+
+      link.exit().transition()
+        .duration(300)
+        .attr('d', () => {
+          const o = { x: source.x, y: source.y };
+          return linkGenerator({ source: o, target: o });
+        })
+        .remove();
+
+      nodes.forEach(d => {
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
+    };
+
+    const collapseAll = node => {
+      if (node.children) {
+        node._children = node.children;
+        node._children.forEach(collapseAll);
+        node.children = null;
+      }
+    };
+
+    root.children.forEach(collapseAll);
+    update(root);
+    showDetails(root.data);
+
+    function showDetails(data) {
+      const content = document.getElementById('details-content');
+      content.innerHTML = `
+        <h3>${data.name}</h3>
+        <p>${data.description || 'Explore this node to learn more.'}</p>
+        ${Array.isArray(data.capabilities) ? renderList('Key capabilities', data.capabilities) : ''}
+        ${Array.isArray(data.scenarios) ? renderList('Common scenarios', data.scenarios) : ''}
+      `;
+    }
+
+    function renderList(title, items) {
+      if (!items.length) return '';
+      const listItems = items.map(item => `<li>${item}</li>`).join('');
+      return `
+        <h4>${title}</h4>
+        <ul>${listItems}</ul>
+      `;
+    }
+  </script>
+</body>
+</html>
