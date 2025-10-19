@@ -11,13 +11,17 @@
     :root {
       color-scheme: light dark;
       --surface: #ffffff;
-      --surface-alt: #f3f6fb;
+      --surface-alt: #eef3fb;
+      --surface-strong: #0f172a;
       --border: #d0d7de;
       --accent: #0078d4;
+      --accent-strong: #004c87;
       --accent-soft: rgba(0, 120, 212, 0.12);
       --text: #1f1f1f;
       --muted: #5f6a7d;
       --shadow: rgba(15, 23, 42, 0.12);
+      --chip-preview: #9457eb;
+      --chip-ga: #107c10;
     }
 
     body {
@@ -30,32 +34,82 @@
       flex-direction: column;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     header {
-      background: linear-gradient(135deg, #002050, #005a9e);
+      background: radial-gradient(circle at 20% 20%, rgba(0, 120, 212, 0.25), transparent 60%),
+        radial-gradient(circle at 80% 30%, rgba(0, 60, 136, 0.45), transparent 55%),
+        linear-gradient(135deg, #002050, #0a5cbf);
       color: white;
-      padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      padding: clamp(2rem, 6vw, 3rem) clamp(1.5rem, 6vw, 4rem);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.18), transparent 60%);
+      pointer-events: none;
     }
 
     header h1 {
-      margin: 0 0 0.6rem 0;
+      margin: 0 0 0.5rem 0;
       font-weight: 600;
-      font-size: clamp(2rem, 3vw, 2.75rem);
+      font-size: clamp(2.1rem, 4vw, 3rem);
     }
 
     header p {
-      max-width: 60ch;
+      max-width: 70ch;
       margin: 0;
-      opacity: 0.85;
+      opacity: 0.92;
       font-size: 1.05rem;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.16);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .badge svg {
+      width: 16px;
+      height: 16px;
     }
 
     main {
       flex: 1;
       display: grid;
       grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
-      gap: clamp(1.5rem, 3vw, 2.5rem);
-      padding: clamp(1.5rem, 3vw, 2.5rem);
+      gap: clamp(1.5rem, 3vw, 2.75rem);
+      padding: clamp(1.75rem, 4vw, 3rem);
     }
 
     .graph-card,
@@ -80,8 +134,14 @@
     }
 
     .details-card h3 {
-      margin: 1rem 0 0.35rem;
-      font-size: 1.05rem;
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .details-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
 
     .details-card p {
@@ -91,14 +151,14 @@
     }
 
     .details-card h4 {
-      margin: 1rem 0 0.35rem;
+      margin: 1.25rem 0 0.35rem;
       font-size: 1rem;
       color: var(--text);
     }
 
     .details-card ul {
       margin: 0;
-      padding-left: 1.25rem;
+      padding-left: 1.1rem;
       color: var(--muted);
     }
 
@@ -115,6 +175,51 @@
       text-align: center;
       color: var(--muted);
       font-style: italic;
+    }
+
+    .details-meta {
+      margin: 0.75rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: rgba(15, 23, 42, 0.08);
+      color: var(--surface-strong);
+    }
+
+    .chip--ga {
+      background: rgba(16, 124, 16, 0.12);
+      color: var(--chip-ga);
+    }
+
+    .chip--preview {
+      background: rgba(148, 87, 235, 0.12);
+      color: var(--chip-preview);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1.25rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .cta:hover,
+    .cta:focus {
+      text-decoration: underline;
     }
 
     .legend {
@@ -137,6 +242,59 @@
       height: 16px;
       border-radius: 50%;
       border: 2px solid transparent;
+    }
+
+    .update-panel {
+      padding: 0 clamp(1.75rem, 4vw, 3rem) clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .update-card {
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 38px var(--shadow);
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .update-card h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 1.45rem;
+    }
+
+    .key-insights {
+      display: grid;
+      gap: 0.85rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .key-insights li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+
+    .key-insights span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .key-insights div {
+      line-height: 1.55;
+      flex: 1;
     }
 
     #graph {
@@ -190,15 +348,48 @@
       .details-card {
         order: 1;
       }
+
+      .update-panel {
+        padding: 0 1.5rem 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      header {
+        padding: 2rem 1.5rem;
+      }
+
+      main {
+        padding: 1.5rem 0;
+      }
+
+      .update-panel {
+        padding: 0 0 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="header-meta">
+      <span class="badge" aria-label="Updated for 2024">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" role="img" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.144.044l-4-4.5a.75.75 0 1 1 1.114-1.004l3.404 3.83 7.45-9.776a.75.75 0 0 1 1.033-.146z" clip-rule="evenodd" />
+        </svg>
+        Updated February 2024
+      </span>
+      <span class="badge" aria-label="Reference for Azure AI-900">
+        Azure AI-900 reference companion
+      </span>
+    </div>
     <h1>Azure AI Services Knowledge Graph</h1>
     <p>
-      Explore how Azure AI services are structured. Select a service or category to learn about its purpose and typical use
-      cases.
+      Explore how Azure AI services are organized in the latest Azure AI portfolio. Select a service or category to review
+      its description, typical capabilities, usage scenarios, and links to documentation.
     </p>
   </header>
   <main>
@@ -227,31 +418,50 @@
       </div>
     </aside>
   </main>
+  <section class="update-panel" aria-label="Latest updates for Azure AI services">
+    <div class="update-card">
+      <h2>What's new in the Azure AI Services line-up</h2>
+      <p>
+        Microsoft continues to evolve the Azure AI portfolio by adding orchestration tools and refreshed branding. The
+        knowledge graph and the notes in this companion capture highlights you should know for the AI-900 exam or solution
+        planning discussions.
+      </p>
+      <ul class="key-insights">
+        <li><span>1</span><div><strong>Azure AI Studio</strong> brings orchestration, prompt flow, and monitoring into a
+          single canvas for building enterprise copilots.</div></li>
+        <li><span>2</span><div><strong>Azure AI Search</strong> (formerly Cognitive Search) is emphasized as the knowledge
+          mining layer for grounding generative AI responses.</div></li>
+        <li><span>3</span><div><strong>Content Safety</strong> and <strong>Responsible AI</strong> tooling receive new
+          capabilities to moderate both text and imagery generated by AI systems.</div></li>
+      </ul>
+    </div>
+  </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const servicesData = {
       name: 'Azure AI Services',
-      description: 'A collection of prebuilt AI capabilities for vision, speech, language, and decision-making that can be accessed via REST APIs and SDKs.',
+      status: 'General availability',
+      description: 'A collection of ready-made AI capabilities spanning language, vision, speech, search, and decision-making. Services are delivered through REST APIs, SDKs, and Azure AI Studio experiences.',
       capabilities: [
-        'Ready-made cognitive capabilities',
-        'Integrates with Azure infrastructure and security',
-        'Support for multiple programming languages and SDKs'
+        'Prebuilt cognitive capabilities and generative AI orchestration',
+        'Integration with Azure platform governance and security',
+        'Support for multiple programming languages, SDKs, and no-code tools'
       ],
       scenarios: [
         'Add intelligent features without building models from scratch',
-        'Augment applications with language, vision, and speech AI',
-        'Accelerate AI solution delivery with prebuilt models'
+        'Ground generative AI solutions with enterprise data',
+        'Accelerate AI solution delivery with reusable Azure building blocks'
       ],
       children: [
         {
           name: 'Language Services',
           type: 'category',
-          description: 'Understand and generate natural language with pretrained models and conversational AI.',
+          description: 'Understand, translate, and generate natural language with pretrained models and conversational AI capabilities.',
           capabilities: [
             'Natural language understanding',
-            'Conversational AI with orchestration',
-            'Text analytics and translation'
+            'Multilingual translation and speech enablement',
+            'Conversational orchestration and summarization'
           ],
           scenarios: [
             'Multilingual chatbots and virtual agents',
@@ -261,6 +471,8 @@
           children: [
             {
               name: 'Azure AI Language',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/language-service/overview',
               description: 'Unified language service with capabilities for text analytics, question answering, and conversational language understanding.',
               capabilities: [
                 'Sentiment and opinion mining',
@@ -275,6 +487,8 @@
             },
             {
               name: 'Azure AI Speech',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/speech-service/overview',
               description: 'Convert speech to text, synthesize speech, and translate conversations in real time.',
               capabilities: [
                 'Speech-to-text with custom acoustic tuning',
@@ -289,6 +503,8 @@
             },
             {
               name: 'Azure OpenAI Service',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/openai/overview',
               description: 'Access OpenAI large language models for generation, summarization, and semantic search with Azure enterprise promises.',
               capabilities: [
                 'GPT models for content generation',
@@ -299,6 +515,22 @@
                 'Automated report and content generation',
                 'Conversational copilots and assistants',
                 'Code completion and knowledge retrieval'
+              ]
+            },
+            {
+              name: 'Azure AI Translator',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/translator/',
+              description: 'Neural machine translation service supporting more than 100 languages with custom terminology options.',
+              capabilities: [
+                'Real-time and batch text translation',
+                'Custom glossary and terminology support',
+                'Document translation with built-in formats'
+              ],
+              scenarios: [
+                'Localizing product content and documentation',
+                'Cross-border collaboration and chat translation',
+                'Multi-language knowledge base publishing'
               ]
             }
           ]
@@ -320,6 +552,8 @@
           children: [
             {
               name: 'Azure AI Vision',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/computer-vision/overview',
               description: 'Prebuilt and custom computer vision APIs for image analysis, spatial analysis, and face detection.',
               capabilities: [
                 'Tagging, description, and object detection',
@@ -334,6 +568,8 @@
             },
             {
               name: 'Custom Vision',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/custom-vision-service/overview',
               description: 'Train, deploy, and improve custom image classification and object detection models.',
               capabilities: [
                 'No-code model training interface',
@@ -344,6 +580,22 @@
                 'Predictive maintenance using visual inspections',
                 'Agricultural crop monitoring',
                 'Quality assurance in manufacturing'
+              ]
+            },
+            {
+              name: 'Azure AI Video Indexer',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/azure-video-indexer/video-indexer-overview',
+              description: 'Extract searchable insights from audio and video, including transcripts, people, and scene segmentation.',
+              capabilities: [
+                'Automatic transcription and translation',
+                'Face and speaker detection',
+                'Scene and topic segmentation with insights'
+              ],
+              scenarios: [
+                'Media archive discovery',
+                'Content compliance and moderation',
+                'Video metadata enrichment for search'
               ]
             }
           ]
@@ -365,6 +617,8 @@
           children: [
             {
               name: 'Azure AI Document Intelligence',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/document-intelligence/overview',
               description: 'Extract text, key-value pairs, tables, and structures from documents using template-less AI models.',
               capabilities: [
                 'Prebuilt models for common business documents',
@@ -375,6 +629,71 @@
                 'Invoice processing and matching',
                 'Loan document review automation',
                 'Regulatory compliance record digitization'
+              ]
+            },
+            {
+              name: 'Form Recognizer Studio',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/ai-services/document-intelligence/studio-overview',
+              description: 'Studio experience for labeling, testing, and deploying custom document models within Azure AI.',
+              capabilities: [
+                'Visual data labeling and testing workflows',
+                'Model versioning and evaluation metrics',
+                'Integration with Azure AI Document Intelligence APIs'
+              ],
+              scenarios: [
+                'Citizen developer document automation',
+                'Iterative improvement of extraction models',
+                'Operational hand-off between business and dev teams'
+              ]
+            }
+          ]
+        },
+        {
+          name: 'Knowledge & Search',
+          type: 'category',
+          description: 'Ground generative AI and applications with enterprise search, semantic ranking, and knowledge mining.',
+          capabilities: [
+            'Cognitive search with semantic ranking',
+            'Vector search with hybrid retrieval',
+            'Indexing for documents, images, and structured data'
+          ],
+          scenarios: [
+            'Retrieval augmented generation (RAG)',
+            'Knowledge mining over enterprise content',
+            'E-discovery and document search portals'
+          ],
+          children: [
+            {
+              name: 'Azure AI Search',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/search/search-what-is-azure-search',
+              description: 'Formerly Azure Cognitive Search. Provides vector, semantic, and keyword search over ingested content.',
+              capabilities: [
+                'Integrated vector and semantic ranking',
+                'Indexers for files, Azure storage, and Cosmos DB',
+                'Built-in skillsets for enrichment and chunking'
+              ],
+              scenarios: [
+                'Grounding generative AI copilots with enterprise data',
+                'Multi-language knowledge mining portals',
+                'Product catalog search and discovery'
+              ]
+            },
+            {
+              name: 'Azure AI Content Safety',
+              status: 'Preview',
+              link: 'https://learn.microsoft.com/azure/ai-services/content-safety/overview',
+              description: 'Moderate harmful or sensitive content across text and images with configurable thresholds and audit tools.',
+              capabilities: [
+                'Text and image classification for safety categories',
+                'Real-time content filtering APIs',
+                'Safety reports for human review workflows'
+              ],
+              scenarios: [
+                'Moderating user-generated content in communities',
+                'Filtering prompts and responses in generative AI apps',
+                'Compliance reporting for regulated industries'
               ]
             }
           ]
@@ -396,6 +715,8 @@
           children: [
             {
               name: 'Personalizer',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/cognitive-services/personalizer/what-is-personalizer',
               description: 'Deliver contextual, personalized experiences using reinforcement learning.',
               capabilities: [
                 'Real-time learning from rewards',
@@ -410,6 +731,8 @@
             },
             {
               name: 'Metrics Advisor',
+              status: 'General availability',
+              link: 'https://learn.microsoft.com/azure/applied-ai-services/metrics-advisor/overview',
               description: 'Monitor time-series data to detect anomalies and diagnose issues quickly.',
               capabilities: [
                 'Adaptive anomaly detection models',
@@ -424,6 +747,8 @@
             },
             {
               name: 'Azure AI Studio',
+              status: 'Preview',
+              link: 'https://learn.microsoft.com/azure/ai-studio/overview',
               description: 'Unified authoring canvas for building and orchestrating generative AI copilots and agents.',
               capabilities: [
                 'Graphical flow and agent design',
@@ -568,11 +893,26 @@
 
     function showDetails(data) {
       const content = document.getElementById('details-content');
+      const metadata = [];
+
+      if (data.status) {
+        const normalized = data.status.toLowerCase().includes('preview') ? 'preview' : 'ga';
+        metadata.push(`<span class="chip chip--${normalized}">${data.status}</span>`);
+      }
+
+      if (data.type === 'category') {
+        metadata.push('<span class="chip">Service category</span>');
+      }
+
       content.innerHTML = `
-        <h3>${data.name}</h3>
+        <div class="details-header">
+          <h3>${data.name}</h3>
+          ${metadata.length ? `<div class="details-meta">${metadata.join('')}</div>` : ''}
+        </div>
         <p>${data.description || 'Explore this node to learn more.'}</p>
         ${Array.isArray(data.capabilities) ? renderList('Key capabilities', data.capabilities) : ''}
         ${Array.isArray(data.scenarios) ? renderList('Common scenarios', data.scenarios) : ''}
+        ${data.link ? `<a class="cta" href="${data.link}" target="_blank" rel="noopener">Open documentation →</a>` : ''}
       `;
     }
 
