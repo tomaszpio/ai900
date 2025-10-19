@@ -14,7 +14,49 @@
   }
   h1 {
     color: #004578;
+    margin-bottom: 0.75rem;
+  }
+  .module-intro {
+    max-width: 60rem;
     margin-bottom: 1.5rem;
+  }
+  .module-nav {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  .module-nav h2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #004578;
+  }
+  .module-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+  .module-nav a {
+    display: block;
+    background: #f1f8ff;
+    border: 1px solid #c5d6ef;
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    color: #004578;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .module-nav a:hover,
+  .module-nav a:focus {
+    background: #e0efff;
+    transform: translateY(-1px);
   }
   .question {
     background: #fff;
@@ -53,6 +95,21 @@
 <body>
 
 <h1>AI-900 Practice Test — Introduction to AI Concepts</h1>
+<p class="module-intro">
+  Explore the foundational AI topics assessed in the AI-900 certification. Use the module
+  links below to drill deeper into focused workloads, or stay on this page for a broad
+  introduction.
+</p>
+
+<nav class="module-nav" aria-label="Introduction to AI Concepts subtopics">
+  <h2>Module Pages</h2>
+  <ul>
+    <li><a href="speech.html">Speech Workloads</a></li>
+    <li><a href="natural-language-processing.html">Natural Language Processing</a></li>
+    <li><a href="extract-data-and-insights.html">Extract Data and Insights</a></li>
+    <li><a href="responsible-ai.html">Responsible AI</a></li>
+  </ul>
+</nav>
 
 <!-- Q1 -->
 <div class="question">
