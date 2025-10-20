@@ -270,6 +270,342 @@
   </section>
 
   <script>
+    const ADDITIONAL_CHOICES = new Map([
+      [
+        `Which type of artificial intelligence (AI) workload provides the ability to generate bounding boxes that identify the locations of different types of vehicles in an image?`,
+        [
+          { text: 'image classification', isCorrect: false },
+          { text: 'optical character recognition (OCR)', isCorrect: false },
+          { text: 'semantic segmentation', isCorrect: false },
+        ],
+      ],
+      [
+        `Which type of artificial intelligence (AI) workload provides the ability to classify individual pixels in an image depending on the object that they represent?`,
+        [
+          { text: 'object detection', isCorrect: false },
+          { text: 'image classification', isCorrect: false },
+        ],
+      ],
+      [
+        `Which artificial intelligence (AI) workload scenario is an example of natural language processing (NLP)?`,
+        [
+          { text: 'detecting anomalies in equipment sensor data', isCorrect: false },
+          { text: 'forecasting quarterly revenue', isCorrect: false },
+          { text: 'tagging landscape photos with locations', isCorrect: false },
+        ],
+      ],
+      [
+        `You are exploring solutions to improve the document search and indexing service for employees. You need an artificial intelligence (AI) search solution that will include searching text in various types of documents, such as images. Which type of AI workload is this?`,
+        [
+          { text: 'conversational AI', isCorrect: false },
+          { text: 'predictive maintenance', isCorrect: false },
+        ],
+      ],
+      [
+        `Which two artificial intelligence (AI) workload features are part of the Azure AI Vision service? Each correct answer presents a complete solution.`,
+        [
+          { text: 'sentiment analysis', isCorrect: false },
+          { text: 'key phrase extraction', isCorrect: false },
+        ],
+      ],
+      [
+        `Which principle of responsible artificial intelligence (AI) has the objective of ensuring that AI solutions benefit all parts of society regardless of gender or ethnicity?`,
+        [
+          { text: 'reliability and safety', isCorrect: false },
+          { text: 'accountability', isCorrect: false },
+          { text: 'privacy and security', isCorrect: false },
+        ],
+      ],
+      [
+        `Which principle of responsible artificial intelligence (AI) defines the framework of governance and organization principles that meet ethical and legal standards of AI solutions?`,
+        [
+          { text: 'transparency', isCorrect: false },
+          { text: 'fairness', isCorrect: false },
+          { text: 'reliability and safety', isCorrect: false },
+        ],
+      ],
+      [
+        `Which principle of responsible artificial intelligence (AI) plays the primary role when implementing an AI solution that meet qualifications for business loan approvals?`,
+        [
+          { text: 'reliability and safety', isCorrect: false },
+          { text: 'privacy and security', isCorrect: false },
+          { text: 'transparency', isCorrect: false },
+        ],
+      ],
+      [
+        `Which two principles of responsible artificial intelligence (AI) are most important when designing an AI system to manage healthcare data? Each correct answer presents part of the solution.`,
+        [
+          { text: 'fairness', isCorrect: false },
+          { text: 'inclusiveness', isCorrect: false },
+        ],
+      ],
+      [
+        `You need to identify numerical values that represent the probability of humans developing diabetes based on age and body fat percentage. Which type of machine learning model should you use?`,
+        [
+          { text: 'k-means clustering', isCorrect: false },
+          { text: 'naive bayes classification', isCorrect: false },
+        ],
+      ],
+      [
+        `Which type machine learning algorithm predicts a numeric label associated with an item based on that item’s features?`,
+        [
+          { text: 'clustering', isCorrect: false },
+          { text: 'reinforcement learning', isCorrect: false },
+        ],
+      ],
+      [
+        `A healthcare organization has a dataset consisting of bone fracture scans that are categorized by using predefined fracture types. The organization wants to use machine learning to detect the different types of bone fractures for new scans before the scans are sent to a medical practitioner. Which type of machine learning is this?`,
+        [
+          { text: 'reinforcement learning', isCorrect: false },
+        ],
+      ],
+      [
+        `You plan to use machine learning to predict the probability of humans developing diabetes based on their age and body fat percentage. What should the model include?`,
+        [
+          { text: 'one feature and two labels', isCorrect: false },
+          { text: 'two labels and no features', isCorrect: false },
+          { text: 'only unlabeled data', isCorrect: false },
+        ],
+      ],
+      [
+        `Which feature makes regression an example of supervised machine learning?`,
+        [
+          { text: 'It learns patterns without labels.', isCorrect: false },
+          { text: 'It relies exclusively on reinforcement signals.', isCorrect: false },
+          { text: 'It generates rules without using historical data.', isCorrect: false },
+        ],
+      ],
+      [
+        `A company is using machine learning to predict house prices based on appropriate house attributes. For the machine learning model, which attribute is the label?`,
+        [
+          { text: 'number of bedrooms', isCorrect: false },
+          { text: 'square footage', isCorrect: false },
+          { text: 'neighborhood crime rate', isCorrect: false },
+        ],
+      ],
+      [
+        `A company wants to predict household water use based on the number of people in a house, the weather temperature, and the time of year. In terms of data labels and features, what is the label in this use case?`,
+        [
+          { text: 'number of people in the house', isCorrect: false },
+          { text: 'weather temperature', isCorrect: false },
+          { text: 'time of year', isCorrect: false },
+        ],
+      ],
+      [
+        `What should you do after preparing a dataset and before training the machine learning model?`,
+        [
+          { text: 'deploy the model to a web service', isCorrect: false },
+          { text: 'collect real-time telemetry', isCorrect: false },
+        ],
+      ],
+      [
+        `You need to create an automated machine learning (automated ML) model. Which resource should you create first in Azure Machine Learning studio?`,
+        [
+          { text: 'a compute cluster', isCorrect: false },
+          { text: 'an inference endpoint', isCorrect: false },
+          { text: 'a datastore', isCorrect: false },
+        ],
+      ],
+      [
+        `You need to use the Azure Machine Learning designer to deploy a predictive service from a newly trained model. What should you do first in the Machine Learning designer?`,
+        [
+          { text: 'Register the training dataset.', isCorrect: false },
+          { text: 'Clone the training pipeline.', isCorrect: false },
+          { text: 'Create a compute instance.', isCorrect: false },
+        ],
+      ],
+      [
+        `You train a regression model by using automated machine learning (automated ML) in the Azure Machine Learning studio. You review the best model summary. You need to publish the model for others to use from the internet. What should you do next?`,
+        [
+          { text: 'Register the dataset.', isCorrect: false },
+          { text: 'Create a labeling project.', isCorrect: false },
+          { text: 'Run hyperparameter tuning again.', isCorrect: false },
+        ],
+      ],
+      [
+        `Which artificial intelligence (AI) technique should be used to extract the name of a store from a photograph displaying the store front?`,
+        [
+          { text: 'face detection', isCorrect: false },
+          { text: 'speech-to-text', isCorrect: false },
+          { text: 'key phrase extraction', isCorrect: false },
+        ],
+      ],
+      [
+        `You have a set of images. Each image shows multiple vehicles. What allows you to identity different vehicle types in the same traffic monitoring image?`,
+        [
+          { text: 'semantic segmentation', isCorrect: false },
+          { text: 'optical character recognition (OCR)', isCorrect: false },
+          { text: 'image classification', isCorrect: false },
+        ],
+      ],
+      [
+        `Which feature of computer vision involves associating an image with metadata that summarizes the attributes of the image?`,
+        [
+          { text: 'optical character recognition (OCR)', isCorrect: false },
+          { text: 'face verification', isCorrect: false },
+          { text: 'speech transcription', isCorrect: false },
+        ],
+      ],
+      [
+        `Which analytical task of the Azure AI Vision service returns bounding box coordinates?`,
+        [
+          { text: 'image classification', isCorrect: false },
+          { text: 'optical character recognition (OCR)', isCorrect: false },
+          { text: 'semantic segmentation', isCorrect: false },
+        ],
+      ],
+      [
+        `Which additional piece of information is included with each phrase returned by an image description task of the Azure AI Vision?`,
+        [
+          { text: 'image width and height', isCorrect: false },
+        ],
+      ],
+      [
+        `Which two prebuilt models allow you to use the Azure AI Document Intelligence service to scan information from international passports and sales accounts? Each correct answer presents part of the solution.`,
+        [
+          { text: 'business card model', isCorrect: false },
+          { text: 'receipt model', isCorrect: false },
+        ],
+      ],
+      [
+        `When using the Azure AI Face service, what should you use to perform one-to-many or one-to-one face matching? Each correct answer presents a complete solution.`,
+        [
+          { text: 'face detection', isCorrect: false },
+        ],
+      ],
+      [
+        `Which service can you use to train an image classification model?`,
+        [
+          { text: 'Azure Databricks', isCorrect: false },
+          { text: 'Azure Synapse Analytics', isCorrect: false },
+        ],
+      ],
+      [
+        `Which natural language processing (NLP) technique normalizes words before counting them?`,
+        [
+          { text: 'tokenization', isCorrect: false },
+          { text: 'named entity recognition', isCorrect: false },
+          { text: 'speech synthesis', isCorrect: false },
+        ],
+      ],
+      [
+        `Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?`,
+        [
+          { text: 'translation', isCorrect: false },
+          { text: 'keyword extraction', isCorrect: false },
+          { text: 'topic modeling', isCorrect: false },
+        ],
+      ],
+      [
+        `What is the confidence score returned by the Azure AI Language detection service of natural language processing (NLP) for an unknown language name?`,
+        [
+          { text: '0', isCorrect: false },
+          { text: '1', isCorrect: false },
+          { text: '0.5', isCorrect: false },
+        ],
+      ],
+      [
+        `Which part of speech synthesis in natural language processing (NLP) involves breaking text into individual words such that each word can be assigned phonetic sounds?`,
+        [
+          { text: 'sentence segmentation', isCorrect: false },
+          { text: 'speech synthesis', isCorrect: false },
+        ],
+      ],
+      [
+        `Which three values are returned by the language detection feature of the Azure AI Language service in Azure?`,
+        [
+          { text: 'Region', isCorrect: false },
+          { text: 'Confidence interval', isCorrect: false },
+        ],
+      ],
+      [
+        `Which Azure resource provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key?`,
+        [
+          { text: 'Azure AI Foundry', isCorrect: false },
+          { text: 'Azure Machine Learning', isCorrect: false },
+          { text: 'Azure Cognitive Search', isCorrect: false },
+        ],
+      ],
+      [
+        `When using the Azure AI Service for Language, what should you use to provide further information online about entities extracted from a text?`,
+        [
+          { text: 'sentiment analysis', isCorrect: false },
+          { text: 'key phrase extraction', isCorrect: false },
+        ],
+      ],
+      [
+        `Which feature of the Azure AI Speech service can identify distinct user voices?`,
+        [
+          { text: 'speech synthesis', isCorrect: false },
+          { text: 'language detection', isCorrect: false },
+          { text: 'keyword spotting', isCorrect: false },
+        ],
+      ],
+      [
+        `Select the answer that correctly completes the sentence. [Answer choice] use plugins to provide end users with the ability to get help with common tasks from a generative AI model.`,
+        [
+          { text: 'playbooks', isCorrect: false },
+          { text: 'dashboards', isCorrect: false },
+          { text: 'pipelines', isCorrect: false },
+        ],
+      ],
+      [
+        `At which layer can you apply content filters to suppress prompts and responses for a responsible generative AI solution?`,
+        [
+          { text: 'data ingestion layer', isCorrect: false },
+        ],
+      ],
+      [
+        `Select the answer that correctly completes the sentence. [Answer choice] can return responses, such as natural language, images, or code, based on natural language input.`,
+        [
+          { text: 'Discriminative AI', isCorrect: false },
+          { text: 'Predictive analytics', isCorrect: false },
+          { text: 'Automation scripts', isCorrect: false },
+        ],
+      ],
+      [
+        `Select the answer that correctly completes the sentence. [Answer choice] can used to identify constraints and styles for the responses of a generative AI model.`,
+        [
+          { text: 'vector indexes', isCorrect: false },
+        ],
+      ],
+      [
+        `As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?`,
+        [
+          { text: 'Mitigate risks before testing.', isCorrect: false },
+        ],
+      ],
+      [
+        `Which two capabilities are examples of a GPT model? Each correct answer presents a complete solution.`,
+        [
+          { text: 'Render 3D animations.', isCorrect: false },
+        ],
+      ],
+      [
+        `Which three capabilities are examples of image generation features for a generative AI model? Each correct answer presents a complete solution.`,
+        [
+          { text: 'real-time speech translation', isCorrect: false },
+          { text: 'dataset labeling', isCorrect: false },
+        ],
+      ],
+      [
+        `You plan to develop an image processing solution that will use DALL-E as a generative AI model. Which capability is NOT supported by the DALL-E model?`,
+        [
+          { text: 'image generation from prompts', isCorrect: false },
+          { text: 'creating variations of an uploaded image', isCorrect: false },
+          { text: 'editing regions of an image', isCorrect: false },
+        ],
+      ],
+      [
+        `Which generative AI model is used to generate images based on natural language prompts?`,
+        [
+          { text: 'GPT-4', isCorrect: false },
+          { text: 'Codex', isCorrect: false },
+          { text: 'Whisper', isCorrect: false },
+        ],
+      ],
+    ]);
+
     async function loadPracticeQuestions() {
       const loadingState = document.getElementById('question-loading');
       const questionList = document.getElementById('question-list');
@@ -335,6 +671,34 @@
           });
 
           const choiceListData = Array.from(choiceMap.values());
+
+          const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
+          if (overrideChoices?.length) {
+            const existingTexts = new Map(
+              choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
+            );
+
+            overrideChoices.forEach((override) => {
+              const normalized = override.text.trim().toLowerCase();
+              const existing = existingTexts.get(normalized);
+
+              if (existing) {
+                if (override.isCorrect) {
+                  existing.isCorrect = true;
+                }
+                return;
+              }
+
+              const mergedChoice = {
+                text: override.text,
+                isCorrect: Boolean(override.isCorrect),
+                isSelected: Boolean(override.isSelected && override.isCorrect),
+              };
+
+              choiceListData.push(mergedChoice);
+              existingTexts.set(normalized, mergedChoice);
+            });
+          }
 
           if (!cleanedQuestion || !choiceListData.length) {
             return;
