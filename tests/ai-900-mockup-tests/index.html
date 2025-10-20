@@ -116,6 +116,69 @@
       margin-bottom: 0.75rem;
     }
 
+    .question-choices {
+      margin-bottom: 0.75rem;
+    }
+
+    .question-choices h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: #004578;
+    }
+
+    .choice-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .choice-item {
+      background: #fdfdff;
+      border: 1px solid #d0d7de;
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .choice-item.is-correct {
+      border-color: #0f7b0f;
+      background: #f2fbf2;
+      box-shadow: 0 2px 6px rgba(15, 123, 15, 0.1);
+    }
+
+    .choice-item.is-selected:not(.is-correct) {
+      border-color: #a80000;
+      background: #fff5f5;
+      box-shadow: 0 2px 6px rgba(168, 0, 0, 0.1);
+    }
+
+    .choice-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #004578;
+      margin-bottom: 0.35rem;
+    }
+
+    .choice-item.is-correct .choice-status {
+      color: #0f7b0f;
+    }
+
+    .choice-item.is-selected:not(.is-correct) .choice-status {
+      color: #a80000;
+    }
+
+    .choice-text {
+      margin: 0;
+      color: #1f1f1f;
+    }
+
     .question-answer p {
       margin: 0.35rem 0 0;
       font-weight: 600;
@@ -230,15 +293,50 @@
 
         articles.forEach((article, index) => {
           const questionText = article.querySelector('section.content p');
-          const correctAnswerSection = article.querySelector('section[id^="question-correct-answer"]');
-          const correctChoice = correctAnswerSection?.querySelector('.quiz-choice .checkb0x-text');
           const rationaleSection = article.querySelector('[id^="question-rationale"]');
 
           const cleanedQuestion = questionText?.textContent.trim();
-          const cleanedAnswer = correctChoice?.textContent.trim();
           const rationaleHTML = rationaleSection ? rationaleSection.innerHTML.trim() : '';
 
-          if (!cleanedQuestion || !cleanedAnswer) {
+          const choiceSections = article.querySelectorAll(
+            'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
+          );
+          const choiceMap = new Map();
+
+          choiceSections.forEach((section) => {
+            const listItems = section.querySelectorAll('li');
+            listItems.forEach((item) => {
+              const choice = item.querySelector('.quiz-choice');
+              const textElement = choice?.querySelector('.checkb0x-text');
+              const rawText = textElement?.textContent || '';
+              const text = rawText.replace(/\s+/g, ' ').trim();
+
+              if (!choice || !text) {
+                return;
+              }
+
+              const key = text.toLowerCase();
+              const existing = choiceMap.get(key) || {
+                text,
+                isCorrect: false,
+                isSelected: false,
+              };
+
+              const isCorrect = choice.classList.contains('is-correct');
+              const checkbox = choice.querySelector('.checkbox-check');
+              const radio = choice.querySelector('.radio-dot');
+              const isSelected =
+                checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
+
+              existing.isCorrect = existing.isCorrect || isCorrect;
+              existing.isSelected = existing.isSelected || isSelected;
+              choiceMap.set(key, existing);
+            });
+          });
+
+          const choiceListData = Array.from(choiceMap.values());
+
+          if (!cleanedQuestion || !choiceListData.length) {
             return;
           }
 
@@ -262,18 +360,99 @@
           const body = document.createElement('div');
           body.className = 'question-body';
 
-          const answerBlock = document.createElement('div');
-          answerBlock.className = 'question-answer';
+          const choicesBlock = document.createElement('div');
+          choicesBlock.className = 'question-choices';
 
-          const answerHeading = document.createElement('h3');
-          answerHeading.textContent = 'Correct answer';
+          const choicesHeading = document.createElement('h3');
+          choicesHeading.textContent = 'Answer choices';
+          choicesBlock.appendChild(choicesHeading);
 
-          const answerText = document.createElement('p');
-          answerText.textContent = cleanedAnswer;
+          const choiceListElement = document.createElement('ul');
+          choiceListElement.className = 'choice-list';
 
-          answerBlock.appendChild(answerHeading);
-          answerBlock.appendChild(answerText);
-          body.appendChild(answerBlock);
+          choiceListData.forEach((choiceData) => {
+            const choiceItem = document.createElement('li');
+            choiceItem.className = 'choice-item';
+
+            if (choiceData.isCorrect) {
+              choiceItem.classList.add('is-correct');
+            }
+
+            if (choiceData.isSelected) {
+              choiceItem.classList.add('is-selected');
+            }
+
+            const statusParts = [];
+            if (choiceData.isSelected && choiceData.isCorrect) {
+              statusParts.push('Selected • Correct');
+            } else if (choiceData.isSelected) {
+              statusParts.push('Selected');
+            }
+
+            if (!choiceData.isSelected && choiceData.isCorrect) {
+              statusParts.push('Correct');
+            }
+
+            if (!choiceData.isCorrect && !choiceData.isSelected) {
+              statusParts.push('Available option');
+            }
+
+            if (!choiceData.isCorrect && choiceData.isSelected) {
+              statusParts.push('Incorrect');
+            }
+
+            if (statusParts.length) {
+              const status = document.createElement('span');
+              status.className = 'choice-status';
+              status.textContent = statusParts.join(' • ');
+              choiceItem.appendChild(status);
+            }
+
+            const choiceText = document.createElement('p');
+            choiceText.className = 'choice-text';
+            choiceText.textContent = choiceData.text;
+
+            choiceItem.appendChild(choiceText);
+            choiceListElement.appendChild(choiceItem);
+          });
+
+          choicesBlock.appendChild(choiceListElement);
+          body.appendChild(choicesBlock);
+
+          const correctChoices = choiceListData.filter((choice) => choice.isCorrect).map((choice) => choice.text);
+
+          if (correctChoices.length) {
+            const answerBlock = document.createElement('div');
+            answerBlock.className = 'question-answer';
+
+            const answerHeading = document.createElement('h3');
+            answerHeading.textContent = correctChoices.length > 1 ? 'Correct answers' : 'Correct answer';
+
+            answerBlock.appendChild(answerHeading);
+
+            if (correctChoices.length === 1) {
+              const answerText = document.createElement('p');
+              answerText.textContent = correctChoices[0];
+              answerBlock.appendChild(answerText);
+            } else {
+              const answerList = document.createElement('ul');
+              answerList.className = 'choice-list';
+              correctChoices.forEach((text) => {
+                const item = document.createElement('li');
+                item.className = 'choice-item is-correct';
+
+                const choiceText = document.createElement('p');
+                choiceText.className = 'choice-text';
+                choiceText.textContent = text;
+
+                item.appendChild(choiceText);
+                answerList.appendChild(item);
+              });
+              answerBlock.appendChild(answerList);
+            }
+
+            body.appendChild(answerBlock);
+          }
 
           if (rationaleHTML) {
             const rationaleBlock = document.createElement('div');
