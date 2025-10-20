@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-900 Mockup Tests</title>
   <style>
+    :root {
+      color-scheme: light;
+    }
+
     body {
       font-family: "Segoe UI", sans-serif;
       background: #f8f9fb;
@@ -13,37 +17,144 @@
       padding: 2rem;
       line-height: 1.6;
     }
-    h1 {
+
+    h1,
+    h2,
+    h3 {
       color: #004578;
-      margin-bottom: 1rem;
+      margin-top: 0;
     }
+
     p.description {
       max-width: 56rem;
       margin-bottom: 2rem;
     }
+
     section.mock-tests {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
+      margin-bottom: 3rem;
     }
-    .mock-test-card {
+
+    .card {
       background: #ffffff;
       border: 1px solid #d0d7de;
       border-radius: 10px;
       padding: 1.25rem;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
+
     .mock-test-card h2 {
       font-size: 1.1rem;
-      margin-top: 0;
-      color: #004578;
     }
+
     .mock-test-card ul {
       padding-left: 1.1rem;
       margin: 0.75rem 0 0;
     }
+
     .mock-test-card li {
       margin-bottom: 0.35rem;
+    }
+
+    section.question-bank {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .question-intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .question-card {
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid #d0d7de;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      padding: 0.75rem 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .question-card summary {
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      outline: none;
+    }
+
+    .question-card[open] {
+      border-color: #004578;
+      box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
+    }
+
+    .question-number {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #004578;
+    }
+
+    .question-text {
+      color: #1f1f1f;
+    }
+
+    .question-body {
+      padding-top: 0.75rem;
+      border-top: 1px solid #d0d7de;
+    }
+
+    .question-answer,
+    .question-rationale {
+      margin-bottom: 0.75rem;
+    }
+
+    .question-answer p {
+      margin: 0.35rem 0 0;
+      font-weight: 600;
+    }
+
+    .question-rationale {
+      background: #f3f9ff;
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+
+    .question-rationale p:last-child {
+      margin-bottom: 0;
+    }
+
+    .loading-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #004578;
+      font-weight: 600;
+    }
+
+    .error-state {
+      color: #9a0007;
+      background: #fdecea;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #f5c6cb;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      .question-card {
+        padding: 0.75rem;
+      }
     }
   </style>
 </head>
@@ -54,7 +165,7 @@
     Each mini-assessment focuses on a specific exam objective and includes answer explanations.
   </p>
   <section class="mock-tests">
-    <article class="mock-test-card">
+    <article class="mock-test-card card">
       <h2>Responsible AI Principles</h2>
       <p>Evaluate how Azure services help organizations apply responsible AI principles across fairness, reliability, privacy, and inclusiveness.</p>
       <ul>
@@ -63,7 +174,7 @@
         <li>Reference links for further study</li>
       </ul>
     </article>
-    <article class="mock-test-card">
+    <article class="mock-test-card card">
       <h2>Azure Machine Learning Workflow</h2>
       <p>Review the stages of the machine learning lifecycle, from data preparation through model deployment and monitoring.</p>
       <ul>
@@ -72,7 +183,7 @@
         <li>Exam tips and key takeaways</li>
       </ul>
     </article>
-    <article class="mock-test-card">
+    <article class="mock-test-card card">
       <h2>Applied AI Services</h2>
       <p>Check your understanding of Azure Cognitive Services, including Vision, Language, Speech, and Decision capabilities.</p>
       <ul>
@@ -82,5 +193,117 @@
       </ul>
     </article>
   </section>
+
+  <section class="question-bank" aria-labelledby="practice-questions-heading">
+    <div class="question-intro">
+      <h2 id="practice-questions-heading">AI-900 Practice Questions</h2>
+      <p>Explore a curated collection of real exam-style questions. Expand a question to reveal the correct answer and supporting rationale pulled directly from the latest mock exam export.</p>
+      <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
+      <noscript>
+        <p class="error-state">JavaScript is required to load the practice questions. Enable JavaScript and refresh the page.</p>
+      </noscript>
+    </div>
+    <div id="question-list" class="question-list" aria-live="polite"></div>
+  </section>
+
+  <script>
+    async function loadPracticeQuestions() {
+      const loadingState = document.getElementById('question-loading');
+      const questionList = document.getElementById('question-list');
+
+      try {
+        const response = await fetch('../../ai900Mockup.html.html');
+        if (!response.ok) {
+          throw new Error(`Failed to load practice questions (status ${response.status})`);
+        }
+
+        const htmlText = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+        const articles = Array.from(doc.querySelectorAll('article'));
+
+        if (!articles.length) {
+          throw new Error('No practice questions were found in the source document.');
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        articles.forEach((article, index) => {
+          const questionText = article.querySelector('section.content p');
+          const correctAnswerSection = article.querySelector('section[id^="question-correct-answer"]');
+          const correctChoice = correctAnswerSection?.querySelector('.quiz-choice .checkb0x-text');
+          const rationaleSection = article.querySelector('[id^="question-rationale"]');
+
+          const cleanedQuestion = questionText?.textContent.trim();
+          const cleanedAnswer = correctChoice?.textContent.trim();
+          const rationaleHTML = rationaleSection ? rationaleSection.innerHTML.trim() : '';
+
+          if (!cleanedQuestion || !cleanedAnswer) {
+            return;
+          }
+
+          const details = document.createElement('details');
+          details.className = 'question-card';
+
+          const summary = document.createElement('summary');
+
+          const numberSpan = document.createElement('span');
+          numberSpan.className = 'question-number';
+          numberSpan.textContent = `Question ${index + 1}`;
+
+          const questionSpan = document.createElement('span');
+          questionSpan.className = 'question-text';
+          questionSpan.textContent = cleanedQuestion;
+
+          summary.appendChild(numberSpan);
+          summary.appendChild(questionSpan);
+          details.appendChild(summary);
+
+          const body = document.createElement('div');
+          body.className = 'question-body';
+
+          const answerBlock = document.createElement('div');
+          answerBlock.className = 'question-answer';
+
+          const answerHeading = document.createElement('h3');
+          answerHeading.textContent = 'Correct answer';
+
+          const answerText = document.createElement('p');
+          answerText.textContent = cleanedAnswer;
+
+          answerBlock.appendChild(answerHeading);
+          answerBlock.appendChild(answerText);
+          body.appendChild(answerBlock);
+
+          if (rationaleHTML) {
+            const rationaleBlock = document.createElement('div');
+            rationaleBlock.className = 'question-rationale';
+            rationaleBlock.innerHTML = `<h3>Explanation</h3>${rationaleHTML}`;
+            body.appendChild(rationaleBlock);
+          }
+
+          details.appendChild(body);
+          fragment.appendChild(details);
+        });
+
+        if (!fragment.childNodes.length) {
+          throw new Error('No complete practice questions could be rendered.');
+        }
+
+        questionList.appendChild(fragment);
+      } catch (error) {
+        const errorMessage = document.createElement('p');
+        errorMessage.className = 'error-state';
+        errorMessage.textContent = error.message;
+        questionList.appendChild(errorMessage);
+      } finally {
+        if (loadingState) {
+          loadingState.remove();
+        }
+      }
+    }
+
+    loadPracticeQuestions();
+  </script>
 </body>
 </html>
