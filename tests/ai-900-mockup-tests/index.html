@@ -142,18 +142,6 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     }
 
-    .choice-item.is-correct {
-      border-color: #0f7b0f;
-      background: #f2fbf2;
-      box-shadow: 0 2px 6px rgba(15, 123, 15, 0.1);
-    }
-
-    .choice-item.is-selected:not(.is-correct) {
-      border-color: #a80000;
-      background: #fff5f5;
-      box-shadow: 0 2px 6px rgba(168, 0, 0, 0.1);
-    }
-
     .choice-status {
       display: inline-flex;
       align-items: center;
@@ -162,16 +150,8 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.03em;
-      color: #004578;
+      color: #1f1f1f;
       margin-bottom: 0.35rem;
-    }
-
-    .choice-item.is-correct .choice-status {
-      color: #0f7b0f;
-    }
-
-    .choice-item.is-selected:not(.is-correct) .choice-status {
-      color: #a80000;
     }
 
     .choice-text {
@@ -606,104 +586,153 @@
       ],
     ]);
 
+    const QUESTION_SOURCES = [
+      { url: '../../ai900Mockup.html.html', isRequired: true },
+      { url: '../../ai900Mockup2.html', isRequired: false },
+    ];
+
     async function loadPracticeQuestions() {
       const loadingState = document.getElementById('question-loading');
       const questionList = document.getElementById('question-list');
 
       try {
-        const response = await fetch('../../ai900Mockup.html.html');
-        if (!response.ok) {
-          throw new Error(`Failed to load practice questions (status ${response.status})`);
+        const parser = new DOMParser();
+        const questionEntries = [];
+        const seenQuestions = new Set();
+
+        for (const source of QUESTION_SOURCES) {
+          let response;
+          try {
+            response = await fetch(source.url);
+          } catch (networkError) {
+            if (source.isRequired) {
+              throw new Error(`Failed to request practice questions from ${source.url}.`);
+            }
+            console.error(`Failed to request practice questions from ${source.url}.`, networkError);
+            continue;
+          }
+
+          if (!response.ok) {
+            const message = `Failed to load practice questions from ${source.url} (status ${response.status})`;
+            if (source.isRequired) {
+              throw new Error(message);
+            }
+            console.warn(message);
+            continue;
+          }
+
+          const htmlText = await response.text();
+          const doc = parser.parseFromString(htmlText, 'text/html');
+          const articles = Array.from(doc.querySelectorAll('article'));
+
+          if (!articles.length) {
+            if (source.isRequired) {
+              throw new Error('No practice questions were found in the source document.');
+            }
+            continue;
+          }
+
+          articles.forEach((article) => {
+            const questionText = article.querySelector('section.content p');
+            const rationaleSection = article.querySelector('[id^="question-rationale"]');
+
+            const cleanedQuestion = questionText?.textContent.trim();
+            if (!cleanedQuestion) {
+              return;
+            }
+
+            const normalizedQuestion = cleanedQuestion.replace(/\s+/g, ' ').trim().toLowerCase();
+            if (seenQuestions.has(normalizedQuestion)) {
+              return;
+            }
+
+            const choiceSections = article.querySelectorAll(
+              'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
+            );
+            const choiceMap = new Map();
+
+            choiceSections.forEach((section) => {
+              const listItems = section.querySelectorAll('li');
+              listItems.forEach((item) => {
+                const choice = item.querySelector('.quiz-choice');
+                const textElement = choice?.querySelector('.checkb0x-text');
+                const rawText = textElement?.textContent || '';
+                const text = rawText.replace(/\s+/g, ' ').trim();
+
+                if (!choice || !text) {
+                  return;
+                }
+
+                const key = text.toLowerCase();
+                const existing = choiceMap.get(key) || {
+                  text,
+                  isCorrect: false,
+                  isSelected: false,
+                };
+
+                const isCorrect = choice.classList.contains('is-correct');
+                const checkbox = choice.querySelector('.checkbox-check');
+                const radio = choice.querySelector('.radio-dot');
+                const isSelected =
+                  checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
+
+                existing.isCorrect = existing.isCorrect || isCorrect;
+                existing.isSelected = existing.isSelected || isSelected;
+                choiceMap.set(key, existing);
+              });
+            });
+
+            const choiceListData = Array.from(choiceMap.values());
+
+            const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
+            if (overrideChoices?.length) {
+              const existingTexts = new Map(
+                choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
+              );
+
+              overrideChoices.forEach((override) => {
+                const normalized = override.text.trim().toLowerCase();
+                const existing = existingTexts.get(normalized);
+
+                if (existing) {
+                  if (override.isCorrect) {
+                    existing.isCorrect = true;
+                  }
+                  return;
+                }
+
+                const mergedChoice = {
+                  text: override.text,
+                  isCorrect: Boolean(override.isCorrect),
+                  isSelected: Boolean(override.isSelected && override.isCorrect),
+                };
+
+                choiceListData.push(mergedChoice);
+                existingTexts.set(normalized, mergedChoice);
+              });
+            }
+
+            if (!choiceListData.length) {
+              return;
+            }
+
+            seenQuestions.add(normalizedQuestion);
+
+            questionEntries.push({
+              question: cleanedQuestion,
+              rationaleHTML: rationaleSection ? rationaleSection.innerHTML.trim() : '',
+              choices: choiceListData,
+            });
+          });
         }
 
-        const htmlText = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(htmlText, 'text/html');
-        const articles = Array.from(doc.querySelectorAll('article'));
-
-        if (!articles.length) {
-          throw new Error('No practice questions were found in the source document.');
+        if (!questionEntries.length) {
+          throw new Error('No complete practice questions could be rendered.');
         }
 
         const fragment = document.createDocumentFragment();
 
-        articles.forEach((article, index) => {
-          const questionText = article.querySelector('section.content p');
-          const rationaleSection = article.querySelector('[id^="question-rationale"]');
-
-          const cleanedQuestion = questionText?.textContent.trim();
-          const rationaleHTML = rationaleSection ? rationaleSection.innerHTML.trim() : '';
-
-          const choiceSections = article.querySelectorAll(
-            'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
-          );
-          const choiceMap = new Map();
-
-          choiceSections.forEach((section) => {
-            const listItems = section.querySelectorAll('li');
-            listItems.forEach((item) => {
-              const choice = item.querySelector('.quiz-choice');
-              const textElement = choice?.querySelector('.checkb0x-text');
-              const rawText = textElement?.textContent || '';
-              const text = rawText.replace(/\s+/g, ' ').trim();
-
-              if (!choice || !text) {
-                return;
-              }
-
-              const key = text.toLowerCase();
-              const existing = choiceMap.get(key) || {
-                text,
-                isCorrect: false,
-                isSelected: false,
-              };
-
-              const isCorrect = choice.classList.contains('is-correct');
-              const checkbox = choice.querySelector('.checkbox-check');
-              const radio = choice.querySelector('.radio-dot');
-              const isSelected =
-                checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
-
-              existing.isCorrect = existing.isCorrect || isCorrect;
-              existing.isSelected = existing.isSelected || isSelected;
-              choiceMap.set(key, existing);
-            });
-          });
-
-          const choiceListData = Array.from(choiceMap.values());
-
-          const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
-          if (overrideChoices?.length) {
-            const existingTexts = new Map(
-              choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
-            );
-
-            overrideChoices.forEach((override) => {
-              const normalized = override.text.trim().toLowerCase();
-              const existing = existingTexts.get(normalized);
-
-              if (existing) {
-                if (override.isCorrect) {
-                  existing.isCorrect = true;
-                }
-                return;
-              }
-
-              const mergedChoice = {
-                text: override.text,
-                isCorrect: Boolean(override.isCorrect),
-                isSelected: Boolean(override.isSelected && override.isCorrect),
-              };
-
-              choiceListData.push(mergedChoice);
-              existingTexts.set(normalized, mergedChoice);
-            });
-          }
-
-          if (!cleanedQuestion || !choiceListData.length) {
-            return;
-          }
-
+        questionEntries.forEach((entry, index) => {
           const details = document.createElement('details');
           details.className = 'question-card';
 
@@ -715,7 +744,7 @@
 
           const questionSpan = document.createElement('span');
           questionSpan.className = 'question-text';
-          questionSpan.textContent = cleanedQuestion;
+          questionSpan.textContent = entry.question;
 
           summary.appendChild(numberSpan);
           summary.appendChild(questionSpan);
@@ -734,17 +763,9 @@
           const choiceListElement = document.createElement('ul');
           choiceListElement.className = 'choice-list';
 
-          choiceListData.forEach((choiceData) => {
+          entry.choices.forEach((choiceData) => {
             const choiceItem = document.createElement('li');
             choiceItem.className = 'choice-item';
-
-            if (choiceData.isCorrect) {
-              choiceItem.classList.add('is-correct');
-            }
-
-            if (choiceData.isSelected) {
-              choiceItem.classList.add('is-selected');
-            }
 
             const statusParts = [];
             if (choiceData.isSelected && choiceData.isCorrect) {
@@ -783,7 +804,7 @@
           choicesBlock.appendChild(choiceListElement);
           body.appendChild(choicesBlock);
 
-          const correctChoices = choiceListData.filter((choice) => choice.isCorrect).map((choice) => choice.text);
+          const correctChoices = entry.choices.filter((choice) => choice.isCorrect).map((choice) => choice.text);
 
           if (correctChoices.length) {
             const answerBlock = document.createElement('div');
@@ -803,7 +824,7 @@
               answerList.className = 'choice-list';
               correctChoices.forEach((text) => {
                 const item = document.createElement('li');
-                item.className = 'choice-item is-correct';
+                item.className = 'choice-item';
 
                 const choiceText = document.createElement('p');
                 choiceText.className = 'choice-text';
@@ -818,20 +839,16 @@
             body.appendChild(answerBlock);
           }
 
-          if (rationaleHTML) {
+          if (entry.rationaleHTML) {
             const rationaleBlock = document.createElement('div');
             rationaleBlock.className = 'question-rationale';
-            rationaleBlock.innerHTML = `<h3>Explanation</h3>${rationaleHTML}`;
+            rationaleBlock.innerHTML = `<h3>Explanation</h3>${entry.rationaleHTML}`;
             body.appendChild(rationaleBlock);
           }
 
           details.appendChild(body);
           fragment.appendChild(details);
         });
-
-        if (!fragment.childNodes.length) {
-          throw new Error('No complete practice questions could be rendered.');
-        }
 
         questionList.appendChild(fragment);
       } catch (error) {
