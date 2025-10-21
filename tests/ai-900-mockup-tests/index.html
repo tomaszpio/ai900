@@ -770,20 +770,14 @@
             const statusParts = [];
             if (choiceData.isSelected && choiceData.isCorrect) {
               statusParts.push('Selected • Correct');
-            } else if (choiceData.isSelected) {
-              statusParts.push('Selected');
-            }
-
-            if (!choiceData.isSelected && choiceData.isCorrect) {
-              statusParts.push('Correct');
-            }
-
-            if (!choiceData.isCorrect && !choiceData.isSelected) {
+            } else if (choiceData.isSelected && !choiceData.isCorrect) {
               statusParts.push('Available option');
-            }
-
-            if (!choiceData.isCorrect && choiceData.isSelected) {
-              statusParts.push('Incorrect');
+            } else {
+              if (choiceData.isCorrect) {
+                statusParts.push('Correct');
+              } else {
+                statusParts.push('Available option');
+              }
             }
 
             if (statusParts.length) {
