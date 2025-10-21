@@ -278,6 +278,35 @@
       margin-top: 0.15rem;
     }
 
+    .answer-explanation {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed rgba(0, 69, 120, 0.25);
+    }
+
+    .answer-explanation-intro {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .answer-explanation-intro strong {
+      color: #004578;
+    }
+
+    .answer-explanation-detail {
+      margin: 0;
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
+    .answer-explanation-list {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 0.92rem;
+    }
+
     .loading-state {
       display: inline-flex;
       align-items: center;
@@ -370,6 +399,53 @@
       return clone.innerHTML.trim();
     }
 
+    function getActiveAnswerTexts(answerSection) {
+      return Array.from(answerSection.querySelectorAll('.active'))
+        .map((node) => node.textContent.replace(/\s+/g, ' ').trim())
+        .filter(Boolean);
+    }
+
+    function buildAnswerExplanation(answerSection) {
+      const activeTexts = getActiveAnswerTexts(answerSection);
+      if (!activeTexts.length) {
+        return null;
+      }
+
+      const explanation = document.createElement('div');
+      explanation.className = 'answer-explanation';
+
+      const intro = document.createElement('p');
+      intro.className = 'answer-explanation-intro';
+
+      const label = document.createElement('strong');
+      label.textContent = 'Explanation:';
+      intro.appendChild(label);
+
+      if (activeTexts.length === 1) {
+        intro.appendChild(document.createTextNode(' The exported answer key confirms this selection as correct.'));
+        explanation.appendChild(intro);
+
+        const detail = document.createElement('p');
+        detail.className = 'answer-explanation-detail';
+        detail.textContent = activeTexts[0];
+        explanation.appendChild(detail);
+      } else {
+        intro.appendChild(document.createTextNode(' The exported answer key confirms the following selections as correct.'));
+        explanation.appendChild(intro);
+
+        const list = document.createElement('ul');
+        list.className = 'answer-explanation-list';
+        activeTexts.forEach((text) => {
+          const item = document.createElement('li');
+          item.textContent = text;
+          list.appendChild(item);
+        });
+        explanation.appendChild(list);
+      }
+
+      return explanation;
+    }
+
     function buildChoiceList(answerSection) {
       const list = answerSection.querySelector('ul');
       if (!list) {
@@ -408,6 +484,12 @@
       });
 
       fragment.appendChild(choiceListElement);
+
+      const explanation = buildAnswerExplanation(answerSection);
+      if (explanation) {
+        fragment.appendChild(explanation);
+      }
+
       return fragment;
     }
 
@@ -420,6 +502,12 @@
       const block = document.createElement('div');
       block.className = 'answer-block';
       block.innerHTML = answerSection.innerHTML;
+
+      const explanation = buildAnswerExplanation(answerSection);
+      if (explanation) {
+        block.appendChild(explanation);
+      }
+
       return block;
     }
 
