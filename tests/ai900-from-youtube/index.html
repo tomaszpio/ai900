@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-900 Practice Test — YouTube Question Bank</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f8f9fb;
+      color: #1f1f1f;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #004578;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    p.lead {
+      max-width: 60rem;
+      margin: 0 0 2rem;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    details.question-card {
+      background: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      padding: 0.75rem 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    details.question-card[open] {
+      border-color: #004578;
+      box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
+    }
+
+    summary {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .question-number {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #004578;
+    }
+
+    .question-text p {
+      margin: 0;
+    }
+
+    .question-body {
+      border-top: 1px solid #d0d7de;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .answer-block {
+      background: #f1f6ff;
+      border-left: 4px solid #004578;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+    }
+
+    .answer-block .table,
+    .answer-block .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .answer-block .col-3,
+    .answer-block .col-4,
+    .answer-block .col-6,
+    .answer-block .col-7,
+    .answer-block .col-8,
+    .answer-block .col-1 {
+      flex: 1 1 200px;
+    }
+
+    .answer-block .box {
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      background: #ffffff;
+    }
+
+    .answer-block .box.dashed {
+      border-style: dashed;
+      background: #fdf6e3;
+    }
+
+    .answer-block .box.active {
+      border-color: #107c10;
+      background: #ecf9ec;
+    }
+
+    .answer-block .radioBox {
+      display: inline-flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    .choice-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .choice-item {
+      background: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .choice-text {
+      margin: 0;
+    }
+
+    .choice-item.is-correct {
+      border-color: #107c10;
+      background: #f2fbf2;
+    }
+
+    .choice-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #107c10;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 0.15rem;
+    }
+
+    .loading-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #004578;
+      font-weight: 600;
+    }
+
+    .error-state {
+      color: #9a0007;
+      background: #fdecea;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #f5c6cb;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      details.question-card {
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>AI-900 Practice Test — YouTube Question Bank</h1>
+  <p class="lead">
+    This practice set was generated from the <code>ai900fromyoutube.html</code> export. Expand each question to review the
+    answers captured from the original mock exam.
+  </p>
+
+  <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
+  <div id="question-list" class="question-list" aria-live="polite"></div>
+
+  <script>
+    const SOURCE_URL = '../../ai900fromyoutube.html';
+
+    function extractHTML(section) {
+      if (!section) {
+        return '';
+      }
+
+      const clone = section.cloneNode(true);
+      clone.querySelectorAll('script').forEach((script) => script.remove());
+      return clone.innerHTML.trim();
+    }
+
+    function buildChoiceList(answerSection) {
+      const list = answerSection.querySelector('ul');
+      if (!list) {
+        return null;
+      }
+
+      const items = Array.from(list.querySelectorAll('li'));
+      if (!items.length) {
+        return null;
+      }
+
+      const fragment = document.createElement('div');
+      fragment.className = 'answer-block';
+
+      const choiceListElement = document.createElement('ul');
+      choiceListElement.className = 'choice-list';
+
+      items.forEach((li) => {
+        const choiceItem = document.createElement('li');
+        choiceItem.className = 'choice-item';
+
+        const text = document.createElement('p');
+        text.className = 'choice-text';
+        text.textContent = li.textContent.trim();
+        choiceItem.appendChild(text);
+
+        if (li.classList.contains('active')) {
+          choiceItem.classList.add('is-correct');
+          const badge = document.createElement('span');
+          badge.className = 'choice-badge';
+          badge.textContent = 'Correct answer';
+          choiceItem.appendChild(badge);
+        }
+
+        choiceListElement.appendChild(choiceItem);
+      });
+
+      fragment.appendChild(choiceListElement);
+      return fragment;
+    }
+
+    function buildAnswerBlock(answerSection) {
+      const choiceList = buildChoiceList(answerSection);
+      if (choiceList) {
+        return choiceList;
+      }
+
+      const block = document.createElement('div');
+      block.className = 'answer-block';
+      block.innerHTML = answerSection.innerHTML;
+      return block;
+    }
+
+    async function loadQuestions() {
+      const loadingState = document.getElementById('question-loading');
+      const questionList = document.getElementById('question-list');
+
+      try {
+        const response = await fetch(SOURCE_URL);
+        if (!response.ok) {
+          throw new Error(`Failed to load practice questions (status ${response.status}).`);
+        }
+
+        const htmlText = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+        const questionNodes = Array.from(doc.querySelectorAll('.questionFormat'));
+
+        if (!questionNodes.length) {
+          throw new Error('No questions were found in the source document.');
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        questionNodes.forEach((node, index) => {
+          const questionCard = document.createElement('details');
+          questionCard.className = 'question-card';
+
+          const summary = document.createElement('summary');
+
+          const number = document.createElement('span');
+          number.className = 'question-number';
+          number.textContent = `Question ${index + 1}`;
+          summary.appendChild(number);
+
+          const questionSection = node.querySelector('.question');
+          const questionHTML = extractHTML(questionSection);
+          const questionText = document.createElement('div');
+          questionText.className = 'question-text';
+          questionText.innerHTML = questionHTML || '<p>No question text available.</p>';
+          summary.appendChild(questionText);
+
+          questionCard.appendChild(summary);
+
+          const body = document.createElement('div');
+          body.className = 'question-body';
+
+          const answerSection = node.querySelector('.answer');
+          if (answerSection) {
+            const answerBlock = buildAnswerBlock(answerSection.cloneNode(true));
+            body.appendChild(answerBlock);
+          } else {
+            const missing = document.createElement('div');
+            missing.className = 'error-state';
+            missing.textContent = 'No answer data was found for this question.';
+            body.appendChild(missing);
+          }
+
+          questionCard.appendChild(body);
+          fragment.appendChild(questionCard);
+        });
+
+        questionList.appendChild(fragment);
+      } catch (error) {
+        const errorMessage = document.createElement('p');
+        errorMessage.className = 'error-state';
+        errorMessage.textContent = error.message;
+        questionList.appendChild(errorMessage);
+      } finally {
+        if (loadingState) {
+          loadingState.remove();
+        }
+      }
+    }
+
+    loadQuestions();
+  </script>
+</body>
+</html>
