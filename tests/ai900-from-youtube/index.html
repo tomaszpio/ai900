@@ -18,15 +18,131 @@
       line-height: 1.6;
     }
 
+    a {
+      color: #004578;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .page-header {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 1080px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #414141;
+    }
+
+    .back-link::before {
+      content: '←';
+      font-size: 1rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: minmax(0, 1fr);
+      background: linear-gradient(135deg, rgba(0, 69, 120, 0.12), rgba(16, 124, 16, 0.1));
+      border: 1px solid rgba(0, 69, 120, 0.2);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem;
+      color: #004578;
+      font-weight: 700;
+    }
+
     h1 {
       color: #004578;
       margin-top: 0;
       margin-bottom: 0.5rem;
     }
 
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.98rem;
+    }
+
+    .feature-list li {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-list li::before {
+      content: '✔';
+      color: #107c10;
+      font-weight: 700;
+      margin-top: 0.15rem;
+    }
+
+    .hero-media {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border: 2px solid rgba(0, 69, 120, 0.2);
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-credit {
+      font-size: 0.85rem;
+      color: #3b3b3b;
+    }
+
     p.lead {
       max-width: 60rem;
-      margin: 0 0 2rem;
+      margin: 0;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
     }
 
     .question-list {
@@ -183,21 +299,63 @@
         padding: 1.5rem;
       }
 
+      .hero {
+        padding: 1.5rem;
+      }
+
+      .feature-list li {
+        font-size: 0.92rem;
+      }
+
       details.question-card {
         padding: 0.75rem;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <h1>AI-900 Practice Test — YouTube Question Bank</h1>
-  <p class="lead">
-    This practice set was generated from the <code>ai900fromyoutube.html</code> export. Expand each question to review the
-    answers captured from the original mock exam.
-  </p>
+  <header class="page-header">
+    <a class="back-link" href="../../index.html">Back to resource index</a>
+    <div class="hero">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Video companion</span>
+        <h1>AI-900 Practice Test — YouTube Question Bank</h1>
+        <p class="lead">
+          This interactive practice set was generated from questions captured in the
+          <code>ai900fromyoutube.html</code> export. Follow along with the companion video and expand each card to see the
+          answers and explanations pulled from the mock exam.
+        </p>
+        <ul class="feature-list">
+          <li><strong>Interactive review:</strong> Toggle each question to reveal the solution captured from the YouTube
+            walkthrough.</li>
+          <li><strong>Detailed answers:</strong> Multiple choice selections are highlighted so you can focus on the correct
+            option.</li>
+          <li><strong>Self-paced learning:</strong> Use the cards as a checklist while you pause the video and validate your
+            understanding.</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/6LUU9_0-0xM" title="AI-900 practice test video" allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <p class="video-credit">Video credit: <a href="https://www.youtube.com/watch?v=6LUU9_0-0xM">AI-900 Practice Test</a>
+          on YouTube.</p>
+      </div>
+    </div>
+  </header>
 
-  <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
-  <div id="question-list" class="question-list" aria-live="polite"></div>
+  <main>
+    <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
+    <div id="question-list" class="question-list" aria-live="polite"></div>
+  </main>
 
   <script>
     const SOURCE_URL = '../../ai900fromyoutube.html';
