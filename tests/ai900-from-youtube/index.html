@@ -5,18 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI-900 Practice Test — YouTube Question Bank</title>
   <style>
-    :root {
-      color-scheme: light;
-    }
+  :root {
+    color-scheme: light;
+    --page-max-width: 74rem;
+    --surface: #ffffff;
+    --surface-alt: #f8f9fb;
+    --border: #d0d7de;
+    --accent: #004578;
+    --accent-soft: rgba(0, 69, 120, 0.08);
+  }
 
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f8f9fb;
-      color: #1f1f1f;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--surface-alt);
+    color: #1f1f1f;
+    margin: 0;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    line-height: 1.6;
+  }
+
+  body > * {
+    width: min(100%, var(--page-max-width));
+    margin: 0 auto;
+  }
 
     a {
       color: #004578;
@@ -27,12 +44,11 @@
       text-decoration: underline;
     }
 
-    .page-header {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 1080px;
-      margin: 0 auto 2.5rem;
-    }
+  .page-header {
+    display: grid;
+    gap: clamp(1.25rem, 4vw, 1.75rem);
+    margin: 0 auto clamp(2rem, 5vw, 2.75rem);
+  }
 
     .back-link {
       display: inline-flex;
@@ -48,16 +64,16 @@
       font-size: 1rem;
     }
 
-    .hero {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: minmax(0, 1fr);
-      background: linear-gradient(135deg, rgba(0, 69, 120, 0.12), rgba(16, 124, 16, 0.1));
-      border: 1px solid rgba(0, 69, 120, 0.2);
-      border-radius: 18px;
-      padding: 2rem;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    }
+  .hero {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.25rem);
+    grid-template-columns: minmax(0, 1fr);
+    background: linear-gradient(135deg, rgba(0, 69, 120, 0.12), rgba(16, 124, 16, 0.1));
+    border: 1px solid rgba(0, 69, 120, 0.2);
+    border-radius: 18px;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
 
     .hero-copy {
       display: grid;
@@ -72,30 +88,31 @@
       font-weight: 700;
     }
 
-    h1 {
-      color: #004578;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
+  h1 {
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+  }
 
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.5rem;
-      font-size: 0.98rem;
-    }
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: clamp(0.5rem, 2vw, 0.85rem);
+    font-size: 0.98rem;
+  }
 
-    .feature-list li {
-      display: inline-flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      padding: 0.6rem 0.75rem;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
+  .feature-list li {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    padding: clamp(0.55rem, 2vw, 0.85rem) clamp(0.7rem, 2.6vw, 1.05rem);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
 
     .feature-list li::before {
       content: '✔';
@@ -133,47 +150,52 @@
       color: #3b3b3b;
     }
 
-    p.lead {
-      max-width: 60rem;
-      margin: 0;
-    }
+  p.lead {
+    max-width: 60rem;
+    margin: 0;
+  }
 
-    main {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1.5rem;
-    }
+  main {
+    max-width: min(64rem, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: clamp(1.25rem, 4vw, 1.75rem);
+  }
 
-    .question-list {
-      display: grid;
-      gap: 1rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
+  .question-list {
+    display: grid;
+    gap: clamp(0.85rem, 2.8vw, 1.25rem);
+    max-width: min(60rem, 100%);
+    margin: 0 auto;
+  }
 
-    details.question-card {
-      background: #ffffff;
-      border: 1px solid #d0d7de;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      padding: 0.75rem 1rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
+  details.question-card {
+    background: var(--surface);
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: clamp(0.75rem, 2.5vw, 1.1rem) clamp(0.9rem, 3vw, 1.3rem);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
 
     details.question-card[open] {
       border-color: #004578;
       box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
     }
 
-    summary {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      font-weight: 600;
-      outline: none;
-    }
+  summary {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 600;
+    outline: none;
+  }
+
+  summary:focus-visible {
+    outline: 3px solid rgba(0, 99, 177, 0.35);
+    border-radius: 6px;
+  }
 
     .question-number {
       font-size: 0.85rem;
@@ -194,12 +216,12 @@
       gap: 1rem;
     }
 
-    .answer-block {
-      background: #f1f6ff;
-      border-left: 4px solid #004578;
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
-    }
+  .answer-block {
+    background: #f1f6ff;
+    border-left: 4px solid #004578;
+    border-radius: 10px;
+    padding: clamp(0.75rem, 2.6vw, 1.1rem) clamp(0.9rem, 3vw, 1.3rem);
+  }
 
     .answer-block .table,
     .answer-block .row {
@@ -248,14 +270,14 @@
       gap: 0.5rem;
     }
 
-    .choice-item {
-      background: #ffffff;
-      border: 1px solid #d0d7de;
-      border-radius: 8px;
-      padding: 0.6rem 0.8rem;
-      display: grid;
-      gap: 0.3rem;
-    }
+  .choice-item {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: clamp(0.55rem, 2vw, 0.85rem) clamp(0.65rem, 2.5vw, 1rem);
+    display: grid;
+    gap: 0.3rem;
+  }
 
     .choice-text {
       margin: 0;
@@ -278,13 +300,13 @@
       margin-top: 0.15rem;
     }
 
-    .answer-explanation {
-      display: grid;
-      gap: 0.35rem;
-      margin-top: 0.75rem;
-      padding-top: 0.75rem;
-      border-top: 1px dashed rgba(0, 69, 120, 0.25);
-    }
+  .answer-explanation {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(0, 69, 120, 0.25);
+  }
 
     .answer-explanation-intro {
       margin: 0;
@@ -323,30 +345,33 @@
       border: 1px solid #f5c6cb;
     }
 
-    @media (max-width: 640px) {
-      body {
-        padding: 1.5rem;
-      }
+  @media (max-width: 760px) {
+    .feature-list li {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
 
-      .hero {
-        padding: 1.5rem;
-      }
-
-      .feature-list li {
-        font-size: 0.92rem;
-      }
-
-      details.question-card {
-        padding: 0.75rem;
-      }
+  @media (max-width: 640px) {
+    body {
+      padding: clamp(1rem, 6vw, 1.5rem);
     }
 
-    @media (min-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        align-items: center;
-      }
+    .hero {
+      padding: clamp(1.25rem, 5vw, 1.6rem);
     }
+
+    .video-wrapper {
+      border-radius: 12px;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .hero {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+    }
+  }
   </style>
 </head>
 <body>

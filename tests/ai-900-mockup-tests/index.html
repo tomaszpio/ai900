@@ -5,45 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-900 Mockup Tests</title>
   <style>
-    :root {
-      color-scheme: light;
-    }
+  :root {
+    color-scheme: light;
+    --page-max-width: 70rem;
+    --surface: #ffffff;
+    --surface-alt: #f8f9fb;
+    --border: #d0d7de;
+    --accent: #004578;
+  }
 
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f8f9fb;
-      color: #1f1f1f;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-    h1,
-    h2,
-    h3 {
-      color: #004578;
-      margin-top: 0;
-    }
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--surface-alt);
+    color: #1f1f1f;
+    margin: 0;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    line-height: 1.6;
+  }
 
-    p.description {
-      max-width: 56rem;
-      margin-bottom: 2rem;
-    }
+  body > * {
+    width: min(100%, var(--page-max-width));
+    margin: 0 auto;
+  }
 
-    section.mock-tests {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
+  h1,
+  h2,
+  h3 {
+    color: var(--accent);
+    margin-top: 0;
+  }
 
-    .card {
-      background: #ffffff;
-      border: 1px solid #d0d7de;
-      border-radius: 10px;
-      padding: 1.25rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
+  p.description {
+    max-width: 56rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  section.mock-tests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(0.85rem, 3vw, 1.25rem);
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: clamp(1rem, 3vw, 1.4rem);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
 
     .mock-test-card h2 {
       font-size: 1.1rem;
@@ -58,28 +74,28 @@
       margin-bottom: 0.35rem;
     }
 
-    section.question-bank {
-      max-width: 960px;
-      margin: 0 auto;
-    }
+  section.question-bank {
+    max-width: min(64rem, 100%);
+    margin: 0 auto;
+  }
 
-    .question-intro {
-      margin-bottom: 1.5rem;
-    }
+  .question-intro {
+    margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+  }
 
-    .question-list {
-      display: grid;
-      gap: 1rem;
-    }
+  .question-list {
+    display: grid;
+    gap: clamp(0.75rem, 2.5vw, 1.15rem);
+  }
 
-    .question-card {
-      border-radius: 12px;
-      background: #ffffff;
-      border: 1px solid #d0d7de;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      padding: 0.75rem 1rem;
-      transition: border-color 0.2s ease;
-    }
+  .question-card {
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: clamp(0.75rem, 2.4vw, 1.1rem) clamp(0.9rem, 3vw, 1.3rem);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
 
     .question-card summary {
       cursor: pointer;
@@ -134,13 +150,13 @@
       gap: 0.5rem;
     }
 
-    .choice-item {
-      background: #fdfdff;
-      border: 1px solid #d0d7de;
-      border-radius: 10px;
-      padding: 0.6rem 0.8rem;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    }
+  .choice-item {
+    background: #fdfdff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: clamp(0.55rem, 2vw, 0.8rem) clamp(0.65rem, 2.4vw, 1rem);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
 
     .choice-status {
       display: inline-flex;
@@ -164,11 +180,11 @@
       font-weight: 600;
     }
 
-    .question-rationale {
-      background: #f3f9ff;
-      border-radius: 8px;
-      padding: 0.75rem;
-    }
+  .question-rationale {
+    background: #f3f9ff;
+    border-radius: 8px;
+    padding: clamp(0.6rem, 2.3vw, 0.85rem);
+  }
 
     .question-rationale p:last-child {
       margin-bottom: 0;
@@ -190,15 +206,27 @@
       border: 1px solid #f5c6cb;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1.5rem;
-      }
-
-      .question-card {
-        padding: 0.75rem;
-      }
+  @media (max-width: 800px) {
+    section.mock-tests {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: clamp(1rem, 6vw, 1.5rem);
+    }
+
+    .choice-list {
+      gap: 0.65rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    section.mock-tests {
+      grid-template-columns: 1fr;
+    }
+  }
   </style>
 </head>
 <body>
