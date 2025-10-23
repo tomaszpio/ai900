@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-900 Combined Question Bank</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --accent: #004578;
+      --surface: #ffffff;
+      --surface-alt: #f4f6fb;
+      --border: #d0d7de;
+      --text: #1f1f1f;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--surface-alt);
+      color: var(--text);
+      margin: 0;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    a.return-home {
+      position: fixed;
+      top: clamp(0.75rem, 2vw, 1.25rem);
+      right: clamp(0.75rem, 3vw, 1.5rem);
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 6px 16px rgba(0, 69, 120, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+    a.return-home svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+    a.return-home:hover, a.return-home:focus-visible {
+      background: #094a8c;
+      box-shadow: 0 14px 32px rgba(9, 74, 140, 0.3);
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: clamp(48rem, 90vw, 62rem);
+      margin: 0 auto;
+    }
+    header.page-header {
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    header.page-header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+    header.page-header p {
+      margin: 0.25rem 0 0;
+      color: #44546a;
+      max-width: 60ch;
+    }
+    article.question-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(1.2rem, 3vw, 1.6rem);
+      margin-bottom: clamp(1rem, 3vw, 1.5rem);
+      box-shadow: 0 10px 30px rgba(15, 25, 45, 0.08);
+    }
+    article.question-card h2 {
+      margin: 0;
+      font-size: clamp(1.1rem, 3.4vw, 1.35rem);
+    }
+    .question-card .meta {
+      margin: 0.35rem 0 1rem;
+      font-size: 0.9rem;
+      color: #5b6b7f;
+    }
+    .question-card .question-text {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+    .question-card ul.answers {
+      margin: 0 0 1rem 1.25rem;
+      padding: 0;
+      list-style: disc;
+    }
+    .question-card ul.answers li {
+      margin-bottom: 0.35rem;
+    }
+    .question-card .explanation {
+      border-left: 4px solid var(--accent);
+      background: rgba(0, 69, 120, 0.08);
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+    .question-card .explanation h3 {
+      margin-top: 0;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      a.return-home {
+        font-size: 0.8rem;
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+      .question-card ul.answers {
+        margin-left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="return-home" href="index.html">
+    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+      <path d="M12 4.248 4.5 10v10h5v-5h5v5h5V10z"></path>
+    </svg>
+    <span>Home</span>
+  </a>
+  <main>
+    <header class="page-header">
+      <h1>AI-900 Combined Question Bank</h1>
+      <p>306 unique questions merged from three study resources.</p>
+    </header>
+    <article class="question-card">
+      <h2>Question 1</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of artificial intelligence (AI) workload provides the ability to generate bounding boxes that identify the locations of different types of vehicles in an image?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>object detection</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. The other answer choices also process images, but their outcomes are different.<br>
+Understand computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 2</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which type of artificial intelligence (AI) workload provides the ability to classify individual pixels in an image depending on the object that they represent?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>semantic segmentation</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. The other answer choices also process images, but their outcomes are different.<br>
+Understand computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 3</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which artificial intelligence (AI) workload scenario is an example of natural language processing (NLP)?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>extracting key phrases from a business insights report</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Extracting key phrases from text to identify the main terms is an NLP workload. Predicting whether customers are likely to buy a product based on previous purchases requires the development of a machine learning model. Monitoring for sudden increases in quantity of failed sign-in attempts is a different workload. Identifying objects in landscape images is a computer vision workload.<br>
+Analyze text with the Language service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 4</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">You are exploring solutions to improve the document search and indexing service for employees.<br>
+You need an artificial intelligence (AI) search solution that will include searching text in various types of documents, such as images.<br>
+Which type of AI workload is this?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>data mining</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Data mining workloads primarily focus on the searching and indexing of data. The computer vision can be used to extract information from images, but it is not a search and indexing solution. Conversational AI is part of natural language processing (NLP) and facilitates the creation of chatbots. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent.<br>
+Microsoft Azure AI Fundamentals: Explore knowledge mining - Training | Microsoft Learn (https://learn.microsoft.com/training/paths/explore-fundamentals-of-knowledge-mining/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 5</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which two artificial intelligence (AI) workload features are part of the Azure AI Vision service? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>optical character recognition (OCR)</li>
+        <li>spatial analysis</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>OCR and Spatial Analysis are part of the Azure AI Vision service. Sentiment analysis, entity recognition, and key phrase extraction are not part of the computer vision service.<br>
+Microsoft Azure AI Fundamentals: Explore computer vision – Training | Microsoft Learn (https://learn.microsoft.com/training/paths/explore-computer-vision-microsoft-azure/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 6</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which principle of responsible artificial intelligence (AI) has the objective of ensuring that AI solutions benefit all parts of society regardless of gender or ethnicity?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>inclusiveness</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The inclusiveness principle is meant to ensure that AI solutions empower and engage everyone, regardless of criteria such as physical ability, gender, sexual orientation, or ethnicity. Privacy and security, reliability and safety, and accountability do not discriminate based on these criteria, but also do not emphasize the significance of bringing benefits to all parts of the society.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 7</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which principle of responsible artificial intelligence (AI) defines the framework of governance and organization principles that meet ethical and legal standards of AI solutions?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>accountability</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Accountability defines the framework of governance and organizational principles, which are meant to ensure that AI solutions meet ethical and legal standards that are clearly defined. The other answer choices do not define the framework of governance and organization principles, but provide guidance regarding the ethical and legal aspects of the corresponding standards.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 8</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which principle of responsible artificial intelligence (AI) plays the primary role when implementing an AI solution that meet qualifications for business loan approvals?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>fairness</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 9</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">A bank is developing a new artificial intelligence (AI) system to support the process of accepting or rejecting mortgage applications.<br>
+Which two issues should be considered as part of the responsible AI principle of fairness to avoid biased decision making? Each correct answer presents part of the solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>ethnicity</li>
+        <li>gender</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The AI system must be designed to ensure that biased decision making is avoided and not based on factors such as ethnicity and gender. The system will consider salary, payment history, and credit utilization. These are standard metrics.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 10</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which two principles of responsible artificial intelligence (AI) are most important when designing an AI system to manage healthcare data? Each correct answer presents part of the solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>accountability</li>
+        <li>privacy and security</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The accountability principle states that AI systems are designed to meet any ethical and legal standards that are applicable. The system must be designed to ensure that privacy of the healthcare data is of the highest importance, including anonymizing data where applicable. The fairness principle is applied to AI systems to ensure that users of the systems are treated fairly. The inclusiveness principle states that AI systems must empower people in a positive and engaging way.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 11</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">You need to identify numerical values that represent the probability of humans developing diabetes based on age and body fat percentage.<br>
+Which type of machine learning model should you use?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>logistic regression</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Multiple linear regression models a relationship between two or more features and a single label. Linear regression uses a single feature. Logistic regression is a type of classification model, which returns either a Boolean value or a categorical decision. Hierarchical clustering groups data points that have similar characteristics.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)<br>
+What are classification models? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 12</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which type machine learning algorithm predicts a numeric label associated with an item based on that item’s features?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>regression</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)<br>
+What are classification models? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification)<br>
+What is clustering? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 13</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">A healthcare organization has a dataset consisting of bone fracture scans that are categorized by using predefined fracture types. The organization wants to use machine learning to detect the different types of bone fractures for new scans before the scans are sent to a medical practitioner.<br>
+Which type of machine learning is this?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>classification</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Classification is used to predict categories of data. It can predict which category or class an item of data belongs to. In this example, a machine learning model trained by using classification with labeled data can be used to determine the type of bone fracture in a new scan that is not labeled already. Featurization is not a machine learning type. Regression is used to predict numeric values. Clustering analyzes unlabeled data to find similarities in the data.<br>
+Clustering - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/7-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 14</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">You plan to use machine learning to predict the probability of humans developing diabetes based on their age and body fat percentage.<br>
+What should the model include?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>two features and one label</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The scenario represents a model that is meant to establish a relationship between two features (age and body fat percentage) and one label (the likelihood of developing diabetes). The features are descriptive attributes (serving as the input), while the label is the characteristic you are trying to predict (serving as the output).<br>
+Multiple linear regression and R-squared - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-regression-machine-learning/4-multiple-linear-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 15</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which feature makes regression an example of supervised machine learning?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>use of historical data with known label values to train a model</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.<br>
+What is regression? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-regression-models/2-what-is-regression)<br>
+What is clustering? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 16</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">A company is using machine learning to predict house prices based on appropriate house attributes.<br>
+For the machine learning model, which attribute is the label?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>price of the house</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The price of the house is the label you are attempting to predict through the machine learning model. This is typically done by using a regression model. Floor space size, number of bedrooms, and age of the house are all input variables for the model to help predict the house price label.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 17</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">A company is using machine learning to predict various aspects of its e-scooter hire service dependent on weather. This includes predicting the number of hires, the average distance traveled, and the impact on e-scooter battery levels.<br>
+For the machine learning model, which two attributes are the features? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>weather temperature</li>
+        <li>weekday or weekend</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Weather temperature and weekday or weekend are features that provide a weather temperature for a given day and a value based on whether the day is on a weekend or weekday. These are input variables for the model to help predict the labels for e-scooter battery levels, number of hires, and distance traveled. E-scooter battery levels, number of hires, and distance traveled are numeric labels you are attempting to predict through the machine learning model.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 18</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">A company wants to predict household water use based on the number of people in a house, the weather temperature, and the time of year.<br>
+In terms of data labels and features, what is the label in this use case?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>water use</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Water use is the label value that you want to predict, also known as the independent variable. Number of people in the house, weather temperature, and time of year are features, and are values that are dependent on the label. Number of people in the house, weather temperature, and time of year can influence the water consumed in a household.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 19</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">What should you do after preparing a dataset and before training the machine learning model?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>split data into training and validation datasets</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Splitting data into training and validation datasets leaves you with two datasets, the first and largest of which is the training dataset you use to train the model. The second, smaller dataset is the held back data and is called the validation dataset, as it is used to evaluate the trained model. If normalizing or summarizing the data is required, it will be carried out as part of data transformation. Cleaning missing data is part of preparing the data and the data transformation processes.<br>
+Regression - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 20</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">You need to create an automated machine learning (automated ML) model.<br>
+Which resource should you create first in Azure Machine Learning studio?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>a dataset</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>A dataset is required to create an automated machine learning (automated ML) run. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 21</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">You need to use the Azure Machine Learning designer to deploy a predictive service from a newly trained model.<br>
+What should you do first in the Machine Learning designer?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Create an inference pipeline.</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>To deploy a predictive service from a newly trained model by using the Machine Learning designer, you must first create a pipeline in the Machine Learning designer. Adding training modules by using the Machine Learning designer takes place before creating a trained model, which already exists. Adding a dataset by using the Machine Learning designer requires that a pipeline already exists. To create an inferencing cluster, you must use Machine Learning studio.<br>
+Regression - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 22</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">You train a regression model by using automated machine learning (automated ML) in the Azure Machine Learning studio. You review the best model summary.<br>
+You need to publish the model for others to use from the internet.<br>
+What should you do next?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Deploy the model to an endpoint.</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>You can deploy the best performing model for client applications to use over the internet by using an endpoint. Compute clusters are used to train the model and are created directly after you create a Machine Learning workspace. Before you can test the model’s endpoint, you must deploy it first to an endpoint. Automated ML performs the validation automatically, so you do not need to split the dataset.<br>
+What is automated ML? AutoML - Azure Machine Learning | Microsoft Learn (https://learn.microsoft.com/azure/machine-learning/concept-automated-ml)<br>
+Regression - Training | Microsoft Learn (https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/4-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 23</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which artificial intelligence (AI) technique should be used to extract the name of a store from a photograph displaying the store front?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>optical character recognition (OCR)</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>OCR provides the ability to detect and read text in images. NLP is an area of AI that deals with identifying the meaning of a written or spoken language, but not detecting or reading text in images. Image classification classifies images based on their contents. Semantic segmentation provides the ability to classify individual pixels in an image.<br>
+Understand computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 24</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which two specialized domain models are supported by Azure AI Vision when categorizing an image? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>celebrities</li>
+        <li>landmarks</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>When categorizing an image, the Azure AI Vision service supports two specialized domain models: celebrities and landmarks. Image types is an additional capability of the computer vision service, allowing it to detect the type of image, such as a clip art image or a line drawing. Both people_ and people_group are supported categories when performing image classification.<br>
+Get started with image analysis on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 25</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">You have a set of images. Each image shows multiple vehicles. What allows you to identity different vehicle types in the same traffic monitoring image?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>object detection</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Object detection can be used to evaluate traffic monitoring images to quickly classify specific vehicle types, such as car, bus, or cyclist. Linear regression is a machine learning training algorithm for training regression models. Image classification is part of computer vision that is concerned with the primary contents of an image. OCR is used to extract text and handwriting from images.<br>
+Machine learning for computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 26</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which feature of computer vision involves associating an image with metadata that summarizes the attributes of the image?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>tagging</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Tagging involves associating an image with metadata that summarizes the attributes of the image. Detecting image types involves identifying clip art images or line drawings. Content organization involves identifying people or objects in photos and organizing them based on the identification. Categorizing involves associating the contents of an image with a limited set of categories.<br>
+Get started with image analysis on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 27</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which analytical task of the Azure AI Vision service returns bounding box coordinates?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>object detection</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Detecting objects identifies common objects and, for each, returns bounding box coordinates. Image categorization assigns a category to an image, but it does not return bounding box coordinates. Tagging involves associating an image with metadata that summarizes the attributes of the image, but it does not return bounding box coordinates. OCR detects printed and handwritten text in images, but it does not return bounding box coordinates.<br>
+Get started with image analysis on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 28</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which additional piece of information is included with each phrase returned by an image description task of the Azure AI Vision?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>confidence score</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.<br>
+Get started with image analysis on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 29</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which two prebuilt models allow you to use the Azure AI Document Intelligence service to scan information from international passports and sales accounts? Each correct answer presents part of the solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>ID document model</li>
+        <li>invoice model</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The invoice model extracts key information from sales invoices and is suitable for extracting information from sales account documents. The ID document model is optimized to analyze and extract key information from US driver’s licenses and international passport biographical pages. The business card model, receipt model, and language model are not suitable to extract information from passports or sales account documents.<br>
+Analyze receipts with the Form Recognizer service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-receipts-form-recognizer/)<br>
+Document processing models - Form Recognizer - Azure Applied AI Services | Microsoft Learn (https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/concept-model-overview?view=form-recog-3.0.0)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 30</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which two Azure AI Document Intelligence models include identifying common data fields as part of its data extraction capabilities? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>business card model</li>
+        <li>invoice model</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The business card model analyzes and extracts key information from business card images and includes common data field extractions, such as name and email. The invoice model extracts key information from sales invoices and includes common data fields used in invoices for extraction. The read model, layout model, and general document model do not identify and extract common data fields.<br>
+Document processing models - Form Recognizer - Azure Applied AI Services | Microsoft Learn (https://learn.microsoft.com/azure/applied-ai-services/form-recognizer/concept-model-overview?view=form-recog-3.0.0)<br>
+Analyze receipts with the Form Recognizer service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-receipts-form-recognizer/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 31</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">When using the Azure AI Face service, what should you use to perform one-to-many or one-to-one face matching? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>face identification</li>
+        <li>face verification</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Face identification in the Azure AI Face service can address one-to-many matching of one face in an image to a set of faces in a secure repository. Face verification has the capability for one-to-one matching of a face in an image to a single face from a secure repository or a photo to verify whether they are the same individual. Face attributes, the find similar faces operation, and Azure AI Custom Vision do not verify the identity of a face.<br>
+What is the Azure Face service? - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/computer-vision/overview-identity)<br>
+Detect and analyze faces with the Face service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/detect-analyze-faces/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 32</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which service can you use to train an image classification model?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Azure AI Custom Vision</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Azure AI Custom Vision is an image recognition service that allows you to build and deploy your own image models. The Azure AI vision service, Azure AI Face service, and Azure AI Language service do not provide the capability to train your own image model.<br>
+What is Custom Vision? - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/custom-vision-service/overview)<br>
+Understand Text Analytics - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 33</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which natural language processing (NLP) technique normalizes words before counting them?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>stemming</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Stemming normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases. Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space.<br>
+Understand Text Analytics - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 34</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>vectorization</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.<br>
+Understand Text Analytics - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 35</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">What is the confidence score returned by the Azure AI Language detection service of natural language processing (NLP) for an unknown language name?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>NaN</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>NaN, or not a number, designates an unknown confidence score. Unknown is a value with which the NaN confidence score is associated. The score values range between 0 and 1, with 0 designating the lowest confidence score and 1 designating the highest confidence score.<br>
+Get started with text analysis - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 36</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which part of speech synthesis in natural language processing (NLP) involves breaking text into individual words such that each word can be assigned phonetic sounds?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>tokenization</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Tokenization is part of speech synthesis that involves breaking text into individual words such that each word can be assigned phonetic sounds. Transcribing is part of speech recognition, which involves converting speech into a text representation. Key phrase extraction is part of language processing, not speech synthesis. Lemmatization, also known as stemming, is part of language processing, not speech synthesis.<br>
+Recognize and synthesize speech - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/recognize-synthesize-speech/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 37</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which two features of Azure AI Services allow you to identify issues from support question data, as well as identify any people and products that are mentioned? Each correct answer presents part of the solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>key phrase extraction</li>
+        <li>named entity recognition</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Key phrase extraction is used to extract key phrases to identify the main concepts in a text. It enables a company to identify the main talking points from the support question data and allows them to identify common issues. Named entity recognition can identify and categorize entities in unstructured text, such as people, places, organizations, and quantities. The Azure AI Speech service, Conversational Language Understanding, and Azure AI Bot Service are not designed for identifying key phrases or entities.<br>
+Key Phrase Extraction cognitive skill – Azure Cognitive Search | Microsoft Learn (https://learn.microsoft.com/azure/search/cognitive-search-skill-keyphrases)<br>
+Extract insights from text with the Language service – Training | Microsoft Learn (https://learn.microsoft.com/training/modules/extract-insights-text-with-text-analytics-service/)<br>
+Analyze text with the Language service – Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 38</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which three values are returned by the language detection feature of the Azure AI Language service in Azure?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>ISO 6391 Code</li>
+        <li>Language Name</li>
+        <li>Score</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Language Name, ISO 6391 Code, and Score are three values returned by the Language service of natural language processing (NLP) in Azure. Bounding box coordinates are returned by the Azure AI Vision services in Azure. Wikipedia URL is one of potential values returned by entity linking of entity recognition.<br>
+Get started with text analysis - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 39</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which Azure resource provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Azure AI Services</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Azure AI Services provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key. Azure AI Language service can be used to access the Azure AI Language service, but not the Azure AI Translator and Azure AI Speech services. The Machine Learning service is used to design, implement, and deploy Machine Learning models. Azure AI Bot Service provides a framework for developing, publishing, and managing bots in Azure.<br>
+Get started with translation in Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/translate-text-with-translation-service/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 40</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">When using the Azure AI Service for Language, what should you use to provide further information online about entities extracted from a text?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>entity linking</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Entity Linking identifies and disambiguates the identity of entities found in a text. Key phrase extraction is not used to extract entities and is used instead to extract key phrases to identify the main concepts in a text. Named entity recognition cannot provide a link for each entity to view further information. Text translation is part of the Azure AI Translator service.<br>
+What is entity linking in Azure Cognitive Service for Language? - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/language-service/entity-linking/overview)<br>
+Analyze text with the Language service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 41</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which feature of the Azure AI Speech service can identify distinct user voices?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>speech recognition</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Speech recognition uses audio data to analyze speech and determine recognizable patterns that can be mapped to distinct user voices. Azure AI Speech synthesis is concerned with vocalizing data, usually by converting text to speech. Azure AI Speech translation is concerned with multilanguage translation of speech. Language identification is used to identify languages spoken in audio when compared against a list of supported languages.<br>
+Speaker recognition overview - Speech service - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/speech-service/speaker-recognition-overview)<br>
+Recognize and synthesize speech - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/recognize-synthesize-speech/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 42</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Select the answer that correctly completes the sentence.<br>
+[Answer choice] use plugins to provide end users with the ability to get help with common tasks from a generative AI model.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Copilots</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.<br>
+What are copilots? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/5-copilots)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 43</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">At which layer can you apply content filters to suppress prompts and responses for a responsible generative AI solution?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>safety system</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The safety system layer includes platform-level configurations and capabilities that help mitigate harm. For example, the Azure OpenAI service includes support for content filters that apply criteria to suppress prompts and responses based on the classification of content into four severity levels (safe, low, medium, and high) for four categories of potential harm (hate, sexual, violence, and self-harm).<br>
+Responsible generative AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/responsible-ai-studio/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 44</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Select the answer that correctly completes the sentence.<br>
+[Answer choice] can return responses, such as natural language, images, or code, based on natural language input.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Generative AI</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.<br>
+What is generative AI? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/2-what-is-generative-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 45</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Select the answer that correctly completes the sentence.<br>
+[Answer choice] can used to identify constraints and styles for the responses of a generative AI model.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>System messages</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.<br>
+Improve generative AI responses with prompt engineering - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/6-writing-prompts)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 46</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Identify potential harms.</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Identifying potential harms is the first stage when planning a responsible generative AI solution.<br>
+Responsible generative AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/responsible-ai-studio/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 47</h2>
+      <p class="meta">Sources: Mockup Practice Assessment</p>
+      <div class="question-text">Which two capabilities are examples of a GPT model? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Create natural language.</li>
+        <li>Understand natural language.</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Azure OpenAI natural language models can take in natural language and generate responses. GPT models are excellent at both understanding and creating natural language.<br>
+What is generative AI? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/2-what-is-generative-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 48</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which three capabilities are examples of image generation features for a generative AI model? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>creating variations of an image</li>
+        <li>editing an image</li>
+        <li>new image creation</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Image generation models can take a prompt, a base image, or both, and create something new. These generative AI models can create both realistic and artistic images, change the layout or style of an image, and create variations of a provided image.<br>
+Fundamentals of Generative AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 49</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">You plan to develop an image processing solution that will use DALL-E as a generative AI model.<br>
+Which capability is NOT supported by the DALL-E model?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>image description</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.<br>
+Fundamentals of Generative AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 50</h2>
+      <p class="meta">Sources: Mockup Practice Assessment, Mockup Practice Assessment #2</p>
+      <div class="question-text">Which generative AI model is used to generate images based on natural language prompts?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>DALL-E</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.<br>
+Azure OpenAI Service models - Azure OpenAI | Microsoft Learn (https://learn.microsoft.com/azure/ai-services/openai/concepts/models)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 51</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which natural language processing (NLP) workload is used to generate closed caption text for live presentations?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Azure AI Speech</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Azure AI Speech provides speech-to-text and text-to-speech capabilities through speech recognition and synthesis. You can use prebuilt and custom Speech service models for a variety of tasks, from transcribing audio to text with high accuracy, to identifying speakers in conversations, creating custom voices, and more.<br>
+Understand Text Analytics - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 52</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of service provides a platform for conversational artificial intelligence (AI)?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Azure AI Bot Service</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Azure AI Bot Service provide a platform for conversational artificial intelligence (AI), which designates the ability of software agents to participate in a conversation. Azure AI Translator is part of Natural language processing (NLP), but it does not serve as a platform for conversational AI. Azure AI Vision deals with image processing. Azure AI Document Intelligence extracts information from scanned forms and invoices.<br>
+Understand natural language processing - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/5-understand-natural-language-process)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 53</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which principle of responsible artificial intelligence (AI) involves evaluating and mitigating the bias introduced by the features of a model?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>fairness</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Fairness involves evaluating and mitigating the bias introduced by the features of a model. Privacy is meant to ensure that privacy provisions are included in AI solutions. Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. Accountability is focused on ensuring that AI solutions meet ethical and legal standards that are clearly defined.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 54</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which principle of responsible artificial intelligence (AI) is applied in the design of an AI system to ensure that users understand constraints and limitations of AI?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>transparency</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The transparency principle states that AI systems must be designed in such a way that users are made fully aware of the purpose of the systems, how they work, and which limitations can be expected during use. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. Fairness is applied to AI systems to ensure that users of the systems are treated fairly. The privacy and security principle are applied to the design of AI systems to ensure that the systems are secure and to respect user privacy.<br>
+Understand Responsible AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 55</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of machine learning algorithm groups observations is based on the similarities of features?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>clustering</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Clustering algorithms group data points that have similar characteristics. Regression algorithms are used to predict numeric values. Classification algorithms are used to predict a predefined category to which an input value belongs. Supervised learning is a category of learning algorithms that includes regression and classification, but not clustering.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)<br>
+What are classification models? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification)<br>
+What is clustering? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 56</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of machine learning algorithm assigns items to a set of predefined categories?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>classification</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Classification algorithms are used to predict a predefined category to which an input value belongs. Regression algorithms are used to predict numeric values. Clustering algorithms group data points that have similar characteristics. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)<br>
+What are classification models? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification)<br>
+What is clustering? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 57</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of machine learning algorithm finds the optimal way to split a dataset into groups without relying on training and validating label predictions?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>clustering</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>A clustering algorithm is an example of unsupervised learning, which groups data points that have similar characteristics without relying on training and validating label predictions. Supervised learning is a category of learning algorithms that includes regression and classification, but not clustering. Classification and regression algorithms are examples of supervised machine learning.<br>
+Fundamentals of machine learning - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/)<br>
+What are classification models? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification)<br>
+What is clustering? - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 58</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Predicting rainfall for a specific geographical location is an example of which type of machine learning?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>regression</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.<br>
+Regression - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 59</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">An electricity utility company wants to develop a mobile app for its customers to monitor their energy use and to display their predicted energy use for the next 12 months. The company wants to use machine learning to provide a reasonably accurate prediction of future energy use by using the customers’ previous energy-use data.<br>
+Which type of machine learning is this?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>regression</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Regression is a machine learning scenario that is used to predict numeric values. In this example, regression will be able to predict future energy consumption based on analyzing historical time-series energy data based on factors, such as seasonal weather and holiday periods. Multiclass classification is used to predict categories of data. Clustering analyzes unlabeled data to find similarities present in the data. Classification is used to predict categories of data.<br>
+Regression - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 60</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which assumption of the multiple linear regression model should be satisfied to avoid misleading predictions?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Features are independent of each other.</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Multiple linear regression models the relationship between several features and a single label. The features must be independent of each other, otherwise, the model&#x27;s predictions will be misleading.<br>
+Multiple linear regression and R-squared - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/understand-regression-machine-learning/4-multiple-linear-regression)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 61</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">What is an unsupervised machine learning algorithm module for training models in the Azure Machine Learning designer?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>K-Means Clustering</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>K-means clustering is an unsupervised machine learning algorithm component used for training clustering models. You can use unlabeled data with this algorithm. Linear regression and classification are supervised machine learning algorithm components. You need labeled data to use these algorithms. Normalize Data is not a machine learning algorithm module.<br>
+Clustering - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-machine-learning/7-clustering)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 62</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which process allows you to use object detection?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>tracking livestock in a field</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).<br>
+Machine learning for computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 63</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">You have a set of images. Each image shows one type of bone fracture. What allows you to identify bone fractures in different X-ray images?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>image classification</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.<br>
+Machine learning for computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 64</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">What can be used for an attendance system that can scan handwritten signatures?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>optical character recognition (OCR)</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>OCR is used to extract text and handwriting from images. In this case, it can be used to extract signatures for attendance purposes. Face detection can detect and verify human faces, not text, from images. Object detection can detect multiple objects in an image by using bounding box coordinates. It is not used to extract handwritten text. Image classification is the part of computer vision that is concerned with the primary contents of an image.<br>
+Read text with the Computer Vision service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/read-text-computer-vision/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 65</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which three parts of the machine learning process does the Azure AI Vision eliminate the need for? Each correct answer presents part of the solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>choosing a model</li>
+        <li>evaluating a model</li>
+        <li>training a model</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The computer vision service eliminates the need for choosing, training, and evaluating a model by providing pre-trained models. To use computer vision, you must create an Azure resource. The use of computer vision involves inferencing.<br>
+Machine learning for computer vision - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 66</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which two specialized domain models are supported by using the Azure AI Vision service? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>celebrities</li>
+        <li>landmarks</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The Azure AI Vision service supports the celebrities and landmarks specialized domain models. It does not support specialized domain models for animals, cars, or plants.<br>
+Get started with image analysis on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 67</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">What is the first step in the statistical analysis of terms in a text in the context of natural language processing (NLP)?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>removing stop words</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Removing stop words is the first step in the statistical analysis of terms used in a text in the context of NLP. Counting the occurrences of each word takes place after stop words are removed. Creating a vectorized model is not part of statistical analysis. It is used to capture the sematic relationship between words. Encoding words as numeric features is not part of statistical analysis. It is frequently used in sentiment analysis.<br>
+Understand Text Analytics - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 68</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which feature of the Azure AI Language service includes functionality that returns links to external websites to disambiguate terms identified in a text?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>entity recognition</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Entity recognition includes the entity linking functionality that returns links to external websites to disambiguate terms (entities) identified in a text. Key phrase extraction evaluates the text of a document and identifies its main talking points. Azure AI Language detection identifies the language in which text is written. Sentiment analysis evaluates text and returns sentiment scores and labels for each sentence.<br>
+Get started with text analysis - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 69</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">For which two scenarios is the Universal Language Model used by the speech-to-text API optimized? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>conversational</li>
+        <li>dictation</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The Universal Language Model used by the speech-to-text API is optimized for conversational and dictation scenarios. The acoustic, language, and pronunciation scenarios require developing your own model.<br>
+Get started with speech on Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/recognize-synthesize-speech/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 70</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which type of translation does the Azure AI Translator service support?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>text-to-text</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>The Azure AI Translator service supports text-to-text translation, but it does not support speech-to-text, text-to-speech, or speech-to-speech translation.<br>
+Get started with translation in Azure - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/translate-text-with-translation-service/2-get-started-azure)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 71</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which three features are elements of the Azure AI Speech service? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>language identification</li>
+        <li>speaker recognition</li>
+        <li>voice assistants</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Language identification, speaker recognition, and voice assistants are all elements of the Azure AI Speech service. Text translation and document translation are part of the Translator service.<br>
+What is the Speech service? - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/speech-service/overview)<br>
+Recognize and synthesize speech - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/recognize-synthesize-speech/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 72</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which feature of the Azure AI Translator service is available only to Custom Translator?</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>model training with a dictionary</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Model training with a dictionary can be used with Custom Translator when you do not have enough parallel sentences to meet the 10,000 minimum requirements. The resulting model will typically complete training much faster than with full training and will use the baseline models for translation along with the dictionaries you have added.<br>
+What is Custom Translator? - Azure Cognitive Services | Microsoft Learn (https://learn.microsoft.com/azure/cognitive-services/translator/custom-translator/overview)<br>
+Introduction to Translator - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/intro-to-translator/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 73</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Which three sources can be used to generate questions and answers for a knowledge base? Each correct answer presents a complete solution.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>a webpage</li>
+        <li>an existing FAQ document</li>
+        <li>manually entered data</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>A webpage or an existing document, such as a text file containing question and answer pairs, can be used to generate a knowledge base. You can also manually enter the knowledge base question-and-answer pairs. You cannot directly use an image or an audio file to import a knowledge base.<br>
+Build a bot with the Language Service and Azure Bot Service - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/build-faq-chatbot-qna-maker-azure-bot-service/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 74</h2>
+      <p class="meta">Sources: Mockup Practice Assessment #2</p>
+      <div class="question-text">Select the answer that correctly completes the sentence.<br>
+[Answer choice] can search, classify, and compare sources of text for similarity.</div>
+      <h3>Answers</h3>
+      <ul class="answers">
+        <li>Embeddings</li>
+      </ul>
+      <div class="explanation">
+        <strong>Explanation</strong><br>Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.<br>
+Fundamentals of Generative AI - Training | Microsoft Learn (https://learn.microsoft.com/training/modules/fundamentals-generative-ai/)
+      </div>
+    </article>
+    <article class="question-card">
+      <h2>Question 75</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Detecting a change in hospital infection rates&quot; is a scenario of Conversational Al.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 76</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are testing a machine learning model. How should you split data for training and evaluation?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 77</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Drag and Drop the Microsoft guiding principles for responsible Al (on the left) to the appropriate description<br>
+(on the right)</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 78</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your team member is planning to use the Form Recognizer pre-built receipt model.<br>
+Which kind of Azure resource should you recommend to create?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 79</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a system, that scans the news for articles about your customers and alert employees<br>
+when there is a negative article. Positive articles must be added to a press book.<br>
+[Image: ]<br>
+Which natural language processing tasks should you use to complete the process?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 80</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct use case from provided scenarios for classification?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 81</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which Azure OpenAl model can generate original images from natural language?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 82</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a dataset. You need to build an Azure Machine Learning classification model that will identify<br>
+defective products. What should you do first?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 83</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing an Al system and encountered a situation where the Al system should be ingested with<br>
+unusual and missing values.<br>
+Which Microsoft guiding principle for responsible Al you should consider?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 84</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What are the various possible channels, a bot can be connected to?<br>
+Select all correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 85</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the Microsoft guidance for responsible generative Al stages with their appropriate definition.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 86</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a frequently asked questions (FAQ) PDF file and need to create a conversational support system<br>
+based on the FAQ.<br>
+Which service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 87</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Answering frequently asked questions&quot; is a scenario of Conversational Al.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 88</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Extracting key insights from structured and unstructured data sources is a feature of what type of<br>
+workload?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 89</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have an Azure Machine Learning pipeline that contains a Split Data module. The Split Data module<br>
+outputs to a Train Model module and a Score Model module.<br>
+What is the function of the Split Data module?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 90</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to reduce the load on telephone operators by implementing a chatbot to answer simple questions<br>
+with predefined answers.<br>
+Which two Al service should you use to achieve the goal?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 91</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which statement is an example of a Microsoft responsible Al principle?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 92</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What can be used to build no-code apps that use built-in natural language processing models.<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 93</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which Azure Cognitive Services service can be used to identify documents that contain sensitive<br>
+information?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 94</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">A banking system, that predicts whether a loan will be repaid or not, is an example of what type of machine<br>
+learning?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 95</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your website use a chatbot to assist customers, and it need to detect when a customer is upset based on<br>
+what the customer types when interacting with chatbot.<br>
+Which type of Al workload should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 96</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are authoring a Language Understanding (LUIS) application to support a music festival.<br>
+You want users to be able to ask questions about scheduled shows, such as, &quot;Which act is playing on the<br>
+main stage?&quot;<br>
+The question &quot;Which act is playing on the main stage?&quot; is an example of which type of element?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 97</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct scenarios, where you will use the Form Recognizer service.<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 98</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure Machine Learning designer can be used to create machine learning models by<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 99</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using drones to identify where weeds grow between rows of crops to send an instruction for the<br>
+removal of the weeds.<br>
+This is an example of which type of computer vision?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 100</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">HOTSPOT<br>
+For each of the following statements, select Yes if the statement is true. Otherwise, select No.<br>
+Note: Each correct selection is worth one point.<br>
+Hot Area:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 101</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the facial recognition tasks to the appropriate scenario.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 102</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Making a travel reservation&quot; is a scenario of Conversational Al.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 103</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a chatbot solution in Azure.<br>
+Which service should you use to determine a user&#x27;s intent?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 104</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What are the Microsoft guiding principles for responsible Al?<br>
+Select three correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 105</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a mobile app for employees to scan and store their expenses while travelling.<br>
+Which type of computer vision should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 106</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What metrics you can use to evaluate a regression model?<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 107</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to map the right type of natural language processing workload for following scenario:<br>
+Be able to evaluate text along with a positive-negative scale<br>
+Which of the following would you map to this requirement?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 108</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using the Text analytics service to perform sentiment analysis on a document. The service returned<br>
+a score of 0.5<br>
+What does this score indicate about the document sentiment?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 109</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building an Al-based app and need to ensure that the app uses the principles for responsible Al.<br>
+Which two principles should you follow?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 110</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You decided to use the Computer Vision service to analyze set of images, which has locations, to identify<br>
+well-known buildings.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 111</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a website that includes customer reviews. You need to store the reviews in English and present<br>
+the reviews to users in their respective language by recognizing each user&#x27;s geographical location.<br>
+Which type of natural language processing workload should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 112</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a chatbot for a website, and need to implement a requirement that the chatbot must<br>
+answer user&#x27;s questions based on the information in the following documents:<br>
+- A frequently asked questions (FAQ) list on a PDF file<br>
+- A product troubleshooting guide in a Microsoft Word document<br>
+- A frequently asked questions (FAQ) list on a webpage<br>
+Which service should you use to process the documents?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 113</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the types of Al workloads to the appropriate scenarios.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 114</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&#x27;Translating speech from one language to another&#x27; is a scenario of Conversational Al.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 115</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">HOTSPOT<br>
+An organization has a Microsoft 365 subscription. You plan to implement multi-factor<br>
+authentication. For each of the following statement, select Yes if the statement is true. Otherwise, select No.<br>
+Note: Each correct selection is worth one point.<br>
+Hot Area:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 116</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">While presenting at a conference, your session is transcribed into subtitles for the audience in real time.<br>
+This is an example of which of the following services?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 117</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your company wants to build a recycling machine for cans. The recycling machine must automatically<br>
+identify cans of the correct shape and reject all other items.<br>
+Which type of Al workload should the company use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 118</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Detecting spam in emails&quot; is a scenario of Conversational Al.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 119</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What are Large Language Models?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 120</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is used to extract dates, quantities, and locations from text.<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 121</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which Computer Vision feature can you use to generate automatic captions for digital photographs?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 122</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Automated Machine Learning is the process of automating the time consuming, iterative tasks of machine<br>
+learning model development.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 123</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the types of machine learning to the appropriate scenarios.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 124</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You plan to use Azure Cognitive Services to develop a voice controlled personal assistant app. Match the<br>
+Azure Cognitive Services to the appropriate tasks.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 125</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the tool to the Azure Machine Learning task.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 126</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to build an app that will read recipe instructions to support users who have reduced vision.<br>
+Which version service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 127</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You want to create a model to predict sales of ice cream based on historic data that includes daily ice<br>
+cream sales totals and weather measurements.<br>
+Which Azure service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 128</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which service you should use to train an object detection model by using your own images?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 129</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of these methods is used to generate additional features?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 130</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Automated machine learning can automatically infer the training data from the usecase provided.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 131</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You use Azure Machine Learning designer to publish an inference pipeline. Which parameters should you<br>
+use to access the web service?<br>
+Select two correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 132</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a QnA Maker bot by using a frequently asked questions (FAQ) page, and need to add<br>
+professional greetings and other responses to make the bot more user friendly.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 133</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is the purpose of vector-based embeddings?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 134</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct options for OpenAl code generation capability.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 135</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using Azure Machine Learning designer to build a model that will predict automobile prices.<br>
+Which type of modules should you use to complete the model?<br>
+[Image: ]</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 136</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have an app that identifies birds in images. The app performs the following tasks:<br>
+- Identifies the location of the birds in the image<br>
+- Identifies the species of the birds in the image<br>
+Which type of computer vision does each task use?<br>
+Locate the birds _________<br>
+Identify the species of the birds ________</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 137</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">From the use-cases listed below, select the correct use-case of anomaly detection.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 138</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">During the process of Machine Learning, when should you review evaluation metrics.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 139</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are designing an Al solution to monitor meetings. The Al model should be able to indicate when people<br>
+are happy or sad using their facial expressions.<br>
+Which cognitive service should you use for the solution?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 140</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have been provided following dataset of employees:<br>
+Income<br>
+Postcode<br>
+Income Range<br>
+25000<br>
+2000<br>
+Low<br>
+32000<br>
+2002<br>
+Medium<br>
+95000<br>
+2000<br>
+High<br>
+You have to use the dataset to train a model that will Income range of employee.<br>
+Confirm that Income is a _______<br>
+Income Range is a ________</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 141</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Automated Machine Learning works by running multiple training iterations that are scored and ranked by<br>
+the metrics you specify.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 142</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Predicting how many vehicles will travel across a bridge on a given day is an example of what type of<br>
+machine learning?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 143</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are setting up a webchat bot, that provides responses from a QnA Maker knowledge base. You have<br>
+been provided with following use case:<br>
+Use case:<br>
+Ensure that the bot uses user feedback to improve the relevance of the responses over time.<br>
+What should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 144</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a natural language processing solution in Azure for following use case:<br>
+The solution should analyze customer reviews and determine how positive or negative each review<br>
+is<br>
+This is an example of which type of natural language processing workload?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 145</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">For each of the following statement, select Yes if the statement is true. Otherwise, select No.<br>
+Note: Each correct selection is worth one point.<br>
+Hot Area:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 146</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">According to which Microsoft&#x27;s principle of responsible Al, Al system should not reflect biases from the data<br>
+sets that are used to train the systems.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 147</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">How are ChatGPT, OpenAl, and Azure OpenAl related?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 148</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have to extract Total and Subtotal from a receipt.<br>
+Which of the following services should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 149</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Training of a custom image classification model&quot; can be performed by using the Computer Vision service.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 150</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What extracts text from handwritten documents?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 151</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have to predict the number of gift cards that will be sold next year.<br>
+Which type of machine learning should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 152</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Detection of faces in an image&quot; can be performed by using the Computer Vision service.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 153</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing an Al system for self-driving cars. Which of the Microsoft Guiding Principle for Al you<br>
+should be applying to ensure consistent operation of the system during unexpected circumstances.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 154</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have an Azure Machine Learning model that predicts product quality. The model has a training dataset<br>
+that contains 25,000 records. A sample dataset is shown in the following table.<br>
+Date<br>
+Time<br>
+Mass (kg)<br>
+Temperature (c)<br>
+Quality Test<br>
+26/02/2021<br>
+15:31:07<br>
+2.108<br>
+62.5<br>
+Pass<br>
+26/02/2021<br>
+15:31:39<br>
+2.099<br>
+62.4<br>
+Pass<br>
+26/02/2021<br>
+02:32:21<br>
+2.098<br>
+66.4<br>
+Fail<br>
+Based on above dataset, validate the below statements and, select Yes if the statement is true. Otherwise,<br>
+select No.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 155</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are training an image classification model, but it achieves less than satisfactory evaluation metrics.<br>
+How might you improve it?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 156</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the types of computer vision workloads to the appropriate scenarios.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 157</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your company is planning to develop a web chatbot to provide automated answers to common customer<br>
+queries.<br>
+Which business benefit should the company expect as a result of creating the web chatbot solution?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 158</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Recognizing handwritten text&quot; can be performed by using the Computer Vision service.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 159</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct scenarios of conversational Al workload.<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 160</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Predicting how many hours of overtime a delivery person will work based on the number of order receivec<br>
+is an example of what type of Machine Learning?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 161</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your organization has an existing frequently asked questions (FAQ) document. You need to create a QnA<br>
+Maker knowledge base that includes the questions and answers from the FAQ with the least possible effort.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 162</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What type of Al workload service you should use in below scenario:<br>
+Counting the number of animals in an area based on a video feed.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 163</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Translating the text in an image between languages&quot; can be performed by using the Computer Vision<br>
+service.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 164</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a solution that analyzes social media posts to extract the mentions of city names and the city<br>
+names discussed most frequently.<br>
+Which type of natural language processing (NLP) workload does the solution use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 165</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which Azure OpenAl model can transcribe and translate speech to text?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 166</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to convert receipts into transactions in a spreadsheet. The spreadsheet must include the date of<br>
+the transaction, the merchant, the total spent, and any taxes paid.<br>
+Which Azure Al service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 167</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a knowledge base by using QnA Maker. Which file format can you use to populate the<br>
+knowledge base?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 168</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In a machine learning model, the data that is used as inputs are called _______<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 169</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select two correct option for Copilot:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 170</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a machine learning model by using the automated machine learning user interface (Ul) and<br>
+need to ensure that the model meets the Microsoft transparency principle for responsible Al.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 171</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to map the right type of natural language processing workload to the right scenario.<br>
+Be able to return text translated to the specified target Language.<br>
+Which of the following would you use for this requirement?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 172</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which type of natural language processing (NLP) entity is used to identify a credit card number?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 173</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the machine learning tasks to the appropriate scenarios.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 174</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select which type of machine learning should you use.<br>
+Scenario:<br>
+Identify groups of people who have similar purchasing habits.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 175</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a security system that analyzes images from CCTV to provide authorized staff entry into restricted<br>
+area.<br>
+Which type of computer vision does the system use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 176</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the following Workload type matches the below workload<br>
+Determining whether a review is positive or negative<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 177</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using Azure ML designer to deploy a real-time inference pipeline as a service for others to<br>
+consume. Where will you deploy the model?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 178</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select type of Al workload it describe.<br>
+Scenario:<br>
+An AI application that uses images to detect cracks in car windshields and warn drivers when a<br>
+windshield should be repaired or replaced.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 179</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;An Al solution that is offered at different prices for different sales territories&quot; is an example of the<br>
+Microsoft<br>
+inclusiveness principle for responsible Al.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 180</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which Azure services you will use to create conversational Al solutions?<br>
+Select two valid options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 181</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">When building a regression model, labels must have a data type of<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 182</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are processing photos of runners in a race and need to read the numbers on the runners&#x27; shirts to<br>
+identity the runners in the photos.<br>
+Which type of computer vision should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 183</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">A company has a team of customer service agents to provide telephone support to customers. Now the<br>
+company is developing a webchat bot to provide automated answers to common customer queries.<br>
+Which business benefit should the company expect as a result of creating the webchat bot solution?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 184</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using natural language processing to process text from a Microsoft news story.<br>
+You receive the output shown in the following exhibit.<br>
+[Image: ]<br>
+Which type of natural languages processing was performed?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 185</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building an Al system and need ensure that the service meets the Microsoft transparency principle<br>
+for responsible Al?.<br>
+Which task should you include ?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 186</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which machine learning technique can be used for anomaly detection?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 187</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is the potential impact of copilots?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 188</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;A triage bot that prioritizes insurance claims based on injuries&quot; is an example of the Microsoft Reliability<br>
+and Safety principle for responsible Al.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 189</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are evaluating a medical research project, which uses a large anonymized dataset of brain scan images<br>
+that are categorised into predefined brain hemorrhage types.<br>
+You need to use machine learning to support early detection of the different brain hemorrhage types in the<br>
+images before the images are reviewed by a person.<br>
+This is an example of which type of machine learning?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 190</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which actions are performed during the data ingestion and data preparation stage of an Azure Machine<br>
+Learning process?<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 191</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Consider the below scenario:<br>
+Deploying an AI service that monitors people of certain ethnicity for closer inspection in a<br>
+retail store.<br>
+The above scenario is a violation of which Microsoft responsible Al principle?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 192</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is an example of the Microsoft responsible Al principle of transparency?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 193</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">The following statement follows which Microsoft principle for responsible Al?<br>
+The handling of unusual or missing values provided to an AI system.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 194</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a solution to identify the main talking points in a collection of documents. You have<br>
+decided to use Text Analytics service.<br>
+Which type of natural language processing should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 195</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have been assigned an task to analyze images and text from an Image.<br>
+You are using Computer vision service to analyze image and Text Analytics service to analyze text. You<br>
+have decided to use only one key and endpoint to access all of your services.<br>
+What kind of resource should you create in your Azure subscription?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 196</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the following Workload type matches the below workload<br>
+An automated chat to answer questions about refunds and exchanges on an E-commerce site.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 197</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select which type of Al service should you use.<br>
+Create a bot from a frequently asked questions (FAQ) document.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 198</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Providing an explanation of the outcome of a credit loan application&quot; is an example of the Microsoft<br>
+transparency principle for responsible Al.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 199</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">From the listed scenarios, select correct scenario where Natural language processing can be used.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 200</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select which type of machine learning should you use.<br>
+Predict the animal population of an area.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 201</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the Azure OpenAl models with their appropriate purpose.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 202</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have received a dataset, that contains information about taxi journeys that occurred during a given<br>
+period. You need to train a model to predict the fare of a taxi journey.<br>
+What should you use as a feature?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 203</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a service to process images from fashion stores and identify the products of competitors.<br>
+The solution will use a custom model.<br>
+Which Azure Cognitive Services service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 204</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select which type of computer vision should you use?<br>
+Determine the location of cars in an image so that you can estimate the distance between the<br>
+cars.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 205</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Returning a bounding box that indicates the location of a vehicle in an image is an example of which<br>
+computer vision capability?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 206</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select an Al service, which can be used to interpret the meaning of a user input such as Call me back<br>
+later.<br>
+Select the correct service.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 207</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have an Al solution that provides users with the ability to control smart devices by using verbal<br>
+commands.<br>
+Which two types of natural language processing (NLP) workloads does the solution use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 208</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a natural language processing (NLP) model that was created by using data obtained without<br>
+permission.<br>
+Which Microsoft principle for responsible Al does this breach?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 209</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">A traffic monitoring system that collects vehicle registration numbers from CCTV footage is an example of which<br>
+Computer Vision service?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 210</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Arrange the stages in correct sequence to plan a responsible generative Al solution<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 211</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure OpenAl image generation models can generate images only from prompt text.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 212</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">To train your model, you need to create a training dataset and validation dataset from an existing dataset.<br>
+Which module in the Azure Machine Learning designer should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 213</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building an image tagging solution for social media, that tags your friends automatically in images.<br>
+Which Azure Cognitive Services service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 214</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">An automobile company wants to use historic car sales data to train a machine learning model. The model<br>
+should predict the price of a pre-owned car based on its make, model, engine size, and mileage.<br>
+What kind of machine learning model should the dealership use automated machine learning to create?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 215</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which components can you drag onto a canvas in Azure Machine Learning designer?<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 216</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a Language Understanding model for an e-commerce business. You need to ensure that<br>
+the model detects when utterances are outside the intended scope of the model.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 217</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You plan to deploy an Azure Machine Learning model by using the Machine Learning designer.<br>
+Which actions should you perform in sequence?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 218</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Assigning classes to images before training a classification model is an example of which of the following<br>
+feature?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 219</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are organising an event that involves posting photos of people wearing sunglasses on social media.<br>
+You need to ensure that you only share photos that meet the following requirements:<br>
+1. Include one or more faces.<br>
+2. Contain at least one person wearing sunglasses.<br>
+What should you use to analyze the images?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 220</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to create a clustering model and evaluate the model by using Azure Machine Learning designer.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 221</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to build an application that uses the Speech service to transcribe audio recordings of<br>
+phone calls into text and then submits the transcribed text to the Text Analytics service to extract key<br>
+phrases.<br>
+You want to manage access and billing for the application services in a single Azure resource.<br>
+Which type of Azure resource should you create?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 222</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Generating live captions for a news broadcast&quot; is an example of Speech Synthesis solution.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 223</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Extracting key phrases from the audio recording of a meeting&quot; is an example of Speech Synthesis solution.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 224</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Automated Machine Learning enabled you to specify a dataset and will automatically understand which<br>
+label to predict.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 225</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In which scenarios can you use speech recognition?<br>
+Select all correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 226</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a web-based Al solution for a customer support system, which will allow users to<br>
+interact with a web app that will guide them to the best resource or answer.<br>
+Which service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 227</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct capability of object detection.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 228</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Using RFM (Recency, Frequency, Monetary) values to identify segments of a customer base is an example<br>
+of _______<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 229</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a conversational Al solution that will communicate with users through multiple channels<br>
+including email, Microsoft Teams, and webchat.<br>
+Which service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 230</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are processing an image using Computer Vision API, which generated an annotated image shown in<br>
+the exhibit.<br>
+[Image: ]<br>
+Which type of computer vision was used?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 231</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the following Workload type matches the below workload<br>
+Determining whether a photo contains a person<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 232</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which type of machine learning should you use for following scenario:<br>
+Predict the sea level in meters for the next 10 years.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 233</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select the correct principle of Responsible Al.<br>
+A predictive app provides audio output for visually impaired users.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 234</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the provided options is considered the calculated probability of a correct image classification?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 235</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to deploy an Azure Machine Learning model as a service that will be used by client<br>
+applications.<br>
+Which three processes should you perform before you deploy the model?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 236</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">From Azure Machine Learning designer, to deploy a real-time inference pipeline as a service for others to<br>
+consume, you must deploy the model to which of the following service?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 237</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have 100 instructional videos that do NOT contain any audio. Each instructional video has a script.<br>
+You need to generate a narration audio file for each video based on the script.<br>
+Which type of workload should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 238</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is one action Microsoft takes to support ethical Al practices in Azure OpenAl?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 239</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your company is exploring the use of voice recognition technologies in its smart home devices. The<br>
+company wants to identify any barriers that might unintentionally leave out specific user groups.<br>
+This an example of which Microsoft guiding principle for responsible Al?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 240</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have an Al-based loan approval system. During testing, you discover that the system has a gender bias.<br>
+Which responsible Al principle does this violate?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 241</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to develop a reservation system for restaurants. Which of the following services would you<br>
+need?<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 242</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to apply Text Analytics API features to a technical support ticketing system. Match the Text<br>
+Analytics API features to the appropriate natural language processing scenarios.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 243</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">The first stage in a responsible generative Al process is to identify the potential harms that could affect<br>
+your planned solution.<br>
+Select the four steps in this stage:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 244</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which type of machine learning should you use for following scenario:<br>
+Predict the sale price of auctioned items.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 245</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;An automated voice that reads back a credit card number entered into a telephone by using a numeric<br>
+keypad&quot; is an example of Speech Synthesis solution.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 246</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are building a machine learning model to determine a local taxi price at a specific time of a day using<br>
+historic data from a taxi service database.<br>
+Which type of machine learning model should you build?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 247</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Consider the below scenario:<br>
+Ensuring that the numeric variables in training data are on a similar scale.<br>
+The above scenario is an example of which of the following category?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 248</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Computer vision capabilities can be deployed to<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 249</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What is an example of a potential task a generative Al application can help solve?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 250</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;An Al character in a computer game that speaks audibly to a player&quot; is an example of Speech Synthesis<br>
+solution.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 251</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">When evaluating the performance of a model, the _______ displays the predicted and actual positives and<br>
+negatives by using a grid of 0 and 1 values.<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 252</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct Azure OpenAl Service models</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 253</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the principles of responsible Al to appropriate requirements.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 254</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Cultural denigration is a violation of which Microsoft responsible Al principle?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 255</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to track multiple versions of a model that was trained by using Azure Machine Learning.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 256</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which all languages can you use to write custom code for Azure Machine Learning designer?<br>
+Select two correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 257</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a model to predict events by using classification. You have a confusion matrix for the<br>
+model scored on test data as shown in the following exhibit.<br>
+[Image: ]<br>
+Identify, how many correctly predicted positives &amp; false negatives are there?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 258</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">What are the tasks that can be performed by using computer vision?<br>
+Select two correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 259</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the following terms you will correctly use for data values that influence the prediction of a model?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 260</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which of the listed scenarios is an example of a webchat bot?<br>
+Select the correct option?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 261</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">An app that analyzes social media posts to identify their tone is an example of which type of natural<br>
+language processing (NLP) workload?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 262</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to train a model, that classifies images of bananas and apples based on a collection of<br>
+your own digital photographs.<br>
+Which Azure service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 263</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to provide content for a business chatbot that will help answer simple user queries. Validate and<br>
+confirm if the below solution can be used to create question and answer text by using QnA Maker?<br>
+Import chit-chat content from a predefined data source.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 264</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a customer dataset, and need to predict the income range of a given customer.<br>
+First Name<br>
+Last Name<br>
+Age<br>
+Education Level<br>
+Income Range<br>
+Orlando<br>
+Gee<br>
+45<br>
+University<br>
+25000 - 50000<br>
+Keith<br>
+Harris<br>
+36<br>
+High school<br>
+25000 - 50000<br>
+Donna<br>
+Carreras<br>
+52<br>
+University<br>
+50000 - 75000<br>
+Janet<br>
+Gates<br>
+21<br>
+University<br>
+75000 - 100000<br>
+Which two fields should you use as features?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 265</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Organizing documents into groups based on similarities of the text contained in the documents&quot; is an<br>
+example of clustering.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 266</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to convert handwritten notes into digital text.<br>
+Which type of computer vision should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 267</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the types of Generative Al categories to the appropriate scenarios:</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 268</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">In the given scenario, select the correct Microsoft guiding principle for responsible Al.<br>
+AI system that empowers everyone, including people who have hearing, visual, and other<br>
+impairments.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 269</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">A historian can use _______ to digitize newspaper articles.<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 270</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to make the written press releases of your company available in a range of languages.<br>
+Which service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 271</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">When you design an Al system to assess whether loans should be approved, the factors used to make the<br>
+decision should be explainable.<br>
+This is an example of which Microsoft guiding principle for responsible Al?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 272</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct statements for Azure Translator service.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 273</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to use a set of images to train an object detection model, and then publish the model as a<br>
+predictive service.<br>
+You want to use a single Azure resource with the same key and endpoint for training and prediction.<br>
+What kind of Azure resource should you create?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 274</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">To evaluate a classification model, which metric can you use?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 275</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You can use Azure OpenAl services using _______<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 276</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to provide content for a business chatbot that will help answer simple user queries. Validate and<br>
+confirm if the below solution can be used to create question and answer text by using QnA Maker?<br>
+Manually enter the questions and answers.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 277</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have been assigned a task to extract key terms from insurance claim reports, that are stored as text,<br>
+and generate summaries.<br>
+Which type of Al workload should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 278</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Match the types of natural languages processing workloads to the appropriate scenarios</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 279</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Select the correct scenarios, where you will key phrase extraction.<br>
+Select the correct options.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 280</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure OpenAl _______ models can convert text into numerical vector form to facilitate text similarity.<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 281</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which service you should use to translate spoken audio from a streaming source, such as a microphone or<br>
+audio file, and return the translation as text or an audio stream.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 282</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a system to predict the insurance prices for drivers in the Australia.<br>
+You need to minimize bias in the system.<br>
+What should you do?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 283</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are planning to develop a bot that will enable users to query a knowledge base by using natural<br>
+language processing.<br>
+Which two services should you include in the solution?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 284</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Which service you can use to extract text, table data, and key/value pairs automatically from scanned<br>
+documents?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 285</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to provide content for a business chatbot that will help answer simple user queries. Validate and<br>
+confirm if the below solution can be used to create question and answer text by using QnA Maker?<br>
+Generate the questions and answers from an existing webpage.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 286</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to provide content for a business chatbot that will help answer simple user queries. Validate and<br>
+confirm if the below solution can be used to create question and answer text by using QnA Maker?<br>
+Use automated machine Learning to train a model based on a file that contains the questions.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 287</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">When training a model, why should you randomly split the rows into separate subsets?<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 288</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">One of the stage of responsible generative Al is to Mitigate the harms at multiple layers in your solution to<br>
+minimize their presence and impact, and ensure transparent communication about potential risks to users.<br>
+Select the four layers to mitigate potential harms in a generative Al solution.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 289</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to identify groups of rows with similar numeric values in a dataset.<br>
+Which type of machine learning should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 290</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;A bot that responds to queries by internal users&quot; is an example of a conversational Al workload.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 291</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Grouping similar patients based on symptoms and diagnostic test results&quot; is an example of clustering.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 292</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;A web form used to submit a request to reset a password&quot; is an example of a conversational Al workload.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 293</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">The following statement follows which Microsoft principle for responsible Al?<br>
+Ensuring an AI system does not provide a prediction when important fields contain unusual or<br>
+missing values.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 294</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure Machine Learning designer enables you to include custom Javascript functions.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 295</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to implement a pre-built solution that will identify well-known brands in digital photographs.<br>
+Which Azure Cognitive Services service should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 296</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure Machine Learning designer enables you to save your progress as a pipeline draft.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 297</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;An application that displays images relating to an entered search term&quot; is an example of a conversational<br>
+Al workload.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 298</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are using a model which generate the Predicted vs. True chart shown in the following exhibit.<br>
+[Image: ]<br>
+Which type of model is the chart used to evaluate?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 299</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Azure Machine Learning designer provides a drag-and-drop visual canvas to build, test, and deploy<br>
+machine learning models.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 300</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You are developing a mobile app for tourists, to scan and store their expenses while travelling.<br>
+Which type of computer vision should you use?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 301</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">&quot;Predicting whether a person will develop mild, moderate or severe allergy symptoms based on pollen<br>
+count&quot; is an example of clustering.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 302</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You have a large dataset that contains motor vehicle sales data.<br>
+You need to train an automated machine learning (automated ML) model to predict vehicle sale values<br>
+based on the type of vehicle.<br>
+Which task should you select?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 303</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Consider the scenario:<br>
+An user is using an interactive application to get answers of his questions.<br>
+Which Al service is used in above scenario?</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 304</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">You need to provide content for a business chatbot that will help answer simple user queries. Validate and<br>
+confirm if the below solution can be used to create question and answer text by using QnA Maker?<br>
+Connect the bot to the Cortana channel and ask questions by using Cortana.<br>
+Select the correct option.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 305</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">An Al solution that helps photographers to take better portrait photographs by providing feedback on<br>
+exposure, noise, and occlusion is an example of _______<br>
+Select the answer that correctly completes the sentence.</div>
+    </article>
+    <article class="question-card">
+      <h2>Question 306</h2>
+      <p class="meta">Sources: YouTube Collection</p>
+      <div class="question-text">Your company manufactures widgets. You have 1,000 digital photos of the widgets and needs to identify<br>
+the location of the widgets within the photos.<br>
+What should you use?</div>
+    </article>
+  </main>
+</body>
+</html>
