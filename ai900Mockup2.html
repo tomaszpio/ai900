@@ -208,10 +208,35 @@
             border: 1px solid rgba(0, 0, 0, 0.2) !important;
             background-color: rgba(0, 0, 0, 0.2) !important;
         }</style><style>
-        .return-home{position:fixed;top:clamp(.75rem,2vw,1.25rem);right:clamp(.75rem,3vw,1.5rem);z-index:1000;display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;background:var(--accent,#0b5cab);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid rgba(255,255,255,.45);box-shadow:0 12px 28px rgba(0,60,136,.22);transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+        .return-home {
+          position: fixed;
+          top: clamp(0.75rem, 2vw, 1.25rem);
+          right: clamp(0.75rem, 3vw, 1.5rem);
+          z-index: 1000;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.45rem 0.85rem;
+          background: var(--accent, #0b5cab);
+          color: #ffffff;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 0.85rem;
+          border: 1px solid rgba(255, 255, 255, 0.45);
+          box-shadow: 0 6px 16px rgba(0, 69, 120, 0.18);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
         .return-home svg{width:1em;height:1em;fill:currentColor}
         .return-home:hover,.return-home:focus-visible{background:var(--accent-strong,#004c87);box-shadow:0 14px 32px rgba(0,60,136,.28);transform:translateY(-1px)}
-        @media(max-width:640px){.return-home{font-size:.85rem;padding:.5rem .9rem;top:.75rem;right:.75rem}}
+        @media(max-width:640px){
+          .return-home {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            top: 0.75rem;
+            right: 0.75rem;
+          }
+        }
         </style></head>
 	
                     <body id="body" data-bi-name="body" class="layout-body " lang="en-us" dir="ltr"><a class="return-home" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M12 4.248 4.5 10v10h5v-5h5v5h5V10z"></path></svg><span>Home</span></a><span tabindex="0" class="modal-tab-sentinel"></span><div data-bi-name="modal"><div tabindex="-1" role="dialog" aria-modal="true" class="modal has-default-focus visibility-hidden-visual-diff is-active" data-test-id="modal-container" aria-labelledby="answerSummary"><!----><div class="modal-background modal-close"></div>
