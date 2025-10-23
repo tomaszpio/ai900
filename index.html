@@ -29,6 +29,48 @@
       line-height: 1.6;
     }
 
+    .return-home {
+      position: fixed;
+      top: clamp(0.75rem, 2vw, 1.25rem);
+      right: clamp(0.75rem, 3vw, 1.5rem);
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.05rem;
+      background: var(--accent, #004578);
+      color: #ffffff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(0, 69, 120, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .return-home svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+    }
+
+    .return-home:hover,
+    .return-home:focus-visible {
+      background: var(--accent-strong, #00345c);
+      box-shadow: 0 10px 24px rgba(0, 69, 120, 0.28);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .return-home {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.9rem;
+        top: 0.75rem;
+        right: 0.75rem;
+      }
+    }
+
     body > * {
       width: min(100%, var(--page-max-width));
       margin: 0 auto;
@@ -91,6 +133,12 @@
   </style>
 </head>
 <body>
+  <a class="return-home" href="index.html">
+    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+      <path d="M12 4.248 4.5 10v10h5v-5h5v5h5V10z"></path>
+    </svg>
+    <span>Home</span>
+  </a>
   <h1>Index of HTML Resources</h1>
   <p class="description">
     Browse the available HTML study materials contained in this repository. Select a resource below to open it.
