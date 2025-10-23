@@ -5,90 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-900 Practice Test — Introduction to AI Concepts</title>
 <style>
+  :root {
+    color-scheme: light;
+    --page-max-width: 64rem;
+    --surface: #ffffff;
+    --surface-alt: #f8f9fb;
+    --border: #d0d7de;
+    --accent: #004578;
+    --accent-soft: #f1f8ff;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: "Segoe UI", sans-serif;
-    background: #f8f9fb;
+    background: var(--surface-alt);
     color: #222;
     margin: 0;
-    padding: 2rem;
+    line-height: 1.6;
+    padding: clamp(1rem, 4vw, 2.5rem);
   }
+
+  body > * {
+    width: min(100%, var(--page-max-width));
+    margin: 0 auto;
+  }
+
   h1 {
-    color: #004578;
-    margin-bottom: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
   }
+
   .module-intro {
-    max-width: 60rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
+
   .module-nav {
-    background: #ffffff;
-    border: 1px solid #d0d7de;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 2rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
+
   .module-nav h2 {
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    color: #004578;
+    font-size: clamp(1.05rem, 2.8vw, 1.2rem);
+    margin: 0 0 0.75rem;
+    color: var(--accent);
   }
+
   .module-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: clamp(0.65rem, 2vw, 1rem);
   }
+
   .module-nav a {
     display: block;
-    background: #f1f8ff;
+    background: var(--accent-soft);
     border: 1px solid #c5d6ef;
     border-radius: 8px;
-    padding: 0.65rem 0.85rem;
-    color: #004578;
+    padding: clamp(0.6rem, 2.4vw, 0.85rem);
+    color: var(--accent);
     font-weight: 600;
     text-decoration: none;
     transition: background 0.2s ease, transform 0.2s ease;
   }
+
   .module-nav a:hover,
-  .module-nav a:focus {
+  .module-nav a:focus-visible {
     background: #e0efff;
     transform: translateY(-1px);
   }
+
   .question {
-    background: #fff;
-    border: 1px solid #d0d7de;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: clamp(0.9rem, 2.5vw, 1.35rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
+
   .question h2 {
-    font-size: 1.05rem;
+    font-size: clamp(1.05rem, 3vw, 1.2rem);
     margin-bottom: 0.5rem;
   }
+
   ul.options {
     list-style-type: upper-alpha;
-    margin-left: 1.5rem;
-    line-height: 1.6;
+    margin: 0;
+    padding-left: clamp(1.1rem, 5vw, 1.5rem);
   }
+
+  ul.options li {
+    margin-bottom: 0.4rem;
+  }
+
   details {
-    margin-top: 0.5rem;
+    margin-top: 0.65rem;
   }
+
   summary {
     cursor: pointer;
     font-weight: 600;
-    color: #0063B1;
+    color: #0063b1;
   }
+
+  summary:focus-visible {
+    outline: 3px solid rgba(0, 99, 177, 0.35);
+    border-radius: 6px;
+  }
+
   .answer {
-    background: #f1f8ff;
-    border-left: 4px solid #0063B1;
-    padding: 0.8rem 1rem;
+    background: var(--accent-soft);
+    border-left: 4px solid #0063b1;
+    padding: clamp(0.75rem, 2.5vw, 1rem) clamp(0.85rem, 3vw, 1.15rem);
     margin-top: 0.5rem;
     border-radius: 6px;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: clamp(1rem, 6vw, 1.5rem);
+    }
+
+    .module-nav ul {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .module-nav a {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    ul.options {
+      padding-left: 1rem;
+    }
+
+    .module-nav ul {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 </head>

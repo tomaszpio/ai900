@@ -5,48 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index of HTML Resources</title>
   <style>
+    :root {
+      color-scheme: light;
+      --page-max-width: 58rem;
+      --surface: #ffffff;
+      --surface-alt: #f4f6fb;
+      --border: #d0d7de;
+      --accent: #004578;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Segoe UI", sans-serif;
-      background: #f4f6fb;
+      background: var(--surface-alt);
       color: #1f1f1f;
       margin: 0;
-      padding: 2rem;
+      padding: clamp(1rem, 4vw, 2.5rem);
       line-height: 1.6;
     }
+
+    body > * {
+      width: min(100%, var(--page-max-width));
+      margin: 0 auto;
+    }
+
     h1 {
-      color: #004578;
-      margin-bottom: 1.5rem;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
     }
+
     p.description {
-      max-width: 48rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
     }
+
     ul.file-list {
       list-style-type: none;
       padding: 0;
+      margin: 0;
+      display: grid;
+      gap: clamp(0.75rem, 2.8vw, 1.1rem);
     }
+
     ul.file-list li {
-      background: #ffffff;
-      border: 1px solid #d0d7de;
-      border-radius: 8px;
-      margin-bottom: 0.75rem;
-      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: clamp(0.85rem, 2.5vw, 1.1rem) clamp(1rem, 3vw, 1.35rem);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
+
     ul.file-list li a {
-      color: #0063B1;
+      color: #0063b1;
       text-decoration: none;
       font-weight: 600;
     }
+
     ul.file-list li a:hover,
-    ul.file-list li a:focus {
+    ul.file-list li a:focus-visible {
       text-decoration: underline;
     }
+
     .file-path {
       display: block;
       font-size: 0.9rem;
       color: #555;
       margin-top: 0.35rem;
+      word-break: break-word;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: clamp(1rem, 6vw, 1.5rem);
+      }
+
+      h1 {
+        font-size: clamp(1.75rem, 6vw, 2.1rem);
+      }
     }
   </style>
 </head>
