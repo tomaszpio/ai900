@@ -663,9 +663,120 @@
     ]);
 
     const QUESTION_SOURCES = [
-      { url: '../../ai900Mockup.html.html', isRequired: true },
-      { url: '../../ai900Mockup2.html', isRequired: false },
+      {
+        url: 'https://learn.microsoft.com/en-en/credentials/certifications/azure-ai-fundamentals/practice/results?assessmentId=26&practice-assessment-type=certification&snapshotId=51a634ac-4649-466d-bf6e-99c281e7842a',
+        fallbackUrl: '../../ai900Mockup.html.html',
+        isRequired: true,
+      },
+      {
+        url: 'https://learn.microsoft.com/en-en/credentials/certifications/exams/dummy/practice/results?assessmentId=26&snapshotId=4b58bfc6-3379-4ee4-b586-3e3ab9197381',
+        fallbackUrl: '../../ai900Mockup2.html',
+        isRequired: false,
+      },
     ];
+
+    function appendQuestionsFromDocument(doc, questionEntries, seenQuestions) {
+      const articles = Array.from(doc.querySelectorAll('article'));
+
+      if (!articles.length) {
+        return false;
+      }
+
+      articles.forEach((article) => {
+        const questionText = article.querySelector('section.content p');
+        const rationaleSection = article.querySelector('[id^="question-rationale"]');
+
+        const cleanedQuestion = questionText?.textContent.trim();
+        if (!cleanedQuestion) {
+          return;
+        }
+
+        const normalizedQuestion = cleanedQuestion.replace(/\s+/g, ' ').trim().toLowerCase();
+        if (seenQuestions.has(normalizedQuestion)) {
+          return;
+        }
+
+        const choiceSections = article.querySelectorAll(
+          'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
+        );
+        const choiceMap = new Map();
+
+        choiceSections.forEach((section) => {
+          const listItems = section.querySelectorAll('li');
+          listItems.forEach((item) => {
+            const choice = item.querySelector('.quiz-choice');
+            const textElement = choice?.querySelector('.checkb0x-text');
+            const rawText = textElement?.textContent || '';
+            const text = rawText.replace(/\s+/g, ' ').trim();
+
+            if (!choice || !text) {
+              return;
+            }
+
+            const key = text.toLowerCase();
+            const existing = choiceMap.get(key) || {
+              text,
+              isCorrect: false,
+              isSelected: false,
+            };
+
+            const isCorrect = choice.classList.contains('is-correct');
+            const checkbox = choice.querySelector('.checkbox-check');
+            const radio = choice.querySelector('.radio-dot');
+            const isSelected =
+              checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
+
+            existing.isCorrect = existing.isCorrect || isCorrect;
+            existing.isSelected = existing.isSelected || isSelected;
+            choiceMap.set(key, existing);
+          });
+        });
+
+        const choiceListData = Array.from(choiceMap.values());
+
+        const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
+        if (overrideChoices?.length) {
+          const existingTexts = new Map(
+            choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
+          );
+
+          overrideChoices.forEach((override) => {
+            const normalized = override.text.trim().toLowerCase();
+            const existing = existingTexts.get(normalized);
+
+            if (existing) {
+              if (override.isCorrect) {
+                existing.isCorrect = true;
+              }
+              return;
+            }
+
+            const mergedChoice = {
+              text: override.text,
+              isCorrect: Boolean(override.isCorrect),
+              isSelected: Boolean(override.isSelected && override.isCorrect),
+            };
+
+            choiceListData.push(mergedChoice);
+            existingTexts.set(normalized, mergedChoice);
+          });
+        }
+
+        if (!choiceListData.length) {
+          return;
+        }
+
+        seenQuestions.add(normalizedQuestion);
+
+        questionEntries.push({
+          question: cleanedQuestion,
+          rationaleHTML: rationaleSection ? rationaleSection.innerHTML.trim() : '',
+          choices: choiceListData,
+        });
+      });
+
+      return true;
+    }
 
     async function loadPracticeQuestions() {
       const loadingState = document.getElementById('question-loading');
@@ -677,129 +788,42 @@
         const seenQuestions = new Set();
 
         for (const source of QUESTION_SOURCES) {
-          let response;
-          try {
-            response = await fetch(source.url);
-          } catch (networkError) {
-            if (source.isRequired) {
-              throw new Error(`Failed to request practice questions from ${source.url}.`);
-            }
-            console.error(`Failed to request practice questions from ${source.url}.`, networkError);
-            continue;
-          }
+          const urlsToTry = [source.url, source.fallbackUrl].filter(Boolean);
+          let sourceLoaded = false;
 
-          if (!response.ok) {
-            const message = `Failed to load practice questions from ${source.url} (status ${response.status})`;
-            if (source.isRequired) {
-              throw new Error(message);
-            }
-            console.warn(message);
-            continue;
-          }
-
-          const htmlText = await response.text();
-          const doc = parser.parseFromString(htmlText, 'text/html');
-          const articles = Array.from(doc.querySelectorAll('article'));
-
-          if (!articles.length) {
-            if (source.isRequired) {
-              throw new Error('No practice questions were found in the source document.');
-            }
-            continue;
-          }
-
-          articles.forEach((article) => {
-            const questionText = article.querySelector('section.content p');
-            const rationaleSection = article.querySelector('[id^="question-rationale"]');
-
-            const cleanedQuestion = questionText?.textContent.trim();
-            if (!cleanedQuestion) {
-              return;
+          for (const candidateUrl of urlsToTry) {
+            let response;
+            try {
+              response = await fetch(candidateUrl);
+            } catch (networkError) {
+              console.error(`Failed to request practice questions from ${candidateUrl}.`, networkError);
+              continue;
             }
 
-            const normalizedQuestion = cleanedQuestion.replace(/\s+/g, ' ').trim().toLowerCase();
-            if (seenQuestions.has(normalizedQuestion)) {
-              return;
-            }
-
-            const choiceSections = article.querySelectorAll(
-              'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
-            );
-            const choiceMap = new Map();
-
-            choiceSections.forEach((section) => {
-              const listItems = section.querySelectorAll('li');
-              listItems.forEach((item) => {
-                const choice = item.querySelector('.quiz-choice');
-                const textElement = choice?.querySelector('.checkb0x-text');
-                const rawText = textElement?.textContent || '';
-                const text = rawText.replace(/\s+/g, ' ').trim();
-
-                if (!choice || !text) {
-                  return;
-                }
-
-                const key = text.toLowerCase();
-                const existing = choiceMap.get(key) || {
-                  text,
-                  isCorrect: false,
-                  isSelected: false,
-                };
-
-                const isCorrect = choice.classList.contains('is-correct');
-                const checkbox = choice.querySelector('.checkbox-check');
-                const radio = choice.querySelector('.radio-dot');
-                const isSelected =
-                  checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
-
-                existing.isCorrect = existing.isCorrect || isCorrect;
-                existing.isSelected = existing.isSelected || isSelected;
-                choiceMap.set(key, existing);
-              });
-            });
-
-            const choiceListData = Array.from(choiceMap.values());
-
-            const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
-            if (overrideChoices?.length) {
-              const existingTexts = new Map(
-                choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
+            if (!response.ok) {
+              console.warn(
+                `Failed to load practice questions from ${candidateUrl} (status ${response.status})`
               );
-
-              overrideChoices.forEach((override) => {
-                const normalized = override.text.trim().toLowerCase();
-                const existing = existingTexts.get(normalized);
-
-                if (existing) {
-                  if (override.isCorrect) {
-                    existing.isCorrect = true;
-                  }
-                  return;
-                }
-
-                const mergedChoice = {
-                  text: override.text,
-                  isCorrect: Boolean(override.isCorrect),
-                  isSelected: Boolean(override.isSelected && override.isCorrect),
-                };
-
-                choiceListData.push(mergedChoice);
-                existingTexts.set(normalized, mergedChoice);
-              });
+              continue;
             }
 
-            if (!choiceListData.length) {
-              return;
+            const htmlText = await response.text();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+
+            if (!appendQuestionsFromDocument(doc, questionEntries, seenQuestions)) {
+              console.warn(`No practice questions were found in ${candidateUrl}.`);
+              continue;
             }
 
-            seenQuestions.add(normalizedQuestion);
+            sourceLoaded = true;
+            break;
+          }
 
-            questionEntries.push({
-              question: cleanedQuestion,
-              rationaleHTML: rationaleSection ? rationaleSection.innerHTML.trim() : '',
-              choices: choiceListData,
-            });
-          });
+          if (!sourceLoaded && source.isRequired) {
+            throw new Error(
+              `No practice questions could be retrieved from the configured URLs for ${source.url}.`
+            );
+          }
         }
 
         if (!questionEntries.length) {
