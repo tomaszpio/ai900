@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-900 Mockup Tests</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-900 Practice Questions</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css" />
   <style>
   :root {
     color-scheme: light;
@@ -163,33 +170,18 @@
     .question-text {
       color: #1f1f1f;
     }
-
-    .question-body {
-      padding-top: 0.75rem;
-      border-top: 1px solid #d0d7de;
+    .questionFormat h1 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
     }
-
-    .question-answer,
-    .question-rationale {
-      margin-bottom: 0.75rem;
+    .question p {
+      margin: 0.25rem 0 0.75rem 0;
     }
-
-    .question-choices {
-      margin-bottom: 0.75rem;
-    }
-
-    .question-choices h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1rem;
-      color: #004578;
-    }
-
-    .choice-list {
+    .answer ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.5rem;
+      padding-left: 0;
+      margin: 0.25rem 0 0.5rem 0;
     }
 
   .choice-item {
@@ -322,8 +314,7 @@
         <p class="error-state">JavaScript is required to load the practice questions. Enable JavaScript and refresh the page.</p>
       </noscript>
     </div>
-    <div id="question-list" class="question-list" aria-live="polite"></div>
-  </section>
+  </div>
 
   <script>
     const ADDITIONAL_CHOICES = new Map([
@@ -956,34 +947,15 @@
               answerBlock.appendChild(answerList);
             }
 
-            body.appendChild(answerBlock);
-          }
-
-          if (entry.rationaleHTML) {
-            const rationaleBlock = document.createElement('div');
-            rationaleBlock.className = 'question-rationale';
-            rationaleBlock.innerHTML = `<h3>Explanation</h3>${entry.rationaleHTML}`;
-            body.appendChild(rationaleBlock);
-          }
-
-          details.appendChild(body);
-          fragment.appendChild(details);
-        });
-
-        questionList.appendChild(fragment);
-      } catch (error) {
-        const errorMessage = document.createElement('p');
-        errorMessage.className = 'error-state';
-        errorMessage.textContent = error.message;
-        questionList.appendChild(errorMessage);
-      } finally {
-        if (loadingState) {
-          loadingState.remove();
-        }
+            container.appendChild(block);
+          });
+      } catch (err) {
+        console.error('Failed to load questions JSON:', err);
+        container.textContent = 'Failed to load questions. Make sure ai900_questions.json is in the same folder as this index.html.';
       }
     }
 
-    loadPracticeQuestions();
+    loadQuestions();
   </script>
 </body>
 </html>

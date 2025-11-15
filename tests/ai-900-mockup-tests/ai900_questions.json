@@ -1,0 +1,5224 @@
+[
+  {
+    "id": 1,
+    "title": "Question 1",
+    "question": "Detecting a change in hospital infection rates\" is a scenario of Conversational Al.",
+    "options": [
+      {
+        "label": "A",
+        "text": "False"
+      },
+      {
+        "label": "B",
+        "text": "True"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "Detecting a change in hospital infection rates is an analytics or anomaly-detection scenario, not a conversational AI scenario. Conversational AI covers systems that hold a dialog with users, such as chatbots or voice agents. Here you are analysing numeric data over time, not engaging in conversation."
+  },
+  {
+    "id": 2,
+    "title": "Question 2",
+    "question": "You are testing a machine learning model. How should you split data for training and evaluation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use features for training and labels for evaluation."
+      },
+      {
+        "label": "B",
+        "text": "Randomly split the data into some rows for training and remaining rows for evaluation."
+      },
+      {
+        "label": "C",
+        "text": "Use labels for training and features for evaluation."
+      },
+      {
+        "label": "D",
+        "text": "Randomly split the data into columns for training and columns for evaluation."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": "To evaluate a machine learning model fairly you must test it on examples it has not seen during training. The typical approach is to randomly split the rows of your dataset into a training set and a separate evaluation set. Using features vs. labels for training/evaluation or splitting by columns would break the learning process."
+  },
+  {
+    "id": 3,
+    "title": "Question 3",
+    "question": "Drag and Drop the Microsoft guiding principles for responsible Al (on the left) to the appropriate description\n        (on the right)",
+    "options": [],
+    "correct": null,
+    "explanation_en": "The Microsoft guiding principles for responsible AI are Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, and Accountability. Each description in the question should be matched to one of these principles, for example, avoiding discrimination relates to Fairness, protecting personal data to Privacy & Security, and making systems understandable to Transparency."
+  },
+  {
+    "id": 4,
+    "title": "Question 4",
+    "question": "Your team member is planning to use the Form Recognizer pre-built receipt model.\n        Which kind of Azure resource should you recommend to create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Face Service"
+      },
+      {
+        "label": "B",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": "The prebuilt receipt model is part of Azure AI Document Intelligence, previously known as Form Recognizer. To use this model you must create a Form Recognizer (Document Intelligence) resource, not a Face or Computer Vision resource. That resource exposes the receipt endpoint that extracts key fields such as merchant, date, and totals from receipts."
+  },
+  {
+    "id": 5,
+    "title": "Question 5",
+    "question": "You are developing a system, that scans the news for articles about your customers and alert employees\n        when there is a negative article. Positive articles must be added to a press book. Which natural language processing tasks should you use to complete the process?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Entity Recognition"
+      },
+      {
+        "label": "B",
+        "text": "Translation"
+      },
+      {
+        "label": "C",
+        "text": "Speech Synthesis"
+      },
+      {
+        "label": "D",
+        "text": "Sentiment Analysis"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": "The scenario has two tasks: finding mentions of your company in text and determining whether the news is positive or negative. Named Entity Recognition finds entities such as organization names in text, while Sentiment Analysis scores the overall attitude of the text as positive, neutral, or negative. Key phrase extraction and translation do not directly address these goals."
+  },
+  {
+    "id": 6,
+    "title": "Question 6",
+    "question": "Select the correct use case from provided scenarios for classification?",
+    "options": [
+      {
+        "label": "A",
+        "text": "predicting how many cups of coffee a person will drink based on how many hours the"
+      },
+      {
+        "label": "B",
+        "text": "predicting how many minutes it will take someone to run a race based on past race times."
+      },
+      {
+        "label": "C",
+        "text": "predicting whether someone uses a bicycle to travel to work based on the distance from"
+      },
+      {
+        "label": "D",
+        "text": "analyzing the contents of images and grouping images that have similar colors."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": "Classification problems predict a discrete label such as yes/no or a category. Predicting whether someone uses a bicycle to travel to work is a yes/no decision based on features like distance, so it is a classification task. Predicting a number such as minutes of travel or cups of coffee is regression, and grouping similar items without labels is clustering."
+  },
+  {
+    "id": 7,
+    "title": "Question 7",
+    "question": "Which Azure OpenAl model can generate original images from natural language?",
+    "options": [
+      {
+        "label": "A",
+        "text": "DALL-E"
+      },
+      {
+        "label": "B",
+        "text": "Whisper"
+      },
+      {
+        "label": "C",
+        "text": "Embeddings"
+      },
+      {
+        "label": "D",
+        "text": "GPT3.5"
+      },
+      {
+        "label": "E",
+        "text": "GPT-4"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "DALL-E (and its successor GPT-image-1 in Azure) is the model designed to generate original images from natural language prompts. Whisper is used for speech-to-text, embeddings models create vector representations of text, and GPT-3.5/4 are primarily text and code models. Therefore only DALL-E fits the requirement of image generation from text."
+  },
+  {
+    "id": 8,
+    "title": "Question 8",
+    "question": "You have a dataset. You need to build an Azure Machine Learning classification model that will identify\n        defective products. What should you do first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create a clustering model."
+      },
+      {
+        "label": "B",
+        "text": "Split the data into training and testing datasets."
+      },
+      {
+        "label": "C",
+        "text": "Create a classification model."
+      },
+      {
+        "label": "D",
+        "text": "Load the dataset."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": "Before you can configure training you must first load your dataset into Azure Machine Learning. Once the data is available in the workspace or Designer, you can split it into training and test subsets, choose algorithms, and start training runs. Without loading data, none of the later steps are possible."
+  },
+  {
+    "id": 9,
+    "title": "Question 9",
+    "question": "You are developing an Al system and encountered a situation where the Al system should be ingested with\n        unusual and missing values.\n        Which Microsoft guiding principle for responsible Al you should consider?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Inclusiveness"
+      },
+      {
+        "label": "B",
+        "text": "Reliability and Safety"
+      },
+      {
+        "label": "C",
+        "text": "Fairness"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": "Reliability and Safety focus on ensuring that AI systems behave safely and predictably, especially under unusual conditions such as missing or abnormal input data. In such cases the system may need to refuse to return a prediction or trigger additional checks rather than silently producing unreliable output. That is exactly the concern described in the scenario."
+  },
+  {
+    "id": 10,
+    "title": "Question 10",
+    "question": "What are the various possible channels, a bot can be connected to?\n        Select all correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Microsft teams"
+      },
+      {
+        "label": "B",
+        "text": "Email"
+      },
+      {
+        "label": "C",
+        "text": "Webchat"
+      },
+      {
+        "label": "D",
+        "text": "Alexa"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": "A bot built with Azure Bot Service can be connected to many different channels, such as Microsoft Teams, email, web chat on a website, and even voice assistants or telephony like Alexa via appropriate connectors. The core bot logic is reused while Bot Service handles the channel integration. Therefore all of the listed channels are valid examples."
+  },
+  {
+    "id": 11,
+    "title": "Question 11",
+    "question": "Match the Microsoft guidance for responsible generative Al stages with their appropriate definition.",
+    "options": [],
+    "correct": null,
+    "explanation_en": "Microsoft’s responsible generative AI process can be summarised as Identify, Measure, Mitigate, and Operate. You first identify potential harms and risks, then measure how often they occur, apply mitigations such as filters or data changes, and finally operate the system with ongoing monitoring and governance. The definitions in the question map to these four stages."
+  },
+  {
+    "id": 12,
+    "title": "Question 12",
+    "question": "You have a frequently asked questions (FAQ) PDF file and need to create a conversational support system\n        based on the FAQ.\n        Which service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "B",
+        "text": "Language Understanding (LUIS)"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "D",
+        "text": "QnA Maker"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": "If you have an FAQ document and want a chatbot to answer questions with predefined answers, the classic Azure service is QnA Maker, now the Question Answering feature of Azure AI Language. It ingests a PDF or web page, builds a knowledge base of question–answer pairs, and exposes it via an API that a bot can call. Computer Vision or Form Recognizer process documents, but they do not provide a Q&A experience by themselves."
+  },
+  {
+    "id": 13,
+    "title": "Question 13",
+    "question": "Answering frequently asked questions\" is a scenario of Conversational Al.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "Answering frequently asked questions in natural language is one of the most common Conversational AI scenarios. A user asks a question through chat or voice, and a bot or copilot responds with an appropriate answer. That is exactly what FAQ bots built with Azure Bot Service, Copilot Studio, or Azure AI Language are designed to do."
+  },
+  {
+    "id": 14,
+    "title": "Question 14",
+    "question": "Extracting key insights from structured and unstructured data sources is a feature of what type of\n        workload?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Anomaly detection"
+      },
+      {
+        "label": "B",
+        "text": "Knowledge Mining"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "D",
+        "text": "Natural Language Processing"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": "Knowledge mining is the workload focused on extracting insights from large volumes of structured and unstructured data. Solutions are typically built with Azure AI Search and cognitive skills to pull key information, entities, and relationships out of documents and databases. Computer vision, NLP, and other services can be used inside a knowledge-mining pipeline, but the overall scenario described matches knowledge mining."
+  },
+  {
+    "id": 15,
+    "title": "Question 15",
+    "question": "You have an Azure Machine Learning pipeline that contains a Split Data module. The Split Data module\n        outputs to a Train Model module and a Score Model module.\n        What is the function of the Split Data module?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Selecting columns that must be included in the model."
+      },
+      {
+        "label": "B",
+        "text": "Scaling numeric variables so that they are within a consistent numeric range."
+      },
+      {
+        "label": "C",
+        "text": "Creating training and validation datasets."
+      },
+      {
+        "label": "D",
+        "text": "Diverting records that have missing data."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": "In Azure Machine Learning designer, the Split Data component is used to divide your dataset into subsets, most commonly a training set and a validation or test set. This allows you to train the model on one subset and evaluate its performance on a separate subset. It does not normalise features, select algorithms, or evaluate the model directly."
+  },
+  {
+    "id": 16,
+    "title": "Question 16",
+    "question": "You need to reduce the load on telephone operators by implementing a chatbot to answer simple questions\n        with predefined answers.\n        Which two Al service should you use to achieve the goal?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "B",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "C",
+        "text": "QnA Maker"
+      },
+      {
+        "label": "D",
+        "text": "Translator"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": "To reduce the load on telephone operators with a simple FAQ-style chatbot, you typically combine Azure Bot Service with QnA Maker (Question Answering in Azure AI Language). Azure Bot Service hosts the bot and connects it to channels like web chat or telephony, while QnA Maker provides the knowledge base of predefined questions and answers. Form Recognizer and Computer Vision are not designed for FAQ chat."
+  },
+  {
+    "id": 17,
+    "title": "Question 17",
+    "question": "Which statement is an example of a Microsoft responsible Al principle?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Al systems must be transparent and inclusive."
+      },
+      {
+        "label": "B",
+        "text": "Al systems must use only publicly available data."
+      },
+      {
+        "label": "C",
+        "text": "Al systems must protect the interests of the company."
+      },
+      {
+        "label": "D",
+        "text": "Al systems must keep personal details public."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "Two of Microsoft’s responsible AI principles are Transparency and Inclusiveness. Transparency means that users can understand how the system works, what data it uses, and what its limitations are. Inclusiveness means designing AI to empower and include people with diverse abilities and backgrounds, rather than excluding them."
+  },
+  {
+    "id": 18,
+    "title": "Question 18",
+    "question": "What can be used to build no-code apps that use built-in natural language processing models.\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Microsoft Copilot Studio"
+      },
+      {
+        "label": "B",
+        "text": "Microsoft Bot Framework"
+      },
+      {
+        "label": "C",
+        "text": "Azure Health Bot"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "Microsoft Copilot Studio is a no-code or low-code tool for building conversational apps that use built-in natural language processing models. It allows you to define topics, intents, and responses visually without writing code, and can connect to your data. Bot Framework is a code-first SDK, and Azure Health Bot is a specialised medical scenario, not a general no-code NLP app builder."
+  },
+  {
+    "id": 19,
+    "title": "Question 19",
+    "question": "Which Azure Cognitive Services service can be used to identify documents that contain sensitive\n        information?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "B",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Conversational Language Understanding"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": "Azure AI Document Intelligence (Form Recognizer) can analyse documents such as forms, invoices, and contracts, extract structured fields, and thus help you detect whether they contain sensitive information like names, addresses, or ID numbers. Custom Vision works on images for classification and object detection, and Conversational Language Understanding focuses on user utterances in dialogs, not full documents."
+  },
+  {
+    "id": 20,
+    "title": "Question 20",
+    "question": "A banking system, that predicts whether a loan will be repaid or not, is an example of what type of machine\n        learning?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "classification"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "clustering"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": "A system that predicts whether a loan will be repaid or not is performing a classification task because the output is a discrete label such as 'will default' or 'will be repaid'. Regression would predict a numeric value such as the exact loss amount, and clustering would group similar customers without pre-defined labels. Therefore classification is the correct type of machine learning."
+  },
+  {
+    "id": 21,
+    "title": "Question 21",
+    "question": "Your website use a chatbot to assist customers, and it need to detect when a customer is upset based on\n        what the customer types when interacting with chatbot.\n        Which type of Al workload should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "regression"
+      },
+      {
+        "label": "B",
+        "text": "natural language processing"
+      },
+      {
+        "label": "C",
+        "text": "anomaly detection"
+      },
+      {
+        "label": "D",
+        "text": "computer vision"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 22,
+    "title": "Question 22",
+    "question": "You are authoring a Language Understanding (LUIS) application to support a music festival.\n        You want users to be able to ask questions about scheduled shows, such as, \"Which act is playing on the\n        main stage?\"\n        The question \"Which act is playing on the main stage?\" is an example of which type of element?",
+    "options": [
+      {
+        "label": "A",
+        "text": "an intent"
+      },
+      {
+        "label": "B",
+        "text": "an utterance"
+      },
+      {
+        "label": "C",
+        "text": "an entity"
+      },
+      {
+        "label": "D",
+        "text": "a domain"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 23,
+    "title": "Question 23",
+    "question": "Select the correct scenarios, where you will use the Form Recognizer service.\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Extracting the invoice number from an invoice."
+      },
+      {
+        "label": "B",
+        "text": "Identifying the retailer from a receipt."
+      },
+      {
+        "label": "C",
+        "text": "Finding image of product in a catalog."
+      },
+      {
+        "label": "D",
+        "text": "Translate a form from French to English."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 24,
+    "title": "Question 24",
+    "question": "Azure Machine Learning designer can be used to create machine learning models by\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automatically selecting an algorithm to build the most accurate model."
+      },
+      {
+        "label": "B",
+        "text": "Automatically performing common data preparation tasks."
+      },
+      {
+        "label": "C",
+        "text": "Adding and connecting modules on a visual canvas."
+      },
+      {
+        "label": "D",
+        "text": "Using a code-first notebook experience."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 25,
+    "title": "Question 25",
+    "question": "You are using drones to identify where weeds grow between rows of crops to send an instruction for the\n        removal of the weeds.\n        This is an example of which type of computer vision?",
+    "options": [
+      {
+        "label": "A",
+        "text": "scene segmentation"
+      },
+      {
+        "label": "B",
+        "text": "optical character recognition (OCR)"
+      },
+      {
+        "label": "C",
+        "text": "object detection"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 26,
+    "title": "Question 26",
+    "question": "HOTSPOT For each of the following statements, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 27,
+    "title": "Question 27",
+    "question": "Match the facial recognition tasks to the appropriate scenario.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 28,
+    "title": "Question 28",
+    "question": "Making a travel reservation\" is a scenario of Conversational Al.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 29,
+    "title": "Question 29",
+    "question": "You are developing a chatbot solution in Azure.\n        Which service should you use to determine a user's intent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Speech"
+      },
+      {
+        "label": "B",
+        "text": "QnA Maker"
+      },
+      {
+        "label": "C",
+        "text": "Translator"
+      },
+      {
+        "label": "D",
+        "text": "Language Understanding (LUIS)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 30,
+    "title": "Question 30",
+    "question": "What are the Microsoft guiding principles for responsible Al?\n        Select three correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fairness"
+      },
+      {
+        "label": "B",
+        "text": "Knowledgeability"
+      },
+      {
+        "label": "C",
+        "text": "Reliability and Safety"
+      },
+      {
+        "label": "D",
+        "text": "Inclusiveness"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 31,
+    "title": "Question 31",
+    "question": "You are developing a mobile app for employees to scan and store their expenses while travelling.\n        Which type of computer vision should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Optical Character Recognition (OCR)"
+      },
+      {
+        "label": "B",
+        "text": "Object detection"
+      },
+      {
+        "label": "C",
+        "text": "Facial detection"
+      },
+      {
+        "label": "D",
+        "text": "Image classification"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 32,
+    "title": "Question 32",
+    "question": "What metrics you can use to evaluate a regression model?\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "F1 score"
+      },
+      {
+        "label": "B",
+        "text": "area under curve (AUC)"
+      },
+      {
+        "label": "C",
+        "text": "root mean squared error (RMSE)"
+      },
+      {
+        "label": "D",
+        "text": "coefficient of determination (R2)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 33,
+    "title": "Question 33",
+    "question": "HOTSPOT For each of the following statements, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 34,
+    "title": "Question 34",
+    "question": "You need to map the right type of natural language processing workload for following scenario: Be able to evaluate text along with a positive-negative scale Which of the following would you map to this requirement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Language modeling"
+      },
+      {
+        "label": "B",
+        "text": "Sentiment analysis"
+      },
+      {
+        "label": "C",
+        "text": "Key phrase extraction"
+      },
+      {
+        "label": "D",
+        "text": "Translation"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 35,
+    "title": "Question 35",
+    "question": "You are using the Text analytics service to perform sentiment analysis on a document. The service returned\n        a score of 0.5\n        What does this score indicate about the document sentiment?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The document is positive"
+      },
+      {
+        "label": "B",
+        "text": "The document is negative"
+      },
+      {
+        "label": "C",
+        "text": "The document is neutral"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 36,
+    "title": "Question 36",
+    "question": "You are building an Al-based app and need to ensure that the app uses the principles for responsible Al.\n        Which two principles should you follow?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Establish a risk governance committee that includes members of the legal team, members"
+      },
+      {
+        "label": "B",
+        "text": "Implement an Agile software development methodology."
+      },
+      {
+        "label": "C",
+        "text": "Implement a process of Al model validation as part of the software review process."
+      },
+      {
+        "label": "D",
+        "text": "Prevent the disclosure of the use of Al-based algorithms for automated decision making."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 37,
+    "title": "Question 37",
+    "question": "You decided to use the Computer Vision service to analyze set of images, which has locations, to identify\n        well-known buildings.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Retrieve the categories for the image, specifying the landmarks domain."
+      },
+      {
+        "label": "B",
+        "text": "Retrieve the categories for the image, specifying the celebrities domain."
+      },
+      {
+        "label": "C",
+        "text": "Retrieve the objects in the image."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 38,
+    "title": "Question 38",
+    "question": "You have a website that includes customer reviews. You need to store the reviews in English and present\n        the reviews to users in their respective language by recognizing each user's geographical location.\n        Which type of natural language processing workload should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Translation"
+      },
+      {
+        "label": "B",
+        "text": "Speech recognition"
+      },
+      {
+        "label": "C",
+        "text": "Key phrase extraction"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 39,
+    "title": "Question 39",
+    "question": "You are developing a chatbot for a website, and need to implement a requirement that the chatbot must\n        answer user's questions based on the information in the following documents: - A frequently asked questions (FAQ) list on a PDF file - A product troubleshooting guide in a Microsoft Word document - A frequently asked questions (FAQ) list on a webpage Which service should you use to process the documents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "QnA Maker"
+      },
+      {
+        "label": "B",
+        "text": "Language Understanding"
+      },
+      {
+        "label": "C",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "D",
+        "text": "Text Analytics"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 40,
+    "title": "Question 40",
+    "question": "Match the types of Al workloads to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 41,
+    "title": "Question 41",
+    "question": "'Translating speech from one language to another' is a scenario of Conversational Al.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 42,
+    "title": "Question 42",
+    "question": "HOTSPOT An organization has a Microsoft 365 subscription. You plan to implement multi-factor\n        authentication. For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 43,
+    "title": "Question 43",
+    "question": "While presenting at a conference, your session is transcribed into subtitles for the audience in real time.\n        This is an example of which of the following services?",
+    "options": [
+      {
+        "label": "A",
+        "text": "sentiment analysis"
+      },
+      {
+        "label": "B",
+        "text": "speech recognition"
+      },
+      {
+        "label": "C",
+        "text": "speech synthesis"
+      },
+      {
+        "label": "D",
+        "text": "translation"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 44,
+    "title": "Question 44",
+    "question": "Your company wants to build a recycling machine for cans. The recycling machine must automatically\n        identify cans of the correct shape and reject all other items.\n        Which type of Al workload should the company use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "computer vision"
+      },
+      {
+        "label": "B",
+        "text": "anomaly detection"
+      },
+      {
+        "label": "C",
+        "text": "natural language processing"
+      },
+      {
+        "label": "D",
+        "text": "conversational Al"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 45,
+    "title": "Question 45",
+    "question": "\"Detecting spam in emails\" is a scenario of Conversational Al.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 46,
+    "title": "Question 46",
+    "question": "What are Large Language Models?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Models that use deep learning to process and understand natural language on a massive"
+      },
+      {
+        "label": "B",
+        "text": "Models that only work with small amounts of data."
+      },
+      {
+        "label": "C",
+        "text": "Models that only work with one language."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 47,
+    "title": "Question 47",
+    "question": "What is used to extract dates, quantities, and locations from text.\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Key phrase extraction"
+      },
+      {
+        "label": "B",
+        "text": "Sentiment analysis"
+      },
+      {
+        "label": "C",
+        "text": "Named Entity Recognition (NER)"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 48,
+    "title": "Question 48",
+    "question": "Which Computer Vision feature can you use to generate automatic captions for digital photographs?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Detect objects"
+      },
+      {
+        "label": "B",
+        "text": "Recognize text"
+      },
+      {
+        "label": "C",
+        "text": "Describe the images"
+      },
+      {
+        "label": "D",
+        "text": "Identify the areas of interest"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 49,
+    "title": "Question 49",
+    "question": "Automated Machine Learning is the process of automating the time consuming, iterative tasks of machine\n        learning model development.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 50,
+    "title": "Question 50",
+    "question": "Match the types of machine learning to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 51,
+    "title": "Question 51",
+    "question": "You plan to use Azure Cognitive Services to develop a voice controlled personal assistant app. Match the\n        Azure Cognitive Services to the appropriate tasks.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 52,
+    "title": "Question 52",
+    "question": "Match the tool to the Azure Machine Learning task.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 53,
+    "title": "Question 53",
+    "question": "You need to build an app that will read recipe instructions to support users who have reduced vision.\n        Which version service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Speech"
+      },
+      {
+        "label": "B",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "C",
+        "text": "Translator"
+      },
+      {
+        "label": "D",
+        "text": "Language Understanding (LUIS)"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 54,
+    "title": "Question 54",
+    "question": "You want to create a model to predict sales of ice cream based on historic data that includes daily ice\n        cream sales totals and weather measurements.\n        Which Azure service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Azure Machine Learning"
+      },
+      {
+        "label": "B",
+        "text": "Language"
+      },
+      {
+        "label": "C",
+        "text": "Azure Bot"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 55,
+    "title": "Question 55",
+    "question": "Which service you should use to train an object detection model by using your own images?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 56,
+    "title": "Question 56",
+    "question": "Which of these methods is used to generate additional features?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Model evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Feature engineering"
+      },
+      {
+        "label": "C",
+        "text": "Feature selection"
+      },
+      {
+        "label": "D",
+        "text": "Model training"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 57,
+    "title": "Question 57",
+    "question": "Automated machine learning can automatically infer the training data from the usecase provided.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 58,
+    "title": "Question 58",
+    "question": "You use Azure Machine Learning designer to publish an inference pipeline. Which parameters should you\n        use to access the web service?\n        Select two correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "the REST endpoint"
+      },
+      {
+        "label": "B",
+        "text": "the training endpoint"
+      },
+      {
+        "label": "C",
+        "text": "the model name"
+      },
+      {
+        "label": "D",
+        "text": "the authentication key"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 59,
+    "title": "Question 59",
+    "question": "You are building a QnA Maker bot by using a frequently asked questions (FAQ) page, and need to add\n        professional greetings and other responses to make the bot more user friendly.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Enable active learning"
+      },
+      {
+        "label": "B",
+        "text": "Create multi-turn questions"
+      },
+      {
+        "label": "C",
+        "text": "Increase the confidence threshold of responses"
+      },
+      {
+        "label": "D",
+        "text": "Add chit-chat"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 60,
+    "title": "Question 60",
+    "question": "What is the purpose of vector-based embeddings?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "To correct misspellings in the training data."
+      },
+      {
+        "label": "B",
+        "text": "To represent semantic meaning of text tokens."
+      },
+      {
+        "label": "C",
+        "text": "To create tokens that include multiple representations of a word in different languages."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 61,
+    "title": "Question 61",
+    "question": "Select the correct options for OpenAl code generation capability.",
+    "options": [
+      {
+        "label": "A",
+        "text": "GPT can convert a function from one programming language into another."
+      },
+      {
+        "label": "B",
+        "text": "GPT can explain SQL queries or tables."
+      },
+      {
+        "label": "C",
+        "text": "GPT can't write unit tests for our function."
+      },
+      {
+        "label": "D",
+        "text": "GPT can summarize functions that are already written."
+      },
+      {
+        "label": "E",
+        "text": "GPT models can help developers code faster."
+      }
+    ],
+    "correct": "E",
+    "explanation_en": ""
+  },
+  {
+    "id": 62,
+    "title": "Question 62",
+    "question": "You are using Azure Machine Learning designer to build a model that will predict automobile prices.\n        Which type of modules should you use to complete the model?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1 - Split Data, 2 - Summarize Data, 3 - Linear Regression"
+      },
+      {
+        "label": "B",
+        "text": "1 - Split Data, 2 - Convert to CSV, 3 - K-Means Clustering"
+      },
+      {
+        "label": "C",
+        "text": "1 - Select columns in Dataset, 2 - Split Data, 3 - Linear Regression"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 63,
+    "title": "Question 63",
+    "question": "You have an app that identifies birds in images. The app performs the following tasks: - Identifies the location of the birds in the image - Identifies the species of the birds in the image Which type of computer vision does each task use? Locate the birds _________ Identify the species of the birds ________",
+    "options": [
+      {
+        "label": "A",
+        "text": "Object detection, Image classification"
+      },
+      {
+        "label": "B",
+        "text": "Object detection, Optical character recognition (OCR)"
+      },
+      {
+        "label": "C",
+        "text": "Optical character recognition (OCR), Image classification"
+      },
+      {
+        "label": "D",
+        "text": "Image classification, Object detection"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 64,
+    "title": "Question 64",
+    "question": "From the use-cases listed below, select the correct use-case of anomaly detection.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 65,
+    "title": "Question 65",
+    "question": "During the process of Machine Learning, when should you review evaluation metrics.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Before you train a model."
+      },
+      {
+        "label": "B",
+        "text": "After you test a model on the validation data."
+      },
+      {
+        "label": "C",
+        "text": "After you clean the data."
+      },
+      {
+        "label": "D",
+        "text": "Before you choose the type of model."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 66,
+    "title": "Question 66",
+    "question": "You are designing an Al solution to monitor meetings. The Al model should be able to indicate when people\n        are happy or sad using their facial expressions.\n        Which cognitive service should you use for the solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "B",
+        "text": "Face API"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "D",
+        "text": "Speech-to-text"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 67,
+    "title": "Question 67",
+    "question": "You have been provided following dataset of employees: Income Postcode Income Range 25000 2000 Low 32000 2002 Medium 95000 2000 High You have to use the dataset to train a model that will Income range of employee. Confirm that Income is a _______ Income Range is a ________",
+    "options": [
+      {
+        "label": "A",
+        "text": "Label, Label"
+      },
+      {
+        "label": "B",
+        "text": "Feature, Feature"
+      },
+      {
+        "label": "C",
+        "text": "Label, Feature"
+      },
+      {
+        "label": "D",
+        "text": "Feature, Label"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 68,
+    "title": "Question 68",
+    "question": "Automated Machine Learning works by running multiple training iterations that are scored and ranked by\n        the metrics you specify.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 69,
+    "title": "Question 69",
+    "question": "Predicting how many vehicles will travel across a bridge on a given day is an example of what type of\n        machine learning?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "classification"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "clustering"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 70,
+    "title": "Question 70",
+    "question": "You are setting up a webchat bot, that provides responses from a QnA Maker knowledge base. You have\n        been provided with following use case: Use case: Ensure that the bot uses user feedback to improve the relevance of the responses over time. What should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sentiment analysis"
+      },
+      {
+        "label": "B",
+        "text": "Active learning"
+      },
+      {
+        "label": "C",
+        "text": "Business logic"
+      },
+      {
+        "label": "D",
+        "text": "Key phrase extraction"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 71,
+    "title": "Question 71",
+    "question": "You are developing a natural language processing solution in Azure for following use case: The solution should analyze customer reviews and determine how positive or negative each review\n          is This is an example of which type of natural language processing workload?",
+    "options": [
+      {
+        "label": "A",
+        "text": "key phrase extraction"
+      },
+      {
+        "label": "B",
+        "text": "sentiment analysis"
+      },
+      {
+        "label": "C",
+        "text": "language detection"
+      },
+      {
+        "label": "D",
+        "text": "entity recognition"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 72,
+    "title": "Question 72",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 73,
+    "title": "Question 73",
+    "question": "According to which Microsoft's principle of responsible Al, Al system should not reflect biases from the data\n        sets that are used to train the systems.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "inclusiveness"
+      },
+      {
+        "label": "B",
+        "text": "privacy and security"
+      },
+      {
+        "label": "C",
+        "text": "fairness"
+      },
+      {
+        "label": "D",
+        "text": "accountability"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 74,
+    "title": "Question 74",
+    "question": "How are ChatGPT, OpenAl, and Azure OpenAl related?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Azure OpenAl is Microsoft's version of ChatGPT, a chatbot that uses generative Al models."
+      },
+      {
+        "label": "B",
+        "text": "ChatGPT and OpenAl are chatbots that generate natural language, code, and images. Azure"
+      },
+      {
+        "label": "C",
+        "text": "OpenAl is a research company that developed ChatGPT, a chatbot that uses generative Al"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 75,
+    "title": "Question 75",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 76,
+    "title": "Question 76",
+    "question": "You have to extract Total and Subtotal from a receipt.\n        Which of the following services should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ink recognizer"
+      },
+      {
+        "label": "B",
+        "text": "Form recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "D",
+        "text": "Text analytics"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 77,
+    "title": "Question 77",
+    "question": "\"Training of a custom image classification model\" can be performed by using the Computer Vision service.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 78,
+    "title": "Question 78",
+    "question": "What extracts text from handwritten documents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Image classification"
+      },
+      {
+        "label": "B",
+        "text": "Object detection"
+      },
+      {
+        "label": "C",
+        "text": "Facial recognition"
+      },
+      {
+        "label": "D",
+        "text": "Optical character recognition (OCR)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 79,
+    "title": "Question 79",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 80,
+    "title": "Question 80",
+    "question": "You have to predict the number of gift cards that will be sold next year.\n        Which type of machine learning should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "classification"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 81,
+    "title": "Question 81",
+    "question": "\"Detection of faces in an image\" can be performed by using the Computer Vision service.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 82,
+    "title": "Question 82",
+    "question": "You are developing an Al system for self-driving cars. Which of the Microsoft Guiding Principle for Al you\n        should be applying to ensure consistent operation of the system during unexpected circumstances.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Privacy and security"
+      },
+      {
+        "label": "B",
+        "text": "Reliability and safety"
+      },
+      {
+        "label": "C",
+        "text": "Fairness"
+      },
+      {
+        "label": "D",
+        "text": "accountability"
+      },
+      {
+        "label": "E",
+        "text": "Inclusiveness"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 83,
+    "title": "Question 83",
+    "question": "You have an Azure Machine Learning model that predicts product quality. The model has a training dataset\n        that contains 25,000 records. A sample dataset is shown in the following table. Date Time Mass (kg) Temperature (c) Quality Test 26/02/2021 15:31:07 2.108 62.5 Pass 26/02/2021 15:31:39 2.099 62.4 Pass 26/02/2021 02:32:21 2.098 66.4 Fail Based on above dataset, validate the below statements and, select Yes if the statement is true. Otherwise,\n        select No.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 84,
+    "title": "Question 84",
+    "question": "You are training an image classification model, but it achieves less than satisfactory evaluation metrics.\n        How might you improve it?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reduce the size of the images used to train the model"
+      },
+      {
+        "label": "B",
+        "text": "Add a new label for \"unknown\" classes"
+      },
+      {
+        "label": "C",
+        "text": "Add more images to the training set"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 85,
+    "title": "Question 85",
+    "question": "Match the types of computer vision workloads to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 86,
+    "title": "Question 86",
+    "question": "Your company is planning to develop a web chatbot to provide automated answers to common customer\n        queries.\n        Which business benefit should the company expect as a result of creating the web chatbot solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It will reduce the workload on the customer service agent"
+      },
+      {
+        "label": "B",
+        "text": "Company sales will increase"
+      },
+      {
+        "label": "C",
+        "text": "Company products quality will increase"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 87,
+    "title": "Question 87",
+    "question": "\"Recognizing handwritten text\" can be performed by using the Computer Vision service.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 88,
+    "title": "Question 88",
+    "question": "Select the correct scenarios of conversational Al workload.\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Assembly line machinery that autonomously inserts headlamps into cars."
+      },
+      {
+        "label": "B",
+        "text": "A smart device in the home that responds to questions such as 'What will the weather be"
+      },
+      {
+        "label": "C",
+        "text": "A website that uses a knowledge base to interactively respond to user's questions."
+      },
+      {
+        "label": "D",
+        "text": "Monitoring the temperature of machinery to turn on a fan when the temperature reaches a"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 89,
+    "title": "Question 89",
+    "question": "Predicting how many hours of overtime a delivery person will work based on the number of order receivec\n        is an example of what type of Machine Learning?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "classification"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 90,
+    "title": "Question 90",
+    "question": "Your organization has an existing frequently asked questions (FAQ) document. You need to create a QnA\n        Maker knowledge base that includes the questions and answers from the FAQ with the least possible effort.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Import a pre-defined chit-chat data source."
+      },
+      {
+        "label": "B",
+        "text": "Import the existing FAQ document into a new knowledge base."
+      },
+      {
+        "label": "C",
+        "text": "Create an empty knowledge base, and then manually copy and paste the FAQ entries into it."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 91,
+    "title": "Question 91",
+    "question": "What type of Al workload service you should use in below scenario: Counting the number of animals in an area based on a video feed.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Forecasting"
+      },
+      {
+        "label": "C",
+        "text": "Conversational Al"
+      },
+      {
+        "label": "D",
+        "text": "Anomaly detection"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 92,
+    "title": "Question 92",
+    "question": "\"Translating the text in an image between languages\" can be performed by using the Computer Vision\n        service.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 93,
+    "title": "Question 93",
+    "question": "You have a solution that analyzes social media posts to extract the mentions of city names and the city\n        names discussed most frequently.\n        Which type of natural language processing (NLP) workload does the solution use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Key phrase extraction"
+      },
+      {
+        "label": "B",
+        "text": "Speech recognition"
+      },
+      {
+        "label": "C",
+        "text": "Entity recognition"
+      },
+      {
+        "label": "D",
+        "text": "Sentiment analysis"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 94,
+    "title": "Question 94",
+    "question": "Which Azure OpenAl model can transcribe and translate speech to text?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Embeddings"
+      },
+      {
+        "label": "B",
+        "text": "GPT3.5"
+      },
+      {
+        "label": "C",
+        "text": "Whisper"
+      },
+      {
+        "label": "D",
+        "text": "GPT-4"
+      },
+      {
+        "label": "E",
+        "text": "DALL-E"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 95,
+    "title": "Question 95",
+    "question": "You need to convert receipts into transactions in a spreadsheet. The spreadsheet must include the date of\n        the transaction, the merchant, the total spent, and any taxes paid.\n        Which Azure Al service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Face"
+      },
+      {
+        "label": "B",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "C",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "D",
+        "text": "Language Understanding (LUIS)"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 96,
+    "title": "Question 96",
+    "question": "You are building a knowledge base by using QnA Maker. Which file format can you use to populate the\n        knowledge base?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "PPTX"
+      },
+      {
+        "label": "B",
+        "text": "XML"
+      },
+      {
+        "label": "C",
+        "text": "ZIP"
+      },
+      {
+        "label": "D",
+        "text": "PDF"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 97,
+    "title": "Question 97",
+    "question": "In a machine learning model, the data that is used as inputs are called _______\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "variables"
+      },
+      {
+        "label": "B",
+        "text": "labels"
+      },
+      {
+        "label": "C",
+        "text": "dataset"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 98,
+    "title": "Question 98",
+    "question": "Select two correct option for Copilot:",
+    "options": [
+      {
+        "label": "A",
+        "text": "Microsoft refers \"Microsoft Copilot\" as first-party copilot."
+      },
+      {
+        "label": "B",
+        "text": "Microsoft refers \"Microsoft Copilot\" as third-party copilot."
+      },
+      {
+        "label": "C",
+        "text": "Microsoft refers \"plugins developed by other companies\" as first-party copilot."
+      },
+      {
+        "label": "D",
+        "text": "Microsoft refers \"plugins developed by other companies\" as third-party copilot."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 99,
+    "title": "Question 99",
+    "question": "You are building a machine learning model by using the automated machine learning user interface (Ul) and\n        need to ensure that the model meets the Microsoft transparency principle for responsible Al.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Enable Explain best model."
+      },
+      {
+        "label": "B",
+        "text": "Set Validation type to Auto."
+      },
+      {
+        "label": "C",
+        "text": "Set Max concurrent iterations to 0."
+      },
+      {
+        "label": "D",
+        "text": "Set Primary metric to accuracy."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 100,
+    "title": "Question 100",
+    "question": "You need to map the right type of natural language processing workload to the right scenario. Be able to return text translated to the specified target Language. Which of the following would you use for this requirement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Key phrase extraction"
+      },
+      {
+        "label": "B",
+        "text": "Sentiment analysis"
+      },
+      {
+        "label": "C",
+        "text": "Translation"
+      },
+      {
+        "label": "D",
+        "text": "Entity recognition"
+      },
+      {
+        "label": "E",
+        "text": "Language modeling"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 101,
+    "title": "Question 101",
+    "question": "Which type of natural language processing (NLP) entity is used to identify a credit card number?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pattern.Any entity"
+      },
+      {
+        "label": "B",
+        "text": "Regex entity"
+      },
+      {
+        "label": "C",
+        "text": "List entity"
+      },
+      {
+        "label": "D",
+        "text": "Machine learned (ML) entity"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 102,
+    "title": "Question 102",
+    "question": "Match the machine learning tasks to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 103,
+    "title": "Question 103",
+    "question": "In the given scenario, select which type of machine learning should you use. Scenario: Identify groups of people who have similar purchasing habits. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "classification"
+      },
+      {
+        "label": "C",
+        "text": "regression"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 104,
+    "title": "Question 104",
+    "question": "You have a security system that analyzes images from CCTV to provide authorized staff entry into restricted\n        area.\n        Which type of computer vision does the system use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "optical character recognition (OCR)"
+      },
+      {
+        "label": "B",
+        "text": "facial detection and facial recognition"
+      },
+      {
+        "label": "C",
+        "text": "image analysis"
+      },
+      {
+        "label": "D",
+        "text": "semantic segmentation"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 105,
+    "title": "Question 105",
+    "question": "Which of the following Workload type matches the below workload Determining whether a review is positive or negative Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Sentiment Analysis"
+      },
+      {
+        "label": "C",
+        "text": "Conversational Al"
+      },
+      {
+        "label": "D",
+        "text": "Anomaly detection"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 106,
+    "title": "Question 106",
+    "question": "You are using Azure ML designer to deploy a real-time inference pipeline as a service for others to\n        consume. Where will you deploy the model?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "a local web service"
+      },
+      {
+        "label": "B",
+        "text": "AKS (Azure Kubernetes Service)"
+      },
+      {
+        "label": "C",
+        "text": "Azure ML compute"
+      },
+      {
+        "label": "D",
+        "text": "Azure containers"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 107,
+    "title": "Question 107",
+    "question": "In the given scenario, select type of Al workload it describe. Scenario: An AI application that uses images to detect cracks in car windshields and warn drivers when a\n          windshield should be repaired or replaced. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Anomaly Detection"
+      },
+      {
+        "label": "B",
+        "text": "Natural Language Processing"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 108,
+    "title": "Question 108",
+    "question": "\"An Al solution that is offered at different prices for different sales territories\" is an example of the\n        Microsoft\n        inclusiveness principle for responsible Al.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 109,
+    "title": "Question 109",
+    "question": "Which Azure services you will use to create conversational Al solutions?\n        Select two valid options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Face API"
+      },
+      {
+        "label": "B",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "C",
+        "text": "QnA Maker"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 110,
+    "title": "Question 110",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 111,
+    "title": "Question 111",
+    "question": "When building a regression model, labels must have a data type of\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "text"
+      },
+      {
+        "label": "B",
+        "text": "numeric"
+      },
+      {
+        "label": "C",
+        "text": "datetime"
+      },
+      {
+        "label": "D",
+        "text": "boolean"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 112,
+    "title": "Question 112",
+    "question": "You are processing photos of runners in a race and need to read the numbers on the runners' shirts to\n        identity the runners in the photos.\n        Which type of computer vision should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "optical character recognition (OCR)"
+      },
+      {
+        "label": "B",
+        "text": "semantic segmentation"
+      },
+      {
+        "label": "C",
+        "text": "object detection"
+      },
+      {
+        "label": "D",
+        "text": "facial recognition"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 113,
+    "title": "Question 113",
+    "question": "A company has a team of customer service agents to provide telephone support to customers. Now the\n        company is developing a webchat bot to provide automated answers to common customer queries.\n        Which business benefit should the company expect as a result of creating the webchat bot solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "a reduced workload for the customer service agents"
+      },
+      {
+        "label": "B",
+        "text": "increased sales"
+      },
+      {
+        "label": "C",
+        "text": "improved product reliability"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 114,
+    "title": "Question 114",
+    "question": "You are using natural language processing to process text from a Microsoft news story.\n        You receive the output shown in the following exhibit. Which type of natural languages processing was performed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "key phrase extraction"
+      },
+      {
+        "label": "B",
+        "text": "translation"
+      },
+      {
+        "label": "C",
+        "text": "entity recognition"
+      },
+      {
+        "label": "D",
+        "text": "sentiment analysis"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 115,
+    "title": "Question 115",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 116,
+    "title": "Question 116",
+    "question": "You are building an Al system and need ensure that the service meets the Microsoft transparency principle\n        for responsible Al?.\n        Which task should you include ?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Provide documentation to help developers debug code."
+      },
+      {
+        "label": "B",
+        "text": "Ensure that all visuals have an associated text that can be read by a screen reader."
+      },
+      {
+        "label": "C",
+        "text": "Enable autoscaling to ensure that a service scales based on demand."
+      },
+      {
+        "label": "D",
+        "text": "sure that a training dataset is representative of the population."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 117,
+    "title": "Question 117",
+    "question": "Which machine learning technique can be used for anomaly detection?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "A machine learning technique that classifies images based on their contents."
+      },
+      {
+        "label": "B",
+        "text": "A machine learning technique that analyzes data over time and identifies unusual changes."
+      },
+      {
+        "label": "C",
+        "text": "A machine learning technique that classifies objects based on user supplied images."
+      },
+      {
+        "label": "D",
+        "text": "A machine learning technique that understands written and spoken language."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 118,
+    "title": "Question 118",
+    "question": "What is the potential impact of copilots?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Copilots can only be used for certain natural language tasks like summarizing text."
+      },
+      {
+        "label": "B",
+        "text": "Copilots only impact applications used in professional settings."
+      },
+      {
+        "label": "C",
+        "text": "Copilots can help with first drafts, information synthesis, strategic planning, and much"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 119,
+    "title": "Question 119",
+    "question": "\"A triage bot that prioritizes insurance claims based on injuries\" is an example of the Microsoft Reliability\n        and Safety principle for responsible Al.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 120,
+    "title": "Question 120",
+    "question": "You are evaluating a medical research project, which uses a large anonymized dataset of brain scan images\n        that are categorised into predefined brain hemorrhage types.\n        You need to use machine learning to support early detection of the different brain hemorrhage types in the\n        images before the images are reviewed by a person. This is an example of which type of machine learning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "regression"
+      },
+      {
+        "label": "B",
+        "text": "classification"
+      },
+      {
+        "label": "C",
+        "text": "clustering"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 121,
+    "title": "Question 121",
+    "question": "Which actions are performed during the data ingestion and data preparation stage of an Azure Machine\n        Learning process?\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Calculate the accuracy of the model."
+      },
+      {
+        "label": "B",
+        "text": "Use the model for real-time predictions."
+      },
+      {
+        "label": "C",
+        "text": "Remove records that have missing values."
+      },
+      {
+        "label": "D",
+        "text": "Score test data by using the model."
+      },
+      {
+        "label": "E",
+        "text": "Combine multiple datasets."
+      }
+    ],
+    "correct": "E",
+    "explanation_en": ""
+  },
+  {
+    "id": 122,
+    "title": "Question 122",
+    "question": "Consider the below scenario: Deploying an AI service that monitors people of certain ethnicity for closer inspection in a\n          retail store. The above scenario is a violation of which Microsoft responsible Al principle?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Privacy and security"
+      },
+      {
+        "label": "B",
+        "text": "Fairness"
+      },
+      {
+        "label": "C",
+        "text": "Transparency"
+      },
+      {
+        "label": "D",
+        "text": "Inclusiveness"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 123,
+    "title": "Question 123",
+    "question": "What is an example of the Microsoft responsible Al principle of transparency?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ensuring that opportunities are allocated equally to all applicants."
+      },
+      {
+        "label": "B",
+        "text": "Ensuring that the privileged data of users is stored in a secure manner."
+      },
+      {
+        "label": "C",
+        "text": "Helping users understand the decisions made by an Al system."
+      },
+      {
+        "label": "D",
+        "text": "Ensuring that developers are accountable for the solutions they create."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 124,
+    "title": "Question 124",
+    "question": "The following statement follows which Microsoft principle for responsible Al? The handling of unusual or missing values provided to an AI system. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "inclusiveness"
+      },
+      {
+        "label": "B",
+        "text": "transparency"
+      },
+      {
+        "label": "C",
+        "text": "reliability and safety"
+      },
+      {
+        "label": "D",
+        "text": "privacy and security"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 125,
+    "title": "Question 125",
+    "question": "Match the types of Al workloads to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 126,
+    "title": "Question 126",
+    "question": "You are developing a solution to identify the main talking points in a collection of documents. You have\n        decided to use Text Analytics service.\n        Which type of natural language processing should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "entity recognition"
+      },
+      {
+        "label": "B",
+        "text": "language detection"
+      },
+      {
+        "label": "C",
+        "text": "key phrase extraction"
+      },
+      {
+        "label": "D",
+        "text": "sentiment analysis"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 127,
+    "title": "Question 127",
+    "question": "You have been assigned an task to analyze images and text from an Image.\n        You are using Computer vision service to analyze image and Text Analytics service to analyze text. You\n        have decided to use only one key and endpoint to access all of your services. What kind of resource should you create in your Azure subscription?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "B",
+        "text": "Cognitive Services"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 128,
+    "title": "Question 128",
+    "question": "Which of the following Workload type matches the below workload An automated chat to answer questions about refunds and exchanges on an E-commerce site. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Sentiment Analysis"
+      },
+      {
+        "label": "C",
+        "text": "Conversational Al"
+      },
+      {
+        "label": "D",
+        "text": "Anomaly detection"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 129,
+    "title": "Question 129",
+    "question": "In the given scenario, select which type of Al service should you use. Create a bot from a frequently asked questions (FAQ) document. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "QnA Maker"
+      },
+      {
+        "label": "B",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "C",
+        "text": "Speech"
+      },
+      {
+        "label": "D",
+        "text": "Language Understanding (LUIS)"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 130,
+    "title": "Question 130",
+    "question": "\"Providing an explanation of the outcome of a credit loan application\" is an example of the Microsoft\n        transparency principle for responsible Al.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 131,
+    "title": "Question 131",
+    "question": "From the listed scenarios, select correct scenario where Natural language processing can be used.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "stop a process in a factory when extremely high temperatures are registered."
+      },
+      {
+        "label": "B",
+        "text": "predict which website visitors will make a transaction."
+      },
+      {
+        "label": "C",
+        "text": "classify email messages as work-related or personal."
+      },
+      {
+        "label": "D",
+        "text": "predict the number of future car rentals."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 132,
+    "title": "Question 132",
+    "question": "In the given scenario, select which type of machine learning should you use. Predict the animal population of an area. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "classification"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 133,
+    "title": "Question 133",
+    "question": "Match the Azure OpenAl models with their appropriate purpose.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 134,
+    "title": "Question 134",
+    "question": "You have received a dataset, that contains information about taxi journeys that occurred during a given\n        period. You need to train a model to predict the fare of a taxi journey.\n        What should you use as a feature?",
+    "options": [
+      {
+        "label": "A",
+        "text": "the number of taxi journeys in the dataset"
+      },
+      {
+        "label": "B",
+        "text": "the trip distance of individual taxi journey"
+      },
+      {
+        "label": "C",
+        "text": "the fare of individual taxi journeys"
+      },
+      {
+        "label": "D",
+        "text": "the trip ID of individual taxi journeys"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 135,
+    "title": "Question 135",
+    "question": "You are building a service to process images from fashion stores and identify the products of competitors.\n        The solution will use a custom model.\n        Which Azure Cognitive Services service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "B",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "D",
+        "text": "Face"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 136,
+    "title": "Question 136",
+    "question": "In the given scenario, select which type of computer vision should you use? Determine the location of cars in an image so that you can estimate the distance between the\n          cars. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "face detection"
+      },
+      {
+        "label": "B",
+        "text": "image classification"
+      },
+      {
+        "label": "C",
+        "text": "object detection"
+      },
+      {
+        "label": "D",
+        "text": "optical character recognition (OCR)"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 137,
+    "title": "Question 137",
+    "question": "Returning a bounding box that indicates the location of a vehicle in an image is an example of which\n        computer vision capability?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Object detection"
+      },
+      {
+        "label": "B",
+        "text": "semantic segmentation"
+      },
+      {
+        "label": "C",
+        "text": "optical character recognizer (OCR)"
+      },
+      {
+        "label": "D",
+        "text": "Image classification"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 138,
+    "title": "Question 138",
+    "question": "Select an Al service, which can be used to interpret the meaning of a user input such as Call me back\n          later .\n        Select the correct service.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "B",
+        "text": "Speech"
+      },
+      {
+        "label": "C",
+        "text": "Language Understanding (LUIS)"
+      },
+      {
+        "label": "D",
+        "text": "Translator"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 139,
+    "title": "Question 139",
+    "question": "You have an Al solution that provides users with the ability to control smart devices by using verbal\n        commands. Which two types of natural language processing (NLP) workloads does the solution use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "language modeling"
+      },
+      {
+        "label": "B",
+        "text": "translation"
+      },
+      {
+        "label": "C",
+        "text": "key phrase extraction"
+      },
+      {
+        "label": "D",
+        "text": "speech-to-text"
+      },
+      {
+        "label": "E",
+        "text": "text-to-speech"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 140,
+    "title": "Question 140",
+    "question": "You have a natural language processing (NLP) model that was created by using data obtained without\n        permission.\n        Which Microsoft principle for responsible Al does this breach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "transparency"
+      },
+      {
+        "label": "B",
+        "text": "privacy and security"
+      },
+      {
+        "label": "C",
+        "text": "inclusiveness"
+      },
+      {
+        "label": "D",
+        "text": "reliability and safety"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 141,
+    "title": "Question 141",
+    "question": "A traffic monitoring system that collects vehicle registration numbers from CCTV footage is an example of which\n        Computer Vision service?",
+    "options": [
+      {
+        "label": "A",
+        "text": "image classification"
+      },
+      {
+        "label": "B",
+        "text": "text detection"
+      },
+      {
+        "label": "C",
+        "text": "object detection"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 142,
+    "title": "Question 142",
+    "question": "Arrange the stages in correct sequence to plan a responsible generative Al solution\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Measure > Mitigate > Identify > Operate"
+      },
+      {
+        "label": "B",
+        "text": "Measure > Identify > Mitigate > Operate"
+      },
+      {
+        "label": "C",
+        "text": "Identify > Mitigate > Measure > Operate"
+      },
+      {
+        "label": "D",
+        "text": "Identify > Operate > Mitigate > Measure"
+      },
+      {
+        "label": "E",
+        "text": "Identify > Measure > Mitigate > Operate"
+      }
+    ],
+    "correct": "E",
+    "explanation_en": ""
+  },
+  {
+    "id": 143,
+    "title": "Question 143",
+    "question": "Azure OpenAl image generation models can generate images only from prompt text.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 144,
+    "title": "Question 144",
+    "question": "To train your model, you need to create a training dataset and validation dataset from an existing dataset.\n        Which module in the Azure Machine Learning designer should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add Rows"
+      },
+      {
+        "label": "B",
+        "text": "Join Data"
+      },
+      {
+        "label": "C",
+        "text": "Split Data"
+      },
+      {
+        "label": "D",
+        "text": "Select Columns in Dataset"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 145,
+    "title": "Question 145",
+    "question": "You are building an image tagging solution for social media, that tags your friends automatically in images.\n        Which Azure Cognitive Services service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "C",
+        "text": "Face"
+      },
+      {
+        "label": "D",
+        "text": "Form Recognizer"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 146,
+    "title": "Question 146",
+    "question": "Select the correct scenarios of conversational Al workload.\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "A telephone answering service that has a pre-recorder message."
+      },
+      {
+        "label": "B",
+        "text": "Telephone voice menus to reduce the load on human resources."
+      },
+      {
+        "label": "C",
+        "text": "A service that creates frequently asked questions (FAQ) documents by crawling public"
+      },
+      {
+        "label": "D",
+        "text": "A chatbot that provides users with the ability to find answers on a website by themselves."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 147,
+    "title": "Question 147",
+    "question": "An automobile company wants to use historic car sales data to train a machine learning model. The model\n        should predict the price of a pre-owned car based on its make, model, engine size, and mileage.\n        What kind of machine learning model should the dealership use automated machine learning to create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "Classification"
+      },
+      {
+        "label": "C",
+        "text": "Regression"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 148,
+    "title": "Question 148",
+    "question": "Which components can you drag onto a canvas in Azure Machine Learning designer?\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "dataset"
+      },
+      {
+        "label": "B",
+        "text": "pipeline"
+      },
+      {
+        "label": "C",
+        "text": "compute"
+      },
+      {
+        "label": "D",
+        "text": "module"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 149,
+    "title": "Question 149",
+    "question": "You are building a Language Understanding model for an e-commerce business. You need to ensure that\n        the model detects when utterances are outside the intended scope of the model.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Test the model by using new utterances"
+      },
+      {
+        "label": "B",
+        "text": "Add utterances to the None intent"
+      },
+      {
+        "label": "C",
+        "text": "Create a new model"
+      },
+      {
+        "label": "D",
+        "text": "Create a prebuilt task entity"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 150,
+    "title": "Question 150",
+    "question": "You plan to deploy an Azure Machine Learning model by using the Machine Learning designer.\n        Which actions should you perform in sequence?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1. Ingest and prepare dataset. 2. Split data randomly into training and validation data. 3. Train the model. 4. Evaluate model against original dataset."
+      },
+      {
+        "label": "B",
+        "text": "1. Ingest and prepare dataset. 2. Train the model. 3. Split data randomly into training and validation data. 4. Evaluate model against validation dataset."
+      },
+      {
+        "label": "C",
+        "text": "1. Ingest and prepare dataset. 2. Split data randomly into training and validation data. 3. Train the model. 4. Evaluate model against validation dataset."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 151,
+    "title": "Question 151",
+    "question": "Assigning classes to images before training a classification model is an example of which of the following\n        feature?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "labeling"
+      },
+      {
+        "label": "B",
+        "text": "feature engineering"
+      },
+      {
+        "label": "C",
+        "text": "hyperparameter tuning"
+      },
+      {
+        "label": "D",
+        "text": "evaluation"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 152,
+    "title": "Question 152",
+    "question": "You are organising an event that involves posting photos of people wearing sunglasses on social media.\n        You need to ensure that you only share photos that meet the following requirements: 1. Include one or more faces. 2. Contain at least one person wearing sunglasses. What should you use to analyze the images?",
+    "options": [
+      {
+        "label": "A",
+        "text": "the Describe Image operation in the Computer Vision service"
+      },
+      {
+        "label": "B",
+        "text": "the Detect operation in the Face service"
+      },
+      {
+        "label": "C",
+        "text": "the Verify operation in the Face service"
+      },
+      {
+        "label": "D",
+        "text": "the Analyze Image operation in the Computer Vision service"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 153,
+    "title": "Question 153",
+    "question": "You need to create a clustering model and evaluate the model by using Azure Machine Learning designer.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Split the original dataset into a dataset for training and a dataset for testing. Use the"
+      },
+      {
+        "label": "B",
+        "text": "Use the original dataset for training and evaluation."
+      },
+      {
+        "label": "C",
+        "text": "Split the original dataset into a dataset for training and a dataset for testing. Use the"
+      },
+      {
+        "label": "D",
+        "text": "Split the original dataset into a dataset for features and a dataset for labels. Use the"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 154,
+    "title": "Question 154",
+    "question": "You are planning to build an application that uses the Speech service to transcribe audio recordings of\n        phone calls into text and then submits the transcribed text to the Text Analytics service to extract key\n        phrases. You want to manage access and billing for the application services in a single Azure resource. Which type of Azure resource should you create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Speech"
+      },
+      {
+        "label": "B",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "C",
+        "text": "Cognitive Services"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 155,
+    "title": "Question 155",
+    "question": "\"Generating live captions for a news broadcast\" is an example of Speech Synthesis solution.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 156,
+    "title": "Question 156",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 157,
+    "title": "Question 157",
+    "question": "\"Extracting key phrases from the audio recording of a meeting\" is an example of Speech Synthesis solution.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 158,
+    "title": "Question 158",
+    "question": "Automated Machine Learning enabled you to specify a dataset and will automatically understand which\n        label to predict.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 159,
+    "title": "Question 159",
+    "question": "In which scenarios can you use speech recognition?\n        Select all correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Creating an automated public address system for a train station."
+      },
+      {
+        "label": "B",
+        "text": "An in-car system that reads text messages aloud."
+      },
+      {
+        "label": "C",
+        "text": "Providing closed captions for recorded or live videos."
+      },
+      {
+        "label": "D",
+        "text": "Creating a transcript of a telephone call or meeting."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 160,
+    "title": "Question 160",
+    "question": "You are developing a web-based Al solution for a customer support system, which will allow users to\n        interact with a web app that will guide them to the best resource or answer. Which service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "OnA Maker"
+      },
+      {
+        "label": "B",
+        "text": "Face"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 161,
+    "title": "Question 161",
+    "question": "Select the correct capability of object detection.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Object detection can identify multiple types of damaged products in an image."
+      },
+      {
+        "label": "B",
+        "text": "Object detection can identify the location of a damaged product in an image."
+      },
+      {
+        "label": "C",
+        "text": "Object detection can identify multiple instances of a damaged product in an image."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 162,
+    "title": "Question 162",
+    "question": "Using RFM (Recency, Frequency, Monetary) values to identify segments of a customer base is an example\n        of _______ Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Regularization"
+      },
+      {
+        "label": "B",
+        "text": "Classification"
+      },
+      {
+        "label": "C",
+        "text": "Regression"
+      },
+      {
+        "label": "D",
+        "text": "Clustering"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 163,
+    "title": "Question 163",
+    "question": "You are developing a conversational Al solution that will communicate with users through multiple channels\n        including email, Microsoft Teams, and webchat.\n        Which service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "B",
+        "text": "Form Recognizer"
+      },
+      {
+        "label": "C",
+        "text": "Translator"
+      },
+      {
+        "label": "D",
+        "text": "Azure Bot Service"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 164,
+    "title": "Question 164",
+    "question": "You are processing an image using Computer Vision API, which generated an annotated image shown in\n        the exhibit. Which type of computer vision was used?",
+    "options": [
+      {
+        "label": "A",
+        "text": "object detection"
+      },
+      {
+        "label": "B",
+        "text": "image classification"
+      },
+      {
+        "label": "C",
+        "text": "optical character recognition (OCR)"
+      },
+      {
+        "label": "D",
+        "text": "semantic segmentation"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 165,
+    "title": "Question 165",
+    "question": "Which of the following Workload type matches the below workload Determining whether a photo contains a person Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sentiment Analysis"
+      },
+      {
+        "label": "B",
+        "text": "Anomaly detection"
+      },
+      {
+        "label": "C",
+        "text": "Conversational Al"
+      },
+      {
+        "label": "D",
+        "text": "Computer Vision"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 166,
+    "title": "Question 166",
+    "question": "Which type of machine learning should you use for following scenario: Predict the sea level in meters for the next 10 years. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "classification"
+      },
+      {
+        "label": "B",
+        "text": "clustering"
+      },
+      {
+        "label": "C",
+        "text": "regression"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 167,
+    "title": "Question 167",
+    "question": "Match the types of machine learning to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 168,
+    "title": "Question 168",
+    "question": "In the given scenario, select the correct principle of Responsible Al. A predictive app provides audio output for visually impaired users. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Transparency"
+      },
+      {
+        "label": "B",
+        "text": "Accountability"
+      },
+      {
+        "label": "C",
+        "text": "Fairness"
+      },
+      {
+        "label": "D",
+        "text": "Inclusiveness"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 169,
+    "title": "Question 169",
+    "question": "Which of the provided options is considered the calculated probability of a correct image classification?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Accuracy"
+      },
+      {
+        "label": "B",
+        "text": "Confidence"
+      },
+      {
+        "label": "C",
+        "text": "Sentiment"
+      },
+      {
+        "label": "D",
+        "text": "Root Mean Square Error"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 170,
+    "title": "Question 170",
+    "question": "You are planning to deploy an Azure Machine Learning model as a service that will be used by client\n        applications.\n        Which three processes should you perform before you deploy the model?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Model Evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Model Training"
+      },
+      {
+        "label": "C",
+        "text": "Data Encryption"
+      },
+      {
+        "label": "D",
+        "text": "Model Retraining"
+      },
+      {
+        "label": "E",
+        "text": "Data Preparation"
+      }
+    ],
+    "correct": "E",
+    "explanation_en": ""
+  },
+  {
+    "id": 171,
+    "title": "Question 171",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 172,
+    "title": "Question 172",
+    "question": "From Azure Machine Learning designer, to deploy a real-time inference pipeline as a service for others to\n        consume, you must deploy the model to which of the following service?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "a local web service"
+      },
+      {
+        "label": "B",
+        "text": "Azure Container Instances"
+      },
+      {
+        "label": "C",
+        "text": "Azure Machine Learning Compute"
+      },
+      {
+        "label": "D",
+        "text": "Azure Kubernetes Service (AKS)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 173,
+    "title": "Question 173",
+    "question": "You have 100 instructional videos that do NOT contain any audio. Each instructional video has a script.\n        You need to generate a narration audio file for each video based on the script.\n        Which type of workload should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "speech synthesis"
+      },
+      {
+        "label": "B",
+        "text": "translation"
+      },
+      {
+        "label": "C",
+        "text": "language modeling"
+      },
+      {
+        "label": "D",
+        "text": "speech recognition"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 174,
+    "title": "Question 174",
+    "question": "What is one action Microsoft takes to support ethical Al practices in Azure OpenAl?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Logs users out of Azure OpenAl Studio after a period of inactivity to ensure it's only used by"
+      },
+      {
+        "label": "B",
+        "text": "Provides Transparency Notes that share how technology is built and asks users to consider"
+      },
+      {
+        "label": "C",
+        "text": "Allows users to build any application, regardless of harmful effects, to ensure fairness."
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 175,
+    "title": "Question 175",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 176,
+    "title": "Question 176",
+    "question": "Your company is exploring the use of voice recognition technologies in its smart home devices. The\n        company wants to identify any barriers that might unintentionally leave out specific user groups.\n        This an example of which Microsoft guiding principle for responsible Al?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reliability and safety"
+      },
+      {
+        "label": "B",
+        "text": "Inclusiveness"
+      },
+      {
+        "label": "C",
+        "text": "Privacy and security"
+      },
+      {
+        "label": "D",
+        "text": "Accountability"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 177,
+    "title": "Question 177",
+    "question": "You have an Al-based loan approval system. During testing, you discover that the system has a gender bias.\n        Which responsible Al principle does this violate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "reliability and safety"
+      },
+      {
+        "label": "B",
+        "text": "fairness"
+      },
+      {
+        "label": "C",
+        "text": "accountability"
+      },
+      {
+        "label": "D",
+        "text": "transparency"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 178,
+    "title": "Question 178",
+    "question": "You are planning to develop a reservation system for restaurants. Which of the following services would you\n        need?\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "B",
+        "text": "LUIS"
+      },
+      {
+        "label": "C",
+        "text": "Azure QnA"
+      },
+      {
+        "label": "D",
+        "text": "Cognitive Services"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 179,
+    "title": "Question 179",
+    "question": "You are planning to apply Text Analytics API features to a technical support ticketing system. Match the Text\n        Analytics API features to the appropriate natural language processing scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 180,
+    "title": "Question 180",
+    "question": "The first stage in a responsible generative Al process is to identify the potential harms that could affect\n        your planned solution.\n        Select the four steps in this stage:",
+    "options": [
+      {
+        "label": "A",
+        "text": "Document and share the verified harms"
+      },
+      {
+        "label": "B",
+        "text": "Define Potential harms"
+      },
+      {
+        "label": "C",
+        "text": "Identify potential harms"
+      },
+      {
+        "label": "D",
+        "text": "Prioritize identified harms"
+      },
+      {
+        "label": "E",
+        "text": "Test and verify the prioritized harms"
+      }
+    ],
+    "correct": "E",
+    "explanation_en": ""
+  },
+  {
+    "id": 181,
+    "title": "Question 181",
+    "question": "Which type of machine learning should you use for following scenario: Predict the sale price of auctioned items. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "classification"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "clustering"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 182,
+    "title": "Question 182",
+    "question": "\"An automated voice that reads back a credit card number entered into a telephone by using a numeric\n        keypad\" is an example of Speech Synthesis solution.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 183,
+    "title": "Question 183",
+    "question": "You are building a machine learning model to determine a local taxi price at a specific time of a day using\n        historic data from a taxi service database.\n        Which type of machine learning model should you build?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reinforcement Learning"
+      },
+      {
+        "label": "B",
+        "text": "Semi-supervised Learning"
+      },
+      {
+        "label": "C",
+        "text": "Unsupervised Learning"
+      },
+      {
+        "label": "D",
+        "text": "Supervised Learning"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 184,
+    "title": "Question 184",
+    "question": "Consider the below scenario: Ensuring that the numeric variables in training data are on a similar scale. The above scenario is an example of which of the following category?",
+    "options": [
+      {
+        "label": "A",
+        "text": "data ingestion"
+      },
+      {
+        "label": "B",
+        "text": "model training"
+      },
+      {
+        "label": "C",
+        "text": "feature engineering"
+      },
+      {
+        "label": "D",
+        "text": "feature selection"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 185,
+    "title": "Question 185",
+    "question": "Computer vision capabilities can be deployed to\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "integrate a facial recognition feature into an app."
+      },
+      {
+        "label": "B",
+        "text": "develop a text-based chatbot for a website."
+      },
+      {
+        "label": "C",
+        "text": "suggest automated response to incoming email."
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 186,
+    "title": "Question 186",
+    "question": "What is an example of a potential task a generative Al application can help solve?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Monitoring the temperature in a manufacturing facility."
+      },
+      {
+        "label": "B",
+        "text": "Collecting real time data and storing it in a database."
+      },
+      {
+        "label": "C",
+        "text": "Creating a draft for an email."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 187,
+    "title": "Question 187",
+    "question": "\"An Al character in a computer game that speaks audibly to a player\" is an example of Speech Synthesis\n        solution.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 188,
+    "title": "Question 188",
+    "question": "When evaluating the performance of a model, the _______ displays the predicted and actual positives and\n        negatives by using a grid of 0 and 1 values.\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Threshold"
+      },
+      {
+        "label": "B",
+        "text": "Confusion matrix"
+      },
+      {
+        "label": "C",
+        "text": "AUC metric"
+      },
+      {
+        "label": "D",
+        "text": "ROC curve"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 189,
+    "title": "Question 189",
+    "question": "Select the correct Azure OpenAl Service models",
+    "options": [
+      {
+        "label": "A",
+        "text": "Embeddings"
+      },
+      {
+        "label": "B",
+        "text": "GPT-4"
+      },
+      {
+        "label": "C",
+        "text": "DALL-E"
+      },
+      {
+        "label": "D",
+        "text": "GPT-3.5"
+      },
+      {
+        "label": "E",
+        "text": "Bard"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 190,
+    "title": "Question 190",
+    "question": "Match the principles of responsible Al to appropriate requirements.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 191,
+    "title": "Question 191",
+    "question": "Cultural denigration is a violation of which Microsoft responsible Al principle?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Transparency"
+      },
+      {
+        "label": "B",
+        "text": "Fairness"
+      },
+      {
+        "label": "C",
+        "text": "Inclusiveness"
+      },
+      {
+        "label": "D",
+        "text": "Accountability"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 192,
+    "title": "Question 192",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 193,
+    "title": "Question 193",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 194,
+    "title": "Question 194",
+    "question": "You need to track multiple versions of a model that was trained by using Azure Machine Learning.\n        What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Explain the model"
+      },
+      {
+        "label": "B",
+        "text": "Provision an inference cluster"
+      },
+      {
+        "label": "C",
+        "text": "Register the training data"
+      },
+      {
+        "label": "D",
+        "text": "Register the model"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 195,
+    "title": "Question 195",
+    "question": "Which all languages can you use to write custom code for Azure Machine Learning designer?\n        Select two correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Scala"
+      },
+      {
+        "label": "B",
+        "text": "R"
+      },
+      {
+        "label": "C",
+        "text": "C#"
+      },
+      {
+        "label": "D",
+        "text": "Python"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 196,
+    "title": "Question 196",
+    "question": "You are developing a model to predict events by using classification. You have a confusion matrix for the\n        model scored on test data as shown in the following exhibit. Identify, how many correctly predicted positives & false negatives are there?",
+    "options": [
+      {
+        "label": "A",
+        "text": "True Positive: 11, False Negative: 13951"
+      },
+      {
+        "label": "B",
+        "text": "True Positive: 5, False Negative: 13951"
+      },
+      {
+        "label": "C",
+        "text": "True Positive: 11, False Negative: 1033"
+      },
+      {
+        "label": "D",
+        "text": "True Positive: 5, False Negative: 1033"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 197,
+    "title": "Question 197",
+    "question": "What are the tasks that can be performed by using computer vision?\n        Select two correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Translate text between languages."
+      },
+      {
+        "label": "B",
+        "text": "Predict stock prices."
+      },
+      {
+        "label": "C",
+        "text": "Detect brands in an image."
+      },
+      {
+        "label": "D",
+        "text": "Detect the color scheme in an image."
+      },
+      {
+        "label": "E",
+        "text": "Extract key phrases."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 198,
+    "title": "Question 198",
+    "question": "Which of the following terms you will correctly use for data values that influence the prediction of a model?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "features"
+      },
+      {
+        "label": "B",
+        "text": "lables"
+      },
+      {
+        "label": "C",
+        "text": "dependant variables"
+      },
+      {
+        "label": "D",
+        "text": "identifiers"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 199,
+    "title": "Question 199",
+    "question": "Which of the listed scenarios is an example of a webchat bot?\n        Select the correct option?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Translate into English questions entered by customers at a kiosk so that the appropriate"
+      },
+      {
+        "label": "B",
+        "text": "Accept questions through email, and then route the email messages to the correct person"
+      },
+      {
+        "label": "C",
+        "text": "From a website interface, answer common questions about scheduled events and ticket"
+      },
+      {
+        "label": "D",
+        "text": "Determine whether reviews entered on a website for a concert are positive or negative, and"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 200,
+    "title": "Question 200",
+    "question": "An app that analyzes social media posts to identify their tone is an example of which type of natural\n        language processing (NLP) workload?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Entity recognition"
+      },
+      {
+        "label": "B",
+        "text": "Key phrase extraction"
+      },
+      {
+        "label": "C",
+        "text": "Sentiment analysis"
+      },
+      {
+        "label": "D",
+        "text": "Speech recognition"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 201,
+    "title": "Question 201",
+    "question": "You are planning to train a model, that classifies images of bananas and apples based on a collection of\n        your own digital photographs.\n        Which Azure service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "B",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 202,
+    "title": "Question 202",
+    "question": "You need to provide content for a business chatbot that will help answer simple user queries. Validate and\n        confirm if the below solution can be used to create question and answer text by using QnA Maker? Import chit-chat content from a predefined data source. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 203,
+    "title": "Question 203",
+    "question": "You have a customer dataset, and need to predict the income range of a given customer. First Name Last Name Age Education Level Income Range Orlando Gee 45 University 25000 - 50000 Keith Harris 36 High school 25000 - 50000 Donna Carreras 52 University 50000 - 75000 Janet Gates 21 University 75000 - 100000 Which two fields should you use as features?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Last Name"
+      },
+      {
+        "label": "B",
+        "text": "Age"
+      },
+      {
+        "label": "C",
+        "text": "First Name"
+      },
+      {
+        "label": "D",
+        "text": "Education Level"
+      },
+      {
+        "label": "E",
+        "text": "Income Range"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 204,
+    "title": "Question 204",
+    "question": "\"Organizing documents into groups based on similarities of the text contained in the documents\" is an\n        example of clustering.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 205,
+    "title": "Question 205",
+    "question": "You need to convert handwritten notes into digital text.\n        Which type of computer vision should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Object detection"
+      },
+      {
+        "label": "B",
+        "text": "Image classification"
+      },
+      {
+        "label": "C",
+        "text": "Facial detection"
+      },
+      {
+        "label": "D",
+        "text": "Optical Character Recognition (OCR)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 206,
+    "title": "Question 206",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 207,
+    "title": "Question 207",
+    "question": "Match the types of Generative Al categories to the appropriate scenarios:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 208,
+    "title": "Question 208",
+    "question": "In the given scenario, select the correct Microsoft guiding principle for responsible Al. AI system that empowers everyone, including people who have hearing, visual, and other\n          impairments. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Inclusiveness"
+      },
+      {
+        "label": "B",
+        "text": "Fairness"
+      },
+      {
+        "label": "C",
+        "text": "Accountability"
+      },
+      {
+        "label": "D",
+        "text": "Reliability and safety"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 209,
+    "title": "Question 209",
+    "question": "A historian can use _______ to digitize newspaper articles.\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Facial recognition"
+      },
+      {
+        "label": "B",
+        "text": "Optical character recognition (OCR)"
+      },
+      {
+        "label": "C",
+        "text": "Object detection"
+      },
+      {
+        "label": "D",
+        "text": "Image classification"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 210,
+    "title": "Question 210",
+    "question": "You need to make the written press releases of your company available in a range of languages.\n        Which service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Translator"
+      },
+      {
+        "label": "B",
+        "text": "Language Understanding (LUIS)"
+      },
+      {
+        "label": "C",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "D",
+        "text": "Speech"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 211,
+    "title": "Question 211",
+    "question": "When you design an Al system to assess whether loans should be approved, the factors used to make the\n        decision should be explainable.\n        This is an example of which Microsoft guiding principle for responsible Al?",
+    "options": [
+      {
+        "label": "A",
+        "text": "privacy and security"
+      },
+      {
+        "label": "B",
+        "text": "transparency"
+      },
+      {
+        "label": "C",
+        "text": "inclusiveness"
+      },
+      {
+        "label": "D",
+        "text": "fairness"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 212,
+    "title": "Question 212",
+    "question": "Select the correct statements for Azure Translator service.",
+    "options": [
+      {
+        "label": "A",
+        "text": "The following service call will accept English text as an input and output italian and"
+      },
+      {
+        "label": "B",
+        "text": "The following service call will accept English text as an input and output italian and french"
+      },
+      {
+        "label": "C",
+        "text": "The translator service can be used to translate documents from English to French."
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 213,
+    "title": "Question 213",
+    "question": "You are planning to use a set of images to train an object detection model, and then publish the model as a\n        predictive service.\n        You want to use a single Azure resource with the same key and endpoint for training and prediction. What kind of Azure resource should you create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "B",
+        "text": "Cognitive Services"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 214,
+    "title": "Question 214",
+    "question": "To evaluate a classification model, which metric can you use?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "coefficient of determination (R2)"
+      },
+      {
+        "label": "B",
+        "text": "true positive rate"
+      },
+      {
+        "label": "C",
+        "text": "root mean squared error (RMSE)"
+      },
+      {
+        "label": "D",
+        "text": "mean absolute error (MAE)"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 215,
+    "title": "Question 215",
+    "question": "You can use Azure OpenAl services using _______\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Azure portal"
+      },
+      {
+        "label": "B",
+        "text": "Azure OpenAl Studio"
+      },
+      {
+        "label": "C",
+        "text": "Microsoft Portal"
+      },
+      {
+        "label": "D",
+        "text": "Azure Al Studio"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 216,
+    "title": "Question 216",
+    "question": "You need to provide content for a business chatbot that will help answer simple user queries. Validate and\n        confirm if the below solution can be used to create question and answer text by using QnA Maker? Manually enter the questions and answers. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 217,
+    "title": "Question 217",
+    "question": "You have been assigned a task to extract key terms from insurance claim reports, that are stored as text,\n        and generate summaries.\n        Which type of Al workload should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "natural language processing"
+      },
+      {
+        "label": "B",
+        "text": "anomaly detection"
+      },
+      {
+        "label": "C",
+        "text": "computer vision"
+      },
+      {
+        "label": "D",
+        "text": "conversational Al"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 218,
+    "title": "Question 218",
+    "question": "Match the types of natural languages processing workloads to the appropriate scenarios",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 219,
+    "title": "Question 219",
+    "question": "Select the correct scenarios, where you will key phrase extraction.\n        Select the correct options.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Identifying whether reviews of a restaurant are positive or negative."
+      },
+      {
+        "label": "B",
+        "text": "Generating captions for a video based on the audio track."
+      },
+      {
+        "label": "C",
+        "text": "Identifying which documents provide information about the same topics."
+      },
+      {
+        "label": "D",
+        "text": "Translating a set of documents from English to German"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 220,
+    "title": "Question 220",
+    "question": "Azure OpenAl _______ models can convert text into numerical vector form to facilitate text similarity.\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Whisper"
+      },
+      {
+        "label": "B",
+        "text": "Embeddings"
+      },
+      {
+        "label": "C",
+        "text": "GPT-4"
+      },
+      {
+        "label": "D",
+        "text": "DALL-E"
+      },
+      {
+        "label": "E",
+        "text": "GPT3.5"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 221,
+    "title": "Question 221",
+    "question": "Which service you should use to translate spoken audio from a streaming source, such as a microphone or\n        audio file, and return the translation as text or an audio stream.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Text-to-speech"
+      },
+      {
+        "label": "B",
+        "text": "Speech Translation"
+      },
+      {
+        "label": "C",
+        "text": "Text analytics"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 222,
+    "title": "Question 222",
+    "question": "You are developing a system to predict the insurance prices for drivers in the Australia. You need to minimize bias in the system. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Remove information about protected characteristics from the data before sampling."
+      },
+      {
+        "label": "B",
+        "text": "reate a training dataset that uses data from global insurers."
+      },
+      {
+        "label": "C",
+        "text": "Take a completely random training sample."
+      },
+      {
+        "label": "D",
+        "text": "Take a training sample that is representative of the population in the Australia."
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 223,
+    "title": "Question 223",
+    "question": "You are planning to develop a bot that will enable users to query a knowledge base by using natural\n        language processing.\n        Which two services should you include in the solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "QnA Maker"
+      },
+      {
+        "label": "B",
+        "text": "Anomaly Detector"
+      },
+      {
+        "label": "C",
+        "text": "Azure Bot Service"
+      },
+      {
+        "label": "D",
+        "text": "Form Recognizer"
+      }
+    ],
+    "correct": "C",
+    "explanation_en": ""
+  },
+  {
+    "id": 224,
+    "title": "Question 224",
+    "question": "Which service you can use to extract text, table data, and key/value pairs automatically from scanned\n        documents?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "B",
+        "text": "Text Analytics"
+      },
+      {
+        "label": "C",
+        "text": "Language Understanding"
+      },
+      {
+        "label": "D",
+        "text": "Form Recognizer"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 225,
+    "title": "Question 225",
+    "question": "You need to provide content for a business chatbot that will help answer simple user queries. Validate and\n        confirm if the below solution can be used to create question and answer text by using QnA Maker? Generate the questions and answers from an existing webpage. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 226,
+    "title": "Question 226",
+    "question": "You need to provide content for a business chatbot that will help answer simple user queries. Validate and\n        confirm if the below solution can be used to create question and answer text by using QnA Maker? Use automated machine Learning to train a model based on a file that contains the questions. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 227,
+    "title": "Question 227",
+    "question": "When training a model, why should you randomly split the rows into separate subsets?\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "to train multiple models simultaneously to attain better performance"
+      },
+      {
+        "label": "B",
+        "text": "to test the model by using data that was not used to train the model"
+      },
+      {
+        "label": "C",
+        "text": "to train the model twice to attain better accuracy"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 228,
+    "title": "Question 228",
+    "question": "One of the stage of responsible generative Al is to Mitigate the harms at multiple layers in your solution to\n        minimize their presence and impact, and ensure transparent communication about potential risks to users.\n        Select the four layers to mitigate potential harms in a generative Al solution.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Metaprompt and grounding"
+      },
+      {
+        "label": "B",
+        "text": "Safety System"
+      },
+      {
+        "label": "C",
+        "text": "Model"
+      },
+      {
+        "label": "D",
+        "text": "System experience"
+      },
+      {
+        "label": "E",
+        "text": "Scanning the System"
+      },
+      {
+        "label": "F",
+        "text": "User experience"
+      }
+    ],
+    "correct": "F",
+    "explanation_en": ""
+  },
+  {
+    "id": 229,
+    "title": "Question 229",
+    "question": "You need to identify groups of rows with similar numeric values in a dataset.\n        Which type of machine learning should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "clustering"
+      },
+      {
+        "label": "B",
+        "text": "regression"
+      },
+      {
+        "label": "C",
+        "text": "classification"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 230,
+    "title": "Question 230",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 231,
+    "title": "Question 231",
+    "question": "\"A bot that responds to queries by internal users\" is an example of a conversational Al workload.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 232,
+    "title": "Question 232",
+    "question": "\"Grouping similar patients based on symptoms and diagnostic test results\" is an example of clustering.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 233,
+    "title": "Question 233",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 234,
+    "title": "Question 234",
+    "question": "\"A web form used to submit a request to reset a password\" is an example of a conversational Al workload.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 235,
+    "title": "Question 235",
+    "question": "The following statement follows which Microsoft principle for responsible Al? Ensuring an AI system does not provide a prediction when important fields contain unusual or\n          missing values. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "Inclusiveness"
+      },
+      {
+        "label": "B",
+        "text": "Reliability and safety"
+      },
+      {
+        "label": "C",
+        "text": "Privacy and security"
+      },
+      {
+        "label": "D",
+        "text": "Transparency"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 236,
+    "title": "Question 236",
+    "question": "Azure Machine Learning designer enables you to include custom Javascript functions.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 237,
+    "title": "Question 237",
+    "question": "You need to implement a pre-built solution that will identify well-known brands in digital photographs.\n        Which Azure Cognitive Services service should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "B",
+        "text": "Face"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision"
+      },
+      {
+        "label": "D",
+        "text": "Form Recognizer"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 238,
+    "title": "Question 238",
+    "question": "Azure Machine Learning designer enables you to save your progress as a pipeline draft.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 239,
+    "title": "Question 239",
+    "question": "\"An application that displays images relating to an entered search term\" is an example of a conversational\n        Al workload.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 240,
+    "title": "Question 240",
+    "question": "Match the types of Al workloads to the appropriate scenarios.",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 241,
+    "title": "Question 241",
+    "question": "You are using a model which generate the Predicted vs. True chart shown in the following exhibit. Which type of model is the chart used to evaluate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Regression"
+      },
+      {
+        "label": "B",
+        "text": "Classification"
+      },
+      {
+        "label": "C",
+        "text": "Clustering"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 242,
+    "title": "Question 242",
+    "question": "Azure Machine Learning designer provides a drag-and-drop visual canvas to build, test, and deploy\n        machine learning models.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 243,
+    "title": "Question 243",
+    "question": "For each of the following statement, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Hot Area:",
+    "options": [],
+    "correct": null,
+    "explanation_en": ""
+  },
+  {
+    "id": 244,
+    "title": "Question 244",
+    "question": "You are developing a mobile app for tourists, to scan and store their expenses while travelling.\n        Which type of computer vision should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "semantic segmentation"
+      },
+      {
+        "label": "B",
+        "text": "image classification"
+      },
+      {
+        "label": "C",
+        "text": "object detection"
+      },
+      {
+        "label": "D",
+        "text": "optical character recognition (OCR)"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 245,
+    "title": "Question 245",
+    "question": "\"Predicting whether a person will develop mild, moderate or severe allergy symptoms based on pollen\n        count\" is an example of clustering.\n        Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 246,
+    "title": "Question 246",
+    "question": "You have a large dataset that contains motor vehicle sales data.\n        You need to train an automated machine learning (automated ML) model to predict vehicle sale values\n        based on the type of vehicle.\n        Which task should you select?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Classification"
+      },
+      {
+        "label": "B",
+        "text": "Natural language processing"
+      },
+      {
+        "label": "C",
+        "text": "Computer Vision"
+      },
+      {
+        "label": "D",
+        "text": "Regression"
+      }
+    ],
+    "correct": "D",
+    "explanation_en": ""
+  },
+  {
+    "id": 247,
+    "title": "Question 247",
+    "question": "Consider the scenario: An user is using an interactive application to get answers of his questions. Which Al service is used in above scenario?",
+    "options": [
+      {
+        "label": "A",
+        "text": "conversational Al"
+      },
+      {
+        "label": "B",
+        "text": "anomaly detection"
+      },
+      {
+        "label": "C",
+        "text": "computer vision"
+      },
+      {
+        "label": "D",
+        "text": "forecasting"
+      }
+    ],
+    "correct": "A",
+    "explanation_en": ""
+  },
+  {
+    "id": 248,
+    "title": "Question 248",
+    "question": "You need to provide content for a business chatbot that will help answer simple user queries. Validate and\n        confirm if the below solution can be used to create question and answer text by using QnA Maker? Connect the bot to the Cortana channel and ask questions by using Cortana. Select the correct option.",
+    "options": [
+      {
+        "label": "A",
+        "text": "True"
+      },
+      {
+        "label": "B",
+        "text": "False"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 249,
+    "title": "Question 249",
+    "question": "An Al solution that helps photographers to take better portrait photographs by providing feedback on\n        exposure, noise, and occlusion is an example of _______\n        Select the answer that correctly completes the sentence.",
+    "options": [
+      {
+        "label": "A",
+        "text": "recognition"
+      },
+      {
+        "label": "B",
+        "text": "analysis"
+      },
+      {
+        "label": "C",
+        "text": "detection"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  },
+  {
+    "id": 250,
+    "title": "Question 250",
+    "question": "Your company manufactures widgets. You have 1,000 digital photos of the widgets and needs to identify\n        the location of the widgets within the photos.\n        What should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Computer Vision Image Analysis"
+      },
+      {
+        "label": "B",
+        "text": "Custom Vision object detection"
+      },
+      {
+        "label": "C",
+        "text": "Custom Vision classification"
+      },
+      {
+        "label": "D",
+        "text": "Computer Vision Spatial Analysis"
+      }
+    ],
+    "correct": "B",
+    "explanation_en": ""
+  }
+]
