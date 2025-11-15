@@ -89,6 +89,26 @@
         font-size: 1.1rem;
       }
 
+      .questionFormat .explanation {
+        margin-top: 0.75rem;
+        padding: 0.85rem 0.95rem;
+        background: #f1f7ff;
+        border-radius: 0.65rem;
+        border: 1px solid rgba(0, 90, 171, 0.18);
+      }
+
+      .questionFormat .explanation h3 {
+        margin: 0 0 0.4rem;
+        color: #0b5cab;
+        font-size: 1rem;
+      }
+
+      .questionFormat .explanation p {
+        margin: 0;
+        color: #1f2937;
+        line-height: 1.55;
+      }
+
       .loading,
       .error {
         font-size: 1rem;
@@ -136,6 +156,21 @@
           const answerBlock = document.createElement('div');
           answerBlock.innerHTML = question.answer_html;
           wrapper.appendChild(answerBlock);
+        }
+
+        if (question.explanation_en) {
+          const explanation = document.createElement('div');
+          explanation.className = 'explanation';
+
+          const explanationHeading = document.createElement('h3');
+          explanationHeading.textContent = 'Explanation';
+          explanation.appendChild(explanationHeading);
+
+          const explanationCopy = document.createElement('p');
+          explanationCopy.textContent = question.explanation_en;
+          explanation.appendChild(explanationCopy);
+
+          wrapper.appendChild(explanation);
         }
 
         return wrapper;
