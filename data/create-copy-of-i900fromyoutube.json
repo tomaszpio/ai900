@@ -1182,7 +1182,8 @@
           "raw": "B. False",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Translating speech from one language to another is primarily a speech and translation workload, not a conversational AI scenario. Conversational AI focuses on managing a back‑and‑forth dialog with users through bots or agents. In this case the system is simply converting spoken language between languages, so the statement that it is a conversational AI scenario is false."
     },
     {
       "title": "Question 42",
@@ -1190,7 +1191,8 @@
       "question_html": "<div class=\"question\">\n      <p>HOTSPOT</p>\n      <p>An organization has a Microsoft 365 subscription. You plan to implement multi-factor\n        authentication. For each of the following statement, select Yes if the statement is true. Otherwise, select No.\n      </p>\n      <p>Note: Each correct selection is worth one point.</p>\n      <p>Hot Area:</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <h2>Answer Area</h2>\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-8\">\n            <h3>Statement</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>Yes</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>No</h3>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can communicate with a bot by using email.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-four\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-four\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can communicate with a bot by using Microsoft Teams.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-five\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-five\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can communicate with a bot by using a webchat interface.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-six\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q42-six\">\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 42,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "This hot area question is about channels for bots. Azure Bot Service supports communication with bots through multiple channels, including email, Microsoft Teams, and a webchat interface embedded in a website. Because all three listed channels are valid ways to talk to a bot, each statement should be answered 'Yes'."
     },
     {
       "title": "Question 43",
@@ -1224,7 +1226,8 @@
           "raw": "D. translation",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Real‑time subtitles for a conference session are produced by converting the speaker's audio into text. That is exactly the role of speech recognition (speech‑to‑text). Sentiment analysis works on the emotional tone of text, speech synthesis converts text to speech, and translation moves text between languages, but only speech recognition listens to audio and outputs text subtitles."
     },
     {
       "title": "Question 44",
@@ -1258,7 +1261,8 @@
           "raw": "D. conversational Al",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "The recycling machine must look at physical items and decide whether they are cans of the correct shape. This is an image understanding problem, so it uses a computer vision workload. Anomaly detection is for unusual patterns in numeric data, natural language processing is for text, and conversational AI is for dialog systems, none of which match the requirement to visually inspect items."
     },
     {
       "title": "Question 45",
@@ -1280,7 +1284,8 @@
           "raw": "B. False",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Detecting spam in emails is a text classification problem, not a conversational AI scenario. The system analyses message content and metadata and assigns labels such as 'spam' or 'not spam'. It does not hold a conversation with the user, so although it uses AI and natural language processing, it is not considered conversational AI."
     },
     {
       "title": "Question 46",
@@ -1308,7 +1313,8 @@
           "raw": "C. Models that only work with one language.",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Large language models are deep learning models trained on very large text datasets so that they can understand and generate natural language at scale. They can perform many tasks such as answering questions, drafting content, and writing code. They are not limited to small amounts of data or to a single language, so those other options are incorrect."
     },
     {
       "title": "Question 47",
@@ -1336,7 +1342,8 @@
           "raw": "C. Named Entity Recognition (NER)",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Extracting items such as dates, quantities, and locations from text is the role of named entity recognition (NER). NER identifies spans of text and labels them with types like Date, Quantity, or Location. Key phrase extraction finds important topics, and sentiment analysis gauges positive or negative tone, but neither one extracts specific entities with their semantic types."
     },
     {
       "title": "Question 48",
@@ -1370,7 +1377,8 @@
           "raw": "D. Identify the areas of interest",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Generating automatic captions for photographs requires the service to produce a short natural‑language description of the entire image. The 'Describe image' feature of Computer Vision is designed for this: it outputs one or more sentences summarising what is shown. Object detection finds individual objects, text recognition reads text, and 'areas of interest' highlight regions, but they do not create full captions."
     },
     {
       "title": "Question 49",
@@ -1392,7 +1400,8 @@
           "raw": "B. False",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Automated machine learning (AutoML) is explicitly defined as automating many of the time‑consuming, iterative steps of model development. It tries different algorithms and hyperparameters, evaluates each run, and ranks models according to your chosen metric. That matches the statement in the question, so the correct answer is that it is true."
     },
     {
       "title": "Question 50",
@@ -1400,7 +1409,8 @@
       "question_html": "<div class=\"question\">\n      <p>Match the types of machine learning to the appropriate scenarios.</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-3\">\n            <h2>Types</h2>\n            <div class=\"box\">\n              Classification\n            </div>\n            <div class=\"box\">\n              Clustering\n            </div>\n            <div class=\"box\">\n              Regression\n            </div>\n          </div>\n          <div class=\"col-7\">\n            <h2>Answer Area</h2>\n            <div class=\"row\">\n              <div class=\"col-6\">\n                <h2>Scenarios</h2>\n                <p>Predict how many minutes late a flight will arrive based on the\n                  amount of snowfall at an airport.</p>\n                <br>\n                <p>Segment customers into different groups to support a marketing\n                  department.</p>\n                <br>\n                <p>Predict whether a student will complete a university course.</p>\n              </div>\n              <div class=\"col-4\">\n                <h2>Type</h2>\n                <div class=\"box dashed active\" style=\"margin-bottom: 70px;\">\n                  Regression\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 70px;\">\n                  Clustering\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  Classification\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 50,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "This matching question covers the three main types of machine learning. Classification is used to predict categorical labels such as 'spam' or 'not spam'. Regression predicts continuous numeric values such as sales or temperatures. Clustering groups similar items together without predefined labels. Each scenario must be paired with the appropriate learning type based on whether it predicts categories, numbers, or groupings."
     },
     {
       "title": "Question 51",
@@ -1408,7 +1418,8 @@
       "question_html": "<div class=\"question\">\n      <p>You plan to use Azure Cognitive Services to develop a voice controlled personal assistant app. Match the\n        Azure Cognitive Services to the appropriate tasks.</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-3\">\n            <h2>Azure Cognitive Services</h2>\n            <div class=\"box\">\n              Speech\n            </div>\n            <div class=\"box\">\n              Language service\n            </div>\n            <div class=\"box\">\n              Translator Text\n            </div>\n          </div>\n          <div class=\"col-7\">\n            <h2>Answer Area</h2>\n            <div class=\"row\">\n              <div class=\"col-4\">\n                <h2>Tasks</h2>\n                <p>Provide a spoken response to the user.</p>\n                <br>\n                <p>Convert a user's speech to text.</p>\n                <br>\n                <p>Identify a user's intent.</p>\n              </div>\n              <div class=\"col-6\">\n                <h2>Azure Cognitive Service</h2>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  Speech\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  Speech\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  Language service\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 51,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "A voice‑controlled personal assistant typically uses several cognitive services together. Speech‑to‑text recognises what the user says, language understanding (for example LUIS or Azure AI Language) identifies the user’s intent and extracts entities, and text‑to‑speech generates spoken responses. The hot area question asks you to map each of these tasks to the correct Azure Cognitive Service capability."
     },
     {
       "title": "Question 52",
@@ -1416,7 +1427,8 @@
       "question_html": "<div class=\"question\">\n      <p>Match the tool to the Azure Machine Learning task.</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-3\">\n            <h2>Azure Machine Learning tasks</h2>\n            <div class=\"box\">\n              Automated\n              machine learning\n            </div>\n            <div class=\"box\">\n              Machine learning\n              designer\n            </div>\n            <div class=\"box\">\n              The Azure Portal\n            </div>\n          </div>\n          <div class=\"col-7\">\n            <h2>Answer Area</h2>\n            <div class=\"row\">\n              <div class=\"col-4\">\n                <h2>Tools</h2>\n                <p>Use a wizard to select configurations for a machine\n                  learning run.</p>\n                <br>\n                <p>Create a Machine learning workspace.</p>\n                <br>\n                <p>Use a drag-and-drop interface used to train and deploy\n                  models.</p>\n              </div>\n              <div class=\"col-6\">\n                <h2>Azure Machine Learning task</h2>\n                <div class=\"box dashed active\" style=\"margin-bottom: 70px;\">\n                  Automated\n                  machine learning\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  The Azure Portal\n                </div>\n                <div class=\"box dashed active\" style=\"margin-bottom: 30px;\">\n                  Machine learning\n                  designer\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 52,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "Different Azure Machine Learning tools are suited to different tasks. Designer lets you build and run pipelines visually by dragging and connecting modules. Automated ML lets you specify a dataset and target column and then automatically explores algorithms and hyperparameters to find a good model. Notebooks provide a code‑first experience for custom experiments. In the matching question each task (such as 'build a model with no code' or 'run custom Python code') should be matched to the tool that best supports it."
     },
     {
       "title": "Question 53",
@@ -1450,7 +1462,8 @@
           "raw": "D. Language Understanding (LUIS)",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "In this scenario the app must read recipe instructions aloud for users with reduced vision. That is a text‑to‑speech problem provided by the Speech service. The app converts written instructions into spoken audio. Text Analytics analyses text, Translator changes languages, and Language Understanding identifies intents, but none of those functions actually speak the text to the user."
     },
     {
       "title": "Question 54",
@@ -1478,7 +1491,8 @@
           "raw": "C. Azure Bot",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Predicting future ice‑cream sales from historic sales and weather measurements is a supervised learning forecasting problem that requires a trained model. Azure Machine Learning is the platform for building, training, and deploying such models. Language and Azure Bot Service focus on natural language and conversational workloads, not on training numeric prediction models."
     },
     {
       "title": "Question 55",
@@ -1506,7 +1520,8 @@
           "raw": "C. Custom Vision",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "To train an object detection model using your own images you need a service that supports custom vision training. Azure Custom Vision lets you upload and label your images and then train either classification or object detection models tailored to your scenario. The base Computer Vision service exposes only prebuilt models and does not train custom ones, and Form Recognizer and Text Analytics are for documents and text, not image object detection."
     },
     {
       "title": "Question 56",
@@ -1540,7 +1555,8 @@
           "raw": "D. Model training",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Feature engineering is the process used to generate additional features from existing data, such as combining columns, extracting date components, or encoding categories. These engineered features can help models learn more useful patterns. Feature selection chooses a subset of existing features, model training fits the model, and model evaluation measures performance, but none of those create new features."
     },
     {
       "title": "Question 57",
@@ -1562,7 +1578,8 @@
           "raw": "B. False",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Automated machine learning still requires you to provide a prepared training dataset with features and labels. It cannot infer the training data just from the business problem description. AutoML automates model and hyperparameter selection on the data you supply, so the statement that it automatically infers the training data from the use case is false."
     },
     {
       "title": "Question 58",
@@ -1596,7 +1613,8 @@
           "raw": "D. the authentication key",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "When you publish an inference pipeline as a web service, you call it via its REST endpoint and authenticate using the service's key or token. The training endpoint is used for training pipelines, and the model name is part of the configuration but is not required to call the web service. Therefore the two parameters you must use are the REST endpoint and the authentication key."
     },
     {
       "title": "Question 59",
@@ -1630,7 +1648,8 @@
           "raw": "D. Add chit-chat",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "To make a QnA Maker bot more friendly with greetings and small‑talk responses you add the built‑in 'chit‑chat' personality. Chit‑chat provides predefined answers to conversational phrases such as 'hello' or 'thanks'. Active learning improves the coverage of question variations, multi‑turn questions handle dialog flows, and confidence thresholds control when to answer or not, but they do not themselves add friendly greetings."
     },
     {
       "title": "Question 60",
@@ -1658,7 +1677,8 @@
           "raw": "C. To create tokens that include multiple representations of a word in different languages.",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Vector‑based embeddings are used to represent the semantic meaning of text tokens, words, sentences, or documents as numeric vectors in a high‑dimensional space. In that space, semantically similar texts have vectors that are close together. This enables semantic search, clustering, and similarity comparisons. They are not primarily for correcting misspellings or storing multiple language variants of a word."
     },
     {
       "title": "Question 61",
@@ -1698,7 +1718,8 @@
           "raw": "E. GPT models can help developers code faster.",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "GPT‑based models can help with many aspects of coding. They can convert code from one language to another, explain SQL queries or database tables, summarise existing functions, and even write unit tests and boilerplate code. All of these capabilities help developers work faster and more productively, so statements that GPT cannot write tests are incorrect while the others are correct."
     },
     {
       "title": "Question 62",
@@ -1726,7 +1747,8 @@
           "raw": "C. 1 - Select columns in Dataset, 2 - Split Data, 3 - Linear Regression",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "To build a model that predicts automobile prices, you should first select the relevant columns from the dataset, then split the data into training and test sets, and finally apply a regression algorithm such as Linear Regression. This corresponds to using 'Select Columns in Dataset', then 'Split Data', then 'Linear Regression' in Designer. Converting to CSV is unnecessary inside the pipeline, and clustering is not suitable for predicting continuous prices."
     },
     {
       "title": "Question 63",
@@ -1760,7 +1782,8 @@
           "raw": "D. Image classification, Object detection",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Locating birds within an image requires object detection, which returns bounding boxes around each detected bird. Identifying the species of each bird is an image classification task that assigns a class label such as 'sparrow' or 'eagle'. OCR only reads text, so the correct pairing is object detection for localisation and image classification for species recognition."
     },
     {
       "title": "Question 64",
@@ -1768,7 +1791,8 @@
       "question_html": "<div class=\"question\">\n      <p>From the use-cases listed below, select the correct use-case of anomaly detection.</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <h2>Answer Area</h2>\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-8\">\n            <h3>Statement</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>Yes</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>No</h3>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            Forecasting housing prices based on historical data is an example of\n            anomaly detection.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-four\">\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-four\" checked>\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            Identifying suspicious sign-ins by looking for deviations from usual\n            patterns is an example of anomaly detection.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-five\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-five\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            Predicting whether a patient will develop diabetes based on the\n            patient's medical history is an example of anomaly detection.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-six\">\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q64-six\" checked>\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 64,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "Anomaly detection is used to find unusual events or patterns that differ significantly from normal behaviour. Forecasting housing prices and predicting whether a patient will develop diabetes are standard regression and classification problems, not anomaly detection. Identifying suspicious sign‑ins by looking for deviations from a user's usual sign‑in patterns is the true example of anomaly detection in this set of statements."
     },
     {
       "title": "Question 65",
@@ -1802,7 +1826,8 @@
           "raw": "D. Before you choose the type of model.",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "You review evaluation metrics after you have trained the model and tested it on validation or test data. At that point metrics such as accuracy, precision, recall, AUC, or RMSE show how well the model generalises to unseen examples. Looking at metrics before training, right after cleaning data, or before choosing a model type does not give you a meaningful view of model performance."
     },
     {
       "title": "Question 66",
@@ -1836,7 +1861,8 @@
           "raw": "D. Speech-to-text",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "The solution must analyse people's facial expressions in meetings to determine whether they are happy or sad. This is a face analysis scenario, which is handled by the Face API in Azure Cognitive Services. Face API detects faces and can return attributes like head pose or, in exam objectives, emotions. Text Analytics and Speech‑to‑text work with text and audio, and generic Computer Vision does not specialise in facial attribute analysis."
     },
     {
       "title": "Question 67",
@@ -1870,7 +1896,8 @@
           "raw": "D. Feature, Label",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "In the given dataset Income is the numeric input used to predict the Income Range category. That makes Income a feature and Income Range the label. Features are the variables the model learns from, while the label is the target value or class that the model is trained to predict."
     },
     {
       "title": "Question 68",
@@ -1892,7 +1919,8 @@
           "raw": "B. False",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Automated Machine Learning works by running multiple training iterations with different algorithms and hyperparameters, scoring each run using the metrics you specify, and ranking the resulting models. This automated search process is what allows AutoML to find a strong model without you manually trying every combination, so the statement in the question is true."
     },
     {
       "title": "Question 69",
@@ -1920,7 +1948,8 @@
           "raw": "C. clustering",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Predicting how many vehicles will travel across a bridge on a given day is forecasting a numeric quantity. That makes it a regression problem. Classification would predict discrete categories such as 'light', 'medium', or 'heavy' traffic, and clustering would group similar days together without predicting a specific number, so regression is the correct learning type."
     },
     {
       "title": "Question 70",
@@ -1954,7 +1983,8 @@
           "raw": "D. Key phrase extraction",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "Active learning in QnA Maker and Azure AI Language uses user interactions and feedback to suggest new alternative questions and improve the relevance of answers over time. Enabling active learning allows the bot to learn from real user queries and refine the knowledge base. Sentiment analysis, business logic, and key phrase extraction do not automatically adjust QnA content based on user feedback."
     },
     {
       "title": "Question 71",
@@ -1988,7 +2018,8 @@
           "raw": "D. entity recognition",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "The solution must analyse customer reviews and determine how positive or negative each review is. That is sentiment analysis, which scores text on a positive–negative or similar sentiment scale. Key phrase extraction finds important terms, language detection identifies the language, and entity recognition finds entities, but none of those directly assess positivity versus negativity."
     },
     {
       "title": "Question 72",
@@ -1996,7 +2027,8 @@
       "question_html": "<div class=\"question\">\n      <p>For each of the following statement, select Yes if the statement is true. Otherwise, select No.</p>\n      <p>Note: Each correct selection is worth one point.</p>\n      <p>Hot Area:</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <h2>Answer Area</h2>\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-8\">\n            <h3>Statement</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>Yes</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>No</h3>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You train a regression model by using unlabeled data.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-four\">\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-four\" checked>\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            The classification technique is used to predict sequential numerical\n            data over time.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-five\">\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-five\" checked>\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            Grouping items by their common characteristics is an example of\n            clustering.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-six\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q72-six\">\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 72,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "This hot area question compares regression, classification, and clustering. Regression models require labelled numeric target values, so the statement that you train a regression model on unlabeled data is false. Classification predicts class labels, not sequential numeric time‑series data, so that statement is also false. Grouping items by their common characteristics is exactly what clustering does, so that statement is true."
     },
     {
       "title": "Question 73",
@@ -2030,7 +2062,8 @@
           "raw": "D. accountability",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "The Microsoft responsible AI principle that says AI systems should not reflect unfair biases from their training data is Fairness. Fairness focuses on ensuring that AI systems treat individuals and groups equitably. Inclusiveness is about making systems usable by people with diverse abilities, privacy and security protect data, and accountability ensures there is human responsibility for AI systems."
     },
     {
       "title": "Question 74",
@@ -2058,7 +2091,8 @@
           "raw": "C. OpenAl is a research company that developed ChatGPT, a chatbot that uses generative Al models. Azure OpenAl provides access to many of OpenAl's Al models.",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "OpenAI is the research organisation that created ChatGPT, a chatbot based on large language models. Azure OpenAI Service is a Microsoft Azure offering that provides access to many of OpenAI's models, including the GPT family used by ChatGPT, through managed Azure endpoints. So ChatGPT is a specific application built by OpenAI, and Azure OpenAI is the service that lets you use those underlying models in your own apps."
     },
     {
       "title": "Question 75",
@@ -2066,7 +2100,8 @@
       "question_html": "<div class=\"question\">\n      <p>For each of the following statement, select Yes if the statement is true. Otherwise, select No.</p>\n      <p>Note: Each correct selection is worth one point.</p>\n      <p>Hot Area:</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <h2>Answer Area</h2>\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-8\">\n            <h3>Statement</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>Yes</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>No</h3>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can use the Translator service to translate text between\n            languages.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-four\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-four\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can use the Translator service to detect the language of a\n            given text.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-five\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-five\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            You can use the Translator service to transcribe audible speech into\n            text.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-six\">\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q75-six\" checked>\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 75,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "Azure Translator can translate text between languages and can also detect the language of a given text, so those two statements are true. Transcribing audible speech into text is speech recognition, which is provided by the Speech service, not Translator. In practice you would first use Speech‑to‑text to get text from audio and then Translator to translate it."
     },
     {
       "title": "Question 76",
@@ -2100,7 +2135,8 @@
           "raw": "D. Text analytics",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "To extract fields such as Total and Subtotal from a receipt you should use Form Recognizer (now Azure AI Document Intelligence). It provides prebuilt receipt models that can parse receipts and return key fields like totals, taxes, and merchant name. Ink Recognizer focuses on digital ink, Custom Vision on image classification and object detection, and Text Analytics on unstructured text, so they are not suited for structured receipt fields."
     },
     {
       "title": "Question 77",
@@ -2122,7 +2158,8 @@
           "raw": "B. False",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Training a custom image classification model cannot be done with the standard Computer Vision service alone, because it offers only prebuilt models. Custom image classification requires the Custom Vision service, where you upload and label your own images and train a model. Therefore the statement that you can perform this training using the Computer Vision service is false."
     },
     {
       "title": "Question 78",
@@ -2156,7 +2193,8 @@
           "raw": "D. Optical character recognition (OCR)",
           "is_correct": true
         }
-      ]
+      ],
+      "explanation_en": "Extracting text from handwritten documents is an optical character recognition (OCR) task. OCR converts handwritten or printed text in images into machine‑readable text. Image classification recognises entire images, object detection finds objects, and facial recognition identifies people, but none of those read the actual text content."
     },
     {
       "title": "Question 79",
@@ -2164,7 +2202,8 @@
       "question_html": "<div class=\"question\">\n      <p>For each of the following statement, select Yes if the statement is true. Otherwise, select No.</p>\n      <p>Note: Each correct selection is worth one point.</p>\n      <p>Hot Area:</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <h2>Answer Area</h2>\n      <div class=\"table\">\n        <div class=\"row\">\n          <div class=\"col-8\">\n            <h3>Statement</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>Yes</h3>\n          </div>\n          <div class=\"col-1\">\n            <h3>No</h3>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            A restaurant can use a chatbot to empower customers to make\n            reservations by using a website or an app.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-four\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-four\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            A restaurant can use a chatbot to answer inquiries about business\n            hours from a webpage.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-five\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-five\">\n            </span>\n          </div>\n        </div>\n        <br>\n        <div class=\"row\">\n          <div class=\"col-8\">\n            A restaurant can use a chatbot to automate responses to customer\n            reviews on an external website.\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-six\" checked>\n            </span>\n          </div>\n          <div class=\"col-1\">\n            <span class=\"radioBox\">\n              <input type=\"radio\" name=\"Q79-six\">\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>",
       "question_number": 79,
-      "answer_type": "html"
+      "answer_type": "html",
+      "explanation_en": "All three scenarios describe valid uses of a chatbot in a restaurant context. A chatbot can take reservations via a website or app, answer questions about business hours from a webpage, and automate responses to customer reviews when integrated with external systems. Each case involves conversational interaction with customers, so all three statements should be marked 'Yes'."
     },
     {
       "title": "Question 80",
@@ -2192,7 +2231,8 @@
           "raw": "C. classification",
           "is_correct": false
         }
-      ]
+      ],
+      "explanation_en": "You need to predict the number of gift cards that will be sold next year, which is a numeric value. This is a regression problem. Classification would assign cases to categories such as 'high' or 'low' sales, and clustering would group similar customers or time periods without predicting an exact quantity, so regression is the appropriate choice."
     },
     {
       "title": "Question 81",
