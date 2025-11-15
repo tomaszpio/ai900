@@ -662,14 +662,38 @@
       ],
     ]);
 
+    const LEARN_ENGLISH_LOCALE = 'en-en';
+    const LEARN_ENGLISH_BASE = `https://learn.microsoft.com/${LEARN_ENGLISH_LOCALE}/`;
+    const LEARN_LINK_PATTERN = /https:\/\/learn\.microsoft\.com\/(?:(?:[a-z]{2}-[a-z]{2})\/)*/gi;
+
+    function normalizeLearnLink(url) {
+      if (typeof url !== 'string' || !url.includes('learn.microsoft.com')) {
+        return url;
+      }
+
+      return url.replace(LEARN_LINK_PATTERN, LEARN_ENGLISH_BASE);
+    }
+
+    function normalizeLearnLinksInHtml(html) {
+      if (typeof html !== 'string' || !html.includes('learn.microsoft.com')) {
+        return html || '';
+      }
+
+      return html.replace(LEARN_LINK_PATTERN, LEARN_ENGLISH_BASE);
+    }
+
     const QUESTION_SOURCES = [
       {
-        url: 'https://learn.microsoft.com/en-en/credentials/certifications/azure-ai-fundamentals/practice/results?assessmentId=26&practice-assessment-type=certification&snapshotId=51a634ac-4649-466d-bf6e-99c281e7842a',
+        url: normalizeLearnLink(
+          'https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/practice/results?assessmentId=26&practice-assessment-type=certification&snapshotId=51a634ac-4649-466d-bf6e-99c281e7842a'
+        ),
         fallbackUrl: '../../ai900Mockup.html.html',
         isRequired: true,
       },
       {
-        url: 'https://learn.microsoft.com/en-en/credentials/certifications/exams/dummy/practice/results?assessmentId=26&snapshotId=4b58bfc6-3379-4ee4-b586-3e3ab9197381',
+        url: normalizeLearnLink(
+          'https://learn.microsoft.com/credentials/certifications/exams/dummy/practice/results?assessmentId=26&snapshotId=4b58bfc6-3379-4ee4-b586-3e3ab9197381'
+        ),
         fallbackUrl: '../../ai900Mockup2.html',
         isRequired: false,
       },
@@ -770,7 +794,9 @@
 
         questionEntries.push({
           question: cleanedQuestion,
-          rationaleHTML: rationaleSection ? rationaleSection.innerHTML.trim() : '',
+          rationaleHTML: normalizeLearnLinksInHtml(
+            rationaleSection ? rationaleSection.innerHTML.trim() : ''
+          ),
           choices: choiceListData,
         });
       });
