@@ -511,6 +511,39 @@
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
 
+    function appendTextWithLineBreaks(target, text) {
+      const lines = text.split('\n');
+      lines.forEach((line, index) => {
+        target.appendChild(document.createTextNode(line));
+        if (index < lines.length - 1) {
+          target.appendChild(document.createElement('br'));
+        }
+      });
+    }
+
+    function appendLinkifiedText(target, text) {
+      const fragment = document.createDocumentFragment();
+      const urlPattern = /https?:\/\/[^\s]+/g;
+
+      let lastIndex = 0;
+      for (const match of text.matchAll(urlPattern)) {
+        const preceding = text.slice(lastIndex, match.index);
+        appendTextWithLineBreaks(fragment, preceding);
+
+        const anchor = document.createElement('a');
+        anchor.href = match[0];
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.textContent = match[0];
+        fragment.appendChild(anchor);
+
+        lastIndex = match.index + match[0].length;
+      }
+
+      appendTextWithLineBreaks(fragment, text.slice(lastIndex));
+      target.appendChild(fragment);
+    }
+
     function buildChoiceList(question) {
       if (!Array.isArray(question.choices) || !question.choices.length) {
         return null;
@@ -557,7 +590,7 @@
 
       const detail = document.createElement('p');
       detail.className = 'answer-explanation-detail';
-      detail.textContent = question.explanation_en;
+      appendLinkifiedText(detail, question.explanation_en);
       explanation.appendChild(detail);
 
       return explanation;

@@ -139,6 +139,39 @@
       const status = document.getElementById('status');
       const container = document.getElementById('questionContainer');
 
+      function appendTextWithLineBreaks(target, text) {
+        const lines = text.split('\n');
+        lines.forEach((line, index) => {
+          target.appendChild(document.createTextNode(line));
+          if (index < lines.length - 1) {
+            target.appendChild(document.createElement('br'));
+          }
+        });
+      }
+
+      function appendLinkifiedText(target, text) {
+        const fragment = document.createDocumentFragment();
+        const urlPattern = /https?:\/\/[^\s]+/g;
+
+        let lastIndex = 0;
+        for (const match of text.matchAll(urlPattern)) {
+          const preceding = text.slice(lastIndex, match.index);
+          appendTextWithLineBreaks(fragment, preceding);
+
+          const anchor = document.createElement('a');
+          anchor.href = match[0];
+          anchor.target = '_blank';
+          anchor.rel = 'noopener noreferrer';
+          anchor.textContent = match[0];
+          fragment.appendChild(anchor);
+
+          lastIndex = match.index + match[0].length;
+        }
+
+        appendTextWithLineBreaks(fragment, text.slice(lastIndex));
+        target.appendChild(fragment);
+      }
+
       function renderQuestion(question) {
         const wrapper = document.createElement('article');
         wrapper.className = 'questionFormat';
@@ -167,7 +200,7 @@
           explanation.appendChild(explanationHeading);
 
           const explanationCopy = document.createElement('p');
-          explanationCopy.textContent = question.explanation_en;
+          appendLinkifiedText(explanationCopy, question.explanation_en);
           explanation.appendChild(explanationCopy);
 
           wrapper.appendChild(explanation);
