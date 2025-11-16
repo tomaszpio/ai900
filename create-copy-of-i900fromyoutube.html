@@ -150,6 +150,14 @@
       }
 
       function appendLinkifiedText(target, text) {
+        // If the explanation already contains HTML (for example, anchor tags),
+        // render it directly so that URLs remain clickable instead of appearing
+        // as escaped text.
+        if (/<\/?[a-z][\s\S]*>/i.test(text)) {
+          target.innerHTML = text.replace(/\n/g, '<br>');
+          return;
+        }
+
         const fragment = document.createDocumentFragment();
         const urlPattern = /https?:\/\/[^\s]+/g;
 
