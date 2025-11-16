@@ -13,6 +13,8 @@
     --border: #d0d7de;
     --accent: #004578;
     --accent-soft: rgba(0, 69, 120, 0.08);
+    --glossary-width: min(320px, 26vw);
+    --glossary-gap: clamp(0.75rem, 2vw, 1rem);
   }
 
   *,
@@ -75,6 +77,12 @@
   body > * {
     width: min(100%, var(--page-max-width));
     margin: 0 auto;
+  }
+
+  @media (min-width: 1200px) {
+    body {
+      padding-right: calc(clamp(1rem, 4vw, 2.5rem) + var(--glossary-width) + var(--glossary-gap));
+    }
   }
 
     a {
@@ -436,6 +444,62 @@
       border: 1px solid #f5c6cb;
     }
 
+  .glossary-panel {
+    position: fixed;
+    top: clamp(4.25rem, 8vw, 5.5rem);
+    right: clamp(0.75rem, 3vw, 1.35rem);
+    width: var(--glossary-width);
+    max-height: calc(100vh - clamp(5.5rem, 10vw, 6.75rem));
+    padding: clamp(0.9rem, 2.4vw, 1.15rem);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
+    z-index: 950;
+  }
+
+    .glossary-panel h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+      color: #004578;
+      letter-spacing: 0.01em;
+    }
+
+    .glossary-panel p {
+      margin: 0 0 0.6rem;
+      color: #414141;
+      font-size: 0.92rem;
+    }
+
+    .glossary-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+      .glossary-item {
+        border: 1px solid rgba(0, 69, 120, 0.14);
+        border-radius: 10px;
+        padding: 0.65rem 0.75rem;
+        background: rgba(0, 69, 120, 0.04);
+      }
+
+        .glossary-term {
+          display: block;
+          font-weight: 700;
+          color: #004578;
+          margin-bottom: 0.2rem;
+        }
+
+        .glossary-definition {
+          margin: 0;
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
   @media (max-width: 760px) {
     .feature-list li {
       align-items: stretch;
@@ -454,6 +518,16 @@
 
     .video-wrapper {
       border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .glossary-panel {
+      width: min(360px, 90vw);
+      right: clamp(0.65rem, 3vw, 1rem);
+      bottom: clamp(0.9rem, 3vw, 1.25rem);
+      top: auto;
+      max-height: 42vh;
     }
   }
 
@@ -507,6 +581,101 @@
     <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
     <div id="question-list" class="question-list" aria-live="polite"></div>
   </main>
+
+  <aside class="glossary-panel" aria-labelledby="glossary-title">
+    <h2 id="glossary-title">AI-900 Glossary</h2>
+    <p>Key Azure AI-900 terms with quick reminders you can reference while reviewing questions.</p>
+    <ul class="glossary-list">
+      <li class="glossary-item">
+        <span class="glossary-term">Azure AI Services (Cognitive Services)</span>
+        <p class="glossary-definition">Prebuilt APIs for vision, speech, language, and decision tasks without managing models or infrastructure.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Azure AI Vision</span>
+        <p class="glossary-definition">Image and video analysis including OCR, tagging, object detection, and spatial analysis.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Document Intelligence (Form Recognizer)</span>
+        <p class="glossary-definition">Extracts structured data from forms, receipts, invoices, and documents using pretrained or custom models.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Azure AI Speech</span>
+        <p class="glossary-definition">Provides speech-to-text, text-to-speech, custom voice, and translation capabilities.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Language Service</span>
+        <p class="glossary-definition">Natural language APIs for sentiment analysis, key phrases, translation, summarization, PII detection, and Q&amp;A.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Azure AI Search</span>
+        <p class="glossary-definition">Cloud search-as-a-service with indexing, filtering, semantic ranking, and vector search for hybrid retrieval.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Azure OpenAI Service</span>
+        <p class="glossary-definition">Enterprise access to GPT and embedding models with Azure security, content filters, and responsible AI tooling.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Embeddings</span>
+        <p class="glossary-definition">Vector representations of text or images that capture semantic meaning for similarity search and grounding.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Vector Search</span>
+        <p class="glossary-definition">Searching with embeddings to find semantically similar documents; often combined with keyword search for hybrid retrieval.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Azure Machine Learning</span>
+        <p class="glossary-definition">Platform for training, deploying, and managing ML models with tools like AutoML, pipelines, and managed endpoints.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Regression</span>
+        <p class="glossary-definition">Supervised learning task that predicts continuous numeric values (for example, cost, time, or demand).</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Classification</span>
+        <p class="glossary-definition">Supervised learning that assigns inputs to categories such as binary (yes/no) or multi-class (multiple labels).</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Clustering</span>
+        <p class="glossary-definition">Unsupervised learning that groups similar data points without predefined labels (for example, customer segmentation).</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Train / Validation / Test Split</span>
+        <p class="glossary-definition">Separating data into sets for model training, tuning hyperparameters, and final unbiased evaluation.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Overfitting vs. Underfitting</span>
+        <p class="glossary-definition">Overfitting memorizes training data and performs poorly on new data; underfitting fails to learn underlying patterns.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Evaluation Metrics</span>
+        <p class="glossary-definition">Measures such as accuracy, precision, recall, F1, MAE, or RMSE that quantify how well a model performs.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Responsible AI</span>
+        <p class="glossary-definition">Practices such as fairness, transparency, privacy, security, and accountability; includes content filters and safety evaluations.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Prompt Engineering</span>
+        <p class="glossary-definition">Crafting system and user prompts, instructions, and few-shot examples to guide model behavior and improve responses.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Retrieval-Augmented Generation (RAG)</span>
+        <p class="glossary-definition">Combining vector or keyword retrieval with generative models so answers are grounded in trusted, recent data.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Custom Vision</span>
+        <p class="glossary-definition">A no-code portal and APIs for training custom image classifiers or object detectors using your labeled images.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">Anomaly Detector</span>
+        <p class="glossary-definition">Detects irregularities in time-series data for monitoring scenarios like IoT telemetry or transactions.</p>
+      </li>
+      <li class="glossary-item">
+        <span class="glossary-term">AI Studio &amp; Prompt Flow</span>
+        <p class="glossary-definition">Workspace for building generative AI apps, grounding prompts with data, and orchestrating evaluations.</p>
+      </li>
+    </ul>
+  </aside>
 
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
