@@ -511,6 +511,79 @@
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
 
+    function buildChoiceList(question) {
+      if (!Array.isArray(question.choices) || !question.choices.length) {
+        return null;
+      }
+
+      const list = document.createElement('ul');
+      list.className = 'choice-list';
+
+      question.choices.forEach((choice) => {
+        const item = document.createElement('li');
+        item.className = 'choice-item';
+
+        const text = document.createElement('p');
+        text.className = 'choice-text';
+        text.textContent = choice.raw || `${choice.label ? `${choice.label}. ` : ''}${choice.text ?? ''}`;
+        item.appendChild(text);
+
+        if (choice.is_correct) {
+          item.classList.add('is-correct');
+          const badge = document.createElement('span');
+          badge.className = 'choice-badge';
+          badge.textContent = 'Correct answer';
+          item.appendChild(badge);
+        }
+
+        list.appendChild(item);
+      });
+
+      return list;
+    }
+
+    function buildExplanation(question) {
+      if (!question.explanation_en) {
+        return null;
+      }
+
+      const explanation = document.createElement('div');
+      explanation.className = 'answer-explanation';
+
+      const intro = document.createElement('p');
+      intro.className = 'answer-explanation-intro';
+      intro.innerHTML = '<strong>Explanation:</strong> The exported answer key confirms this selection.';
+      explanation.appendChild(intro);
+
+      const detail = document.createElement('p');
+      detail.className = 'answer-explanation-detail';
+      detail.textContent = question.explanation_en;
+      explanation.appendChild(detail);
+
+      return explanation;
+    }
+
+    function buildAnswerBlock(question) {
+      const block = document.createElement('div');
+      block.className = 'answer-block';
+
+      const choiceList = buildChoiceList(question);
+      if (choiceList) {
+        block.appendChild(choiceList);
+      } else if (question.answer_html) {
+        block.innerHTML = question.answer_html;
+      } else {
+        block.innerHTML = '<p>No answer data was found for this question.</p>';
+      }
+
+      const explanation = buildExplanation(question);
+      if (explanation) {
+        block.appendChild(explanation);
+      }
+
+      return block;
+    }
+
     function buildQuestionCard(question, index) {
       const questionCard = document.createElement('details');
       questionCard.className = 'question-card';
@@ -528,10 +601,7 @@
 
       const body = document.createElement('div');
       body.className = 'question-body';
-      const answer = document.createElement('div');
-      answer.className = 'answer-block';
-      answer.innerHTML = question.answer_html || '<p>No answer data was found for this question.</p>';
-      body.appendChild(answer);
+      body.appendChild(buildAnswerBlock(question));
 
       questionCard.appendChild(summary);
       questionCard.appendChild(body);
