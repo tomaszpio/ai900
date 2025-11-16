@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Entity recognition output table">
+  <rect width="960" height="540" fill="#ffffff"/>
+  <text x="60" y="60" fill="#0a4d8c" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700">Entity recognition output</text>
+  <g fill="#1f1f1f" font-family="'Segoe UI', sans-serif" font-size="16">
+    <rect x="90" y="110" width="520" height="40" fill="#f4f8ff" stroke="#999" stroke-width="2"/>
+    <text x="110" y="137">Text</text>
+    <text x="360" y="137">Category</text>
+    <text x="540" y="137">Confidence</text>
+    <line x1="330" y1="110" x2="330" y2="430" stroke="#d0d7de" stroke-width="1" />
+    <line x1="520" y1="110" x2="520" y2="430" stroke="#d0d7de" stroke-width="1" />
+    <rect x="90" y="150" width="520" height="60" fill="#ffffff" stroke="#d0d7de" />
+    <text x="110" y="185">Microsoft</text>
+    <text x="360" y="185" fill="#0f6ec3">Organization</text>
+    <text x="540" y="185">0.98</text>
+    <rect x="90" y="210" width="520" height="60" fill="#ffffff" stroke="#d0d7de" />
+    <text x="110" y="245">Seattle</text>
+    <text x="360" y="245" fill="#0f6ec3">Location</text>
+    <text x="540" y="245">0.93</text>
+    <rect x="90" y="270" width="520" height="60" fill="#ffffff" stroke="#d0d7de" />
+    <text x="110" y="305">Azure AI</text>
+    <text x="360" y="305" fill="#0f6ec3">Product</text>
+    <text x="540" y="305">0.90</text>
+    <rect x="90" y="330" width="520" height="60" fill="#ffffff" stroke="#d0d7de" />
+    <text x="110" y="365">Satya Nadella</text>
+    <text x="360" y="365" fill="#0f6ec3">Person</text>
+    <text x="540" y="365">0.89</text>
+  </g>
+</svg>

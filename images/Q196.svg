@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Confusion matrix showing true positives and false negatives">
+  <rect width="960" height="540" fill="#ffffff"/>
+  <text x="360" y="80" fill="#0a4d8c" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="700">Confusion Matrix</text>
+  <g stroke="#000" stroke-width="2" fill="none">
+    <rect x="220" y="140" width="240" height="240" />
+    <line x1="340" y1="140" x2="340" y2="380" />
+    <line x1="220" y1="260" x2="460" y2="260" />
+  </g>
+  <g font-family="'Segoe UI', sans-serif" font-size="16" fill="#1f1f1f">
+    <text x="230" y="130">Predicted Positive</text>
+    <text x="350" y="130">Predicted Negative</text>
+    <text x="120" y="220">Actual Positive</text>
+    <text x="120" y="340">Actual Negative</text>
+  </g>
+  <g font-family="'Segoe UI', sans-serif" font-size="16" fill="#0b6a0b">
+    <text x="240" y="220">TP: 11</text>
+    <text x="360" y="220">FP: 5</text>
+    <text x="240" y="340">FN: 1033</text>
+    <text x="360" y="340">TN: 13951</text>
+  </g>
+</svg>

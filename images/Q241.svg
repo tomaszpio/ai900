@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Predicted versus true scatter plot for regression">
+  <rect width="960" height="540" fill="#ffffff"/>
+  <g stroke="#000" stroke-width="3" fill="none">
+    <line x1="100" y1="420" x2="820" y2="420" />
+    <line x1="100" y1="420" x2="100" y2="100" />
+  </g>
+  <text x="780" y="445" font-family="'Segoe UI', sans-serif" font-size="16">Predicted</text>
+  <text x="40" y="110" font-family="'Segoe UI', sans-serif" font-size="16">True</text>
+  <line x1="100" y1="420" x2="820" y2="100" stroke="#0f6ec3" stroke-width="2" />
+  <g fill="#0b8a2c">
+    <circle cx="140" cy="360" r="7" />
+    <circle cx="220" cy="320" r="7" />
+    <circle cx="300" cy="290" r="7" />
+    <circle cx="380" cy="260" r="7" />
+    <circle cx="460" cy="230" r="7" />
+    <circle cx="540" cy="210" r="7" />
+    <circle cx="620" cy="190" r="7" />
+    <circle cx="700" cy="170" r="7" />
+    <circle cx="780" cy="150" r="7" />
+  </g>
+  <text x="140" y="90" font-family="'Segoe UI', sans-serif" font-size="18" fill="#0a4d8c">Predicted vs. True (Regression)</text>
+</svg>
