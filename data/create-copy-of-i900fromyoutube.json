@@ -101,7 +101,7 @@
     {
       "title": "Question 5",
       "question_text": "You are developing a system, that scans the news for articles about your customers and alert employees when there is a negative article. Positive articles must be added to a press book. Which natural language processing tasks should you use to complete the process?",
-      "question_html": "<div class=\"question\">\n      <p>You are developing a system, that scans the news for articles about your customers and alert employees\n        when there is a negative article. Positive articles must be added to a press book.</p>\n      \n      <img src=\"images/Q5-b.png\" alt=\"\">\n      <p>Which natural language processing tasks should you use to complete the process?</p>\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are developing a system, that scans the news for articles about your customers and alert employees\n        when there is a negative article. Positive articles must be added to a press book.</p>\n      \n      <img src=\"images/Q5-b.svg\" alt=\"\">\n      <p>Which natural language processing tasks should you use to complete the process?</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Entity Recognition </li>\n        <li>B. Translation</li>\n        <li>C. Speech Synthesis</li>\n        <li class=\"active\">D. Sentiment Analysis</li>\n      </ul>\n    </div>",
       "question_number": 5,
       "answer_type": "choices",
@@ -1724,7 +1724,7 @@
     {
       "title": "Question 62",
       "question_text": "You are using Azure Machine Learning designer to build a model that will predict automobile prices. Which type of modules should you use to complete the model?",
-      "question_html": "<div class=\"question\">\n      <p>You are using Azure Machine Learning designer to build a model that will predict automobile prices.\n        Which type of modules should you use to complete the model?</p>\n      \n      <img src=\"images/Q62-b.png\" alt=\"\">\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are using Azure Machine Learning designer to build a model that will predict automobile prices.\n        Which type of modules should you use to complete the model?</p>\n      \n      <img src=\"images/Q62-b.svg\" alt=\"\">\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. 1 - Split Data, 2 - Summarize Data, 3 - Linear Regression</li>\n        <li>B. 1 - Split Data, 2 - Convert to CSV, 3 - K-Means Clustering</li>\n        <li class=\"active\">C. 1 - Select columns in Dataset, 2 - Split Data, 3 - Linear Regression</li>\n      </ul>\n    </div>",
       "question_number": 62,
       "answer_type": "choices",
@@ -3171,7 +3171,7 @@
     {
       "title": "Question 114",
       "question_text": "You are using natural language processing to process text from a Microsoft news story. You receive the output shown in the following exhibit. Which type of natural languages processing was performed?",
-      "question_html": "<div class=\"question\">\n      <p>You are using natural language processing to process text from a Microsoft news story.\n        You receive the output shown in the following exhibit.\n      </p>\n      <img src=\"images/Q114.png\" alt=\"\">\n      <p>Which type of natural languages processing was performed?</p>\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are using natural language processing to process text from a Microsoft news story.\n        You receive the output shown in the following exhibit.\n      </p>\n      <img src=\"images/Q114.svg\" alt=\"\">\n      <p>Which type of natural languages processing was performed?</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. key phrase extraction</li>\n        <li>B. translation</li>\n        <li class=\"active\">C. entity recognition</li>\n        <li>D. sentiment analysis</li>\n      </ul>\n    </div>",
       "question_number": 114,
       "answer_type": "choices",
@@ -4633,7 +4633,7 @@
     {
       "title": "Question 164",
       "question_text": "You are processing an image using Computer Vision API, which generated an annotated image shown in the exhibit. Which type of computer vision was used?",
-      "question_html": "<div class=\"question\">\n      <p>You are processing an image using Computer Vision API, which generated an annotated image shown in\n        the exhibit.</p>\n      <img src=\"images/Q164.png\" alt=\"\">\n      <p>Which type of computer vision was used?</p>\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are processing an image using Computer Vision API, which generated an annotated image shown in\n        the exhibit.</p>\n      <img src=\"images/Q164.svg\" alt=\"\">\n      <p>Which type of computer vision was used?</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. object detection</li>\n        <li>B. image classification</li>\n        <li>C. optical character recognition (OCR)</li>\n        <li>D. semantic segmentation</li>\n      </ul>\n    </div>",
       "question_number": 164,
       "answer_type": "choices",
@@ -5503,7 +5503,7 @@
     {
       "title": "Question 196",
       "question_text": "You are developing a model to predict events by using classification. You have a confusion matrix for the model scored on test data as shown in the following exhibit. Identify, how many correctly predicted positives & false negatives are there?",
-      "question_html": "<div class=\"question\">\n      <p>You are developing a model to predict events by using classification. You have a confusion matrix for the\n        model scored on test data as shown in the following exhibit.</p>\n      <img src=\"images/Q196.png\" alt=\"\">\n      <p>Identify, how many correctly predicted positives & false negatives are there?</p>\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are developing a model to predict events by using classification. You have a confusion matrix for the\n        model scored on test data as shown in the following exhibit.</p>\n      <img src=\"images/Q196.svg\" alt=\"\">\n      <p>Identify, how many correctly predicted positives & false negatives are there?</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. True Positive: 11, False Negative: 13951</li>\n        <li>B. True Positive: 5, False Negative: 13951</li>\n        <li class=\"active\">C. True Positive: 11, False Negative: 1033</li>\n        <li>D. True Positive: 5, False Negative: 1033</li>\n      </ul>\n    </div>",
       "question_number": 196,
       "answer_type": "choices",
@@ -6739,7 +6739,7 @@
     {
       "title": "Question 241",
       "question_text": "You are using a model which generate the Predicted vs. True chart shown in the following exhibit. Which type of model is the chart used to evaluate?",
-      "question_html": "<div class=\"question\">\n      <p>You are using a model which generate the Predicted vs. True chart shown in the following exhibit. </p>\n      <img src=\"images/Q241.png\" alt=\"\">\n      <p>Which type of model is the chart used to evaluate?</p>\n    </div>",
+      "question_html": "<div class=\"question\">\n      <p>You are using a model which generate the Predicted vs. True chart shown in the following exhibit. </p>\n      <img src=\"images/Q241.svg\" alt=\"\">\n      <p>Which type of model is the chart used to evaluate?</p>\n    </div>",
       "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Regression</li>\n        <li>B. Classification</li>\n        <li>C. Clustering</li>\n      </ul>\n    </div>",
       "question_number": 241,
       "answer_type": "choices",

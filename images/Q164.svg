@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Annotated image with detected objects">
+  <rect width="960" height="540" fill="#f7f9fc" stroke="#d0d7de" stroke-width="2"/>
+  <g stroke="#0b8a2c" stroke-width="3" fill="none">
+    <rect x="150" y="170" width="220" height="200" />
+    <rect x="420" y="150" width="280" height="160" />
+    <rect x="520" y="260" width="250" height="170" />
+  </g>
+  <g font-family="'Segoe UI', sans-serif" font-size="16" fill="#ffffff">
+    <rect x="150" y="146" width="140" height="24" fill="#0b8a2c" />
+    <text x="160" y="164">Person (detected)</text>
+    <rect x="420" y="126" width="150" height="24" fill="#0b8a2c" />
+    <text x="430" y="144">Laptop (detected)</text>
+    <rect x="520" y="236" width="140" height="24" fill="#0b8a2c" />
+    <text x="530" y="254">Chair (detected)</text>
+  </g>
+</svg>
