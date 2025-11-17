@@ -219,29 +219,6 @@
     margin: 0 auto;
   }
 
-  .category-section {
-    background: #f8f9fb;
-    border: 1px solid #d0d7de;
-    border-radius: 14px;
-    padding: clamp(1rem, 3vw, 1.4rem);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .category-section + .category-section {
-    margin-top: clamp(1rem, 3vw, 1.4rem);
-  }
-
-  .category-heading {
-    margin: 0 0 0.35rem;
-    color: #004578;
-  }
-
-  .category-count {
-    margin: 0 0 0.9rem;
-    color: #555;
-    font-size: 0.95rem;
-  }
-
   details.question-card {
     background: var(--surface);
     border: 1px solid #d0d7de;
@@ -889,103 +866,6 @@
       return questionCard;
     }
 
-    const CATEGORY_RULES = [
-      {
-        id: 'ai-workloads',
-        title: 'Describe Artificial Intelligence workloads and considerations',
-        keywords: ['responsible', 'fairness', 'bias', 'privacy', 'security', 'ethics', 'governance', 'bot',
-          'cognitive services', 'anomaly', 'chatbot', 'decision', 'workload']
-      },
-      {
-        id: 'ml-principles',
-        title: 'Describe fundamental principles of machine learning on Azure',
-        keywords: ['automl', 'regression', 'classification', 'clustering', 'machine learning', 'train', 'model', 'dataset',
-          'feature', 'label', 'overfitting', 'underfitting', 'pipeline', 'notebook', 'mlflow', 'evaluation']
-      },
-      {
-        id: 'computer-vision',
-        title: 'Describe features of computer vision workloads on Azure',
-        keywords: ['vision', 'ocr', 'image', 'photo', 'object detection', 'custom vision', 'face', 'spatial analysis', 'video',
-          'form recognizer', 'document intelligence', 'receipt', 'invoice']
-      },
-      {
-        id: 'nlp',
-        title: 'Describe features of Natural Language Processing (NLP) workloads on Azure',
-        keywords: ['language', 'translator', 'speech', 'text to speech', 'speech to text', 'sentiment', 'key phrase', 'entity',
-          'utterance', 'question answering', 'text analytics', 'translation']
-      },
-      {
-        id: 'generative-ai',
-        title: 'Describe features of generative AI workloads on Azure',
-        keywords: ['openai', 'gpt', 'copilot', 'prompt', 'generative', 'chatgpt', 'embedding', 'embeddings', 'completion',
-          'assistant', 'dall', 'vector search']
-      }
-    ];
-
-    function normalizeQuestionText(question) {
-      const snippets = [question.question_text, question.question_html, question.answer_html]
-        .filter(Boolean)
-        .map((snippet) => snippet.replace(/<[^>]*>/g, ' '));
-      return snippets.join(' ').toLowerCase();
-    }
-
-    function categorizeQuestion(question) {
-      const normalized = normalizeQuestionText(question);
-      let bestRule = CATEGORY_RULES[0];
-      let bestScore = 0;
-
-      CATEGORY_RULES.forEach((rule) => {
-        const score = keywordMatchCount(normalized, rule.keywords);
-        if (score > bestScore) {
-          bestScore = score;
-          bestRule = rule;
-        }
-      });
-
-      return bestScore === 0 ? CATEGORY_RULES[0] : bestRule;
-    }
-
-    function keywordMatchCount(text, keywords) {
-      return keywords.reduce((count, keyword) => count + (text.includes(keyword) ? 1 : 0), 0);
-    }
-
-    function groupQuestions(questions) {
-      const grouped = new Map();
-      CATEGORY_RULES.forEach((rule) => grouped.set(rule.id, []));
-
-      questions.forEach((question, index) => {
-        const category = categorizeQuestion(question);
-        const bucket = grouped.get(category.id);
-        bucket.push({ question, index });
-      });
-
-      return grouped;
-    }
-
-    function renderCategorySection(rule, items) {
-      const section = document.createElement('section');
-      section.className = 'category-section';
-
-      const heading = document.createElement('h2');
-      heading.className = 'category-heading';
-      heading.textContent = rule.title;
-      section.appendChild(heading);
-
-      const count = document.createElement('p');
-      count.className = 'category-count';
-      count.textContent = `${items.length} question${items.length === 1 ? '' : 's'}`;
-      section.appendChild(count);
-
-      const list = document.createElement('div');
-      list.className = 'question-list';
-      items.forEach(({ question, index }) => {
-        list.appendChild(buildQuestionCard(question, index));
-      });
-
-      section.appendChild(list);
-      return section;
-    }
-
     async function loadQuestions() {
       const loadingState = document.getElementById('question-loading');
       const questionList = document.getElementById('question-list');
@@ -1004,11 +884,8 @@
         }
 
         const fragment = document.createDocumentFragment();
-        const grouped = groupQuestions(questions);
-
-        CATEGORY_RULES.forEach((rule) => {
-          const items = grouped.get(rule.id) ?? [];
-          fragment.appendChild(renderCategorySection(rule, items));
+        questions.forEach((question, index) => {
+          fragment.appendChild(buildQuestionCard(question, index));
         });
 
         questionList.appendChild(fragment);
