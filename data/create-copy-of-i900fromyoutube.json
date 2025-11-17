@@ -1,6 +1,6 @@
 {
   "source": "create-copy-of-i900fromyoutube.html",
-  "question_count": 300,
+  "question_count": 349,
   "questions": [
     {
       "title": "Question 1",
@@ -8067,6 +8067,965 @@
         }
       ],
       "explanation_en": "Entity Linking identifies and disambiguates the identity of entities found in a text. Key phrase extraction is not used to extract entities and is used instead to extract key phrases to identify the main concepts in a text. Named entity recognition cannot provide a link for each entity to view further information. Text translation is part of the Azure AI Translator service.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/cognitive-services/language-service/entity-linking/overview\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/"
+    },
+    {
+      "title": "Question 301",
+      "question_text": "Which type of artificial intelligence (AI) workload provides the ability to generate bounding boxes that identify the locations of different types of vehicles in an image?",
+      "question_html": "<div class=\"question\">\n      <p>Which type of artificial intelligence (AI) workload provides the ability to generate bounding boxes that identify the locations of different types of vehicles in an image?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. object detection</li>\n      </ul>\n    </div>",
+      "question_number": 301,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "object detection",
+          "raw": "A. object detection",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. The other answer choices also process images, but their outcomes are different.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision"
+    },
+    {
+      "title": "Question 302",
+      "question_text": "Which type of artificial intelligence (AI) workload provides the ability to classify individual pixels in an image depending on the object that they represent?",
+      "question_html": "<div class=\"question\">\n      <p>Which type of artificial intelligence (AI) workload provides the ability to classify individual pixels in an image depending on the object that they represent?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. semantic segmentation</li>\n      </ul>\n    </div>",
+      "question_number": 302,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "semantic segmentation",
+          "raw": "A. semantic segmentation",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. The other answer choices also process images, but their outcomes are different.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision"
+    },
+    {
+      "title": "Question 303",
+      "question_text": "Which AI service can be integrated into chat applications and generate content in the form of text?",
+      "question_html": "<div class=\"question\">\n      <p>Which AI service can be integrated into chat applications and generate content in the form of text?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Azure OpenAI</li>\n      </ul>\n    </div>",
+      "question_number": 303,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Azure OpenAI",
+          "raw": "A. Azure OpenAI",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Azure OpenAI is the only service capable of generating text that can be used in chat applications to create conversational experiences. The other workloads are Azure Cognitive Services used for different purposes, but not for generating text used in chat applications.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/6-understand-generative-ai"
+    },
+    {
+      "title": "Question 304",
+      "question_text": "Which type of artificial intelligence (AI) workload has the primary purpose of making large amounts of data searchable?",
+      "question_html": "<div class=\"question\">\n      <p>Which type of artificial intelligence (AI) workload has the primary purpose of making large amounts of data searchable?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. knowledge mining</li>\n      </ul>\n    </div>",
+      "question_number": 304,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "knowledge mining",
+          "raw": "A. knowledge mining",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Knowledge mining is an artificial intelligence (AI) workload that has the purpose of making large amounts of data searchable. While other workloads leverage indexing for faster access to large amounts of data, this is not their primary purpose.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/6-understand-knowledge-mining"
+    },
+    {
+      "title": "Question 305",
+      "question_text": "Which artificial intelligence (AI) workload scenario is an example of natural language processing (NLP)?",
+      "question_html": "<div class=\"question\">\n      <p>Which artificial intelligence (AI) workload scenario is an example of natural language processing (NLP)?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. extracting key phrases from a business insights report</li>\n      </ul>\n    </div>",
+      "question_number": 305,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "extracting key phrases from a business insights report",
+          "raw": "A. extracting key phrases from a business insights report",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Extracting key phrases from text to identify the main terms is an NLP workload. Predicting whether customers are likely to buy a product based on previous purchases requires the development of a machine learning model. Monitoring for sudden increases in quantity of failed sign-in attempts is a different workload. Identifying objects in landscape images is a computer vision workload.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/"
+    },
+    {
+      "title": "Question 306",
+      "question_text": "Which two artificial intelligence (AI) workload scenarios are examples of natural language processing (NLP)? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which two artificial intelligence (AI) workload scenarios are examples of natural language processing (NLP)? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. extracting handwritten text from online images</li>\n        <li class=\"active\">B. translating text between different languages from product reviews</li>\n        <li class=\"active\">C. performing sentiment analysis on social media data</li>\n      </ul>\n    </div>",
+      "question_number": 306,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "extracting handwritten text from online images",
+          "raw": "A. extracting handwritten text from online images",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "translating text between different languages from product reviews",
+          "raw": "B. translating text between different languages from product reviews",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "performing sentiment analysis on social media data",
+          "raw": "C. performing sentiment analysis on social media data",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Translating text between different languages from product reviews is an NLP workload that uses the Azure AI Translator service and is part of Azure AI Services. It can provide text translation of supported languages in real time. Performing sentiment analysis on social media data is an NLP that uses the sentiment analysis feature of the Azure AI Service for Language. It can provide sentiment labels, such as negative, neutral, and positive for text-based sentences and documents.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/paths/explore-natural-language-processing/"
+    },
+    {
+      "title": "Question 307",
+      "question_text": "Which principle of responsible artificial intelligence (AI) involves evaluating and mitigating the bias introduced by the features of a model?",
+      "question_html": "<div class=\"question\">\n      <p>Which principle of responsible artificial intelligence (AI) involves evaluating and mitigating the bias introduced by the features of a model?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. fairness</li>\n      </ul>\n    </div>",
+      "question_number": 307,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "fairness",
+          "raw": "A. fairness",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Fairness involves evaluating and mitigating the bias introduced by the features of a model. Privacy is meant to ensure that privacy provisions are included in AI solutions. Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. Accountability is focused on ensuring that AI solutions meet ethical and legal standards that are clearly defined.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai"
+    },
+    {
+      "title": "Question 308",
+      "question_text": "A bank is developing a new artificial intelligence (AI) system to support the process of accepting or rejecting mortgage applications. Which two issues should be considered as part of the responsible AI principle of fairness to avoid biased decision making? Each correct answer presents part of the solution.",
+      "question_html": "<div class=\"question\">\n      <p>A bank is developing a new artificial intelligence (AI) system to support the process of accepting or rejecting mortgage applications. Which two issues should be considered as part of the responsible AI principle of fairness to avoid biased decision making? Each correct answer presents part of the solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. ethnicity</li>\n        <li class=\"active\">B. gender</li>\n      </ul>\n    </div>",
+      "question_number": 308,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ethnicity",
+          "raw": "A. ethnicity",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "gender",
+          "raw": "B. gender",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The AI system must be designed to ensure that biased decision making is avoided and not based on factors such as ethnicity and gender. The system will consider salary, payment history, and credit utilization. These are standard metrics.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai"
+    },
+    {
+      "title": "Question 309",
+      "question_text": "A company is currently developing driverless agriculture vehicles to help harvest crops. The vehicles will be deployed alongside people working in the crop fields, and as such, the company will need to carry out robust testing. Which principle of responsible artificial intelligence (AI) is most important in this case?",
+      "question_html": "<div class=\"question\">\n      <p>A company is currently developing driverless agriculture vehicles to help harvest crops. The vehicles will be deployed alongside people working in the crop fields, and as such, the company will need to carry out robust testing. Which principle of responsible artificial intelligence (AI) is most important in this case?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. reliability and safety</li>\n      </ul>\n    </div>",
+      "question_number": 309,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "reliability and safety",
+          "raw": "A. reliability and safety",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The reliability and safety principles are of paramount importance here as it requires an AI system to work alongside people in a physical environment by using AI controlled machinery. The system must function safely, while ensuring no harm will come to human life.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai"
+    },
+    {
+      "title": "Question 310",
+      "question_text": "Which type machine learning algorithm predicts a numeric label associated with an item based on that item\u2019s features?",
+      "question_html": "<div class=\"question\">\n      <p>Which type machine learning algorithm predicts a numeric label associated with an item based on that item\u2019s features?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. regression</li>\n      </ul>\n    </div>",
+      "question_number": 310,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "regression",
+          "raw": "A. regression",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/\n- https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification\n- https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering"
+    },
+    {
+      "title": "Question 311",
+      "question_text": "Which type of machine learning algorithm finds the optimal way to split a dataset into groups without relying on training and validating label predictions?",
+      "question_html": "<div class=\"question\">\n      <p>Which type of machine learning algorithm finds the optimal way to split a dataset into groups without relying on training and validating label predictions?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. clustering</li>\n      </ul>\n    </div>",
+      "question_number": 311,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "clustering",
+          "raw": "A. clustering",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "A clustering algorithm is an example of unsupervised learning, which groups data points that have similar characteristics without relying on training and validating label predictions. Supervised learning is a category of learning algorithms that includes regression and classification, but not clustering. Classification and regression algorithms are examples of supervised machine learning.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/\n- https://learn.microsoft.com/training/modules/understand-classification-machine-learning/2-what-is-classification\n- https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering"
+    },
+    {
+      "title": "Question 312",
+      "question_text": "Predicting rainfall for a specific geographical location is an example of which type of machine learning?",
+      "question_html": "<div class=\"question\">\n      <p>Predicting rainfall for a specific geographical location is an example of which type of machine learning?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. regression</li>\n      </ul>\n    </div>",
+      "question_number": 312,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "regression",
+          "raw": "A. regression",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression"
+    },
+    {
+      "title": "Question 313",
+      "question_text": "An electricity utility company wants to develop a mobile app for its customers to monitor their energy use and to display their predicted energy use for the next 12 months. The company wants to use machine learning to provide a reasonably accurate prediction of future energy use by using the customers\u2019 previous energy-use data. Which type of machine learning is this?",
+      "question_html": "<div class=\"question\">\n      <p>An electricity utility company wants to develop a mobile app for its customers to monitor their energy use and to display their predicted energy use for the next 12 months. The company wants to use machine learning to provide a reasonably accurate prediction of future energy use by using the customers\u2019 previous energy-use data. Which type of machine learning is this?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. regression</li>\n      </ul>\n    </div>",
+      "question_number": 313,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "regression",
+          "raw": "A. regression",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Regression is a machine learning scenario that is used to predict numeric values. In this example, regression will be able to predict future energy consumption based on analyzing historical time-series energy data based on factors, such as seasonal weather and holiday periods. Multiclass classification is used to predict categories of data. Clustering analyzes unlabeled data to find similarities present in the data. Classification is used to predict categories of data.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression"
+    },
+    {
+      "title": "Question 314",
+      "question_text": "Which feature makes regression an example of supervised machine learning?",
+      "question_html": "<div class=\"question\">\n      <p>Which feature makes regression an example of supervised machine learning?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. use of historical data with known label values to train a model</li>\n      </ul>\n    </div>",
+      "question_number": 314,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "use of historical data with known label values to train a model",
+          "raw": "A. use of historical data with known label values to train a model",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training. What is regression? - Training | Microsoft Learn\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/train-evaluate-cluster-models/2-what-is-clustering"
+    },
+    {
+      "title": "Question 315",
+      "question_text": "In a regression machine learning algorithm, what are the characteristics of features and labels in a validation dataset?",
+      "question_html": "<div class=\"question\">\n      <p>In a regression machine learning algorithm, what are the characteristics of features and labels in a validation dataset?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. known feature and label values</li>\n      </ul>\n    </div>",
+      "question_number": 315,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "known feature and label values",
+          "raw": "A. known feature and label values",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "In a regression machine learning algorithm, a validation set contains known feature and label values.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/train-evaluate-regression-models/2-what-is-regression"
+    },
+    {
+      "title": "Question 316",
+      "question_text": "A company wants to predict household water use based on the number of people in a house, the weather temperature, and the time of year. In terms of data labels and features, what is the label in this use case?",
+      "question_html": "<div class=\"question\">\n      <p>A company wants to predict household water use based on the number of people in a house, the weather temperature, and the time of year. In terms of data labels and features, what is the label in this use case?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. water use</li>\n      </ul>\n    </div>",
+      "question_number": 316,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "water use",
+          "raw": "A. water use",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Water use is the label value that you want to predict, also known as the independent variable. Number of people in the house, weather temperature, and time of year are features, and are values that are dependent on the label. Number of people in the house, weather temperature, and time of year can influence the water consumed in a household.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/"
+    },
+    {
+      "title": "Question 317",
+      "question_text": "You need to use Azure Machine Learning to train a regression model. What should you create in Machine Learning studio?",
+      "question_html": "<div class=\"question\">\n      <p>You need to use Azure Machine Learning to train a regression model. What should you create in Machine Learning studio?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. a job</li>\n      </ul>\n    </div>",
+      "question_number": 317,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a job",
+          "raw": "A. a job",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "A job must be created in Machine Learning studio to use Machine Learning to train a regression model. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/"
+    },
+    {
+      "title": "Question 318",
+      "question_text": "You need to use the Azure Machine Learning designer to train a machine learning model. What should you do first in the Machine Learning designer?",
+      "question_html": "<div class=\"question\">\n      <p>You need to use the Azure Machine Learning designer to train a machine learning model. What should you do first in the Machine Learning designer?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Create a pipeline.</li>\n      </ul>\n    </div>",
+      "question_number": 318,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Create a pipeline.",
+          "raw": "A. Create a pipeline.",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Before you can start training a machine learning model, you must first create a pipeline in the Machine Learning designer. This is followed by adding a dataset, adding training modules, and eventually deploying a service.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/4-regression"
+    },
+    {
+      "title": "Question 319",
+      "question_text": "You train a regression model by using automated machine learning (automated ML) in the Azure Machine Learning studio. You review the best model summary. You need to publish the model for others to use from the internet. What should you do next?",
+      "question_html": "<div class=\"question\">\n      <p>You train a regression model by using automated machine learning (automated ML) in the Azure Machine Learning studio. You review the best model summary. You need to publish the model for others to use from the internet. What should you do next?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Deploy the model to an endpoint.</li>\n      </ul>\n    </div>",
+      "question_number": 319,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Deploy the model to an endpoint.",
+          "raw": "A. Deploy the model to an endpoint.",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "You can deploy the best performing model for client applications to use over the internet by using an endpoint. Compute clusters are used to train the model and are created directly after you create a Machine Learning workspace. Before you can test the model\u2019s endpoint, you must deploy it first to an endpoint. Automated ML performs the validation automatically, so you do not need to split the dataset.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/machine-learning/concept-automated-ml\n- https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/4-regression"
+    },
+    {
+      "title": "Question 320",
+      "question_text": "Which three data transformation modules are in the Azure Machine Learning designer? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which three data transformation modules are in the Azure Machine Learning designer? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Clean Missing Data</li>\n        <li>B. Model Evaluate Model</li>\n        <li class=\"active\">C. Select Columns in Dataset</li>\n        <li class=\"active\">D. Normalize Data</li>\n      </ul>\n    </div>",
+      "question_number": 320,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Clean Missing Data",
+          "raw": "A. Clean Missing Data",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Model Evaluate Model",
+          "raw": "B. Model Evaluate Model",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Select Columns in Dataset",
+          "raw": "C. Select Columns in Dataset",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "Normalize Data",
+          "raw": "D. Normalize Data",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Normalize Data is a data transformation module that is used to change the values of numeric columns in a dataset to a common scale, without distorting differences in the range of values. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. The train clustering model is not a part of data transformation. The evaluate model is a component used to measure the accuracy of training models.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/7-clustering"
+    },
+    {
+      "title": "Question 321",
+      "question_text": "What is an unsupervised machine learning algorithm module for training models in the Azure Machine Learning designer?",
+      "question_html": "<div class=\"question\">\n      <p>What is an unsupervised machine learning algorithm module for training models in the Azure Machine Learning designer?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. K-Means Clustering</li>\n      </ul>\n    </div>",
+      "question_number": 321,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "K-Means Clustering",
+          "raw": "A. K-Means Clustering",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "K-means clustering is an unsupervised machine learning algorithm component used for training clustering models. You can use unlabeled data with this algorithm. Linear regression and classification are supervised machine learning algorithm components. You need labeled data to use these algorithms. Normalize Data is not a machine learning algorithm module.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/7-clustering"
+    },
+    {
+      "title": "Question 322",
+      "question_text": "Which artificial intelligence (AI) technique serves as the foundation for modern image classification solutions?",
+      "question_html": "<div class=\"question\">\n      <p>Which artificial intelligence (AI) technique serves as the foundation for modern image classification solutions?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. semantic segmentation</li>\n        <li class=\"active\">B. deep learning</li>\n      </ul>\n    </div>",
+      "question_number": 322,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "semantic segmentation",
+          "raw": "A. semantic segmentation",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "deep learning",
+          "raw": "B. deep learning",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Modern image classification solutions are based on deep learning techniques. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. Both linear regression and multiple linear regression use training and validating predictions to predict numeric values, so they are not part of image classification solutions.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models\n- https://learn.microsoft.com/training/modules/fundamentals-machine-learning/"
+    },
+    {
+      "title": "Question 323",
+      "question_text": "Which artificial intelligence (AI) technique should be used to extract the name of a store from a photograph displaying the store front?",
+      "question_html": "<div class=\"question\">\n      <p>Which artificial intelligence (AI) technique should be used to extract the name of a store from a photograph displaying the store front?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. optical character recognition (OCR)</li>\n      </ul>\n    </div>",
+      "question_number": 323,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "optical character recognition (OCR)",
+          "raw": "A. optical character recognition (OCR)",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "OCR provides the ability to detect and read text in images. NLP is an area of AI that deals with identifying the meaning of a written or spoken language, but not detecting or reading text in images. Image classification classifies images based on their contents. Semantic segmentation provides the ability to classify individual pixels in an image.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision"
+    },
+    {
+      "title": "Question 324",
+      "question_text": "Which computer vision solution provides the ability to identify a person's age based on a photograph?",
+      "question_html": "<div class=\"question\">\n      <p>Which computer vision solution provides the ability to identify a person&#x27;s age based on a photograph?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. image classification</li>\n        <li class=\"active\">B. facial detection</li>\n      </ul>\n    </div>",
+      "question_number": 324,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "image classification",
+          "raw": "A. image classification",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "facial detection",
+          "raw": "B. facial detection",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Facial detection provides the ability to detect and analyze human faces in an image, including identifying a person's age based on a photograph. Image classification classifies images based on their contents. Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. Semantic segmentation provides the ability to classify individual pixels in an image.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision"
+    },
+    {
+      "title": "Question 325",
+      "question_text": "Which computer vision service provides bounding coordinates as part of its output?",
+      "question_html": "<div class=\"question\">\n      <p>Which computer vision service provides bounding coordinates as part of its output?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. object detection</li>\n      </ul>\n    </div>",
+      "question_number": 325,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "object detection",
+          "raw": "A. object detection",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Object detection provides the ability to generate bounding boxes that identify the locations of different types of objects in an image, including the bounding box coordinates, designating the location of the object in the image. Semantic segmentation provides the ability to classify individual pixels in an image. Image classification classifies images based on their contents. Image analysis extracts information from the image to label it with tags or captions.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure\n- https://learn.microsoft.com/training/modules/get-started-ai-fundamentals/4-understand-computer-vision"
+    },
+    {
+      "title": "Question 326",
+      "question_text": "Which process allows you to use optical character recognition (OCR)?",
+      "question_html": "<div class=\"question\">\n      <p>Which process allows you to use optical character recognition (OCR)?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. digitizing medical records</li>\n      </ul>\n    </div>",
+      "question_number": 326,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "digitizing medical records",
+          "raw": "A. digitizing medical records",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "OCR can extract printed or handwritten text from images. In this case, it can be used to extract text from scanned medical records to produce a digital archive from paper-based documents. Identifying wildlife in an image is an example of a computer vision solution that uses object detection and is not suitable for OCR. Identifying a user requesting access to a laptop is done by taking images from the laptop\u2019s webcam and using facial detection and recognition to identify the user requesting access. Translating speech to text is an example of using speech translation and uses the Azure AI Speech service as part of Azure AI Services.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/read-text-computer-vision/"
+    },
+    {
+      "title": "Question 327",
+      "question_text": "You have a set of images. Each image shows one type of bone fracture. What allows you to identify bone fractures in different X-ray images?",
+      "question_html": "<div class=\"question\">\n      <p>You have a set of images. Each image shows one type of bone fracture. What allows you to identify bone fractures in different X-ray images?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. image classification</li>\n      </ul>\n    </div>",
+      "question_number": 327,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "image classification",
+          "raw": "A. image classification",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2b-computer-vision-models"
+    },
+    {
+      "title": "Question 328",
+      "question_text": "What can be used for an attendance system that can scan handwritten signatures?",
+      "question_html": "<div class=\"question\">\n      <p>What can be used for an attendance system that can scan handwritten signatures?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. optical character recognition (OCR)</li>\n      </ul>\n    </div>",
+      "question_number": 328,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "optical character recognition (OCR)",
+          "raw": "A. optical character recognition (OCR)",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "OCR is used to extract text and handwriting from images. In this case, it can be used to extract signatures for attendance purposes. Face detection can detect and verify human faces, not text, from images. Object detection can detect multiple objects in an image by using bounding box coordinates. It is not used to extract handwritten text. Image classification is the part of computer vision that is concerned with the primary contents of an image.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/read-text-computer-vision/"
+    },
+    {
+      "title": "Question 329",
+      "question_text": "Which two specialized domain models are supported by using the Azure AI Vision service? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which two specialized domain models are supported by using the Azure AI Vision service? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. celebrities</li>\n        <li class=\"active\">B. landmarks</li>\n      </ul>\n    </div>",
+      "question_number": 329,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "celebrities",
+          "raw": "A. celebrities",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "landmarks",
+          "raw": "B. landmarks",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The Azure AI Vision service supports the celebrities and landmarks specialized domain models. It does not support specialized domain models for animals, cars, or plants.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-images-computer-vision/2-image-analysis-azure"
+    },
+    {
+      "title": "Question 330",
+      "question_text": "When using the Face Detect API of the Azure AI Face service, which feature helps identify whether a human face has glasses or headwear?",
+      "question_html": "<div class=\"question\">\n      <p>When using the Face Detect API of the Azure AI Face service, which feature helps identify whether a human face has glasses or headwear?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. face attributes</li>\n      </ul>\n    </div>",
+      "question_number": 330,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "face attributes",
+          "raw": "A. face attributes",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Face attributes are a set of features that can be detected by the Face Detect API. Attributes such as accessories (glasses, mask, headwear etc.) can be detected. Face rectangle, face ID, and face landmarks do not allow you to determine whether a person is wearing glasses or headwear.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/cognitive-services/computer-vision/overview-identity\n- https://learn.microsoft.com/training/modules/detect-analyze-faces/"
+    },
+    {
+      "title": "Question 331",
+      "question_text": "Which service can you use to train an image classification model?",
+      "question_html": "<div class=\"question\">\n      <p>Which service can you use to train an image classification model?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Azure AI Custom Vision</li>\n      </ul>\n    </div>",
+      "question_number": 331,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Azure AI Custom Vision",
+          "raw": "A. Azure AI Custom Vision",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Azure AI Custom Vision is an image recognition service that allows you to build and deploy your own image models. The Azure AI vision service, Azure AI Face service, and Azure AI Language service do not provide the capability to train your own image model.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/cognitive-services/custom-vision-service/overview\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics"
+    },
+    {
+      "title": "Question 332",
+      "question_text": "Which natural language processing (NLP) technique normalizes words before counting them?",
+      "question_html": "<div class=\"question\">\n      <p>Which natural language processing (NLP) technique normalizes words before counting them?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. stemming</li>\n      </ul>\n    </div>",
+      "question_number": 332,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "stemming",
+          "raw": "A. stemming",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Stemming normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases. Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics"
+    },
+    {
+      "title": "Question 333",
+      "question_text": "Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?",
+      "question_html": "<div class=\"question\">\n      <p>Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. vectorization</li>\n      </ul>\n    </div>",
+      "question_number": 333,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "vectorization",
+          "raw": "A. vectorization",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-understand-text-analytics"
+    },
+    {
+      "title": "Question 334",
+      "question_text": "What is the confidence score returned by the Azure AI Language detection service of natural language processing (NLP) for an unknown language name?",
+      "question_html": "<div class=\"question\">\n      <p>What is the confidence score returned by the Azure AI Language detection service of natural language processing (NLP) for an unknown language name?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. NaN</li>\n      </ul>\n    </div>",
+      "question_number": 334,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NaN",
+          "raw": "A. NaN",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "NaN, or not a number, designates an unknown confidence score. Unknown is a value with which the NaN confidence score is associated. The score values range between 0 and 1, with 0 designating the lowest confidence score and 1 designating the highest confidence score.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/2-get-started-azure"
+    },
+    {
+      "title": "Question 335",
+      "question_text": "Which Azure AI Service for Language feature can be used to analyze online user reviews to identify whether users view a product positively or negatively?",
+      "question_html": "<div class=\"question\">\n      <p>Which Azure AI Service for Language feature can be used to analyze online user reviews to identify whether users view a product positively or negatively?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. sentiment analysis</li>\n      </ul>\n    </div>",
+      "question_number": 335,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "sentiment analysis",
+          "raw": "A. sentiment analysis",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Sentiment analysis provides sentiment labels, such as negative, neutral, and positive, based on a confidence score from text analysis. This makes it suitable for understanding user sentiment for product reviews. The named entity recognition, key phrase extraction, and language detection features cannot perform sentiment analysis for product reviews.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/\n- https://learn.microsoft.com/azure/cognitive-services/language-service/sentiment-opinion-mining/overview"
+    },
+    {
+      "title": "Question 336",
+      "question_text": "Which two Azure AI Services features can be used to enable both text-to-text and speech-to-text between multiple languages? Each correct answer presents part of the solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which two Azure AI Services features can be used to enable both text-to-text and speech-to-text between multiple languages? Each correct answer presents part of the solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. the Speech service</li>\n        <li class=\"active\">B. the Translator service</li>\n      </ul>\n    </div>",
+      "question_number": 336,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "the Speech service",
+          "raw": "A. the Speech service",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "the Translator service",
+          "raw": "B. the Translator service",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The Azure AI Speech service can be used to generate spoken audio from a text source for text-to-speech translation. The Azure AI Translator service directly supports text-to-text translation in more than 60 languages. Key phrase extraction, Conversational Language Understanding, and language detection are not used for language translation for text-to-text and speech-to-text translation.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/translate-text-with-translation-service/\n- https://learn.microsoft.com/azure/cognitive-services/translator/"
+    },
+    {
+      "title": "Question 337",
+      "question_text": "For which two scenarios is the Universal Language Model used by the speech-to-text API optimized? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>For which two scenarios is the Universal Language Model used by the speech-to-text API optimized? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. dictation</li>\n        <li>B. pronunciation</li>\n        <li class=\"active\">C. conversational</li>\n      </ul>\n    </div>",
+      "question_number": 337,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "dictation",
+          "raw": "A. dictation",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "pronunciation",
+          "raw": "B. pronunciation",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "conversational",
+          "raw": "C. conversational",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The Universal Language Model used by the speech-to-text API is optimized for conversational and dictation scenarios. The acoustic, language, and pronunciation scenarios require developing your own model.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/recognize-synthesize-speech/2-get-started-azure"
+    },
+    {
+      "title": "Question 338",
+      "question_text": "Which Azure resource provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key?",
+      "question_html": "<div class=\"question\">\n      <p>Which Azure resource provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Azure AI Services</li>\n      </ul>\n    </div>",
+      "question_number": 338,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Azure AI Services",
+          "raw": "A. Azure AI Services",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Azure AI Services provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key. Azure AI Language service can be used to access the Azure AI Language service, but not the Azure AI Translator and Azure AI Speech services. The Machine Learning service is used to design, implement, and deploy Machine Learning models. Azure AI Bot Service provides a framework for developing, publishing, and managing bots in Azure.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/translate-text-with-translation-service/2-get-started-azure"
+    },
+    {
+      "title": "Question 339",
+      "question_text": "Which three features are elements of the Azure AI Speech service? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which three features are elements of the Azure AI Speech service? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. language identification</li>\n        <li class=\"active\">B. speaker recognition</li>\n        <li>C. text translation</li>\n        <li class=\"active\">D. voice assistants</li>\n      </ul>\n    </div>",
+      "question_number": 339,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "language identification",
+          "raw": "A. language identification",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "speaker recognition",
+          "raw": "B. speaker recognition",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "text translation",
+          "raw": "C. text translation",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "voice assistants",
+          "raw": "D. voice assistants",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Language identification, speaker recognition, and voice assistants are all elements of the Azure AI Speech service. Text translation and document translation are part of the Translator service.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/cognitive-services/speech-service/overview\n- https://learn.microsoft.com/training/modules/recognize-synthesize-speech/"
+    },
+    {
+      "title": "Question 340",
+      "question_text": "When using the Azure AI Service for Language, what should you use to provide further information online about entities extracted from a text?",
+      "question_html": "<div class=\"question\">\n      <p>When using the Azure AI Service for Language, what should you use to provide further information online about entities extracted from a text?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. named entity recognition</li>\n        <li class=\"active\">B. entity linking</li>\n      </ul>\n    </div>",
+      "question_number": 340,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "named entity recognition",
+          "raw": "A. named entity recognition",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "entity linking",
+          "raw": "B. entity linking",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Entity Linking identifies and disambiguates the identity of entities found in a text. Key phrase extraction is not used to extract entities and is used instead to extract key phrases to identify the main concepts in a text. Named entity recognition cannot provide a link for each entity to view further information. Text translation is part of the Azure AI Translator service.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/cognitive-services/language-service/entity-linking/overview\n- https://learn.microsoft.com/training/modules/analyze-text-with-text-analytics-service/"
+    },
+    {
+      "title": "Question 341",
+      "question_text": "Which three sources can be used to generate questions and answers for a knowledge base? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which three sources can be used to generate questions and answers for a knowledge base? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. a webpage</li>\n        <li class=\"active\">B. an existing FAQ document</li>\n        <li class=\"active\">C. manually entered data</li>\n      </ul>\n    </div>",
+      "question_number": 341,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "a webpage",
+          "raw": "A. a webpage",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "an existing FAQ document",
+          "raw": "B. an existing FAQ document",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "manually entered data",
+          "raw": "C. manually entered data",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "A webpage or an existing document, such as a text file containing question and answer pairs, can be used to generate a knowledge base. You can also manually enter the knowledge base question-and-answer pairs. You cannot directly use an image or an audio file to import a knowledge base.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/build-faq-chatbot-qna-maker-azure-bot-service/"
+    },
+    {
+      "title": "Question 342",
+      "question_text": "At which layer can you apply content filters to suppress prompts and responses for a responsible generative AI solution?",
+      "question_html": "<div class=\"question\">\n      <p>At which layer can you apply content filters to suppress prompts and responses for a responsible generative AI solution?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. safety system</li>\n      </ul>\n    </div>",
+      "question_number": 342,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "safety system",
+          "raw": "A. safety system",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "The safety system layer includes platform-level configurations and capabilities that help mitigate harm. For example, the Azure OpenAI service includes support for content filters that apply criteria to suppress prompts and responses based on the classification of content into four severity levels (safe, low, medium, and high) for four categories of potential harm (hate, sexual, violence, and self-harm).\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/responsible-ai-studio/"
+    },
+    {
+      "title": "Question 343",
+      "question_text": "Select the answer that correctly completes the sentence. [Answer choice] can return responses, such as natural language, images, or code, based on natural language input.",
+      "question_html": "<div class=\"question\">\n      <p>Select the answer that correctly completes the sentence. [Answer choice] can return responses, such as natural language, images, or code, based on natural language input.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Generative AI</li>\n      </ul>\n    </div>",
+      "question_number": 343,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Generative AI",
+          "raw": "A. Generative AI",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-generative-ai/2-what-is-generative-ai"
+    },
+    {
+      "title": "Question 344",
+      "question_text": "Select the answer that correctly completes the sentence. [Answer choice] can used to identify constraints and styles for the responses of a generative AI model.",
+      "question_html": "<div class=\"question\">\n      <p>Select the answer that correctly completes the sentence. [Answer choice] can used to identify constraints and styles for the responses of a generative AI model.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. System messages</li>\n      </ul>\n    </div>",
+      "question_number": 344,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "System messages",
+          "raw": "A. System messages",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-generative-ai/6-writing-prompts"
+    },
+    {
+      "title": "Question 345",
+      "question_text": "As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?",
+      "question_html": "<div class=\"question\">\n      <p>As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li>A. Measure the presence of potential harms.</li>\n        <li class=\"active\">B. Identify potential harms.</li>\n      </ul>\n    </div>",
+      "question_number": 345,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Measure the presence of potential harms.",
+          "raw": "A. Measure the presence of potential harms.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Identify potential harms.",
+          "raw": "B. Identify potential harms.",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Identifying potential harms is the first stage when planning a responsible generative AI solution.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/responsible-ai-studio/"
+    },
+    {
+      "title": "Question 346",
+      "question_text": "Which three capabilities are examples of image generation features for a generative AI model? Each correct answer presents a complete solution.",
+      "question_html": "<div class=\"question\">\n      <p>Which three capabilities are examples of image generation features for a generative AI model? Each correct answer presents a complete solution.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. creating variations of an image</li>\n        <li class=\"active\">B. editing an image</li>\n        <li class=\"active\">C. new image creation</li>\n      </ul>\n    </div>",
+      "question_number": 346,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "creating variations of an image",
+          "raw": "A. creating variations of an image",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "editing an image",
+          "raw": "B. editing an image",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "new image creation",
+          "raw": "C. new image creation",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Image generation models can take a prompt, a base image, or both, and create something new. These generative AI models can create both realistic and artistic images, change the layout or style of an image, and create variations of a provided image.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-generative-ai/"
+    },
+    {
+      "title": "Question 347",
+      "question_text": "You plan to develop an image processing solution that will use DALL-E as a generative AI model. Which capability is NOT supported by the DALL-E model?",
+      "question_html": "<div class=\"question\">\n      <p>You plan to develop an image processing solution that will use DALL-E as a generative AI model. Which capability is NOT supported by the DALL-E model?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. image description</li>\n      </ul>\n    </div>",
+      "question_number": 347,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "image description",
+          "raw": "A. image description",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-generative-ai/"
+    },
+    {
+      "title": "Question 348",
+      "question_text": "Which generative AI model is used to generate images based on natural language prompts?",
+      "question_html": "<div class=\"question\">\n      <p>Which generative AI model is used to generate images based on natural language prompts?</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. DALL-E</li>\n      </ul>\n    </div>",
+      "question_number": 348,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DALL-E",
+          "raw": "A. DALL-E",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/azure/ai-services/openai/concepts/models"
+    },
+    {
+      "title": "Question 349",
+      "question_text": "Select the answer that correctly completes the sentence. [Answer choice] can search, classify, and compare sources of text for similarity.",
+      "question_html": "<div class=\"question\">\n      <p>Select the answer that correctly completes the sentence. [Answer choice] can search, classify, and compare sources of text for similarity.</p>\n    </div>",
+      "answer_html": "<div class=\"answer\">\n      <ul>\n        <li class=\"active\">A. Embeddings</li>\n      </ul>\n    </div>",
+      "question_number": 349,
+      "answer_type": "choices",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Embeddings",
+          "raw": "A. Embeddings",
+          "is_correct": true
+        }
+      ],
+      "explanation_en": "Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.\n\nMicrosoft Learn documentation:\n- https://learn.microsoft.com/training/modules/fundamentals-generative-ai/"
     }
   ]
 }
