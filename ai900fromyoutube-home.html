@@ -212,122 +212,12 @@
     gap: clamp(1.25rem, 4vw, 1.75rem);
   }
 
-  .category-controls {
-    display: grid;
-    gap: 0.65rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: clamp(0.9rem, 2.8vw, 1.3rem);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-
-    .category-controls h2 {
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    .category-controls p {
-      margin: 0;
-      color: #3b3b3b;
-    }
-
-    .category-control-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .category-control-buttons {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .pill-button {
-      border: 1px solid var(--border);
-      background: #f6f8fb;
-      color: #004578;
-      border-radius: 999px;
-      padding: 0.45rem 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .pill-button:hover,
-    .pill-button:focus-visible {
-      background: #e9f2ff;
-      border-color: #004578;
-      outline: none;
-      transform: translateY(-1px);
-    }
-
-    .pill-button:focus-visible {
-      box-shadow: 0 0 0 3px rgba(0, 99, 177, 0.25);
-    }
-
   .question-list {
     display: grid;
     gap: clamp(0.85rem, 2.8vw, 1.25rem);
     max-width: min(60rem, 100%);
     margin: 0 auto;
   }
-
-  details.category-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-    padding: clamp(0.4rem, 1.8vw, 0.6rem) clamp(0.7rem, 2.2vw, 1rem);
-  }
-
-    .category-summary {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .category-summary h2 {
-      margin: 0;
-      font-size: 1.05rem;
-      color: #0b4f7a;
-    }
-
-    .category-description {
-      margin: 0.25rem 0 0 0;
-      color: #3b3b3b;
-      font-weight: 400;
-      font-size: 0.95rem;
-    }
-
-    .category-count {
-      background: #e9f2ff;
-      color: #004578;
-      border: 1px solid #b7d4ff;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .category-questions {
-      display: grid;
-      gap: clamp(0.75rem, 2vw, 1rem);
-      padding: clamp(0.6rem, 2vw, 0.9rem) 0 0.35rem;
-    }
-
-    .empty-category {
-      margin: 0;
-      color: #555;
-      background: #f6f8fb;
-      border: 1px dashed #d0d7de;
-      border-radius: 10px;
-      padding: 0.75rem;
-    }
 
   details.question-card {
     background: var(--surface);
@@ -689,18 +579,6 @@
 
   <main>
     <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
-    <div id="category-controls" class="category-controls" hidden>
-      <div class="category-control-row">
-        <div>
-          <h2>Group by exam domain</h2>
-          <p>Toggle each AI-900 domain to focus on the questions you want to review.</p>
-        </div>
-        <div class="category-control-buttons">
-          <button class="pill-button" type="button" data-toggle="expand">Expand all</button>
-          <button class="pill-button" type="button" data-toggle="collapse">Collapse all</button>
-        </div>
-      </div>
-    </div>
     <div id="question-list" class="question-list" aria-live="polite"></div>
   </main>
 
@@ -858,39 +736,6 @@
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
 
-    const CATEGORY_CONFIG = [
-      {
-        key: 'ai-workloads',
-        title: 'Describe Artificial Intelligence workloads and considerations',
-        description: 'Scenarios, responsible AI, and high-level AI solution choices.',
-        keywords: ['responsible ai', 'anomaly', 'bot service', 'ai workload', 'ethics', 'governance', 'fairness', 'bias', 'cognitive services', 'ai services']
-      },
-      {
-        key: 'ml-fundamentals',
-        title: 'Describe fundamental principles of machine learning on Azure',
-        description: 'Core ML concepts like features, labels, training, AutoML, and MLOps.',
-        keywords: ['machine learning', 'ml', 'model', 'regression', 'classification', 'clustering', 'automl', 'label', 'feature', 'train', 'endpoint', 'mlflow', 'dataset', 'pipeline', 'designer']
-      },
-      {
-        key: 'computer-vision',
-        title: 'Describe features of computer vision workloads on Azure',
-        description: 'Image, video, OCR, face analysis, spatial analysis, and document AI.',
-        keywords: ['computer vision', 'vision', 'image', 'ocr', 'object', 'face', 'spatial', 'custom vision', 'form recognizer', 'document intelligence', 'video', 'image analysis', 'read api']
-      },
-      {
-        key: 'nlp',
-        title: 'Describe features of Natural Language Processing (NLP) workloads on Azure',
-        description: 'Language, speech, translation, text analytics, and conversational bots.',
-        keywords: ['language', 'nlp', 'text', 'speech', 'translate', 'translator', 'sentiment', 'key phrase', 'entity', 'speech to text', 'text to speech', 'bot', 'qna', 'luis', 'language studio']
-      },
-      {
-        key: 'generative-ai',
-        title: 'Describe features of generative AI workloads on Azure',
-        description: 'Azure OpenAI, GPT, prompt engineering, embeddings, and generative safety.',
-        keywords: ['openai', 'gpt', 'chatgpt', 'dall', 'prompt', 'completion', 'embedding', 'generative', 'large language model', 'llm', 'ai studio', 'prompt flow', 'content safety', 'chat playground']
-      }
-    ];
-
     function appendTextWithLineBreaks(target, text) {
       const lines = text.split('\n');
       lines.forEach((line, index) => {
@@ -922,21 +767,6 @@
 
       appendTextWithLineBreaks(fragment, text.slice(lastIndex));
       target.appendChild(fragment);
-    }
-
-    function normalizeQuestionText(question) {
-      const fields = [question.question_text, question.question_html, question.explanation_en];
-      return fields.filter(Boolean).join(' ').toLowerCase();
-    }
-
-    function includesAnyKeyword(text, keywords) {
-      return keywords.some((keyword) => text.includes(keyword));
-    }
-
-    function categorizeQuestion(question) {
-      const text = normalizeQuestionText(question);
-      const match = CATEGORY_CONFIG.find((category) => includesAnyKeyword(text, category.keywords));
-      return match ? match.key : CATEGORY_CONFIG[0].key;
     }
 
     function buildChoiceList(question) {
@@ -1036,79 +866,6 @@
       return questionCard;
     }
 
-    function buildCategorySection(category, questions) {
-      const section = document.createElement('details');
-      section.className = 'category-section';
-      section.open = true;
-      section.dataset.categoryKey = category.key;
-
-      const summary = document.createElement('summary');
-      summary.className = 'category-summary';
-
-      const text = document.createElement('div');
-      const title = document.createElement('h2');
-      title.textContent = category.title;
-      text.appendChild(title);
-
-      const description = document.createElement('p');
-      description.className = 'category-description';
-      description.textContent = category.description;
-      text.appendChild(description);
-
-      const badge = document.createElement('span');
-      badge.className = 'category-count';
-      badge.textContent = `${questions.length} question${questions.length === 1 ? '' : 's'}`;
-
-      summary.appendChild(text);
-      summary.appendChild(badge);
-
-      const container = document.createElement('div');
-      container.className = 'category-questions';
-      if (questions.length) {
-        questions.forEach((question) => {
-          container.appendChild(buildQuestionCard(question, question.originalIndex ?? 0));
-        });
-      } else {
-        const empty = document.createElement('p');
-        empty.className = 'empty-category';
-        empty.textContent = 'No questions matched this domain in the current dataset.';
-        container.appendChild(empty);
-      }
-
-      section.appendChild(summary);
-      section.appendChild(container);
-
-      return section;
-    }
-
-    function setAllCategorySections(open) {
-      document.querySelectorAll('.category-section').forEach((section) => {
-        section.open = open;
-      });
-    }
-
-    function enableCategoryControls() {
-      const controls = document.getElementById('category-controls');
-      if (!controls) {
-        return;
-      }
-
-      controls.hidden = false;
-      controls.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-toggle]');
-        if (!button) {
-          return;
-        }
-
-        const action = button.getAttribute('data-toggle');
-        if (action === 'expand') {
-          setAllCategorySections(true);
-        } else if (action === 'collapse') {
-          setAllCategorySections(false);
-        }
-      });
-    }
-
     async function loadQuestions() {
       const loadingState = document.getElementById('question-loading');
       const questionList = document.getElementById('question-list');
@@ -1126,28 +883,12 @@
           throw new Error('No questions were found in the source document.');
         }
 
-        const grouped = CATEGORY_CONFIG.reduce((bucket, category) => {
-          bucket[category.key] = [];
-          return bucket;
-        }, {});
-
-        questions.forEach((question, index) => {
-          question.originalIndex = index;
-          const categoryKey = categorizeQuestion(question);
-          if (grouped[categoryKey]) {
-            grouped[categoryKey].push(question);
-          } else {
-            grouped[CATEGORY_CONFIG[0].key].push(question);
-          }
-        });
-
         const fragment = document.createDocumentFragment();
-        CATEGORY_CONFIG.forEach((category) => {
-          fragment.appendChild(buildCategorySection(category, grouped[category.key] || []));
+        questions.forEach((question, index) => {
+          fragment.appendChild(buildQuestionCard(question, index));
         });
 
         questionList.appendChild(fragment);
-        enableCategoryControls();
       } catch (error) {
         const errorMessage = document.createElement('p');
         errorMessage.className = 'error-state';
