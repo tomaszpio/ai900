@@ -92,7 +92,7 @@
         "text": "Sentiment Analysis"
       }
     ],
-    "correct": "D",
+    "correct": ["A", "D"],
     "explanation_en": "The scenario has two tasks: finding mentions of your company in text and determining whether the news is positive or negative. Named Entity Recognition finds entities such as organization names in text, while Sentiment Analysis scores the overall attitude of the text as positive, neutral, or negative. Key phrase extraction and translation do not directly address these goals."
   },
   {
@@ -612,31 +612,31 @@
     "correct": "D",
     "explanation_en": ""
   },
-  {
-    "id": 30,
-    "title": "Question 30",
-    "question": "What are the Microsoft guiding principles for responsible Al?\n        Select three correct options.",
-    "options": [
-      {
-        "label": "A",
-        "text": "Fairness"
-      },
-      {
-        "label": "B",
-        "text": "Knowledgeability"
-      },
-      {
-        "label": "C",
-        "text": "Reliability and Safety"
-      },
-      {
-        "label": "D",
-        "text": "Inclusiveness"
-      }
-    ],
-    "correct": "D",
-    "explanation_en": ""
-  },
+    {
+      "id": 30,
+      "title": "Question 30",
+      "question": "What are the Microsoft guiding principles for responsible Al?\n        Select three correct options.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fairness"
+        },
+        {
+          "label": "B",
+          "text": "Knowledgeability"
+        },
+        {
+          "label": "C",
+          "text": "Reliability and Safety"
+        },
+        {
+          "label": "D",
+          "text": "Inclusiveness"
+        }
+      ],
+      "correct": ["A", "C", "D"],
+      "explanation_en": "Microsoft's responsible AI principles include Fairness, Reliability and Safety, Privacy and Security, Inclusiveness, Transparency, and Accountability. Among the options provided, Fairness, Reliability and Safety, and Inclusiveness align with those principles, while Knowledgeability is not an official guiding principle."
+    },
   {
     "id": 31,
     "title": "Question 31",
