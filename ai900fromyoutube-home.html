@@ -994,21 +994,41 @@
       const list = choiceElement.closest('.choice-list');
       if (!list) return;
 
-      list.querySelectorAll('.choice-item').forEach((item) => {
-        item.classList.remove('is-selected');
-        const radio = item.querySelector("input[type='radio']");
-        if (radio) {
-          radio.checked = false;
-        }
-      });
+      const isMultiSelect = list.dataset.multiSelect === 'true';
+      const correctLabels = JSON.parse(list.dataset.correctLabels || '[]');
+      const input = choiceElement.querySelector('input');
 
-      choiceElement.classList.add('is-selected');
-      const radio = choiceElement.querySelector("input[type='radio']");
-      if (radio) {
-        radio.checked = true;
+      if (!input) return;
+
+      if (isMultiSelect) {
+        input.checked = !input.checked;
+        choiceElement.classList.toggle('is-selected', input.checked);
+      } else {
+        list.querySelectorAll('.choice-item').forEach((item) => {
+          item.classList.remove('is-selected');
+          const radio = item.querySelector("input[type='radio']");
+          if (radio) {
+            radio.checked = false;
+          }
+        });
+
+        input.checked = true;
+        choiceElement.classList.add('is-selected');
       }
 
-      responseState.set(questionIndex, { isCorrect: choiceElement.dataset.correct === 'true' });
+      const selectedLabels = Array.from(list.querySelectorAll("input:checked"))
+        .map((selected) => selected.dataset.choiceLabel || selected.value)
+        .filter(Boolean);
+
+      if (selectedLabels.length) {
+        const hasCompleteMatch =
+          selectedLabels.length === correctLabels.length &&
+          selectedLabels.every((label) => correctLabels.includes(label));
+
+        responseState.set(questionIndex, { isCorrect: hasCompleteMatch });
+      } else {
+        responseState.delete(questionIndex);
+      }
 
       updateAnsweredCounter();
 
@@ -1075,8 +1095,13 @@
         return null;
       }
 
+      const correctLabels = question.choices.filter((choice) => choice.is_correct).map((choice) => choice.label || '');
+      const isMultiSelect = correctLabels.length > 1;
+
       const list = document.createElement('ul');
       list.className = 'choice-list';
+      list.dataset.correctLabels = JSON.stringify(correctLabels);
+      list.dataset.multiSelect = isMultiSelect ? 'true' : 'false';
 
       question.choices.forEach((choice, choiceIndex) => {
         const item = document.createElement('li');
@@ -1089,8 +1114,9 @@
         row.className = 'choice-row';
 
         const radio = document.createElement('input');
-        radio.type = 'radio';
+        radio.type = isMultiSelect ? 'checkbox' : 'radio';
         radio.name = `question-${questionIndex}`;
+        radio.dataset.choiceLabel = choice.label || '';
         radio.tabIndex = -1;
         row.appendChild(radio);
 
