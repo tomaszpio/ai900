@@ -441,13 +441,26 @@
     gap: 0.3rem;
     cursor: pointer;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    position: relative;
   }
 
-    .choice-item:hover,
-    .choice-item:focus-within {
-      border-color: #004578;
-      box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
-    }
+  .choice-item:hover,
+  .choice-item:focus-within {
+    border-color: #004578;
+    box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
+  }
+
+  .choice-list.showing-correct .choice-item[data-correct='true']::after {
+    content: '';
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background: #c62030;
+    box-shadow: 0 0 0 2px rgba(198, 32, 48, 0.35);
+  }
 
     .choice-text {
       margin: 0;
@@ -1155,6 +1168,10 @@
       });
     }
 
+    function revealCorrectAnswers() {
+      document.querySelectorAll('.choice-list').forEach((list) => list.classList.add('showing-correct'));
+    }
+
     function handleChoiceSelection(questionIndex, choiceElement) {
       const list = choiceElement.closest('.choice-list');
       if (!list) return;
@@ -1246,6 +1263,7 @@
         }
       }
 
+      revealCorrectAnswers();
       updateScoreSummary(summary);
     }
 
