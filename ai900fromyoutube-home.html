@@ -720,6 +720,7 @@
         <strong>Instrukcja:</strong> kliknij, aby zaznaczyć swoją odpowiedź. Możesz w dowolnym momencie policzyć wyniki dla
         wszystkich dotychczas wybranych opcji.
         <span class="floating-instruction__count">Odpowiedziane pytania: <span id="answered-count">0</span></span>
+        <span class="floating-instruction__count">Wyświetlane pytania: <span id="visible-count">0</span></span>
       </p>
     </div>
     <div class="floating-instruction__actions">
@@ -1047,6 +1048,8 @@
         }
       });
 
+      updateVisibleCounter(visibleCount);
+
       if (filterHint) {
         if (!selectedCategoryId) {
           filterHint.textContent = 'Kliknij kategorię, aby wyświetlić tylko pytania z tego zakresu.';
@@ -1136,6 +1139,13 @@
       const answeredCounter = document.getElementById('answered-count');
       if (answeredCounter) {
         answeredCounter.textContent = responseState.size.toString();
+      }
+    }
+
+    function updateVisibleCounter(visibleCount) {
+      const visibleCounter = document.getElementById('visible-count');
+      if (visibleCounter) {
+        visibleCounter.textContent = visibleCount.toString();
       }
     }
 
