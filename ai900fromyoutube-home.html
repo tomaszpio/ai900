@@ -424,17 +424,44 @@
       align-items: center;
     }
 
-    .choice-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.5rem;
-    }
+  .choice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
 
-  .choice-item {
+  .question-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.4rem;
+  }
+
+  .reveal-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.85rem;
     background: #ffffff;
-    border: 1px solid #d0d7de;
+    color: #004578;
+    border: 1px solid #004578;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .reveal-button:hover,
+  .reveal-button:focus-visible {
+    background: #004578;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 69, 120, 0.18);
+  }
+
+.choice-item {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
     border-radius: 8px;
     padding: clamp(0.55rem, 2vw, 0.85rem) clamp(0.65rem, 2.5vw, 1rem);
     display: grid;
@@ -1168,10 +1195,6 @@
       });
     }
 
-    function revealCorrectAnswers() {
-      document.querySelectorAll('.choice-list').forEach((list) => list.classList.add('showing-correct'));
-    }
-
     function handleChoiceSelection(questionIndex, choiceElement) {
       const list = choiceElement.closest('.choice-list');
       if (!list) return;
@@ -1263,7 +1286,6 @@
         }
       }
 
-      revealCorrectAnswers();
       updateScoreSummary(summary);
     }
 
@@ -1387,6 +1409,20 @@
       const choiceList = buildChoiceList(question, questionIndex);
       if (choiceList) {
         block.appendChild(choiceList);
+
+        const actionBar = document.createElement('div');
+        actionBar.className = 'question-actions';
+
+        const submitButton = document.createElement('button');
+        submitButton.type = 'button';
+        submitButton.className = 'reveal-button';
+        submitButton.textContent = 'Submit';
+        submitButton.addEventListener('click', () => {
+          choiceList.classList.add('showing-correct');
+        });
+
+        actionBar.appendChild(submitButton);
+        block.appendChild(actionBar);
       } else if (question.answer_html) {
         block.innerHTML = question.answer_html;
       } else {
