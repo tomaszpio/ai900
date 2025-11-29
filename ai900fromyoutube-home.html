@@ -79,6 +79,42 @@
     margin: 0 auto;
   }
 
+  .floating-instruction {
+    position: sticky;
+    top: clamp(0.75rem, 2vw, 1.25rem);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 69, 120, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+  }
+
+    .floating-instruction p {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .floating-instruction__count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.65rem;
+      background: var(--accent-soft);
+      color: #004578;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid rgba(0, 69, 120, 0.25);
+    }
+
   @media (min-width: 1200px) {
     body {
       padding-right: calc(clamp(1rem, 4vw, 2.5rem) + var(--glossary-width) + var(--glossary-gap));
@@ -602,6 +638,13 @@
   </style>
 </head>
 <body>
+  <div class="floating-instruction" role="status" aria-live="polite">
+    <p>
+      <strong>Instrukcja:</strong> kliknij, aby zaznaczyć swoją odpowiedź. Możesz w dowolnym momencie policzyć wyniki dla
+      wszystkich dotychczas wybranych opcji.
+      <span class="floating-instruction__count">Odpowiedziane pytania: <span id="answered-count">0</span></span>
+    </p>
+  </div>
   <a class="return-home" href="./index.html">
     <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
       <path d="M12 4.248 4.5 10v10h5v-5h5v5h5V10z"></path>
@@ -809,6 +852,13 @@
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
     const responseState = new Map();
 
+    function updateAnsweredCounter() {
+      const answeredCounter = document.getElementById('answered-count');
+      if (answeredCounter) {
+        answeredCounter.textContent = responseState.size.toString();
+      }
+    }
+
     function updateScoreSummary(message) {
       const summary = document.getElementById('score-summary');
       if (summary) {
@@ -836,6 +886,8 @@
 
       responseState.set(questionIndex, { isCorrect: choiceElement.dataset.correct === 'true' });
 
+      updateAnsweredCounter();
+
       if (responseState.size) {
         updateScoreSummary(`Zaznaczyłeś odpowiedzi w ${responseState.size} pytaniach. Kliknij przycisk, aby obliczyć wynik.`);
       }
@@ -858,6 +910,8 @@
     if (scoreButton) {
       scoreButton.addEventListener('click', handleScoreButtonClick);
     }
+
+    updateAnsweredCounter();
 
     function appendTextWithLineBreaks(target, text) {
       const lines = text.split('\n');
