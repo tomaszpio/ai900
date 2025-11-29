@@ -242,7 +242,21 @@
     background: var(--pill-accent);
     color: #0f172a;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
   }
+
+    .category-pill:hover,
+    .category-pill:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      outline: none;
+    }
+
+    .category-pill.is-active {
+      background: color-mix(in srgb, var(--pill-accent) 70%, white);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
 
   .category-pill__dot {
     width: 12px;
@@ -260,6 +274,12 @@
   .category-pill__meta {
     grid-column: 2;
     font-size: 0.85rem;
+    color: #334155;
+  }
+
+  .filter-hint {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
     color: #334155;
   }
 
@@ -739,6 +759,7 @@
             <span class="category-pill__meta">AI-900</span>
           </span>
         </div>
+        <p class="filter-hint" id="category-filter-hint">Kliknij kategorię, aby wyświetlić tylko pytania z tego zakresu.</p>
       </div>
       <div class="hero-media">
         <div class="video-wrapper">
@@ -921,6 +942,128 @@
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
     const CATEGORY_URL = 'data/ai900_categories.json';
     const responseState = new Map();
+    const categoryLookup = new Map();
+    const questionMeta = new Map();
+    let selectedCategoryId = '';
+
+    const CATEGORY_KEYWORDS = {
+      'generative-ai': [
+        'openai',
+        'gpt',
+        'prompt',
+        'grounding',
+        'copilot',
+        'generative',
+        'llm',
+        'chat completion',
+        'content filter'
+      ],
+      nlp: [
+        'language',
+        'translator',
+        'speech',
+        'qna',
+        'text analytics',
+        'bot service',
+        'sentiment',
+        'text-to-speech',
+        'speech-to-text',
+        'language understanding'
+      ],
+      'computer-vision': [
+        'image',
+        'vision',
+        'ocr',
+        'object detection',
+        'bounding box',
+        'face',
+        'spatial analysis',
+        'analyze image',
+        'semantic segmentation'
+      ],
+      'machine-learning': [
+        'regression',
+        'classification',
+        'clustering',
+        'model training',
+        'feature',
+        'label',
+        'automl',
+        'designer',
+        'responsible ml',
+        'ml lifecycle'
+      ],
+      'ai-workloads': [
+        'responsible ai',
+        'workload',
+        'azure ai services',
+        'anomaly',
+        'knowledge mining',
+        'analytics',
+        'planning'
+      ]
+    };
+
+    function categorizeQuestion(question) {
+      const haystack = [question.question_text, question.explanation_en, question.title]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      for (const [categoryId, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
+        if (keywords.some((keyword) => haystack.includes(keyword))) {
+          return categoryId;
+        }
+      }
+
+      return 'ai-workloads';
+    }
+
+    function updateCategoryPillsState() {
+      const pills = document.querySelectorAll('#category-pills .category-pill');
+      pills.forEach((pill) => {
+        const pillCategory = pill.dataset.categoryId;
+        const isActive = selectedCategoryId && pillCategory === selectedCategoryId;
+        pill.classList.toggle('is-active', isActive);
+        pill.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function applyCategoryFilter() {
+      const questionList = document.getElementById('question-list');
+      const filterHint = document.getElementById('category-filter-hint');
+
+      if (!questionList) return;
+
+      const cards = questionList.querySelectorAll('.question-card');
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const categoryId = card.dataset.categoryId || '';
+        const shouldShow = !selectedCategoryId || categoryId === selectedCategoryId;
+        card.style.display = shouldShow ? '' : 'none';
+        if (shouldShow) {
+          visibleCount += 1;
+        }
+      });
+
+      if (filterHint) {
+        if (!selectedCategoryId) {
+          filterHint.textContent = 'Kliknij kategorię, aby wyświetlić tylko pytania z tego zakresu.';
+        } else {
+          const categoryLabel = categoryLookup.get(selectedCategoryId) || 'wybrana kategoria';
+          filterHint.textContent = `Widoczna jest kategoria: ${categoryLabel} (${visibleCount} pytań). Kliknij ponownie, aby przywrócić wszystkie.`;
+        }
+      }
+
+      updateCategoryPillsState();
+    }
+
+    function handleCategorySelection(categoryId) {
+      if (!categoryId) return;
+      selectedCategoryId = selectedCategoryId === categoryId ? '' : categoryId;
+      applyCategoryFilter();
+    }
 
     async function renderCategories() {
       const container = document.getElementById('category-pills');
@@ -942,11 +1085,15 @@
         const fragment = document.createDocumentFragment();
 
         categories.forEach((category) => {
+          categoryLookup.set(category.id, category.label);
+
           const pill = document.createElement('span');
           pill.className = 'category-pill';
           pill.style.setProperty('--pill-color', category.color || '#004578');
           pill.style.setProperty('--pill-accent', category.accent || 'rgba(0, 69, 120, 0.12)');
           pill.title = category.summary || category.label;
+          pill.dataset.categoryId = category.id;
+          pill.tabIndex = 0;
 
           const dot = document.createElement('span');
           dot.className = 'category-pill__dot';
@@ -963,6 +1110,14 @@
             weight.textContent = `Waga: ${category.weight}`;
             pill.appendChild(weight);
           }
+
+          pill.addEventListener('click', () => handleCategorySelection(category.id));
+          pill.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              handleCategorySelection(category.id);
+            }
+          });
 
           fragment.appendChild(pill);
         });
@@ -1025,7 +1180,12 @@
           selectedLabels.length === correctLabels.length &&
           selectedLabels.every((label) => correctLabels.includes(label));
 
-        responseState.set(questionIndex, { isCorrect: hasCompleteMatch });
+        const meta = questionMeta.get(questionIndex);
+
+        responseState.set(questionIndex, {
+          isCorrect: hasCompleteMatch,
+          categoryId: meta?.categoryId || ''
+        });
       } else {
         responseState.delete(questionIndex);
       }
@@ -1046,8 +1206,37 @@
       const answered = responseState.size;
       const correct = Array.from(responseState.values()).filter((entry) => entry.isCorrect).length;
       const percent = Math.round((correct / answered) * 1000) / 10;
+      const incorrectEntries = Array.from(responseState.entries()).filter(([, entry]) => !entry.isCorrect);
+      const incorrectCategories = Array.from(
+        new Set(
+          incorrectEntries
+            .map(([questionIndex, entry]) => entry.categoryId || questionMeta.get(questionIndex)?.categoryId)
+            .filter(Boolean)
+        )
+      );
 
-      updateScoreSummary(`Dotychczas: ${correct} / ${answered} poprawnych (${percent}%).`);
+      const incorrectCategoryLabels = incorrectCategories
+        .map((categoryId) => categoryLookup.get(categoryId) || categoryId)
+        .join(', ');
+
+      const incorrectQuestionNumbers = incorrectEntries
+        .map(([questionIndex]) => questionMeta.get(questionIndex)?.questionNumber ?? questionIndex + 1)
+        .sort((a, b) => a - b)
+        .join(', ');
+
+      let summary = `Dotychczas: ${correct} / ${answered} poprawnych (${percent}%).`;
+
+      if (incorrectEntries.length) {
+        if (incorrectQuestionNumbers) {
+          summary += ` Niepoprawne pytania: ${incorrectQuestionNumbers}.`;
+        }
+
+        if (incorrectCategoryLabels) {
+          summary += ` Powtórz kategorie: ${incorrectCategoryLabels}.`;
+        }
+      }
+
+      updateScoreSummary(summary);
     }
 
     const scoreButtons = document.querySelectorAll('.score-button');
@@ -1184,9 +1373,10 @@
       return block;
     }
 
-    function buildQuestionCard(question, index) {
+    function buildQuestionCard(question, index, categoryId) {
       const questionCard = document.createElement('details');
       questionCard.className = 'question-card';
+      questionCard.dataset.categoryId = categoryId || '';
 
       const summary = document.createElement('summary');
       const number = document.createElement('span');
@@ -1227,7 +1417,9 @@
 
         const fragment = document.createDocumentFragment();
         questions.forEach((question, index) => {
-          fragment.appendChild(buildQuestionCard(question, index));
+          const categoryId = categorizeQuestion(question);
+          questionMeta.set(index, { categoryId, questionNumber: question.question_number ?? index + 1 });
+          fragment.appendChild(buildQuestionCard(question, index, categoryId));
         });
 
         questionList.appendChild(fragment);
@@ -1244,7 +1436,7 @@
     }
 
     renderCategories();
-    loadQuestions();
+    loadQuestions().then(applyCategoryFilter);
   </script>
 
 </body>
