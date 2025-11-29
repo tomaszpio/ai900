@@ -327,27 +327,89 @@
     padding: clamp(0.55rem, 2vw, 0.85rem) clamp(0.65rem, 2.5vw, 1rem);
     display: grid;
     gap: 0.3rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
+
+    .choice-item:hover,
+    .choice-item:focus-within {
+      border-color: #004578;
+      box-shadow: 0 6px 12px rgba(0, 69, 120, 0.12);
+    }
 
     .choice-text {
       margin: 0;
     }
 
-    .choice-item.is-correct {
-      border-color: #107c10;
-      background: #f2fbf2;
+    .choice-item.is-selected {
+      border-color: #004578;
+      background: var(--accent-soft);
+      box-shadow: 0 8px 18px rgba(0, 69, 120, 0.15);
     }
 
-    .choice-badge {
+    .choice-item input[type='radio'] {
+      margin-right: 0.6rem;
+      accent-color: #004578;
+    }
+
+    .choice-row {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+  .quiz-controls {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    padding: clamp(0.9rem, 2.8vw, 1.2rem);
+    display: grid;
+    gap: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+    .quiz-controls__copy {
+      color: #1f1f1f;
+      font-size: 0.98rem;
+      margin: 0;
+    }
+
+    .quiz-controls__copy p {
+      margin: 0;
+    }
+
+    .quiz-controls__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .primary-button {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      font-size: 0.85rem;
+      padding: 0.6rem 1rem;
+      background: #004578;
+      color: #ffffff;
+      border: 1px solid #004578;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+      .primary-button:hover,
+      .primary-button:focus-visible {
+        background: #00345c;
+        box-shadow: 0 8px 18px rgba(0, 69, 120, 0.2);
+        transform: translateY(-1px);
+      }
+
+    .score-summary {
+      margin: 0;
       font-weight: 600;
-      color: #107c10;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-top: 0.15rem;
+      color: #004578;
     }
 
   .answer-explanation {
@@ -560,10 +622,10 @@
         <ul class="feature-list">
           <li><strong>Interactive review:</strong> Toggle each question to reveal the solution captured from the YouTube
             walkthrough.</li>
-          <li><strong>Detailed answers:</strong> Multiple choice selections are highlighted so you can focus on the correct
-            option.</li>
           <li><strong>Self-paced learning:</strong> Use the cards as a checklist while you pause the video and validate your
             understanding.</li>
+          <li><strong>Progress check:</strong> Select answers without spoilers, then calculate your current score whenever
+            you are ready.</li>
         </ul>
       </div>
       <div class="hero-media">
@@ -578,6 +640,16 @@
   </header>
 
   <main>
+    <section class="quiz-controls" aria-label="Quiz progress">
+      <div class="quiz-controls__copy">
+        <p><strong>Instrukcja:</strong> kliknij, aby zaznaczyć swoją odpowiedź. Możesz w dowolnym momencie policzyć wyniki dla
+          wszystkich dotychczas wybranych opcji.</p>
+      </div>
+      <div class="quiz-controls__actions">
+        <button id="score-button" type="button" class="primary-button">Oblicz dotychczasowy wynik</button>
+        <p id="score-summary" class="score-summary" aria-live="polite">Nie wybrano jeszcze żadnych odpowiedzi.</p>
+      </div>
+    </section>
     <p id="question-loading" class="loading-state" role="status" aria-live="polite">Loading questions…</p>
     <div id="question-list" class="question-list" aria-live="polite"></div>
   </main>
@@ -735,6 +807,57 @@
 
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
+    const responseState = new Map();
+
+    function updateScoreSummary(message) {
+      const summary = document.getElementById('score-summary');
+      if (summary) {
+        summary.textContent = message;
+      }
+    }
+
+    function handleChoiceSelection(questionIndex, choiceElement) {
+      const list = choiceElement.closest('.choice-list');
+      if (!list) return;
+
+      list.querySelectorAll('.choice-item').forEach((item) => {
+        item.classList.remove('is-selected');
+        const radio = item.querySelector("input[type='radio']");
+        if (radio) {
+          radio.checked = false;
+        }
+      });
+
+      choiceElement.classList.add('is-selected');
+      const radio = choiceElement.querySelector("input[type='radio']");
+      if (radio) {
+        radio.checked = true;
+      }
+
+      responseState.set(questionIndex, { isCorrect: choiceElement.dataset.correct === 'true' });
+
+      if (responseState.size) {
+        updateScoreSummary(`Zaznaczyłeś odpowiedzi w ${responseState.size} pytaniach. Kliknij przycisk, aby obliczyć wynik.`);
+      }
+    }
+
+    function handleScoreButtonClick() {
+      if (!responseState.size) {
+        updateScoreSummary('Nie wybrano jeszcze żadnych odpowiedzi.');
+        return;
+      }
+
+      const answered = responseState.size;
+      const correct = Array.from(responseState.values()).filter((entry) => entry.isCorrect).length;
+      const percent = Math.round((correct / answered) * 1000) / 10;
+
+      updateScoreSummary(`Dotychczas: ${correct} / ${answered} poprawnych (${percent}%).`);
+    }
+
+    const scoreButton = document.getElementById('score-button');
+    if (scoreButton) {
+      scoreButton.addEventListener('click', handleScoreButtonClick);
+    }
 
     function appendTextWithLineBreaks(target, text) {
       const lines = text.split('\n');
@@ -769,7 +892,7 @@
       target.appendChild(fragment);
     }
 
-    function buildChoiceList(question) {
+    function buildChoiceList(question, questionIndex) {
       if (!Array.isArray(question.choices) || !question.choices.length) {
         return null;
       }
@@ -777,22 +900,37 @@
       const list = document.createElement('ul');
       list.className = 'choice-list';
 
-      question.choices.forEach((choice) => {
+      question.choices.forEach((choice, choiceIndex) => {
         const item = document.createElement('li');
         item.className = 'choice-item';
+        item.dataset.correct = choice.is_correct ? 'true' : 'false';
+        item.dataset.choiceId = `${questionIndex}-${choiceIndex}`;
+        item.tabIndex = 0;
+
+        const row = document.createElement('div');
+        row.className = 'choice-row';
+
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = `question-${questionIndex}`;
+        radio.tabIndex = -1;
+        row.appendChild(radio);
 
         const text = document.createElement('p');
         text.className = 'choice-text';
         text.textContent = choice.raw || `${choice.label ? `${choice.label}. ` : ''}${choice.text ?? ''}`;
-        item.appendChild(text);
+        row.appendChild(text);
 
-        if (choice.is_correct) {
-          item.classList.add('is-correct');
-          const badge = document.createElement('span');
-          badge.className = 'choice-badge';
-          badge.textContent = 'Correct answer';
-          item.appendChild(badge);
-        }
+        item.appendChild(row);
+
+        const selectChoice = () => handleChoiceSelection(questionIndex, item);
+        item.addEventListener('click', selectChoice);
+        item.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            selectChoice();
+          }
+        });
 
         list.appendChild(item);
       });
@@ -821,11 +959,11 @@
       return explanation;
     }
 
-    function buildAnswerBlock(question) {
+    function buildAnswerBlock(question, questionIndex) {
       const block = document.createElement('div');
       block.className = 'answer-block';
 
-      const choiceList = buildChoiceList(question);
+      const choiceList = buildChoiceList(question, questionIndex);
       if (choiceList) {
         block.appendChild(choiceList);
       } else if (question.answer_html) {
@@ -859,7 +997,7 @@
 
       const body = document.createElement('div');
       body.className = 'question-body';
-      body.appendChild(buildAnswerBlock(question));
+      body.appendChild(buildAnswerBlock(question, index));
 
       questionCard.appendChild(summary);
       questionCard.appendChild(body);
