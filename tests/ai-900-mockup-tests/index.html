@@ -232,13 +232,179 @@
       font-weight: 600;
     }
 
-    .error-state {
-      color: #9a0007;
-      background: #fdecea;
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      border: 1px solid #f5c6cb;
-    }
+  .error-state {
+    color: #9a0007;
+    background: #fdecea;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #f5c6cb;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+  }
+
+  .pill-neutral {
+    background: #f7f8fa;
+    color: #1f1f1f;
+  }
+
+  .pill-success {
+    background: #e8f5e9;
+    color: #0f6a0f;
+    border-color: #b7e0ba;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 69, 120, 0.18);
+  }
+
+  .btn.primary:hover,
+  .btn.primary:focus-visible {
+    background: #00345c;
+    box-shadow: 0 12px 24px rgba(0, 69, 120, 0.22);
+    transform: translateY(-1px);
+  }
+
+  .btn.ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: #1f1f1f;
+  }
+
+  .btn.ghost:hover,
+  .btn.ghost:focus-visible {
+    background: #f6f8fb;
+  }
+
+  .quiz-card {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .quiz-header {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .quiz-note {
+    margin: 0;
+    color: #3b3b3b;
+  }
+
+  .quiz-form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .quiz-question {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: clamp(0.85rem, 2.6vw, 1.15rem);
+    background: #fff;
+  }
+
+  .quiz-question.correct {
+    border-color: #107c10;
+    box-shadow: 0 0 0 3px rgba(16, 124, 16, 0.15);
+  }
+
+  .quiz-question.incorrect {
+    border-color: #d83b01;
+    box-shadow: 0 0 0 3px rgba(216, 59, 1, 0.12);
+  }
+
+  .quiz-helper {
+    margin: 0.25rem 0 0.5rem 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  .quiz-option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.5rem;
+    padding: 0.45rem 0;
+  }
+
+  .quiz-option input {
+    margin-top: 0.2rem;
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .quiz-option-text {
+    line-height: 1.4;
+  }
+
+  .quiz-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .quiz-results {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+  }
+
+  .quiz-score {
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    color: #004578;
+  }
+
+  .quiz-feedback-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .feedback {
+    padding: 0.45rem 0.65rem;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  .feedback.success {
+    background: #e8f5e9;
+    color: #0f6a0f;
+  }
+
+  .feedback.error {
+    background: #fef2e5;
+    color: #a52600;
+  }
 
   @media (max-width: 800px) {
     section.mock-tests {
@@ -314,646 +480,276 @@
         <p class="error-state">JavaScript is required to load the practice questions. Enable JavaScript and refresh the page.</p>
       </noscript>
     </div>
-  </div>
+
+    <section class="quiz-card card" aria-labelledby="interactive-quiz-heading">
+      <div class="quiz-header">
+        <h3 id="interactive-quiz-heading">Check your knowledge</h3>
+        <p class="quiz-note">Select every correct option for multi-answer questions. A question is scored correct only when all right options are chosen and no incorrect options are selected.</p>
+      </div>
+      <form id="quiz-form" class="quiz-form" aria-describedby="quiz-helper">
+        <p id="quiz-loading" class="loading-state" role="status" aria-live="polite">Loading practice set…</p>
+      </form>
+      <div class="quiz-actions">
+        <button type="submit" form="quiz-form" class="btn primary">Check answers</button>
+        <button type="button" id="reset-quiz" class="btn ghost">Reset selections</button>
+      </div>
+      <div id="quiz-results" class="quiz-results" aria-live="polite"></div>
+    </section>
+
+    <div id="question-list" class="question-list" aria-live="polite"></div>
+  </section>
 
   <script>
-    const ADDITIONAL_CHOICES = new Map([
-      [
-        `Which type of artificial intelligence (AI) workload provides the ability to generate bounding boxes that identify the locations of different types of vehicles in an image?`,
-        [
-          { text: 'image classification', isCorrect: false },
-          { text: 'optical character recognition (OCR)', isCorrect: false },
-          { text: 'semantic segmentation', isCorrect: false },
-        ],
-      ],
-      [
-        `Which type of artificial intelligence (AI) workload provides the ability to classify individual pixels in an image depending on the object that they represent?`,
-        [
-          { text: 'object detection', isCorrect: false },
-          { text: 'image classification', isCorrect: false },
-        ],
-      ],
-      [
-        `Which artificial intelligence (AI) workload scenario is an example of natural language processing (NLP)?`,
-        [
-          { text: 'detecting anomalies in equipment sensor data', isCorrect: false },
-          { text: 'forecasting quarterly revenue', isCorrect: false },
-          { text: 'tagging landscape photos with locations', isCorrect: false },
-        ],
-      ],
-      [
-        `You are exploring solutions to improve the document search and indexing service for employees. You need an artificial intelligence (AI) search solution that will include searching text in various types of documents, such as images. Which type of AI workload is this?`,
-        [
-          { text: 'conversational AI', isCorrect: false },
-          { text: 'predictive maintenance', isCorrect: false },
-        ],
-      ],
-      [
-        `Which two artificial intelligence (AI) workload features are part of the Azure AI Vision service? Each correct answer presents a complete solution.`,
-        [
-          { text: 'sentiment analysis', isCorrect: false },
-          { text: 'key phrase extraction', isCorrect: false },
-        ],
-      ],
-      [
-        `Which principle of responsible artificial intelligence (AI) has the objective of ensuring that AI solutions benefit all parts of society regardless of gender or ethnicity?`,
-        [
-          { text: 'reliability and safety', isCorrect: false },
-          { text: 'accountability', isCorrect: false },
-          { text: 'privacy and security', isCorrect: false },
-        ],
-      ],
-      [
-        `Which principle of responsible artificial intelligence (AI) defines the framework of governance and organization principles that meet ethical and legal standards of AI solutions?`,
-        [
-          { text: 'transparency', isCorrect: false },
-          { text: 'fairness', isCorrect: false },
-          { text: 'reliability and safety', isCorrect: false },
-        ],
-      ],
-      [
-        `Which principle of responsible artificial intelligence (AI) plays the primary role when implementing an AI solution that meet qualifications for business loan approvals?`,
-        [
-          { text: 'reliability and safety', isCorrect: false },
-          { text: 'privacy and security', isCorrect: false },
-          { text: 'transparency', isCorrect: false },
-        ],
-      ],
-      [
-        `Which two principles of responsible artificial intelligence (AI) are most important when designing an AI system to manage healthcare data? Each correct answer presents part of the solution.`,
-        [
-          { text: 'fairness', isCorrect: false },
-          { text: 'inclusiveness', isCorrect: false },
-        ],
-      ],
-      [
-        `You need to identify numerical values that represent the probability of humans developing diabetes based on age and body fat percentage. Which type of machine learning model should you use?`,
-        [
-          { text: 'k-means clustering', isCorrect: false },
-          { text: 'naive bayes classification', isCorrect: false },
-        ],
-      ],
-      [
-        `Which type machine learning algorithm predicts a numeric label associated with an item based on that item’s features?`,
-        [
-          { text: 'clustering', isCorrect: false },
-          { text: 'reinforcement learning', isCorrect: false },
-        ],
-      ],
-      [
-        `A healthcare organization has a dataset consisting of bone fracture scans that are categorized by using predefined fracture types. The organization wants to use machine learning to detect the different types of bone fractures for new scans before the scans are sent to a medical practitioner. Which type of machine learning is this?`,
-        [
-          { text: 'reinforcement learning', isCorrect: false },
-        ],
-      ],
-      [
-        `You plan to use machine learning to predict the probability of humans developing diabetes based on their age and body fat percentage. What should the model include?`,
-        [
-          { text: 'one feature and two labels', isCorrect: false },
-          { text: 'two labels and no features', isCorrect: false },
-          { text: 'only unlabeled data', isCorrect: false },
-        ],
-      ],
-      [
-        `Which feature makes regression an example of supervised machine learning?`,
-        [
-          { text: 'It learns patterns without labels.', isCorrect: false },
-          { text: 'It relies exclusively on reinforcement signals.', isCorrect: false },
-          { text: 'It generates rules without using historical data.', isCorrect: false },
-        ],
-      ],
-      [
-        `A company is using machine learning to predict house prices based on appropriate house attributes. For the machine learning model, which attribute is the label?`,
-        [
-          { text: 'number of bedrooms', isCorrect: false },
-          { text: 'square footage', isCorrect: false },
-          { text: 'neighborhood crime rate', isCorrect: false },
-        ],
-      ],
-      [
-        `A company wants to predict household water use based on the number of people in a house, the weather temperature, and the time of year. In terms of data labels and features, what is the label in this use case?`,
-        [
-          { text: 'number of people in the house', isCorrect: false },
-          { text: 'weather temperature', isCorrect: false },
-          { text: 'time of year', isCorrect: false },
-        ],
-      ],
-      [
-        `What should you do after preparing a dataset and before training the machine learning model?`,
-        [
-          { text: 'deploy the model to a web service', isCorrect: false },
-          { text: 'collect real-time telemetry', isCorrect: false },
-        ],
-      ],
-      [
-        `You need to create an automated machine learning (automated ML) model. Which resource should you create first in Azure Machine Learning studio?`,
-        [
-          { text: 'a compute cluster', isCorrect: false },
-          { text: 'an inference endpoint', isCorrect: false },
-          { text: 'a datastore', isCorrect: false },
-        ],
-      ],
-      [
-        `You need to use the Azure Machine Learning designer to deploy a predictive service from a newly trained model. What should you do first in the Machine Learning designer?`,
-        [
-          { text: 'Register the training dataset.', isCorrect: false },
-          { text: 'Clone the training pipeline.', isCorrect: false },
-          { text: 'Create a compute instance.', isCorrect: false },
-        ],
-      ],
-      [
-        `You train a regression model by using automated machine learning (automated ML) in the Azure Machine Learning studio. You review the best model summary. You need to publish the model for others to use from the internet. What should you do next?`,
-        [
-          { text: 'Register the dataset.', isCorrect: false },
-          { text: 'Create a labeling project.', isCorrect: false },
-          { text: 'Run hyperparameter tuning again.', isCorrect: false },
-        ],
-      ],
-      [
-        `Which artificial intelligence (AI) technique should be used to extract the name of a store from a photograph displaying the store front?`,
-        [
-          { text: 'face detection', isCorrect: false },
-          { text: 'speech-to-text', isCorrect: false },
-          { text: 'key phrase extraction', isCorrect: false },
-        ],
-      ],
-      [
-        `You have a set of images. Each image shows multiple vehicles. What allows you to identity different vehicle types in the same traffic monitoring image?`,
-        [
-          { text: 'semantic segmentation', isCorrect: false },
-          { text: 'optical character recognition (OCR)', isCorrect: false },
-          { text: 'image classification', isCorrect: false },
-        ],
-      ],
-      [
-        `Which feature of computer vision involves associating an image with metadata that summarizes the attributes of the image?`,
-        [
-          { text: 'optical character recognition (OCR)', isCorrect: false },
-          { text: 'face verification', isCorrect: false },
-          { text: 'speech transcription', isCorrect: false },
-        ],
-      ],
-      [
-        `Which analytical task of the Azure AI Vision service returns bounding box coordinates?`,
-        [
-          { text: 'image classification', isCorrect: false },
-          { text: 'optical character recognition (OCR)', isCorrect: false },
-          { text: 'semantic segmentation', isCorrect: false },
-        ],
-      ],
-      [
-        `Which additional piece of information is included with each phrase returned by an image description task of the Azure AI Vision?`,
-        [
-          { text: 'image width and height', isCorrect: false },
-        ],
-      ],
-      [
-        `Which two prebuilt models allow you to use the Azure AI Document Intelligence service to scan information from international passports and sales accounts? Each correct answer presents part of the solution.`,
-        [
-          { text: 'business card model', isCorrect: false },
-          { text: 'receipt model', isCorrect: false },
-        ],
-      ],
-      [
-        `When using the Azure AI Face service, what should you use to perform one-to-many or one-to-one face matching? Each correct answer presents a complete solution.`,
-        [
-          { text: 'face detection', isCorrect: false },
-        ],
-      ],
-      [
-        `Which service can you use to train an image classification model?`,
-        [
-          { text: 'Azure Databricks', isCorrect: false },
-          { text: 'Azure Synapse Analytics', isCorrect: false },
-        ],
-      ],
-      [
-        `Which natural language processing (NLP) technique normalizes words before counting them?`,
-        [
-          { text: 'tokenization', isCorrect: false },
-          { text: 'named entity recognition', isCorrect: false },
-          { text: 'speech synthesis', isCorrect: false },
-        ],
-      ],
-      [
-        `Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?`,
-        [
-          { text: 'translation', isCorrect: false },
-          { text: 'keyword extraction', isCorrect: false },
-          { text: 'topic modeling', isCorrect: false },
-        ],
-      ],
-      [
-        `What is the confidence score returned by the Azure AI Language detection service of natural language processing (NLP) for an unknown language name?`,
-        [
-          { text: '0', isCorrect: false },
-          { text: '1', isCorrect: false },
-          { text: '0.5', isCorrect: false },
-        ],
-      ],
-      [
-        `Which part of speech synthesis in natural language processing (NLP) involves breaking text into individual words such that each word can be assigned phonetic sounds?`,
-        [
-          { text: 'sentence segmentation', isCorrect: false },
-          { text: 'speech synthesis', isCorrect: false },
-        ],
-      ],
-      [
-        `Which three values are returned by the language detection feature of the Azure AI Language service in Azure?`,
-        [
-          { text: 'Region', isCorrect: false },
-          { text: 'Confidence interval', isCorrect: false },
-        ],
-      ],
-      [
-        `Which Azure resource provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key?`,
-        [
-          { text: 'Azure AI Foundry', isCorrect: false },
-          { text: 'Azure Machine Learning', isCorrect: false },
-          { text: 'Azure Cognitive Search', isCorrect: false },
-        ],
-      ],
-      [
-        `When using the Azure AI Service for Language, what should you use to provide further information online about entities extracted from a text?`,
-        [
-          { text: 'sentiment analysis', isCorrect: false },
-          { text: 'key phrase extraction', isCorrect: false },
-        ],
-      ],
-      [
-        `Which feature of the Azure AI Speech service can identify distinct user voices?`,
-        [
-          { text: 'speech synthesis', isCorrect: false },
-          { text: 'language detection', isCorrect: false },
-          { text: 'keyword spotting', isCorrect: false },
-        ],
-      ],
-      [
-        `Select the answer that correctly completes the sentence. [Answer choice] use plugins to provide end users with the ability to get help with common tasks from a generative AI model.`,
-        [
-          { text: 'playbooks', isCorrect: false },
-          { text: 'dashboards', isCorrect: false },
-          { text: 'pipelines', isCorrect: false },
-        ],
-      ],
-      [
-        `At which layer can you apply content filters to suppress prompts and responses for a responsible generative AI solution?`,
-        [
-          { text: 'data ingestion layer', isCorrect: false },
-        ],
-      ],
-      [
-        `Select the answer that correctly completes the sentence. [Answer choice] can return responses, such as natural language, images, or code, based on natural language input.`,
-        [
-          { text: 'Discriminative AI', isCorrect: false },
-          { text: 'Predictive analytics', isCorrect: false },
-          { text: 'Automation scripts', isCorrect: false },
-        ],
-      ],
-      [
-        `Select the answer that correctly completes the sentence. [Answer choice] can used to identify constraints and styles for the responses of a generative AI model.`,
-        [
-          { text: 'vector indexes', isCorrect: false },
-        ],
-      ],
-      [
-        `As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?`,
-        [
-          { text: 'Mitigate risks before testing.', isCorrect: false },
-        ],
-      ],
-      [
-        `Which two capabilities are examples of a GPT model? Each correct answer presents a complete solution.`,
-        [
-          { text: 'Render 3D animations.', isCorrect: false },
-        ],
-      ],
-      [
-        `Which three capabilities are examples of image generation features for a generative AI model? Each correct answer presents a complete solution.`,
-        [
-          { text: 'real-time speech translation', isCorrect: false },
-          { text: 'dataset labeling', isCorrect: false },
-        ],
-      ],
-      [
-        `You plan to develop an image processing solution that will use DALL-E as a generative AI model. Which capability is NOT supported by the DALL-E model?`,
-        [
-          { text: 'image generation from prompts', isCorrect: false },
-          { text: 'creating variations of an uploaded image', isCorrect: false },
-          { text: 'editing regions of an image', isCorrect: false },
-        ],
-      ],
-      [
-        `Which generative AI model is used to generate images based on natural language prompts?`,
-        [
-          { text: 'GPT-4', isCorrect: false },
-          { text: 'Codex', isCorrect: false },
-          { text: 'Whisper', isCorrect: false },
-        ],
-      ],
-    ]);
+    const QUESTION_DATA_URL = '../../data/ai900_mslearn_practice.json';
+    const questionList = document.getElementById('question-list');
+    const quizForm = document.getElementById('quiz-form');
+    const quizResults = document.getElementById('quiz-results');
+    const quizLoading = document.getElementById('quiz-loading');
+    const questionLoading = document.getElementById('question-loading');
+    const resetQuizButton = document.getElementById('reset-quiz');
 
-    const LEARN_ENGLISH_LOCALE = 'en-en';
-    const LEARN_ENGLISH_BASE = `https://learn.microsoft.com/${LEARN_ENGLISH_LOCALE}/`;
-    const LEARN_LINK_PATTERN = /https:\/\/learn\.microsoft\.com\/(?:(?:[a-z]{2}-[a-z]{2})\/)*/gi;
+    let quizQuestions = [];
 
-    function normalizeLearnLink(url) {
-      if (typeof url !== 'string' || !url.includes('learn.microsoft.com')) {
-        return url;
-      }
-
-      return url.replace(LEARN_LINK_PATTERN, LEARN_ENGLISH_BASE);
+    function createChoicePill(text, variant = 'neutral') {
+      const pill = document.createElement('span');
+      pill.className = `pill pill-${variant}`;
+      pill.textContent = text;
+      return pill;
     }
 
-    function normalizeLearnLinksInHtml(html) {
-      if (typeof html !== 'string' || !html.includes('learn.microsoft.com')) {
-        return html || '';
-      }
+    function renderQuestionBank(questions) {
+      const fragment = document.createDocumentFragment();
 
-      return html.replace(LEARN_LINK_PATTERN, LEARN_ENGLISH_BASE);
-    }
+      questions.forEach((question, index) => {
+        const details = document.createElement('details');
+        details.className = 'question-card';
 
-    const QUESTION_SOURCES = [
-      {
-        url: normalizeLearnLink(
-          'https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/practice/results?assessmentId=26&practice-assessment-type=certification&snapshotId=51a634ac-4649-466d-bf6e-99c281e7842a'
-        ),
-        fallbackUrl: '../../ai900Mockup.html.html',
-        isRequired: true,
-      },
-      {
-        url: normalizeLearnLink(
-          'https://learn.microsoft.com/credentials/certifications/exams/dummy/practice/results?assessmentId=26&snapshotId=4b58bfc6-3379-4ee4-b586-3e3ab9197381'
-        ),
-        fallbackUrl: '../../ai900Mockup2.html',
-        isRequired: false,
-      },
-    ];
+        const summary = document.createElement('summary');
 
-    function appendQuestionsFromDocument(doc, questionEntries, seenQuestions) {
-      const articles = Array.from(doc.querySelectorAll('article'));
+        const numberSpan = document.createElement('span');
+        numberSpan.className = 'question-number';
+        numberSpan.textContent = `Question ${index + 1}`;
 
-      if (!articles.length) {
-        return false;
-      }
+        const questionSpan = document.createElement('span');
+        questionSpan.className = 'question-text';
+        questionSpan.textContent = question.question_text || question.question;
 
-      articles.forEach((article) => {
-        const questionText = article.querySelector('section.content p');
-        const rationaleSection = article.querySelector('[id^="question-rationale"]');
+        summary.appendChild(numberSpan);
+        summary.appendChild(questionSpan);
+        details.appendChild(summary);
 
-        const cleanedQuestion = questionText?.textContent.trim();
-        if (!cleanedQuestion) {
-          return;
-        }
+        const body = document.createElement('div');
+        body.className = 'question-body';
 
-        const normalizedQuestion = cleanedQuestion.replace(/\s+/g, ' ').trim().toLowerCase();
-        if (seenQuestions.has(normalizedQuestion)) {
-          return;
-        }
+        const choicesBlock = document.createElement('div');
+        choicesBlock.className = 'question-choices';
 
-        const choiceSections = article.querySelectorAll(
-          'section[id^="question-selected-answer"], section[id^="question-correct-answer"]'
-        );
-        const choiceMap = new Map();
+        const choicesHeading = document.createElement('h3');
+        choicesHeading.textContent = 'Answer choices';
+        choicesBlock.appendChild(choicesHeading);
 
-        choiceSections.forEach((section) => {
-          const listItems = section.querySelectorAll('li');
-          listItems.forEach((item) => {
-            const choice = item.querySelector('.quiz-choice');
-            const textElement = choice?.querySelector('.checkb0x-text');
-            const rawText = textElement?.textContent || '';
-            const text = rawText.replace(/\s+/g, ' ').trim();
+        const choiceListElement = document.createElement('ul');
+        choiceListElement.className = 'choice-list';
 
-            if (!choice || !text) {
-              return;
-            }
+        question.choices.forEach((choice) => {
+          const choiceItem = document.createElement('li');
+          choiceItem.className = 'choice-item';
 
-            const key = text.toLowerCase();
-            const existing = choiceMap.get(key) || {
-              text,
-              isCorrect: false,
-              isSelected: false,
-            };
-
-            const isCorrect = choice.classList.contains('is-correct');
-            const checkbox = choice.querySelector('.checkbox-check');
-            const radio = choice.querySelector('.radio-dot');
-            const isSelected =
-              checkbox?.classList.contains('is-checked') || radio?.classList.contains('is-checked') || false;
-
-            existing.isCorrect = existing.isCorrect || isCorrect;
-            existing.isSelected = existing.isSelected || isSelected;
-            choiceMap.set(key, existing);
-          });
-        });
-
-        const choiceListData = Array.from(choiceMap.values());
-
-        const overrideChoices = ADDITIONAL_CHOICES.get(cleanedQuestion);
-        if (overrideChoices?.length) {
-          const existingTexts = new Map(
-            choiceListData.map((choice) => [choice.text.trim().toLowerCase(), choice])
+          const badge = createChoicePill(
+            choice.is_correct ? 'Correct option' : 'Available option',
+            choice.is_correct ? 'success' : 'neutral'
           );
+          badge.setAttribute('aria-hidden', 'true');
+          choiceItem.appendChild(badge);
 
-          overrideChoices.forEach((override) => {
-            const normalized = override.text.trim().toLowerCase();
-            const existing = existingTexts.get(normalized);
+          const choiceText = document.createElement('p');
+          choiceText.className = 'choice-text';
+          choiceText.textContent = `${choice.label}. ${choice.text}`;
 
-            if (existing) {
-              if (override.isCorrect) {
-                existing.isCorrect = true;
-              }
-              return;
-            }
-
-            const mergedChoice = {
-              text: override.text,
-              isCorrect: Boolean(override.isCorrect),
-              isSelected: Boolean(override.isSelected && override.isCorrect),
-            };
-
-            choiceListData.push(mergedChoice);
-            existingTexts.set(normalized, mergedChoice);
-          });
-        }
-
-        if (!choiceListData.length) {
-          return;
-        }
-
-        seenQuestions.add(normalizedQuestion);
-
-        questionEntries.push({
-          question: cleanedQuestion,
-          rationaleHTML: normalizeLearnLinksInHtml(
-            rationaleSection ? rationaleSection.innerHTML.trim() : ''
-          ),
-          choices: choiceListData,
+          choiceItem.appendChild(choiceText);
+          choiceListElement.appendChild(choiceItem);
         });
-      });
 
-      return true;
-    }
+        choicesBlock.appendChild(choiceListElement);
+        body.appendChild(choicesBlock);
 
-    async function loadPracticeQuestions() {
-      const loadingState = document.getElementById('question-loading');
-      const questionList = document.getElementById('question-list');
+        const correctChoices = question.choices
+          .filter((choice) => choice.is_correct)
+          .map((choice) => `${choice.label}. ${choice.text}`);
 
-      try {
-        const parser = new DOMParser();
-        const questionEntries = [];
-        const seenQuestions = new Set();
+        if (correctChoices.length) {
+          const answerBlock = document.createElement('div');
+          answerBlock.className = 'question-answer';
 
-        for (const source of QUESTION_SOURCES) {
-          const urlsToTry = [source.url, source.fallbackUrl].filter(Boolean);
-          let sourceLoaded = false;
+          const answerHeading = document.createElement('h3');
+          answerHeading.textContent = correctChoices.length > 1 ? 'Correct answers' : 'Correct answer';
 
-          for (const candidateUrl of urlsToTry) {
-            let response;
-            try {
-              response = await fetch(candidateUrl);
-            } catch (networkError) {
-              console.error(`Failed to request practice questions from ${candidateUrl}.`, networkError);
-              continue;
-            }
+          answerBlock.appendChild(answerHeading);
 
-            if (!response.ok) {
-              console.warn(
-                `Failed to load practice questions from ${candidateUrl} (status ${response.status})`
-              );
-              continue;
-            }
-
-            const htmlText = await response.text();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-
-            if (!appendQuestionsFromDocument(doc, questionEntries, seenQuestions)) {
-              console.warn(`No practice questions were found in ${candidateUrl}.`);
-              continue;
-            }
-
-            sourceLoaded = true;
-            break;
-          }
-
-          if (!sourceLoaded && source.isRequired) {
-            throw new Error(
-              `No practice questions could be retrieved from the configured URLs for ${source.url}.`
-            );
-          }
-        }
-
-        if (!questionEntries.length) {
-          throw new Error('No complete practice questions could be rendered.');
-        }
-
-        const fragment = document.createDocumentFragment();
-
-        questionEntries.forEach((entry, index) => {
-          const details = document.createElement('details');
-          details.className = 'question-card';
-
-          const summary = document.createElement('summary');
-
-          const numberSpan = document.createElement('span');
-          numberSpan.className = 'question-number';
-          numberSpan.textContent = `Question ${index + 1}`;
-
-          const questionSpan = document.createElement('span');
-          questionSpan.className = 'question-text';
-          questionSpan.textContent = entry.question;
-
-          summary.appendChild(numberSpan);
-          summary.appendChild(questionSpan);
-          details.appendChild(summary);
-
-          const body = document.createElement('div');
-          body.className = 'question-body';
-
-          const choicesBlock = document.createElement('div');
-          choicesBlock.className = 'question-choices';
-
-          const choicesHeading = document.createElement('h3');
-          choicesHeading.textContent = 'Answer choices';
-          choicesBlock.appendChild(choicesHeading);
-
-          const choiceListElement = document.createElement('ul');
-          choiceListElement.className = 'choice-list';
-
-          entry.choices.forEach((choiceData) => {
-            const choiceItem = document.createElement('li');
-            choiceItem.className = 'choice-item';
-
-            const statusParts = [];
-            if (choiceData.isSelected && choiceData.isCorrect) {
-              statusParts.push('Selected • Correct');
-            } else if (choiceData.isSelected && !choiceData.isCorrect) {
-              statusParts.push('Available option');
-            } else {
-              if (choiceData.isCorrect) {
-                statusParts.push('Correct');
-              } else {
-                statusParts.push('Available option');
-              }
-            }
-
-            if (statusParts.length) {
-              const status = document.createElement('span');
-              status.className = 'choice-status';
-              status.textContent = statusParts.join(' • ');
-              choiceItem.appendChild(status);
-            }
+          const answerList = document.createElement('ul');
+          answerList.className = 'choice-list';
+          correctChoices.forEach((text) => {
+            const item = document.createElement('li');
+            item.className = 'choice-item';
 
             const choiceText = document.createElement('p');
             choiceText.className = 'choice-text';
-            choiceText.textContent = choiceData.text;
+            choiceText.textContent = text;
 
-            choiceItem.appendChild(choiceText);
-            choiceListElement.appendChild(choiceItem);
+            item.appendChild(choiceText);
+            answerList.appendChild(item);
           });
 
-          choicesBlock.appendChild(choiceListElement);
-          body.appendChild(choicesBlock);
+          answerBlock.appendChild(answerList);
 
-          const correctChoices = entry.choices.filter((choice) => choice.isCorrect).map((choice) => choice.text);
+          if (question.explanation_en) {
+            const rationale = document.createElement('div');
+            rationale.className = 'question-rationale';
+            rationale.innerHTML = `<p>${question.explanation_en}</p>`;
+            answerBlock.appendChild(rationale);
+          }
 
-          if (correctChoices.length) {
-            const answerBlock = document.createElement('div');
-            answerBlock.className = 'question-answer';
+          body.appendChild(answerBlock);
+        }
 
-            const answerHeading = document.createElement('h3');
-            answerHeading.textContent = correctChoices.length > 1 ? 'Correct answers' : 'Correct answer';
+        details.appendChild(body);
+        fragment.appendChild(details);
+      });
 
-            answerBlock.appendChild(answerHeading);
+      questionList.replaceChildren(fragment);
+      questionLoading.textContent = `${questions.length} practice questions loaded.`;
+    }
 
-            if (correctChoices.length === 1) {
-              const answerText = document.createElement('p');
-              answerText.textContent = correctChoices[0];
-              answerBlock.appendChild(answerText);
-            } else {
-              const answerList = document.createElement('ul');
-              answerList.className = 'choice-list';
-              correctChoices.forEach((text) => {
-                const item = document.createElement('li');
-                item.className = 'choice-item';
+    function renderQuiz(questions) {
+      quizForm.innerHTML = '';
+      quizResults.textContent = '';
 
-                const choiceText = document.createElement('p');
-                choiceText.className = 'choice-text';
-                choiceText.textContent = text;
+      questions.forEach((question, index) => {
+        const fieldset = document.createElement('fieldset');
+        fieldset.className = 'quiz-question';
+        fieldset.id = `quiz-q-${index}`;
 
-                item.appendChild(choiceText);
-                answerList.appendChild(item);
-              });
-              answerBlock.appendChild(answerList);
-            }
+        const legend = document.createElement('legend');
+        legend.innerHTML = `<span class="question-number">Question ${index + 1}</span> ${
+          question.question_text || question.question
+        }`;
+        fieldset.appendChild(legend);
 
-            container.appendChild(block);
-          });
-      } catch (err) {
-        console.error('Failed to load questions JSON:', err);
-        container.textContent = 'Failed to load questions. Make sure ai900_questions.json is in the same folder as this index.html.';
+        const correctLabels = question.choices.filter((choice) => choice.is_correct).map((choice) => choice.label);
+        const isMultiSelect = correctLabels.length > 1;
+        fieldset.dataset.correctLabels = JSON.stringify(correctLabels);
+
+        const helper = document.createElement('p');
+        helper.className = 'quiz-helper';
+        helper.textContent = isMultiSelect
+          ? 'Select all answers that apply.'
+          : 'Select the single best answer.';
+        fieldset.appendChild(helper);
+
+        question.choices.forEach((choice) => {
+          const optionWrapper = document.createElement('label');
+          optionWrapper.className = 'quiz-option';
+
+          const input = document.createElement('input');
+          input.type = isMultiSelect ? 'checkbox' : 'radio';
+          input.name = `q-${index}`;
+          input.value = choice.label;
+
+          const optionText = document.createElement('span');
+          optionText.className = 'quiz-option-text';
+          optionText.textContent = `${choice.label}. ${choice.text}`;
+
+          optionWrapper.appendChild(input);
+          optionWrapper.appendChild(optionText);
+          fieldset.appendChild(optionWrapper);
+        });
+
+        quizForm.appendChild(fieldset);
+      });
+
+      quizLoading.textContent = 'Practice set ready — give it a try!';
+    }
+
+    function evaluateQuiz(event) {
+      event.preventDefault();
+
+      let correctCount = 0;
+      const totalQuestions = quizQuestions.length;
+      const feedbackList = document.createElement('ul');
+      feedbackList.className = 'quiz-feedback-list';
+
+      quizQuestions.forEach((question, index) => {
+        const fieldset = document.getElementById(`quiz-q-${index}`);
+        const correctLabels = JSON.parse(fieldset.dataset.correctLabels);
+        const selectedLabels = Array.from(
+          quizForm.querySelectorAll(`input[name="q-${index}"]:checked`)
+        ).map((input) => input.value);
+
+        const hasCompleteMatch =
+          selectedLabels.length === correctLabels.length &&
+          selectedLabels.every((label) => correctLabels.includes(label));
+
+        if (hasCompleteMatch && selectedLabels.length > 0) {
+          correctCount += 1;
+          fieldset.classList.remove('incorrect');
+          fieldset.classList.add('correct');
+        } else {
+          fieldset.classList.remove('correct');
+          fieldset.classList.add('incorrect');
+        }
+
+        const feedbackItem = document.createElement('li');
+        feedbackItem.className = hasCompleteMatch ? 'feedback success' : 'feedback error';
+        feedbackItem.textContent = hasCompleteMatch
+          ? `Question ${index + 1}: Correct`
+          : `Question ${index + 1}: Review the correct combination (${correctLabels.join(', ')}).`;
+
+        feedbackList.appendChild(feedbackItem);
+      });
+
+      const scoreText = `Score: ${correctCount}/${totalQuestions} — ${Math.round(
+        (correctCount / Math.max(totalQuestions, 1)) * 100
+      )}%`;
+
+      quizResults.innerHTML = '';
+      const summary = document.createElement('p');
+      summary.className = 'quiz-score';
+      summary.textContent = scoreText;
+
+      quizResults.appendChild(summary);
+      quizResults.appendChild(feedbackList);
+    }
+
+    function resetQuizSelections() {
+      quizResults.textContent = '';
+      quizForm.reset();
+      quizForm.querySelectorAll('.correct, .incorrect').forEach((el) => {
+        el.classList.remove('correct', 'incorrect');
+      });
+    }
+
+    async function loadQuestions() {
+      try {
+        const response = await fetch(QUESTION_DATA_URL);
+        if (!response.ok) {
+          throw new Error(`Failed to load questions (status ${response.status}).`);
+        }
+
+        const data = await response.json();
+        const questions = Array.isArray(data.questions) ? data.questions : [];
+
+        quizQuestions = questions;
+        renderQuestionBank(questions);
+        renderQuiz(questions);
+      } catch (error) {
+        console.error('Failed to load questions JSON:', error);
+        questionLoading.textContent = 'Failed to load practice questions.';
+        quizLoading.textContent = 'Unable to load the practice set.';
       }
     }
+
+    quizForm.addEventListener('submit', evaluateQuiz);
+    resetQuizButton.addEventListener('click', resetQuizSelections);
 
     loadQuestions();
   </script>
