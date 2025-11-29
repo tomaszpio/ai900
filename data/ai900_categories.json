@@ -1,0 +1,47 @@
+{
+  "title": "AI-900 Exam Objective Areas",
+  "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900",
+  "updated": "2024-05-01",
+  "categories": [
+    {
+      "id": "ai-workloads",
+      "label": "Describe AI workloads and considerations",
+      "weight": "15-20%",
+      "color": "#2563EB",
+      "accent": "rgba(37, 99, 235, 0.12)",
+      "summary": "Core AI scenarios, responsible AI principles, and considerations for choosing an approach."
+    },
+    {
+      "id": "machine-learning",
+      "label": "Describe fundamental principles of machine learning on Azure",
+      "weight": "20-25%",
+      "color": "#059669",
+      "accent": "rgba(5, 150, 105, 0.14)",
+      "summary": "Regression vs. classification vs. clustering and the ML lifecycle on Azure."
+    },
+    {
+      "id": "computer-vision",
+      "label": "Describe features of computer vision workloads on Azure",
+      "weight": "15-20%",
+      "color": "#D97706",
+      "accent": "rgba(217, 119, 6, 0.14)",
+      "summary": "Image/video analysis, OCR, facial recognition, and spatial analysis services."
+    },
+    {
+      "id": "nlp",
+      "label": "Describe features of Natural Language Processing (NLP) workloads on Azure",
+      "weight": "15-20%",
+      "color": "#9333EA",
+      "accent": "rgba(147, 51, 234, 0.14)",
+      "summary": "Sentiment analysis, translation, language understanding, and Q&A experiences."
+    },
+    {
+      "id": "generative-ai",
+      "label": "Describe features of generative AI workloads on Azure",
+      "weight": "20-25%",
+      "color": "#DC2626",
+      "accent": "rgba(220, 38, 38, 0.14)",
+      "summary": "Azure OpenAI Service, grounding, prompt engineering, and safety systems."
+    }
+  ]
+}

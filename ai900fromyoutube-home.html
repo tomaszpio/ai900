@@ -222,6 +222,47 @@
       margin-top: 0.15rem;
     }
 
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.4rem;
+  }
+
+  .category-pill {
+    --pill-color: #004578;
+    --pill-accent: rgba(0, 69, 120, 0.12);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.35rem 0.5rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--pill-color);
+    background: var(--pill-accent);
+    color: #0f172a;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .category-pill__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--pill-color);
+    display: inline-block;
+  }
+
+  .category-pill__label {
+    font-weight: 700;
+    color: #0b1221;
+  }
+
+  .category-pill__meta {
+    grid-column: 2;
+    font-size: 0.85rem;
+    color: #334155;
+  }
+
     .hero-media {
       display: grid;
       gap: 0.75rem;
@@ -691,6 +732,13 @@
           <li><strong>Progress check:</strong> Select answers without spoilers, then calculate your current score whenever
             you are ready.</li>
         </ul>
+        <div class="category-pills" id="category-pills" aria-label="AI-900 exam categories">
+          <span class="category-pill" aria-hidden="true">
+            <span class="category-pill__dot"></span>
+            <span class="category-pill__label">Wczytywanie zakresów egzaminu…</span>
+            <span class="category-pill__meta">AI-900</span>
+          </span>
+        </div>
       </div>
       <div class="hero-media">
         <div class="video-wrapper">
@@ -871,7 +919,63 @@
 
     <script>
     const DATA_URL = 'data/create-copy-of-i900fromyoutube.json';
+    const CATEGORY_URL = 'data/ai900_categories.json';
     const responseState = new Map();
+
+    async function renderCategories() {
+      const container = document.getElementById('category-pills');
+      if (!container) return;
+
+      try {
+        const response = await fetch(CATEGORY_URL);
+        if (!response.ok) {
+          throw new Error(`Nie udało się pobrać zakresów egzaminu (status ${response.status}).`);
+        }
+
+        const payload = await response.json();
+        const categories = Array.isArray(payload.categories) ? payload.categories : [];
+
+        if (!categories.length) {
+          throw new Error('Brak kategorii do wyświetlenia.');
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        categories.forEach((category) => {
+          const pill = document.createElement('span');
+          pill.className = 'category-pill';
+          pill.style.setProperty('--pill-color', category.color || '#004578');
+          pill.style.setProperty('--pill-accent', category.accent || 'rgba(0, 69, 120, 0.12)');
+          pill.title = category.summary || category.label;
+
+          const dot = document.createElement('span');
+          dot.className = 'category-pill__dot';
+          pill.appendChild(dot);
+
+          const label = document.createElement('span');
+          label.className = 'category-pill__label';
+          label.textContent = category.label;
+          pill.appendChild(label);
+
+          if (category.weight) {
+            const weight = document.createElement('span');
+            weight.className = 'category-pill__meta';
+            weight.textContent = `Waga: ${category.weight}`;
+            pill.appendChild(weight);
+          }
+
+          fragment.appendChild(pill);
+        });
+
+        container.replaceChildren(fragment);
+      } catch (error) {
+        container.replaceChildren();
+        const fallback = document.createElement('span');
+        fallback.className = 'category-pill';
+        fallback.textContent = error.message;
+        container.appendChild(fallback);
+      }
+    }
 
     function updateAnsweredCounter() {
       const answeredCounter = document.getElementById('answered-count');
@@ -1113,6 +1217,7 @@
       }
     }
 
+    renderCategories();
     loadQuestions();
   </script>
 
