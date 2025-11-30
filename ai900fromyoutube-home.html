@@ -593,6 +593,28 @@
         transform: translateY(-1px);
       }
 
+    .secondary-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.55rem 0.95rem;
+      background: #ffffff;
+      color: #004578;
+      border: 1px solid #c3d7e8;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+      .secondary-button:hover,
+      .secondary-button:focus-visible {
+        background: #f1f6fb;
+        color: #00345c;
+        box-shadow: 0 6px 14px rgba(0, 69, 120, 0.18);
+        transform: translateY(-1px);
+      }
+
     .score-summary {
       margin: 0;
       font-weight: 600;
@@ -800,6 +822,7 @@
     </div>
     <div class="floating-instruction__actions">
       <button type="button" class="primary-button score-button">Oblicz dotychczasowy wynik</button>
+      <button type="button" class="secondary-button report-button">Pobierz raport błędnych odpowiedzi</button>
       <p class="score-summary" aria-live="polite">Nie wybrano jeszcze żadnych odpowiedzi.</p>
     </div>
   </div>
@@ -856,6 +879,7 @@
       </div>
       <div class="quiz-controls__actions">
         <button type="button" class="primary-button score-button">Oblicz dotychczasowy wynik</button>
+        <button type="button" class="secondary-button report-button">Pobierz raport błędnych odpowiedzi</button>
         <p class="score-summary" aria-live="polite">Nie wybrano jeszcze żadnych odpowiedzi.</p>
       </div>
     </section>
@@ -1021,6 +1045,7 @@
     const categoryLookup = new Map();
     const categoryRegistry = new Map();
     const questionMeta = new Map();
+    let questionBank = [];
     let selectedCategoryId = '';
 
     const CATEGORY_KEYWORDS = {
@@ -1292,7 +1317,8 @@
 
         responseState.set(questionIndex, {
           isCorrect: hasCompleteMatch,
-          categoryId: meta?.categoryId || ''
+          categoryId: meta?.categoryId || '',
+          selectedLabels
         });
       } else {
         responseState.delete(questionIndex);
@@ -1353,6 +1379,136 @@
     }
 
     updateAnsweredCounter();
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatExplanation(text) {
+      if (!text) return 'Brak wyjaśnienia w źródle.';
+      return escapeHtml(text).replace(/\n/g, '<br>');
+    }
+
+    function buildReportHtml(incorrectEntries) {
+      const answered = responseState.size;
+      const correct = Math.max(0, answered - incorrectEntries.length);
+      const percent = answered ? Math.round((correct / answered) * 1000) / 10 : 0;
+      const generatedAt = new Date();
+      const formattedDate = generatedAt.toLocaleString('pl-PL');
+
+      const parts = [
+        '<!DOCTYPE html>',
+        '<html lang="pl">',
+        '<head>',
+        '  <meta charset="UTF-8" />',
+        '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+        '  <title>Raport błędnych odpowiedzi — AI-900</title>',
+        '  <style>',
+        '    body { font-family: "Segoe UI", sans-serif; margin: 0 auto; padding: 1.5rem; max-width: 960px; background: #f7f9fb; color: #1f1f1f; }',
+        '    h1 { color: #004578; margin-bottom: 0.35rem; }',
+        '    h2 { margin-bottom: 0.25rem; color: #00345c; }',
+        '    h3 { margin: 0.5rem 0 0.35rem; color: #004578; }',
+        '    .report-meta { margin: 0 0 1.25rem; color: #394956; }',
+        '    .question-entry { background: #ffffff; border: 1px solid #d0d7de; border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }',
+        '    .question-text { margin-bottom: 0.5rem; }',
+        '    .answer-block { margin: 0.5rem 0; padding: 0.6rem 0.7rem; background: #f4f7fb; border-radius: 8px; border-left: 3px solid #004578; }',
+        '    .answer-block p { margin: 0; }',
+        '  </style>',
+        '</head>',
+        '<body>',
+        '  <h1>Raport błędnych odpowiedzi — AI-900</h1>',
+        `  <p class="report-meta">Wygenerowano: ${formattedDate}. Oceniono ${answered} odpowiedzi: ${correct} poprawnych (${percent}%). Błędnych pytań: ${incorrectEntries.length}.</p>`
+      ];
+
+      incorrectEntries.forEach(([questionIndex, entry]) => {
+        const question = questionBank[questionIndex];
+        if (!question) return;
+
+        const questionNumber = question.question_number ?? questionIndex + 1;
+        const questionContent = question.question_html || `<p>${escapeHtml(question.question_text || 'Brak treści pytania.')}</p>`;
+        const correctChoices = Array.isArray(question.choices)
+          ? question.choices.filter((choice) => choice.is_correct)
+          : [];
+        const correctAnswerText = correctChoices.length
+          ? correctChoices
+              .map((choice) => escapeHtml(choice.raw || `${choice.label ? `${choice.label}. ` : ''}${choice.text ?? ''}`))
+              .join('<br>')
+          : 'Brak danych o prawidłowej odpowiedzi.';
+        const selectedLabels = entry.selectedLabels?.length
+          ? escapeHtml(entry.selectedLabels.join(', '))
+          : 'Brak zaznaczonych odpowiedzi.';
+
+        parts.push(
+          '<article class="question-entry">',
+          `  <h2>Pytanie ${questionNumber}</h2>`,
+          `  <div class="question-text">${questionContent}</div>`,
+          '  <div class="answer-block">',
+          '    <h3>Twoja odpowiedź</h3>',
+          `    <p>${selectedLabels}</p>`,
+          '  </div>',
+          '  <div class="answer-block">',
+          '    <h3>Prawidłowa odpowiedź</h3>',
+          `    <p>${correctAnswerText}</p>`,
+          '  </div>',
+          '  <div class="answer-block">',
+          '    <h3>Wyjaśnienie</h3>',
+          `    <p>${formatExplanation(question.explanation_en)}</p>`,
+          '  </div>',
+          '</article>'
+        );
+      });
+
+      parts.push('</body>', '</html>');
+      return parts.join('\n');
+    }
+
+    function downloadIncorrectReport() {
+      if (!responseState.size) {
+        updateScoreSummary('Zaznacz odpowiedzi, aby wygenerować raport z błędami.');
+        return;
+      }
+
+      const incorrectEntries = Array.from(responseState.entries()).filter(([, entry]) => !entry.isCorrect);
+
+      if (!incorrectEntries.length) {
+        updateScoreSummary('Świetnie! Brak błędnych odpowiedzi do zapisania w raporcie.');
+        return;
+      }
+
+      if (!questionBank.length) {
+        updateScoreSummary('Nie udało się odczytać źródła pytań do raportu. Odśwież stronę i spróbuj ponownie.');
+        return;
+      }
+
+      const html = buildReportHtml(incorrectEntries);
+      const blob = new Blob([html], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      const timestamp = new Date();
+      const formattedTimestamp = `${timestamp.getFullYear()}-${String(timestamp.getMonth() + 1).padStart(2, '0')}-${String(
+        timestamp.getDate()
+      ).padStart(2, '0')}_${String(timestamp.getHours()).padStart(2, '0')}-${String(timestamp.getMinutes()).padStart(2, '0')}`;
+
+      link.href = url;
+      link.download = `ai900-raport-blednych-odpowiedzi-${formattedTimestamp}.html`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+
+      updateScoreSummary('Raport błędnych odpowiedzi został zapisany jako plik HTML.');
+    }
+
+    const reportButtons = document.querySelectorAll('.report-button');
+    if (reportButtons.length) {
+      reportButtons.forEach((button) => button.addEventListener('click', downloadIncorrectReport));
+    }
 
     function appendTextWithLineBreaks(target, text) {
       const lines = text.split('\n');
@@ -1566,6 +1722,7 @@
           throw new Error('No questions were found in the source document.');
         }
 
+        questionBank = questions;
         const fragment = document.createDocumentFragment();
         questions.forEach((question, index) => {
           const categoryId = categorizeQuestion(question);
