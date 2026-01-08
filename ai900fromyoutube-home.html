@@ -859,6 +859,13 @@
           </span>
         </div>
         <p class="filter-hint" id="category-filter-hint">Kliknij kategorię, aby wyświetlić tylko pytania z tego zakresu.</p>
+        <div class="category-pills chapter-pills" id="chapter-pills" aria-label="AI-900 chapters">
+          <span class="category-pill" aria-hidden="true">
+            <span class="category-pill__dot"></span>
+            <span class="category-pill__label">Wczytywanie rozdziałów…</span>
+          </span>
+        </div>
+        <p class="filter-hint" id="chapter-filter-hint">Kliknij rozdział, aby wyświetlić pytania z sekcji Overview of AI concepts.</p>
       </div>
       <div class="hero-media">
         <div class="video-wrapper">
@@ -1045,8 +1052,21 @@
     const categoryLookup = new Map();
     const categoryRegistry = new Map();
     const questionMeta = new Map();
+    const chapterRegistry = new Map();
     let questionBank = [];
     let selectedCategoryId = '';
+    let selectedChapterId = '';
+
+    const CHAPTER_OVERVIEW_ID = 'overview-ai-concepts';
+    const CHAPTERS = [
+      {
+        id: CHAPTER_OVERVIEW_ID,
+        label: 'Overview of AI concepts',
+        color: '#0EA5E9',
+        accent: 'rgba(14, 165, 233, 0.12)',
+        summary: 'Podstawy pojęć AI, ML, Deep Learning i odpowiedzialnego AI.'
+      }
+    ];
 
     const CATEGORY_KEYWORDS = {
       'generative-ai': [
@@ -1131,9 +1151,20 @@
       });
     }
 
+    function updateChapterPillsState() {
+      const pills = document.querySelectorAll('#chapter-pills .category-pill');
+      pills.forEach((pill) => {
+        const pillChapter = pill.dataset.chapterId;
+        const isActive = selectedChapterId && pillChapter === selectedChapterId;
+        pill.classList.toggle('is-active', isActive);
+        pill.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
     function applyCategoryFilter() {
       const questionList = document.getElementById('question-list');
       const filterHint = document.getElementById('category-filter-hint');
+      const chapterHint = document.getElementById('chapter-filter-hint');
 
       if (!questionList) return;
 
@@ -1142,7 +1173,10 @@
 
       cards.forEach((card) => {
         const categoryId = card.dataset.categoryId || '';
-        const shouldShow = !selectedCategoryId || categoryId === selectedCategoryId;
+        const chapterId = card.dataset.chapterId || '';
+        const matchesCategory = !selectedCategoryId || categoryId === selectedCategoryId;
+        const matchesChapter = !selectedChapterId || chapterId === selectedChapterId;
+        const shouldShow = matchesCategory && matchesChapter;
         card.style.display = shouldShow ? '' : 'none';
         if (shouldShow) {
           visibleCount += 1;
@@ -1160,12 +1194,28 @@
         }
       }
 
+      if (chapterHint) {
+        if (!selectedChapterId) {
+          chapterHint.textContent = 'Kliknij rozdział, aby wyświetlić pytania z sekcji Overview of AI concepts.';
+        } else {
+          const chapterLabel = chapterRegistry.get(selectedChapterId)?.label || 'wybrany rozdział';
+          chapterHint.textContent = `Widoczny jest rozdział: ${chapterLabel} (${visibleCount} pytań). Kliknij ponownie, aby przywrócić wszystkie.`;
+        }
+      }
+
       updateCategoryPillsState();
+      updateChapterPillsState();
     }
 
     function handleCategorySelection(categoryId) {
       if (!categoryId) return;
       selectedCategoryId = selectedCategoryId === categoryId ? '' : categoryId;
+      applyCategoryFilter();
+    }
+
+    function handleChapterSelection(chapterId) {
+      if (!chapterId) return;
+      selectedChapterId = selectedChapterId === chapterId ? '' : chapterId;
       applyCategoryFilter();
     }
 
@@ -1242,6 +1292,51 @@
       }
     }
 
+    function renderChapters() {
+      const container = document.getElementById('chapter-pills');
+      if (!container) return;
+
+      if (!CHAPTERS.length) {
+        container.replaceChildren();
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      CHAPTERS.forEach((chapter) => {
+        chapterRegistry.set(chapter.id, chapter);
+
+        const pill = document.createElement('span');
+        pill.className = 'category-pill';
+        pill.style.setProperty('--pill-color', chapter.color);
+        pill.style.setProperty('--pill-accent', chapter.accent);
+        pill.title = chapter.summary || chapter.label;
+        pill.dataset.chapterId = chapter.id;
+        pill.tabIndex = 0;
+
+        const dot = document.createElement('span');
+        dot.className = 'category-pill__dot';
+        pill.appendChild(dot);
+
+        const label = document.createElement('span');
+        label.className = 'category-pill__label';
+        label.textContent = chapter.label;
+        pill.appendChild(label);
+
+        pill.addEventListener('click', () => handleChapterSelection(chapter.id));
+        pill.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleChapterSelection(chapter.id);
+          }
+        });
+
+        fragment.appendChild(pill);
+      });
+
+      container.replaceChildren(fragment);
+    }
+
     function updateAnsweredCounter() {
       const answeredCounter = document.getElementById('answered-count');
       if (answeredCounter) {
@@ -1276,6 +1371,14 @@
             accent: 'rgba(0, 69, 120, 0.12)'
           }
         : null;
+    }
+
+    function resolveChapterId(question) {
+      if (!question) return '';
+      if (question.category === 'ai-workloads') {
+        return CHAPTER_OVERVIEW_ID;
+      }
+      return '';
     }
 
     function handleChoiceSelection(questionIndex, choiceElement) {
@@ -1655,6 +1758,7 @@
       const questionCard = document.createElement('details');
       questionCard.className = 'question-card';
       questionCard.dataset.categoryId = categoryId || '';
+      questionCard.dataset.chapterId = resolveChapterId(question) || '';
 
       const summary = document.createElement('summary');
       const number = document.createElement('span');
@@ -1744,6 +1848,7 @@
     }
 
     const categoriesReady = renderCategories();
+    renderChapters();
     loadQuestions().then(applyCategoryFilter);
   </script>
 
