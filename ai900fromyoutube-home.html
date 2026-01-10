@@ -1058,6 +1058,19 @@
     let selectedChapterId = '';
 
     const CHAPTER_OVERVIEW_ID = 'overview-ai-concepts';
+    const CHAPTER_GET_STARTED_AI_FOUNDRY_ID = 'get-started-ai-foundry';
+    const CHAPTER_INTRO_ML_ID = 'intro-ml-concepts';
+    const CHAPTER_GET_STARTED_ML_ID = 'get-started-ml-azure';
+    const CHAPTER_INTRO_GENERATIVE_ID = 'intro-generative-ai-agents';
+    const CHAPTER_GET_STARTED_GENERATIVE_ID = 'get-started-generative-ai-foundry';
+    const CHAPTER_INTRO_TEXT_ANALYSIS_ID = 'intro-text-analysis-concepts';
+    const CHAPTER_GET_STARTED_NLP_ID = 'get-started-nlp-foundry';
+    const CHAPTER_INTRO_SPEECH_ID = 'intro-ai-speech-concepts';
+    const CHAPTER_GET_STARTED_SPEECH_ID = 'get-started-speech-foundry';
+    const CHAPTER_INTRO_COMPUTER_VISION_ID = 'intro-computer-vision-concepts';
+    const CHAPTER_GET_STARTED_COMPUTER_VISION_ID = 'get-started-computer-vision-foundry';
+    const CHAPTER_INTRO_INFO_EXTRACTION_ID = 'intro-ai-info-extraction-concepts';
+    const CHAPTER_GET_STARTED_INFO_EXTRACTION_ID = 'get-started-ai-info-extraction-foundry';
     const CHAPTERS = [
       {
         id: CHAPTER_OVERVIEW_ID,
@@ -1065,6 +1078,97 @@
         color: '#0EA5E9',
         accent: 'rgba(14, 165, 233, 0.12)',
         summary: 'Podstawy pojęć AI, ML, Deep Learning i odpowiedzialnego AI.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_AI_FOUNDRY_ID,
+        label: 'Get started with AI in Microsoft Foundry',
+        color: '#2563EB',
+        accent: 'rgba(37, 99, 235, 0.12)',
+        summary: 'Wprowadzenie do pracy z usługami AI w Microsoft Foundry.'
+      },
+      {
+        id: CHAPTER_INTRO_ML_ID,
+        label: 'Introduction to machine learning concepts',
+        color: '#059669',
+        accent: 'rgba(5, 150, 105, 0.14)',
+        summary: 'Kluczowe pojęcia uczenia maszynowego: klasyfikacja, regresja i klasteryzacja.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_ML_ID,
+        label: 'Get started with machine learning in Azure',
+        color: '#10B981',
+        accent: 'rgba(16, 185, 129, 0.14)',
+        summary: 'Praktyczne wdrożenia ML w Azure Machine Learning.'
+      },
+      {
+        id: CHAPTER_INTRO_GENERATIVE_ID,
+        label: 'Introduction to generative AI and agents',
+        color: '#DC2626',
+        accent: 'rgba(220, 38, 38, 0.14)',
+        summary: 'Modele generatywne, agenci oraz podstawy promptingu.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_GENERATIVE_ID,
+        label: 'Get started with generative AI in Microsoft Foundry',
+        color: '#B91C1C',
+        accent: 'rgba(185, 28, 28, 0.14)',
+        summary: 'Praca z modelami generatywnymi w Microsoft Foundry.'
+      },
+      {
+        id: CHAPTER_INTRO_TEXT_ANALYSIS_ID,
+        label: 'Introduction to text analysis concepts',
+        color: '#9333EA',
+        accent: 'rgba(147, 51, 234, 0.14)',
+        summary: 'Podstawowe zagadnienia NLP i analizy tekstu.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_NLP_ID,
+        label: 'Get started with natural language processing in Microsoft Foundry',
+        color: '#7C3AED',
+        accent: 'rgba(124, 58, 237, 0.14)',
+        summary: 'Usługi językowe i praktyczne scenariusze NLP.'
+      },
+      {
+        id: CHAPTER_INTRO_SPEECH_ID,
+        label: 'Introduction to AI speech concepts',
+        color: '#0F766E',
+        accent: 'rgba(15, 118, 110, 0.14)',
+        summary: 'Rozpoznawanie i synteza mowy oraz scenariusze głosowe.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_SPEECH_ID,
+        label: 'Get started with speech in Microsoft Foundry',
+        color: '#0D9488',
+        accent: 'rgba(13, 148, 136, 0.14)',
+        summary: 'Implementacja rozpoznawania i syntezy mowy w Foundry.'
+      },
+      {
+        id: CHAPTER_INTRO_COMPUTER_VISION_ID,
+        label: 'Introduction to computer vision concepts',
+        color: '#D97706',
+        accent: 'rgba(217, 119, 6, 0.14)',
+        summary: 'Podstawy analizy obrazu, OCR i detekcji obiektów.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_COMPUTER_VISION_ID,
+        label: 'Get started with computer vision in Microsoft Foundry',
+        color: '#F59E0B',
+        accent: 'rgba(245, 158, 11, 0.14)',
+        summary: 'Wdrożenia i usługi wizji komputerowej w Foundry.'
+      },
+      {
+        id: CHAPTER_INTRO_INFO_EXTRACTION_ID,
+        label: 'Introduction to AI-powered information extraction concepts',
+        color: '#4B5563',
+        accent: 'rgba(75, 85, 99, 0.14)',
+        summary: 'Ekstrakcja informacji z dokumentów i danych nieustrukturyzowanych.'
+      },
+      {
+        id: CHAPTER_GET_STARTED_INFO_EXTRACTION_ID,
+        label: 'Get started with AI-powered information extraction in Microsoft Foundry',
+        color: '#6B7280',
+        accent: 'rgba(107, 114, 128, 0.14)',
+        summary: 'Praktyczne użycie usług ekstrakcji informacji w Foundry.'
       }
     ];
 
@@ -1375,8 +1479,23 @@
 
     function resolveChapterId(question) {
       if (!question) return '';
+      if (question.chapter_id) {
+        return question.chapter_id;
+      }
       if (question.category === 'ai-workloads') {
         return CHAPTER_OVERVIEW_ID;
+      }
+      if (question.category === 'machine-learning') {
+        return CHAPTER_INTRO_ML_ID;
+      }
+      if (question.category === 'generative-ai') {
+        return CHAPTER_INTRO_GENERATIVE_ID;
+      }
+      if (question.category === 'nlp') {
+        return CHAPTER_INTRO_TEXT_ANALYSIS_ID;
+      }
+      if (question.category === 'computer-vision') {
+        return CHAPTER_INTRO_COMPUTER_VISION_ID;
       }
       return '';
     }
