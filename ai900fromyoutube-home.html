@@ -1500,6 +1500,15 @@
       return '';
     }
 
+    function shuffleQuestions(questions) {
+      const shuffled = [...questions];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
     function handleChoiceSelection(questionIndex, choiceElement) {
       const list = choiceElement.closest('.choice-list');
       if (!list) return;
@@ -1945,9 +1954,10 @@
           throw new Error('No questions were found in the source document.');
         }
 
-        questionBank = questions;
+        const randomizedQuestions = shuffleQuestions(questions);
+        questionBank = randomizedQuestions;
         const fragment = document.createDocumentFragment();
-        questions.forEach((question, index) => {
+        randomizedQuestions.forEach((question, index) => {
           const categoryId = categorizeQuestion(question);
           questionMeta.set(index, { categoryId, questionNumber: question.question_number ?? index + 1 });
           fragment.appendChild(buildQuestionCard(question, index, categoryId));
