@@ -1048,6 +1048,7 @@
     <script>
     const DATA_URL = 'data/data.json';
     const CATEGORY_URL = 'data/ai900_categories.json';
+    const MAX_VISIBLE_QUESTIONS = 50;
     const responseState = new Map();
     const categoryLookup = new Map();
     const categoryRegistry = new Map();
@@ -1954,7 +1955,7 @@
           throw new Error('No questions were found in the source document.');
         }
 
-        const randomizedQuestions = shuffleQuestions(questions);
+        const randomizedQuestions = shuffleQuestions(questions).slice(0, MAX_VISIBLE_QUESTIONS);
         questionBank = randomizedQuestions;
         const fragment = document.createDocumentFragment();
         randomizedQuestions.forEach((question, index) => {
