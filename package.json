@@ -1,0 +1,29 @@
+{
+  "name": "ai900",
+  "version": "1.0.0",
+  "description": "ai 900 test samples",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "json-schema-to-ts": "^3.1.1",
+    "ts-algebra": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszpio/ai900.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tomaszpio/ai900/issues"
+  },
+  "homepage": "https://github.com/tomaszpio/ai900#readme"
+}

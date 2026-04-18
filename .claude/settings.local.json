@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Bash(npm list:*)",
+      "Bash(npm install:*)",
+      "Bash(npm init *)",
+      "Bash(node generate-explanations.js)",
+      "Bash(node -e ' *)",
+      "Bash(node patch-explanations.js)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
