@@ -861,6 +861,12 @@
     <div class="floating-instruction__actions">
       <button type="button" class="primary-button score-button">Oblicz dotychczasowy wynik</button>
       <button type="button" class="secondary-button report-button">Pobierz raport błędnych odpowiedzi</button>
+      <div class="count-picker" role="group" aria-label="Number of questions to show">
+        <span class="count-picker__label">Pytania:</span>
+        <button type="button" class="count-pill" data-count="20">20</button>
+        <button type="button" class="count-pill" data-count="50">50</button>
+        <button type="button" class="count-pill" data-count="all">Wszystkie</button>
+      </div>
       <p class="score-summary" aria-live="polite">Nie wybrano jeszcze żadnych odpowiedzi.</p>
     </div>
   </div>
@@ -934,12 +940,6 @@
 
   <aside class="glossary-panel" aria-labelledby="glossary-title">
     <h2 id="glossary-title">AI-900 Glossary</h2>
-    <div class="count-picker" role="group" aria-label="Number of questions to show">
-      <span class="count-picker__label">Liczba pytań:</span>
-      <button type="button" class="count-pill" data-count="20">20</button>
-      <button type="button" class="count-pill is-active" data-count="50">50</button>
-      <button type="button" class="count-pill" data-count="all">Wszystkie</button>
-    </div>
     <p>Key Azure AI-900 terms with quick reminders you can reference while reviewing questions.</p>
     <ul class="glossary-list">
       <li class="glossary-item">
@@ -1099,7 +1099,8 @@
     const chapterRegistry = new Map();
     let questionBank = [];
     let allShuffledQuestions = [];
-    let visibleLimit = 50;
+    const _urlQ = new URLSearchParams(window.location.search).get('questions');
+    let visibleLimit = _urlQ === 'all' ? 'all' : (Number(_urlQ) || 50);
     let selectedCategoryId = '';
     let selectedChapterId = '';
 
@@ -2039,15 +2040,26 @@
       }
     }
 
+    function syncCountPills() {
+      const current = String(visibleLimit);
+      document.querySelectorAll('.count-pill').forEach((p) => {
+        p.classList.toggle('is-active', p.dataset.count === current);
+      });
+    }
+
     document.querySelectorAll('.count-pill').forEach((pill) => {
       pill.addEventListener('click', () => {
         const raw = pill.dataset.count;
         visibleLimit = raw === 'all' ? 'all' : Number(raw);
-        document.querySelectorAll('.count-pill').forEach((p) => p.classList.remove('is-active'));
-        pill.classList.add('is-active');
+        const url = new URL(window.location);
+        url.searchParams.set('questions', raw);
+        history.replaceState(null, '', url);
+        syncCountPills();
         renderQuestions(visibleLimit);
       });
     });
+
+    syncCountPills();
 
     const categoriesReady = renderCategories();
     renderChapters();
