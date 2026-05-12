@@ -572,6 +572,44 @@
       align-items: center;
     }
 
+    .count-picker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: 1px solid #c3d7e8;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .count-picker__label {
+      padding: 0 0.6rem 0 0.8rem;
+      font-size: 0.85rem;
+      color: #394956;
+      white-space: nowrap;
+    }
+
+    .count-pill {
+      padding: 0.45rem 0.75rem;
+      background: transparent;
+      border: none;
+      border-left: 1px solid #c3d7e8;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #004578;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .count-pill:hover {
+      background: #f1f6fb;
+    }
+
+    .count-pill.is-active {
+      background: #004578;
+      color: #ffffff;
+    }
+
     .primary-button {
       display: inline-flex;
       align-items: center;
@@ -887,6 +925,12 @@
       <div class="quiz-controls__actions">
         <button type="button" class="primary-button score-button">Oblicz dotychczasowy wynik</button>
         <button type="button" class="secondary-button report-button">Pobierz raport błędnych odpowiedzi</button>
+        <div class="count-picker" role="group" aria-label="Number of questions to show">
+          <span class="count-picker__label">Pytania:</span>
+          <button type="button" class="count-pill" data-count="20">20</button>
+          <button type="button" class="count-pill is-active" data-count="50">50</button>
+          <button type="button" class="count-pill" data-count="all">Wszystkie</button>
+        </div>
         <p class="score-summary" aria-live="polite">Nie wybrano jeszcze żadnych odpowiedzi.</p>
       </div>
     </section>
@@ -1048,13 +1092,14 @@
     <script>
     const DATA_URL = 'data/data.json?v=2';
     const CATEGORY_URL = 'data/ai900_categories.json';
-    const MAX_VISIBLE_QUESTIONS = 50;
     const responseState = new Map();
     const categoryLookup = new Map();
     const categoryRegistry = new Map();
     const questionMeta = new Map();
     const chapterRegistry = new Map();
     let questionBank = [];
+    let allShuffledQuestions = [];
+    let visibleLimit = 50;
     let selectedCategoryId = '';
     let selectedChapterId = '';
 
@@ -1936,6 +1981,31 @@
       return questionCard;
     }
 
+    function renderQuestions(limit) {
+      const questionList = document.getElementById('question-list');
+      if (!questionList || !allShuffledQuestions.length) return;
+
+      const subset = limit === 'all' ? allShuffledQuestions : allShuffledQuestions.slice(0, limit);
+
+      responseState.clear();
+      questionMeta.clear();
+      questionBank = subset;
+
+      updateAnsweredCounter();
+      updateScoreSummary('Nie wybrano jeszcze żadnych odpowiedzi.');
+
+      const fragment = document.createDocumentFragment();
+      subset.forEach((question, index) => {
+        const categoryId = categorizeQuestion(question);
+        questionMeta.set(index, { categoryId, questionNumber: question.question_number ?? index + 1 });
+        fragment.appendChild(buildQuestionCard(question, index, categoryId));
+      });
+
+      questionList.replaceChildren(fragment);
+      updateVisibleCounter(subset.length);
+      applyCategoryFilter();
+    }
+
     async function loadQuestions() {
       const loadingState = document.getElementById('question-loading');
       const questionList = document.getElementById('question-list');
@@ -1955,16 +2025,8 @@
           throw new Error('No questions were found in the source document.');
         }
 
-        const randomizedQuestions = shuffleQuestions(questions).slice(0, MAX_VISIBLE_QUESTIONS);
-        questionBank = randomizedQuestions;
-        const fragment = document.createDocumentFragment();
-        randomizedQuestions.forEach((question, index) => {
-          const categoryId = categorizeQuestion(question);
-          questionMeta.set(index, { categoryId, questionNumber: question.question_number ?? index + 1 });
-          fragment.appendChild(buildQuestionCard(question, index, categoryId));
-        });
-
-        questionList.appendChild(fragment);
+        allShuffledQuestions = shuffleQuestions(questions);
+        renderQuestions(visibleLimit);
       } catch (error) {
         const errorMessage = document.createElement('p');
         errorMessage.className = 'error-state';
@@ -1976,6 +2038,16 @@
         }
       }
     }
+
+    document.querySelectorAll('.count-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const raw = pill.dataset.count;
+        visibleLimit = raw === 'all' ? 'all' : Number(raw);
+        document.querySelectorAll('.count-pill').forEach((p) => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+        renderQuestions(visibleLimit);
+      });
+    });
 
     const categoriesReady = renderCategories();
     renderChapters();
