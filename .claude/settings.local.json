@@ -15,7 +15,9 @@
       "Bash(Select-String -Pattern \"questionFormat\" \"D:\\\\development\\\\ai900\\\\ai900fromyoutube-home.html\")",
       "Bash(Measure-Object)",
       "Bash(Select-Object -ExpandProperty Count)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(Select-String -Path \"D:\\\\development\\\\ai900\\\\data\\\\data.json\" -Pattern '\"title\": \"Question 275\"')",
+      "Bash(Select-Object LineNumber)"
     ]
   }
 }

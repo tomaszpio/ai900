@@ -8357,6 +8357,24 @@
           "text": "Azure AI Bot Service",
           "raw": "A. Azure AI Bot Service",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Azure AI Translator",
+          "raw": "B. Azure AI Translator",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Azure AI Vision",
+          "raw": "C. Azure AI Vision",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Azure AI Document Intelligence",
+          "raw": "D. Azure AI Document Intelligence",
+          "is_correct": false
         }
       ],
       "explanation_en": "Azure AI Bot Service provide a platform for conversational artificial intelligence (AI), which designates the ability of software agents to participate in a conversation. Azure AI Translator is part of Natural language processing (NLP), but it does not serve as a platform for conversational AI. Azure AI Vision deals with image processing. Azure AI Document Intelligence extracts information from scanned forms and invoices.\nUnderstand natural language processing - Training | Microsoft Learn",
@@ -8376,6 +8394,24 @@
           "text": "Azure OpenAI",
           "raw": "A. Azure OpenAI",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Azure AI Vision",
+          "raw": "B. Azure AI Vision",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Azure AI Language",
+          "raw": "C. Azure AI Language",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Azure AI Speech",
+          "raw": "D. Azure AI Speech",
+          "is_correct": false
         }
       ],
       "explanation_en": "Azure OpenAI is the only service capable of generating text that can be used in chat applications to create conversational experiences. The other workloads are Azure Cognitive Services used for different purposes, but not for generating text used in chat applications.\nUnderstand generative AI - Training | Microsoft Learn",
@@ -8395,6 +8431,24 @@
           "text": "extracting key phrases from a business insights report",
           "raw": "A. extracting key phrases from a business insights report",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "predicting whether customers are likely to buy a product based on previous purchases",
+          "raw": "B. predicting whether customers are likely to buy a product based on previous purchases",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "monitoring for sudden increases in the quantity of failed sign-in attempts",
+          "raw": "C. monitoring for sudden increases in the quantity of failed sign-in attempts",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "identifying objects in landscape images",
+          "raw": "D. identifying objects in landscape images",
+          "is_correct": false
         }
       ],
       "explanation_en": "Extracting key phrases from text to identify the main terms is an NLP workload. Predicting whether customers are likely to buy a product based on previous purchases requires the development of a machine learning model. Monitoring for sudden increases in quantity of failed sign-in attempts is a different workload. Identifying objects in landscape images is a computer vision workload.\nAnalyze text with the Language service - Training | Microsoft Learn",
@@ -8470,6 +8524,24 @@
           "text": "fairness",
           "raw": "A. fairness",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "privacy and security",
+          "raw": "B. privacy and security",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "transparency",
+          "raw": "C. transparency",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "accountability",
+          "raw": "D. accountability",
+          "is_correct": false
         }
       ],
       "explanation_en": "Fairness involves evaluating and mitigating the bias introduced by the features of a model. Privacy is meant to ensure that privacy provisions are included in AI solutions. Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. Accountability is focused on ensuring that AI solutions meet ethical and legal standards that are clearly defined.\nUnderstand Responsible AI - Training | Microsoft Learn",
@@ -8489,6 +8561,24 @@
           "text": "fairness",
           "raw": "A. fairness",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "transparency",
+          "raw": "B. transparency",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "inclusiveness",
+          "raw": "C. inclusiveness",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "reliability and safety",
+          "raw": "D. reliability and safety",
+          "is_correct": false
         }
       ],
       "explanation_en": "Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.\nUnderstand Responsible AI - Training | Microsoft Learn",
@@ -8514,6 +8604,24 @@
           "text": "gender",
           "raw": "B. gender",
           "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "salary",
+          "raw": "C. salary",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "payment history",
+          "raw": "D. payment history",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "credit utilization",
+          "raw": "E. credit utilization",
+          "is_correct": false
         }
       ],
       "explanation_en": "The AI system must be designed to ensure that biased decision making is avoided and not based on factors such as ethnicity and gender. The system will consider salary, payment history, and credit utilization. These are standard metrics.\nUnderstand Responsible AI - Training | Microsoft Learn",
@@ -8539,6 +8647,18 @@
           "text": "accountability",
           "raw": "B. accountability",
           "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "fairness",
+          "raw": "C. fairness",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "inclusiveness",
+          "raw": "D. inclusiveness",
+          "is_correct": false
         }
       ],
       "explanation_en": "The accountability principle states that AI systems are designed to meet any ethical and legal standards that are applicable. The system must be designed to ensure that privacy of the healthcare data is of the highest importance, including anonymizing data where applicable. The fairness principle is applied to AI systems to ensure that users of the systems are treated fairly. The inclusiveness principle states that AI systems must empower people in a positive and engaging way.\nUnderstand Responsible AI - Training | Microsoft Learn",
@@ -8558,6 +8678,24 @@
           "text": "regression",
           "raw": "A. regression",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "clustering",
+          "raw": "B. clustering",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "classification",
+          "raw": "C. classification",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "unsupervised learning",
+          "raw": "D. unsupervised learning",
+          "is_correct": false
         }
       ],
       "explanation_en": "The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.\nFundamentals of machine learning - Training | Microsoft Learn\nWhat are classification models? - Training | Microsoft Learn\nWhat is clustering? - Training | Microsoft Learn",
@@ -8627,6 +8765,24 @@
           "text": "regression",
           "raw": "A. regression",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "multiclass classification",
+          "raw": "B. multiclass classification",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "clustering",
+          "raw": "C. clustering",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "binary classification",
+          "raw": "D. binary classification",
+          "is_correct": false
         }
       ],
       "explanation_en": "Regression is a machine learning scenario that is used to predict numeric values. In this example, regression will be able to predict future energy consumption based on analyzing historical time-series energy data based on factors, such as seasonal weather and holiday periods. Multiclass classification is used to predict categories of data. Clustering analyzes unlabeled data to find similarities present in the data. Classification is used to predict categories of data.\nRegression - Training | Microsoft Learn",
@@ -8671,6 +8827,24 @@
           "text": "two features and one label",
           "raw": "A. two features and one label",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "one feature and two labels",
+          "raw": "B. one feature and two labels",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "two features and two labels",
+          "raw": "C. two features and two labels",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "one feature and one label",
+          "raw": "D. one feature and one label",
+          "is_correct": false
         }
       ],
       "explanation_en": "The scenario represents a model that is meant to establish a relationship between two features (age and body fat percentage) and one label (the likelihood of developing diabetes). The features are descriptive attributes (serving as the input), while the label is the characteristic you are trying to predict (serving as the output).\nMultiple linear regression and R-squared - Training | Microsoft Learn",
@@ -8690,6 +8864,24 @@
           "text": "use of historical data with known label values to train a model",
           "raw": "A. use of historical data with known label values to train a model",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "use of randomly generated data for training",
+          "raw": "B. use of randomly generated data for training",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "use of unlabeled data to discover hidden patterns",
+          "raw": "C. use of unlabeled data to discover hidden patterns",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "use of predicted output values as training inputs",
+          "raw": "D. use of predicted output values as training inputs",
+          "is_correct": false
         }
       ],
       "explanation_en": "Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.\nWhat is regression? - Training | Microsoft Learn\nWhat is clustering? - Training | Microsoft Learn",
@@ -8796,6 +8988,24 @@
           "text": "Linear Regression",
           "raw": "A. Linear Regression",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Clean Missing Data",
+          "raw": "B. Clean Missing Data",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Select Columns in Dataset",
+          "raw": "C. Select Columns in Dataset",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Evaluate Model",
+          "raw": "D. Evaluate Model",
+          "is_correct": false
         }
       ],
       "explanation_en": "Linear regression is a machine learning algorithm module used for training regression models. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. Evaluate model is a component used to measure the accuracy of trained models.\nRegression - Training | Microsoft Learn",
@@ -8815,6 +9025,24 @@
           "text": "K-Means Clustering",
           "raw": "A. K-Means Clustering",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Linear Regression",
+          "raw": "B. Linear Regression",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Multiclass Classification",
+          "raw": "C. Multiclass Classification",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Normalize Data",
+          "raw": "D. Normalize Data",
+          "is_correct": false
         }
       ],
       "explanation_en": "K-means clustering is an unsupervised machine learning algorithm component used for training clustering models. You can use unlabeled data with this algorithm. Linear regression and classification are supervised machine learning algorithm components. You need labeled data to use these algorithms. Normalize Data is not a machine learning algorithm module.\nClustering - Training | Microsoft Learn",
@@ -8840,6 +9068,18 @@
           "text": "landmarks",
           "raw": "B. landmarks",
           "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "image types",
+          "raw": "C. image types",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "people_group",
+          "raw": "D. people_group",
+          "is_correct": false
         }
       ],
       "explanation_en": "When categorizing an image, the Azure AI Vision service supports two specialized domain models: celebrities and landmarks. Image types is an additional capability of the computer vision service, allowing it to detect the type of image, such as a clip art image or a line drawing. Both people_ and people_group are supported categories when performing image classification.\nGet started with image analysis on Azure - Training | Microsoft Learn",
@@ -8859,6 +9099,24 @@
           "text": "object detection",
           "raw": "A. object detection",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "semantic segmentation",
+          "raw": "B. semantic segmentation",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "image classification",
+          "raw": "C. image classification",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "image analysis",
+          "raw": "D. image analysis",
+          "is_correct": false
         }
       ],
       "explanation_en": "Object detection provides the ability to generate bounding boxes that identify the locations of different types of objects in an image, including the bounding box coordinates, designating the location of the object in the image. Semantic segmentation provides the ability to classify individual pixels in an image. Image classification classifies images based on their contents. Image analysis extracts information from the image to label it with tags or captions.\nGet started with image analysis on Azure - Training | Microsoft Learn\nUnderstand computer vision - Training | Microsoft Learn",
@@ -8903,6 +9161,24 @@
           "text": "tracking livestock in a field",
           "raw": "A. tracking livestock in a field",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "performing sentiment analysis on employee feedback",
+          "raw": "B. performing sentiment analysis on employee feedback",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "extracting text from handwritten manuscripts",
+          "raw": "C. extracting text from handwritten manuscripts",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "granting employee access to a secure building by using facial recognition",
+          "raw": "D. granting employee access to a secure building by using facial recognition",
+          "is_correct": false
         }
       ],
       "explanation_en": "Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).\nMachine learning for computer vision - Training | Microsoft Learn",
@@ -8947,6 +9223,24 @@
           "text": "object detection",
           "raw": "A. object detection",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "linear regression",
+          "raw": "B. linear regression",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "image classification",
+          "raw": "C. image classification",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "optical character recognition (OCR)",
+          "raw": "D. optical character recognition (OCR)",
+          "is_correct": false
         }
       ],
       "explanation_en": "Object detection can be used to evaluate traffic monitoring images to quickly classify specific vehicle types, such as car, bus, or cyclist. Linear regression is a machine learning training algorithm for training regression models. Image classification is part of computer vision that is concerned with the primary contents of an image. OCR is used to extract text and handwriting from images.\nMachine learning for computer vision - Training | Microsoft Learn",
@@ -8966,6 +9260,24 @@
           "text": "tagging",
           "raw": "A. tagging",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "detecting image types",
+          "raw": "B. detecting image types",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "content organization",
+          "raw": "C. content organization",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "categorizing",
+          "raw": "D. categorizing",
+          "is_correct": false
         }
       ],
       "explanation_en": "Tagging involves associating an image with metadata that summarizes the attributes of the image. Detecting image types involves identifying clip art images or line drawings. Content organization involves identifying people or objects in photos and organizing them based on the identification. Categorizing involves associating the contents of an image with a limited set of categories.\nGet started with image analysis on Azure - Training | Microsoft Learn",
@@ -8985,6 +9297,24 @@
           "text": "object detection",
           "raw": "A. object detection",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "image categorization",
+          "raw": "B. image categorization",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "tagging",
+          "raw": "C. tagging",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "optical character recognition (OCR)",
+          "raw": "D. optical character recognition (OCR)",
+          "is_correct": false
         }
       ],
       "explanation_en": "Detecting objects identifies common objects and, for each, returns bounding box coordinates. Image categorization assigns a category to an image, but it does not return bounding box coordinates. Tagging involves associating an image with metadata that summarizes the attributes of the image, but it does not return bounding box coordinates. OCR detects printed and handwritten text in images, but it does not return bounding box coordinates.\nGet started with image analysis on Azure - Training | Microsoft Learn",
@@ -9004,6 +9334,24 @@
           "text": "confidence score",
           "raw": "A. confidence score",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "endpoint URL",
+          "raw": "B. endpoint URL",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "bounding box coordinates",
+          "raw": "C. bounding box coordinates",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "authentication key",
+          "raw": "D. authentication key",
+          "is_correct": false
         }
       ],
       "explanation_en": "Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.\nGet started with image analysis on Azure - Training | Microsoft Learn",
@@ -9054,6 +9402,24 @@
           "text": "stemming",
           "raw": "A. stemming",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "frequency analysis",
+          "raw": "B. frequency analysis",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "n-grams",
+          "raw": "C. n-grams",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "vectorization",
+          "raw": "D. vectorization",
+          "is_correct": false
         }
       ],
       "explanation_en": "Stemming normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases. Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space.\nUnderstand Text Analytics - Training | Microsoft Learn",
@@ -9098,6 +9464,24 @@
           "text": "NaN",
           "raw": "A. NaN",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "0",
+          "raw": "B. 0",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "1",
+          "raw": "C. 1",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "-1",
+          "raw": "D. -1",
+          "is_correct": false
         }
       ],
       "explanation_en": "NaN, or not a number, designates an unknown confidence score. Unknown is a value with which the NaN confidence score is associated. The score values range between 0 and 1, with 0 designating the lowest confidence score and 1 designating the highest confidence score.\nGet started with text analysis - Training | Microsoft Learn",
@@ -9123,6 +9507,24 @@
           "text": "key phrase extraction",
           "raw": "B. key phrase extraction",
           "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Azure AI Speech service",
+          "raw": "C. Azure AI Speech service",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Azure AI Bot Service",
+          "raw": "D. Azure AI Bot Service",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "Conversational Language Understanding",
+          "raw": "E. Conversational Language Understanding",
+          "is_correct": false
         }
       ],
       "explanation_en": "Key phrase extraction is used to extract key phrases to identify the main concepts in a text. It enables a company to identify the main talking points from the support question data and allows them to identify common issues. Named entity recognition can identify and categorize entities in unstructured text, such as people, places, organizations, and quantities. The Azure AI Speech service, Conversational Language Understanding, and Azure AI Bot Service are not designed for identifying key phrases or entities.\nKey Phrase Extraction cognitive skill – Azure Cognitive Search | Microsoft Learn\nExtract insights from text with the Language service – Training | Microsoft Learn\nAnalyze text with the Language service – Training | Microsoft Learn",
@@ -9148,6 +9550,18 @@
           "text": "Azure AI Content Moderator",
           "raw": "B. Azure AI Content Moderator",
           "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "key phrase extraction",
+          "raw": "C. key phrase extraction",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Personally Identifiable Information (PII) detection",
+          "raw": "D. Personally Identifiable Information (PII) detection",
+          "is_correct": false
         }
       ],
       "explanation_en": "Named entity recognition can identify and categorize entities in unstructured text, such as people, places, organizations, and quantities, and is suitable to support the development of an article recommendation system. Key phrase extraction, Content Moderator, and the PII feature are not suited to entity recognition tasks to build a recommender system.\nWhat is the Named Entity Recognition (NER) feature in Azure Cognitive Service for Language? – Azure Cognitive Services | Microsoft Learn\nAnalyze text with the Language service – Training | Microsoft Learn",
@@ -9167,6 +9581,24 @@
           "text": "Azure AI Services",
           "raw": "A. Azure AI Services",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Azure AI Language service",
+          "raw": "B. Azure AI Language service",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Azure Machine Learning service",
+          "raw": "C. Azure Machine Learning service",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Azure AI Bot Service",
+          "raw": "D. Azure AI Bot Service",
+          "is_correct": false
         }
       ],
       "explanation_en": "Azure AI Services provides direct access to both Azure AI Translator and Azure AI Speech services through a single endpoint and authentication key. Azure AI Language service can be used to access the Azure AI Language service, but not the Azure AI Translator and Azure AI Speech services. The Machine Learning service is used to design, implement, and deploy Machine Learning models. Azure AI Bot Service provides a framework for developing, publishing, and managing bots in Azure.\nGet started with translation in Azure - Training | Microsoft Learn",
@@ -9241,6 +9673,18 @@
           "text": "speaker recognition",
           "raw": "C. speaker recognition",
           "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "text translation",
+          "raw": "D. text translation",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "text": "document translation",
+          "raw": "E. document translation",
+          "is_correct": false
         }
       ],
       "explanation_en": "Language identification, speaker recognition, and voice assistants are all elements of the Azure AI Speech service. Text translation and document translation are part of the Translator service.\nWhat is the Speech service? - Azure Cognitive Services | Microsoft Learn\nRecognize and synthesize speech - Training | Microsoft Learn",
@@ -9260,6 +9704,24 @@
           "text": "entity linking",
           "raw": "A. entity linking",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "key phrase extraction",
+          "raw": "B. key phrase extraction",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "named entity recognition",
+          "raw": "C. named entity recognition",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "text translation",
+          "raw": "D. text translation",
+          "is_correct": false
         }
       ],
       "explanation_en": "Entity Linking identifies and disambiguates the identity of entities found in a text. Key phrase extraction is not used to extract entities and is used instead to extract key phrases to identify the main concepts in a text. Named entity recognition cannot provide a link for each entity to view further information. Text translation is part of the Azure AI Translator service.\nWhat is entity linking in Azure Cognitive Service for Language? - Azure Cognitive Services | Microsoft Learn\nAnalyze text with the Language service - Training | Microsoft Learn",
@@ -9316,6 +9778,24 @@
           "text": "Copilots",
           "raw": "A. Copilots",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Chatbots",
+          "raw": "B. Chatbots",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "AI Agents",
+          "raw": "C. AI Agents",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Virtual Assistants",
+          "raw": "D. Virtual Assistants",
+          "is_correct": false
         }
       ],
       "explanation_en": "Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.\nWhat are copilots? - Training | Microsoft Learn",
@@ -9335,6 +9815,24 @@
           "text": "safety system",
           "raw": "A. safety system",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "model layer",
+          "raw": "B. model layer",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "metaprompt layer",
+          "raw": "C. metaprompt layer",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "user interface layer",
+          "raw": "D. user interface layer",
+          "is_correct": false
         }
       ],
       "explanation_en": "The safety system layer includes platform-level configurations and capabilities that help mitigate harm. For example, the Azure OpenAI service includes support for content filters that apply criteria to suppress prompts and responses based on the classification of content into four severity levels (safe, low, medium, and high) for four categories of potential harm (hate, sexual, violence, and self-harm).\nResponsible generative AI - Training | Microsoft Learn",
@@ -9379,6 +9877,24 @@
           "text": "Identify potential harms.",
           "raw": "A. Identify potential harms.",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "Measure identified harms.",
+          "raw": "B. Measure identified harms.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Mitigate identified harms.",
+          "raw": "C. Mitigate identified harms.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Operate a responsible solution.",
+          "raw": "D. Operate a responsible solution.",
+          "is_correct": false
         }
       ],
       "explanation_en": "Identifying potential harms is the first stage when planning a responsible generative AI solution.\nResponsible generative AI - Training | Microsoft Learn",
@@ -9404,6 +9920,18 @@
           "text": "Understand natural language.",
           "raw": "B. Understand natural language.",
           "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Generate images from text descriptions.",
+          "raw": "C. Generate images from text descriptions.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Transcribe spoken audio to text.",
+          "raw": "D. Transcribe spoken audio to text.",
+          "is_correct": false
         }
       ],
       "explanation_en": "Azure OpenAI natural language models can take in natural language and generate responses. GPT models are excellent at both understanding and creating natural language.\nWhat is generative AI? - Training | Microsoft Learn",
@@ -9460,6 +9988,24 @@
           "text": "image description",
           "raw": "A. image description",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "new image creation",
+          "raw": "B. new image creation",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "creating variations of an image",
+          "raw": "C. creating variations of an image",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "image editing",
+          "raw": "D. image editing",
+          "is_correct": false
         }
       ],
       "explanation_en": "Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.\nFundamentals of Generative AI - Training | Microsoft Learn",
@@ -9479,6 +10025,24 @@
           "text": "DALL-E",
           "raw": "A. DALL-E",
           "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "GPT-4",
+          "raw": "B. GPT-4",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "Embeddings",
+          "raw": "C. Embeddings",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Whisper",
+          "raw": "D. Whisper",
+          "is_correct": false
         }
       ],
       "explanation_en": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.\nAzure OpenAI Service models - Azure OpenAI | Microsoft Learn",
