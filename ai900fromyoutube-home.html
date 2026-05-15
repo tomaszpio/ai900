@@ -130,6 +130,40 @@
       flex-wrap: wrap;
     }
 
+    .floating-instruction__toggle {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      background: transparent;
+      border: 1px solid rgba(0, 69, 120, 0.25);
+      border-radius: 8px;
+      cursor: pointer;
+      color: #004578;
+      transition: background 0.15s, transform 0.25s;
+      align-self: flex-start;
+    }
+
+    .floating-instruction__toggle:hover {
+      background: var(--accent-soft);
+    }
+
+    .floating-instruction__toggle svg {
+      transition: transform 0.25s;
+    }
+
+    .floating-instruction--collapsed .floating-instruction__copy,
+    .floating-instruction--collapsed .floating-instruction__actions {
+      display: none;
+    }
+
+    .floating-instruction--collapsed .floating-instruction__toggle svg {
+      transform: rotate(180deg);
+    }
+
   @media (min-width: 1200px) {
     body {
       padding-right: calc(clamp(1rem, 4vw, 2.5rem) + var(--glossary-width) + var(--glossary-gap));
@@ -660,12 +694,52 @@
     }
 
   .answer-explanation {
-    display: grid;
-    gap: 0.4rem;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px dashed rgba(0, 69, 120, 0.25);
   }
+
+    .answer-explanation-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 100%;
+      padding: 0.35rem 0.5rem;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #004578;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .answer-explanation-toggle:hover {
+      background: var(--accent-soft);
+    }
+
+    .answer-explanation-toggle svg {
+      flex-shrink: 0;
+      transition: transform 0.22s;
+    }
+
+    .answer-explanation-toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+
+    .answer-explanation-body {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      padding-left: 0.5rem;
+      overflow: hidden;
+    }
+
+    .answer-explanation-body[hidden] {
+      display: none;
+    }
 
     .answer-explanation-intro {
       margin: 0;
@@ -850,6 +924,11 @@
 </head>
 <body>
   <div class="floating-instruction" role="status" aria-live="polite">
+    <button type="button" class="floating-instruction__toggle" aria-label="Zwiń instrukcję" title="Zwiń / rozwiń instrukcję">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
     <div class="floating-instruction__copy">
       <p>
         <strong>Instrukcja:</strong> kliknij, aby zaznaczyć swoją odpowiedź. Możesz w dowolnym momencie policzyć wyniki dla
@@ -1656,6 +1735,15 @@
       scoreButtons.forEach((button) => button.addEventListener('click', handleScoreButtonClick));
     }
 
+    const instructionPanel = document.querySelector('.floating-instruction');
+    const instructionToggle = document.querySelector('.floating-instruction__toggle');
+    if (instructionPanel && instructionToggle) {
+      instructionToggle.addEventListener('click', () => {
+        const collapsed = instructionPanel.classList.toggle('floating-instruction--collapsed');
+        instructionToggle.setAttribute('aria-label', collapsed ? 'Rozwiń instrukcję' : 'Zwiń instrukcję');
+      });
+    }
+
     updateAnsweredCounter();
 
     function escapeHtml(text) {
@@ -1881,15 +1969,38 @@
       const explanation = document.createElement('div');
       explanation.className = 'answer-explanation';
 
+      const bodyId = 'exp-' + Math.random().toString(36).slice(2, 9);
+
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'answer-explanation-toggle';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', bodyId);
+      toggle.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>Wyjaśnienie`;
+      explanation.appendChild(toggle);
+
+      const body = document.createElement('div');
+      body.className = 'answer-explanation-body';
+      body.id = bodyId;
+      body.hidden = true;
+
       const intro = document.createElement('p');
       intro.className = 'answer-explanation-intro';
       intro.innerHTML = '<strong>Explanation:</strong> The exported answer key confirms this selection.';
-      explanation.appendChild(intro);
+      body.appendChild(intro);
 
       const detail = document.createElement('p');
       detail.className = 'answer-explanation-detail';
       appendLinkifiedText(detail, question.explanation_en);
-      explanation.appendChild(detail);
+      body.appendChild(detail);
+
+      explanation.appendChild(body);
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        body.hidden = expanded;
+      });
 
       return explanation;
     }
